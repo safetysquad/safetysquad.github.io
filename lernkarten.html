@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Lernkarten</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,14 +16,16 @@
   </div>
 </header>
 
-<div class="card" id="box"></div>
+<main class="card-container">
+  <div class="card" id="card"></div>
+</main>
 
-<div class="menu">
-  <button onclick="prev()">⬅ Zurück</button>
-  <button onclick="flip()">🔁 Antwort</button>
-  <button onclick="mark()">⭐ Merkliste</button>
-  <button onclick="done()">✅ Erledigt</button>
-  <button onclick="next()">➡ Weiter</button>
+<div class="controls">
+  <button onclick="prev()">⬅<br>Zurück</button>
+  <button onclick="flip()">🔁<br>Antwort</button>
+  <button class="mark" onclick="mark()">❌<br>Merken</button>
+  <button class="done" onclick="done()">✅<br>Erledigt</button>
+  <button onclick="next()">➡<br>Weiter</button>
 </div>
 
 <script src="lernkartenData.js"></script>
