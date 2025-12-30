@@ -1,3 +1,5 @@
+console.log(lernkarten.length);
+
 let index = 0;
 let showAnswer = false;
 
