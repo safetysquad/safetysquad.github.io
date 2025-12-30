@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Lernkarten</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>📚 Lernkarten</h1>
+  <div class="stats">
+    <div>Erledigt<br><b id="done">0</b></div>
+    <div>Merkliste<br><b id="mark">0</b></div>
+  </div>
+</header>
+
+<div class="card" id="box"></div>
+
+<div class="menu">
+  <button onclick="prev()">⬅ Zurück</button>
+  <button onclick="flip()">🔁 Antwort</button>
+  <button onclick="mark()">⭐ Merkliste</button>
+  <button onclick="done()">✅ Erledigt</button>
+  <button onclick="next()">➡ Weiter</button>
+</div>
+
+<script src="lernkartenData.js"></script>
+<script src="lernkarten.js"></script>
+</body>
+</html>
