@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Prüfung</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🧪 Prüfungsmodus</h1>
+  <div class="stats">
+    <div>Versuche<br><b id="attempts">0</b></div>
+    <div>Bestes<br><b id="best">0%</b></div>
+    <div>Status<br><b id="status">❌</b></div>
+  </div>
+</header>
+
+<div class="card" id="box"></div>
+
+<div class="menu">
+  <button onclick="finish()">✅ Prüfung abgeben</button>
+</div>
+
+<script src="pruefungData.js"></script>
+<script src="pruefung.js"></script>
+</body>
+</html>
