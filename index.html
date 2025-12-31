@@ -2,51 +2,36 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>SAFETY SQUAD – Lernkarteikarten</title>
+  <title>SAFETY SQUAD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <div class="app">
 
-<header>
-  <h1>📚 SAFETY SQUAD</h1>
-  <p>Lernkarteikarten</p>
+    <header>
+      <h1>📘 SAFETY SQUAD</h1>
+      <p>Teste dein Wissen Schritt für Schritt</p>
+    </header>
 
-  <div class="stats">
-    <div>✅ Erledigt<br><b id="doneCount">0</b></div>
-    <div>⭐ Merkliste<br><b id="markCount">0</b></div>
-    <div>📄 Karte<br><b id="cardCounter">0 / 0</b></div>
+    <main style="flex:1; display:flex; align-items:center; justify-content:center;">
+      <a href="lernkarteikarten.html"
+         style="
+           display:block;
+           width:100%;
+           padding:18px;
+           text-align:center;
+           background:#22c55e;
+           color:#022c22;
+           border-radius:18px;
+           font-size:1.1rem;
+           font-weight:600;
+           text-decoration:none;">
+        📚 Lernkarteikarten
+      </a>
+    </main>
+
   </div>
-
-  <div class="progress">
-    <div id="progressBar"></div>
-  </div>
-
-  <div class="top-buttons">
-    <button id="toggleMode" onclick="toggleMode()">⭐ Nur Merkliste</button>
-    <a class="link-btn" href="stats.html">📊 Statistik</a>
-    <button class="reset" onclick="resetProgress()">🧹 Reset</button>
-  </div>
-</header>
-
-<main>
-  <div class="card" onclick="flipCard()">
-    <p id="cardText">Lade Karte…</p>
-  </div>
-
-  <div class="nav-buttons">
-    <button onclick="prevCard()">⬅ Zurück</button>
-    <button onclick="nextCard()">➡ Weiter</button>
-  </div>
-
-  <div class="buttons">
-    <button class="mark" onclick="markCard()">⭐ Merkliste</button>
-    <button class="flip" onclick="flipCard()">🔁 Antwort</button>
-    <button class="done" onclick="doneCard()">✅ Richtig</button>
-  </div>
-</main>
-
-<script src="data.js"></script>
-<script src="script.js"></script>
 </body>
 </html>
