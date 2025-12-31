@@ -80,6 +80,19 @@ function finish() {
 function save() {
   localStorage.setItem("testStats", JSON.stringify(stats));
 }
+let currentIndex = 0;
+let merkliste = JSON.parse(localStorage.getItem("merkliste")) || [];
+
+function addToMerkliste() {
+  const card = cards[currentIndex];
+
+  if (!merkliste.includes(card.id)) {
+    merkliste.push(card.id);
+    localStorage.setItem("merkliste", JSON.stringify(merkliste));
+  }
+
+  nextCard(); // 👉 automatisch nächste Karte
+}
 
 // INIT
 loadCards();
