@@ -91,3 +91,16 @@ h1 {
   background: #ef4444;
   color: white;
 }
+.card {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.buttons button,
+.nav-buttons button {
+  flex: 1;
+}
+
+.buttons {
+  display: flex;
+}
