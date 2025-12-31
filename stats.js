@@ -1,16 +1,27 @@
 const state = JSON.parse(localStorage.getItem("state")) || {};
 
-document.getElementById("doneCount").innerText =
-  Object.values(state).filter(v => v === "done").length;
+const total = cards.length;
+const values = Object.values(state);
 
-document.getElementById("markCount").innerText =
-  Object.values(state).filter(v => v === "mark").length;
+const done = values.filter(v => v === "done").length;
+const mark = values.filter(v => v === "mark").length;
 
-document.getElementById("totalCount").innerText = 51;
+const percent = total === 0 ? 0 : Math.round((done / total) * 100);
 
-function resetProgress() {
-  const ok = confirm("Willst du wirklich alles zurücksetzen?");
+document.getElementById("totalCards").innerText = total;
+document.getElementById("doneCards").innerText = done;
+document.getElementById("markCards").innerText = mark;
+document.getElementById("percentDone").innerText = percent + "%";
+
+const bar = document.getElementById("progressBar");
+bar.style.width = percent + "%";
+
+function resetAll() {
+  const ok = confirm(
+    "Willst du wirklich deinen gesamten Lernfortschritt löschen?\n\nDiese Aktion kann nicht rückgängig gemacht werden."
+  );
   if (!ok) return;
+
   localStorage.removeItem("state");
   location.reload();
 }
