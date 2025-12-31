@@ -93,6 +93,7 @@ function addToMerkliste() {
 
   nextCard(); // 👉 automatisch nächste Karte
 }
+<button onclick="addToMerkliste()">⭐ Merkliste</button>
 
 // INIT
 loadCards();
