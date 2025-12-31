@@ -1,185 +1,93 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #020617;
-  color: #f8fafc;
+  margin: 0;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  color: #e5e7eb;
 }
 
-/* ============================= */
-/* MOBILE APP LAYOUT */
-/* ============================= */
-body {
+header {
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.stats div {
+  background: #1e293b;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  min-width: 90px;
+}
+
+.card-container {
   display: flex;
   justify-content: center;
+  padding: 1.5rem 1rem;
 }
 
-/* App Container */
-.app {
-  width: 100%;
-  max-width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-
-/* ============================= */
-/* HEAD */
-/* ============================= */
-header {
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-header h1 {
-  font-size: 1.9rem;
-  margin-bottom: 4px;
-}
-
-header p {
-  font-size: 0.95rem;
-  opacity: 0.75;
-}
-
-/* ============================= */
-/* PROGRESS */
-/* ============================= */
-.progress-container {
-  margin: 12px 0;
-}
-
-#progressText {
-  font-size: 0.85rem;
-  text-align: center;
-  margin-bottom: 6px;
-  opacity: 0.8;
-}
-
-.progress {
-  height: 8px;
-  background: #1e293b;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-#progressBar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #22c55e, #4ade80);
-}
-
-/* ============================= */
-/* CARD */
-/* ============================= */
 .card {
-  flex: 1;
   background: #020617;
-  border-radius: 24px;
+  border: 2px solid #334155;
+  border-radius: 18px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  min-height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 28px;
-  text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 1.4;
-  border: 1px solid #1e293b;
+  text-align: center;
 }
 
-/* ============================= */
-/* ACTIONS */
-/* ============================= */
-.action-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 14px;
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #020617;
+  border-top: 1px solid #334155;
+  padding: 0.6rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.4rem;
 }
 
-.action-buttons button {
-  flex: 1;
-  padding: 16px;
-  font-size: 1rem;
-  border-radius: 18px;
+.controls button {
+  background: #1e293b;
+  color: white;
   border: none;
-  font-weight: 600;
+  border-radius: 12px;
+  padding: 0.6rem 0;
+  font-size: 0.75rem;
 }
 
-.correct {
+.controls button.primary {
+  background: #f59e0b;
+  color: #020617;
+  font-weight: bold;
+}
+
+.controls button.done {
   background: #22c55e;
-  color: #022c22;
+  color: #020617;
 }
 
-.wrong {
+.controls button.mark {
   background: #ef4444;
   color: white;
-}
-
-.mark {
-  background: #f59e0b;
-  color: #1f2937;
-}
-
-/* ============================= */
-/* NAVIGATION */
-/* ============================= */
-.nav-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.nav-buttons button {
-  flex: 1;
-  padding: 14px;
-  background: #1e293b;
-  color: #f8fafc;
-  border-radius: 16px;
-  border: none;
-}
-
-/* ============================= */
-/* TOP BUTTONS */
-/* ============================= */
-.top-buttons {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.top-buttons button,
-.top-buttons a {
-  flex: 1;
-  padding: 10px;
-  font-size: 0.85rem;
-  border-radius: 14px;
-  border: none;
-  background: #f59e0b;
-  color: #1f2937;
-  text-align: center;
-}
-
-/* ============================= */
-/* DESKTOP */
-/* ============================= */
-@media (min-width: 900px) {
-  body {
-    background: radial-gradient(circle at top, #020617, #000);
-  }
-
-  .app {
-    max-width: 420px;
-    min-height: 90vh;
-    margin: auto;
-    border-radius: 28px;
-    border: 1px solid #1e293b;
-    background: #020617;
-  }
 }
