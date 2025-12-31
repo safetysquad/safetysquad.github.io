@@ -2,45 +2,22 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Testmodus – SAFETY SQUAD</title>
+  <title>Statistik – SAFETY SQUAD</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h2>📝 Testmodus</h2>
+  <h2>📊 Statistik</h2>
 
-  <div class="progress-container">
-    <div id="progressBar"></div>
-  </div>
-  <div id="progressText">0%</div>
+  <p>Gesamt Karten: <span id="total"></span></p>
+  <p>Richtig: <span id="true"></span></p>
+  <p>Falsch: <span id="false"></span></p>
+  <p>Merkliste: <span id="merk"></span></p>
 
-  <div class="top-buttons">
-    <button onclick="toggleMerkliste()">⭐ Nur Merkliste</button>
-    <a href="statistik.html">📊 Statistik</a>
-    <a href="index.html">🏠 Startseite</a>
-  </div>
-
-  <div class="card" id="card">
-    <div id="question"></div>
-  </div>
-
-  <div class="action-buttons">
-    <button onclick="addToMerkliste()">⭐ Merkliste</button>
-    <button onclick="markFalse()">❌ Falsch</button>
-    <button onclick="markTrue()">✅ Richtig</button>
-  </div>
-
-  <div class="nav-buttons">
-    <button onclick="prevCard()">⬅ Zurück</button>
-    <button onclick="nextCard()">Weiter ➡</button>
-  </div>
-
-  <div class="counter">
-    <span id="cardCounter"></span> |
-    ⭐ Merkliste: <span id="merkCount"></span>
-  </div>
+  <button onclick="resetStats()">🔄 Reset</button>
+  <a href="lernkarten.html">⬅ Zurück</a>
 
   <script src="lernkartenData.js"></script>
-  <script src="lernkarten.js"></script>
+  <script src="statistik.js"></script>
 </body>
 </html>
