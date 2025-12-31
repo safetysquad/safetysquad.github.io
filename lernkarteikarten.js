@@ -77,10 +77,25 @@ function markCard() {
 }
 
 function saveAndNext() {
+  const currentId = currentCard().id;
+
   localStorage.setItem("state", JSON.stringify(state));
+
   updateFilteredCards();
-  nextCard();
+
+  // gleiche Reihenfolge beibehalten
+  const nextIndex = filteredCards.findIndex(c => c.id > currentId);
+
+  if (nextIndex !== -1) {
+    index = nextIndex;
+  } else {
+    index = 0; // von vorne, wenn keine höhere ID existiert
+  }
+
+  showAnswer = false;
+  render();
 }
+
 
 function toggleMarkMode() {
   mode = mode === "all" ? "mark" : "all";
