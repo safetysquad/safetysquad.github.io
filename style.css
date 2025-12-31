@@ -1,75 +1,188 @@
+/* ============================= */
+/* RESET */
+/* ============================= */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
-  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: #020617;
-  color: #e5e7eb;
+  color: #f8fafc;
 }
 
-header {
-  padding: 1rem;
-  text-align: center;
-}
-
-.card {
-  background: #1e293b;
-  padding: 2rem;
-  border-radius: 16px;
-  margin: 1rem;
-  text-align: center;
-  min-height: 200px;
+/* ============================= */
+/* MOBILE APP LAYOUT */
+/* ============================= */
+body {
   display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 
-.big-btn {
-  padding: 1rem;
-  background: #22c55e;
-  color: black;
-  text-decoration: none;
-  border-radius: 14px;
-  font-size: 1.2rem;
+/* App Container */
+.app {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-.progress-wrap {
-  margin: 1rem;
+/* ============================= */
+/* HEAD */
+/* ============================= */
+header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+header h1 {
+  font-size: 1.9rem;
+  margin-bottom: 4px;
+}
+
+header p {
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* ============================= */
+/* PROGRESS */
+/* ============================= */
+.progress-container {
+  margin: 12px 0;
+}
+
+#progressText {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 6px;
+  opacity: 0.8;
 }
 
 .progress {
-  height: 10px;
-  background: #334155;
-  border-radius: 10px;
+  height: 8px;
+  background: #1e293b;
+  border-radius: 999px;
   overflow: hidden;
 }
 
 #progressBar {
   height: 100%;
   width: 0%;
-  background: #22c55e;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
 }
 
-#progressText {
-  margin-top: 0.4rem;
-  font-size: 0.9rem;
-}
-
-.buttons, .top-buttons {
-  display: flex;
-  gap: 0.5rem;
-  margin: 1rem;
-}
-
-button, .link-btn {
+/* ============================= */
+/* CARD */
+/* ============================= */
+.card {
   flex: 1;
-  padding: 0.6rem;
+  background: #020617;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  border: 1px solid #1e293b;
+}
+
+/* ============================= */
+/* ACTIONS */
+/* ============================= */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.action-buttons button {
+  flex: 1;
+  padding: 16px;
+  font-size: 1rem;
+  border-radius: 18px;
   border: none;
-  border-radius: 12px;
+  font-weight: 600;
+}
+
+.correct {
+  background: #22c55e;
+  color: #022c22;
+}
+
+.wrong {
+  background: #ef4444;
+  color: white;
+}
+
+.mark {
   background: #f59e0b;
-  color: black;
-  cursor: pointer;
-  text-decoration: none;
+  color: #1f2937;
+}
+
+/* ============================= */
+/* NAVIGATION */
+/* ============================= */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.nav-buttons button {
+  flex: 1;
+  padding: 14px;
+  background: #1e293b;
+  color: #f8fafc;
+  border-radius: 16px;
+  border: none;
+}
+
+/* ============================= */
+/* TOP BUTTONS */
+/* ============================= */
+.top-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.top-buttons button,
+.top-buttons a {
+  flex: 1;
+  padding: 10px;
+  font-size: 0.85rem;
+  border-radius: 14px;
+  border: none;
+  background: #f59e0b;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* ============================= */
+/* DESKTOP */
+/* ============================= */
+@media (min-width: 900px) {
+  body {
+    background: radial-gradient(circle at top, #020617, #000);
+  }
+
+  .app {
+    max-width: 420px;
+    min-height: 90vh;
+    margin: auto;
+    border-radius: 28px;
+    border: 1px solid #1e293b;
+    background: #020617;
+  }
 }
