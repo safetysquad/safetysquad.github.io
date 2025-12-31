@@ -1,151 +1,75 @@
-/* ===== RESET ===== */
+/* ============================= */
+/* RESET */
+/* ============================= */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* ===== BASIS ===== */
+html, body {
+  height: 100%;
+}
+
 body {
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: #f8fafc;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  min-height: 100vh;
-}
-
-/* ===== LAYOUT ===== */
-.container {
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 24px;
-}
-
-.center {
-  text-align: center;
-  margin-top: 20vh;
-}
-
-/* ===== HEADLINES ===== */
-h1 {
-  font-size: 2.4rem;
-  margin-bottom: 12px;
-}
-
-h2 {
-  font-size: 1.8rem;
-  margin: 20px 0;
-}
-
-p {
-  opacity: 0.85;
-  font-size: 1rem;
-}
-
-/* ===== BUTTONS ===== */
-button,
-.btn,
-a {
-  font-size: 1rem;
-}
-
-button,
-.btn {
-  width: 100%;
-  padding: 16px;
-  border-radius: 16px;
-  border: none;
-  margin: 6px 0;
-  font-weight: 600;
-}
-
-.green {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: #022c22;
-}
-
-button {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  color: #1f2937;
-}
-
-a {
-  text-decoration: none;
-  display: inline-block;
-}
-
-/* ===== TOP BUTTONS ===== */
-.top-buttons {
-  display: flex;
-  gap: 10px;
-  margin: 12px auto 20px;
-  max-width: 420px;
-}
-
-.top-buttons button,
-.top-buttons a {
-  flex: 1;
-  padding: 12px;
-  border-radius: 14px;
-  font-size: 0.9rem;
-}
-
-/* ===== KARTE ===== */
-.card {
-  background: linear-gradient(180deg, #1e293b, #020617);
-  padding: 40px 24px;
-  border-radius: 24px;
-  margin: 20px auto;
-  max-width: 420px;
-  min-height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 1.2rem;
-  line-height: 1.4;
-}
-
-/* ===== ACTION BUTTONS ===== */
-.action-buttons {
-  display: flex;
-  gap: 10px;
-  max-width: 420px;
-  margin: 10px auto;
-}
-
-.action-buttons button {
-  flex: 1;
-  padding: 14px;
-}
-
-/* ===== NAV BUTTONS ===== */
-.nav-buttons {
-  display: flex;
-  gap: 10px;
-  max-width: 420px;
-  margin: 10px auto;
-}
-
-.nav-buttons button {
-  flex: 1;
-  background: #334155;
+  background: #020617;
   color: #f8fafc;
 }
 
-/* ===== COUNTER ===== */
-.counter {
-  margin-top: 16px;
-  font-size: 0.9rem;
+/* ============================= */
+/* MOBILE APP LAYOUT */
+/* ============================= */
+body {
+  display: flex;
+  justify-content: center;
+}
+
+/* App Container */
+.app {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* ============================= */
+/* HEAD */
+/* ============================= */
+header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+header h1 {
+  font-size: 1.9rem;
+  margin-bottom: 4px;
+}
+
+header p {
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* ============================= */
+/* PROGRESS */
+/* ============================= */
+.progress-container {
+  margin: 12px 0;
+}
+
+#progressText {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 6px;
   opacity: 0.8;
 }
 
-/* ===== PROGRESS ===== */
-.progress-container {
-  width: 90%;
-  max-width: 420px;
-  height: 12px;
-  background: #334155;
-  margin: 10px auto;
+.progress {
+  height: 8px;
+  background: #1e293b;
   border-radius: 999px;
   overflow: hidden;
 }
@@ -156,24 +80,109 @@ a {
   background: linear-gradient(90deg, #22c55e, #4ade80);
 }
 
-#progressText {
-  font-size: 0.85rem;
-  margin-bottom: 6px;
-  opacity: 0.8;
+/* ============================= */
+/* CARD */
+/* ============================= */
+.card {
+  flex: 1;
+  background: #020617;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  border: 1px solid #1e293b;
 }
 
-/* ===== DESKTOP OPTIMIERUNG ===== */
-@media (min-width: 768px) {
-  .container {
-    max-width: 520px;
+/* ============================= */
+/* ACTIONS */
+/* ============================= */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.action-buttons button {
+  flex: 1;
+  padding: 16px;
+  font-size: 1rem;
+  border-radius: 18px;
+  border: none;
+  font-weight: 600;
+}
+
+.correct {
+  background: #22c55e;
+  color: #022c22;
+}
+
+.wrong {
+  background: #ef4444;
+  color: white;
+}
+
+.mark {
+  background: #f59e0b;
+  color: #1f2937;
+}
+
+/* ============================= */
+/* NAVIGATION */
+/* ============================= */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.nav-buttons button {
+  flex: 1;
+  padding: 14px;
+  background: #1e293b;
+  color: #f8fafc;
+  border-radius: 16px;
+  border: none;
+}
+
+/* ============================= */
+/* TOP BUTTONS */
+/* ============================= */
+.top-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.top-buttons button,
+.top-buttons a {
+  flex: 1;
+  padding: 10px;
+  font-size: 0.85rem;
+  border-radius: 14px;
+  border: none;
+  background: #f59e0b;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* ============================= */
+/* DESKTOP */
+/* ============================= */
+@media (min-width: 900px) {
+  body {
+    background: radial-gradient(circle at top, #020617, #000);
   }
 
-  .card {
-    font-size: 1.3rem;
-    min-height: 220px;
-  }
-
-  h1 {
-    font-size: 2.8rem;
+  .app {
+    max-width: 420px;
+    min-height: 90vh;
+    margin: auto;
+    border-radius: 28px;
+    border: 1px solid #1e293b;
+    background: #020617;
   }
 }
