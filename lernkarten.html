@@ -2,56 +2,52 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Lernkarteikarten – SAFETY SQUAD</title>
+  <title>SAFETY SQUAD – Lernkarteikarten</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <div class="app">
 
-    <!-- HEADER -->
-    <header>
-      <h1>📝 Testmodus</h1>
-      <p id="counterText">Karte 1 von 51</p>
-    </header>
+<header>
+  <h1>📚 SAFETY SQUAD</h1>
+  <p>Lernkarteikarten</p>
 
-    <!-- PROGRESS -->
-    <div class="progress-container">
-      <div id="progressText">0%</div>
-      <div class="progress">
-        <div id="progressBar"></div>
-      </div>
-    </div>
-
-    <!-- TOP BUTTONS -->
-    <div class="top-buttons">
-      <button onclick="toggleMarkMode()">⭐ Nur Merkliste</button>
-      <a href="statistik.html">📊 Statistik</a>
-      <a href="index.html">🏠 Startseite</a>
-    </div>
-
-    <!-- CARD -->
-    <div class="card" id="cardText">
-      Lade Karte...
-    </div>
-
-    <!-- ACTION BUTTONS -->
-    <div class="action-buttons">
-      <button class="mark" onclick="markCard()">⭐ Merkliste</button>
-      <button class="wrong" onclick="wrongCard()">❌ Falsch</button>
-      <button class="correct" onclick="doneCard()">✅ Richtig</button>
-    </div>
-
-    <!-- NAV -->
-    <div class="nav-buttons">
-      <button onclick="prevCard()">⬅ Zurück</button>
-      <button onclick="nextCard()">➡ Weiter</button>
-    </div>
-
+  <div class="stats">
+    <div>✅ Erledigt<br><b id="doneCount">0</b></div>
+    <div>⭐ Merkliste<br><b id="markCount">0</b></div>
+    <div>📄 Karte<br><b id="cardCounter">0 / 0</b></div>
   </div>
 
-  <script src="lernkarteikartenData.js"></script>
-  <script src="lernkarteikarten.js"></script>
+  <div class="progress">
+    <div id="progressBar"></div>
+  </div>
+
+  <div class="top-buttons">
+    <button id="toggleMode" onclick="toggleMode()">⭐ Nur Merkliste</button>
+    <a class="link-btn" href="stats.html">📊 Statistik</a>
+    <a class="link-btn" href="index.html">🏠 Start</a>
+    <button class="reset" onclick="resetProgress()">🧹 Reset</button>
+  </div>
+</header>
+
+<main>
+  <div class="card" onclick="flipCard()">
+    <p id="cardText">Lade Karte…</p>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="prevCard()">⬅ Zurück</button>
+    <button onclick="nextCard()">➡ Weiter</button>
+  </div>
+
+  <div class="buttons">
+    <button class="mark" onclick="markCard()">⭐ Merkliste</button>
+    <button class="flip" onclick="flipCard()">🔁 Antwort</button>
+    <button class="done" onclick="doneCard()">✅ Richtig</button>
+  </div>
+</main>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
