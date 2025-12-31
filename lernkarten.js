@@ -1,5 +1,3 @@
-console.log(lernkarten.length);
-
 let index = 0;
 let showAnswer = false;
 
@@ -7,9 +5,15 @@ const STORAGE = "lernkarten_status";
 let status = JSON.parse(localStorage.getItem(STORAGE)) || {};
 
 function render() {
-  const card = lernkarten[index];
+  if (!cards || cards.length === 0) {
+    document.getElementById("card").innerText = "Keine Lernkarten gefunden.";
+    return;
+  }
+
+  const card = cards[index];
+
   document.getElementById("card").innerText =
-    showAnswer ? card.antwort : card.frage;
+    showAnswer ? card.answer : card.question;
 
   const values = Object.values(status);
   document.getElementById("done").innerText =
@@ -25,24 +29,24 @@ function flip() {
 }
 
 function next() {
-  index = (index + 1) % lernkarten.length;
+  index = (index + 1) % cards.length;
   showAnswer = false;
   render();
 }
 
 function prev() {
-  index = (index - 1 + lernkarten.length) % lernkarten.length;
+  index = (index - 1 + cards.length) % cards.length;
   showAnswer = false;
   render();
 }
 
 function mark() {
-  status[lernkarten[index].id] = "mark";
+  status[cards[index].id] = "mark";
   saveAndNext();
 }
 
 function done() {
-  status[lernkarten[index].id] = "done";
+  status[cards[index].id] = "done";
   saveAndNext();
 }
 
@@ -50,5 +54,8 @@ function saveAndNext() {
   localStorage.setItem(STORAGE, JSON.stringify(status));
   next();
 }
+
+// Debug-Hilfe (kannst du später löschen)
+console.log("Lernkarten geladen:", cards.length);
 
 render();
