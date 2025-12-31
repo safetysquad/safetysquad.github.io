@@ -2,53 +2,51 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <title>Statistik – SAFETY SQUAD</title>
+  <title>SAFETY SQUAD – Statistik</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <div class="app">
 
-    <header>
-      <h1>📊 Statistik</h1>
-      <p>Dein Lernfortschritt</p>
-    </header>
+<header>
+  <h1>📊 Statistik</h1>
+  <p>Dein Lernfortschritt</p>
+</header>
 
-    <main style="flex:1; text-align:center;">
-      <p>✅ Erledigt: <b id="doneCount">0</b></p>
-      <p>⭐ Merkliste: <b id="markCount">0</b></p>
-      <p>📚 Gesamt: <b id="totalCount">0</b></p>
+<main class="stats-page">
 
-      <button
-        style="
-          margin-top:20px;
-          padding:14px;
-          width:100%;
-          background:#ef4444;
-          color:white;
-          border:none;
-          border-radius:16px;
-          font-size:1rem;"
-        onclick="resetProgress()">
-        🧹 Fortschritt zurücksetzen
-      </button>
-
-      <a href="lernkarteikarten.html"
-         style="
-           display:block;
-           margin-top:12px;
-           padding:14px;
-           background:#f59e0b;
-           color:#1f2937;
-           border-radius:16px;
-           text-decoration:none;">
-        🔙 Zurück zu den Karten
-      </a>
-    </main>
-
+  <div class="stat-box">
+    <p>📄 Gesamt Karten</p>
+    <b id="totalCards">0</b>
   </div>
 
-  <script src="statistik.js"></script>
+  <div class="stat-box">
+    <p>✅ Erledigt</p>
+    <b id="doneCards">0</b>
+  </div>
+
+  <div class="stat-box">
+    <p>⭐ Merkliste</p>
+    <b id="markCards">0</b>
+  </div>
+
+  <div class="stat-box">
+    <p>📊 Fortschritt</p>
+    <b id="percentDone">0%</b>
+  </div>
+
+  <div class="progress" style="margin-top:1rem;">
+    <div id="progressBar"></div>
+  </div>
+
+  <div class="top-buttons" style="margin-top:2rem;">
+    <a class="link-btn" href="index.html">🏠 Start</a>
+    <button class="reset" onclick="resetAll()">🧹 Fortschritt löschen</button>
+  </div>
+
+</main>
+
+<script src="data.js"></script>
+<script src="stats.js"></script>
 </body>
 </html>
