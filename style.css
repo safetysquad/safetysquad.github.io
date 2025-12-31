@@ -1,188 +1,103 @@
-/* ============================= */
-/* RESET */
-/* ============================= */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
+  font-family: system-ui, sans-serif;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #020617;
-  color: #f8fafc;
+  margin: 0;
+  background: #0f172a;
+  color: #e5e7eb;
 }
 
-/* ============================= */
-/* MOBILE APP LAYOUT */
-/* ============================= */
-body {
-  display: flex;
-  justify-content: center;
-}
-
-/* App Container */
-.app {
-  width: 100%;
-  max-width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-
-/* ============================= */
-/* HEAD */
-/* ============================= */
 header {
+  padding: 1rem;
   text-align: center;
-  margin-bottom: 16px;
 }
 
-header h1 {
-  font-size: 1.9rem;
-  margin-bottom: 4px;
-}
-
-header p {
-  font-size: 0.95rem;
-  opacity: 0.75;
-}
-
-/* ============================= */
-/* PROGRESS */
-/* ============================= */
-.progress-container {
-  margin: 12px 0;
-}
-
-#progressText {
-  font-size: 0.85rem;
-  text-align: center;
-  margin-bottom: 6px;
-  opacity: 0.8;
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
 }
 
 .progress {
-  height: 8px;
+  height: 10px;
   background: #1e293b;
-  border-radius: 999px;
+  border-radius: 10px;
   overflow: hidden;
 }
 
 #progressBar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #22c55e, #4ade80);
-}
-
-/* ============================= */
-/* CARD */
-/* ============================= */
-.card {
-  flex: 1;
-  background: #020617;
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 28px;
-  text-align: center;
-  font-size: 1.25rem;
-  line-height: 1.4;
-  border: 1px solid #1e293b;
-}
-
-/* ============================= */
-/* ACTIONS */
-/* ============================= */
-.action-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.action-buttons button {
-  flex: 1;
-  padding: 16px;
-  font-size: 1rem;
-  border-radius: 18px;
-  border: none;
-  font-weight: 600;
-}
-
-.correct {
   background: #22c55e;
-  color: #022c22;
 }
 
-.wrong {
+.top-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+button, .link-btn {
+  padding: 0.7rem 1.2rem;
+  border-radius: 14px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #f59e0b;
+  color: black;
+  text-decoration: none;
+}
+
+.reset {
   background: #ef4444;
   color: white;
 }
 
-.mark {
-  background: #f59e0b;
-  color: #1f2937;
+main {
+  padding: 1rem;
+  max-width: 520px;
+  margin: auto;
 }
 
-/* ============================= */
-/* NAVIGATION */
-/* ============================= */
-.nav-buttons {
+.card {
+  background: #1e293b;
+  padding: 2rem;
+  border-radius: 20px;
+  min-height: 240px;
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: pre-line;
+  font-size: 1.1rem;
+}
+
+.nav-buttons, .buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .nav-buttons button {
   flex: 1;
-  padding: 14px;
-  background: #1e293b;
-  color: #f8fafc;
-  border-radius: 16px;
-  border: none;
 }
 
-/* ============================= */
-/* TOP BUTTONS */
-/* ============================= */
-.top-buttons {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.top-buttons button,
-.top-buttons a {
+.buttons button {
   flex: 1;
-  padding: 10px;
-  font-size: 0.85rem;
-  border-radius: 14px;
-  border: none;
-  background: #f59e0b;
-  color: #1f2937;
-  text-align: center;
 }
 
-/* ============================= */
-/* DESKTOP */
-/* ============================= */
-@media (min-width: 900px) {
-  body {
-    background: radial-gradient(circle at top, #020617, #000);
-  }
+.mark { background: #f59e0b; }
+.flip { background: #3b82f6; color: white; }
+.done { background: #22c55e; }
 
-  .app {
-    max-width: 420px;
-    min-height: 90vh;
-    margin: auto;
-    border-radius: 28px;
-    border: 1px solid #1e293b;
-    background: #020617;
+@media (min-width: 768px) {
+  .card {
+    font-size: 1.25rem;
+    min-height: 300px;
   }
 }
