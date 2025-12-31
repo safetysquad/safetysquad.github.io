@@ -1,23 +1,54 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Statistik – SAFETY SQUAD</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <div class="app">
 
-  <h2>📊 Statistik</h2>
+    <header>
+      <h1>📊 Statistik</h1>
+      <p>Dein Lernfortschritt</p>
+    </header>
 
-  <p>Gesamt Karten: <span id="total"></span></p>
-  <p>Richtig: <span id="true"></span></p>
-  <p>Falsch: <span id="false"></span></p>
-  <p>Merkliste: <span id="merk"></span></p>
+    <main style="flex:1; text-align:center;">
+      <p>✅ Erledigt: <b id="doneCount">0</b></p>
+      <p>⭐ Merkliste: <b id="markCount">0</b></p>
+      <p>📚 Gesamt: <b id="totalCount">0</b></p>
 
-  <button onclick="resetStats()">🔄 Reset</button>
-  <a href="lernkarten.html">⬅ Zurück</a>
+      <button
+        style="
+          margin-top:20px;
+          padding:14px;
+          width:100%;
+          background:#ef4444;
+          color:white;
+          border:none;
+          border-radius:16px;
+          font-size:1rem;"
+        onclick="resetProgress()">
+        🧹 Fortschritt zurücksetzen
+      </button>
 
-  <script src="lernkartenData.js"></script>
+      <a href="lernkarteikarten.html"
+         style="
+           display:block;
+           margin-top:12px;
+           padding:14px;
+           background:#f59e0b;
+           color:#1f2937;
+           border-radius:16px;
+           text-decoration:none;">
+        🔙 Zurück zu den Karten
+      </a>
+    </main>
+
+  </div>
+
   <script src="statistik.js"></script>
 </body>
 </html>
