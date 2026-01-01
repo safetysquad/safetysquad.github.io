@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Falsche Fragen üben</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<div class="app">
+
+<header>
+  <h1>🔁 Falsche Fragen</h1>
+  <p>Noch einmal üben</p>
+
+  <div class="progress">
+    <div id="progressBar"></div>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <p id="questionText">Lade Frage…</p>
+  </div>
+
+  <div id="answers" class="quiz-answers"></div>
+
+  <button class="done" onclick="submitAnswer()">Antwort prüfen</button>
+</main>
+
+</div>
+
+<script src="quiz-repeat.js"></script>
+</body>
+</html>
 
