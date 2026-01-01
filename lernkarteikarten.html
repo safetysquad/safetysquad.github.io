@@ -1,56 +1,50 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>SAFETY SQUAD – Lernkarteikarten</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+  <div class="app">
 
-<div class="app">
+    <header>
+      <h1>📚 SAFETY SQUAD</h1>
+      <p>Lernkarteikarten</p>
 
-  <header class="app-header">
-    <h1>📚 SAFETY SQUAD</h1>
-    <p>Lernkarteikarten</p>
+      <div class="stats">
+        <div>✅ Erledigt<br><b id="doneCount">0</b></div>
+        <div>⭐ Merkliste<br><b id="markCount">0</b></div>
+        <div>📄 Karte<br><b id="cardCounter">1 / 51</b></div>
+      </div>
 
-    <div class="stats">
-      <div>✅ Erledigt<br><b id="doneCount">0</b></div>
-      <div>⭐ Merkliste<br><b id="markCount">0</b></div>
-      <div>📄 Karte<br><b id="cardCounter">0 / 0</b></div>
-    </div>
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+    </header>
 
-    <div class="progress">
-      <div id="progressBar"></div>
-    </div>
+    <main>
+      <div class="card" onclick="flipCard()">
+        <p id="cardText">Lade Karte…</p>
+      </div>
 
-    <div class="top-buttons">
-      <button id="toggleMode" onclick="toggleMode()">⭐ Nur Merkliste</button>
-      <a class="link-btn" href="stats.html">📊 Statistik</a>
-      <a class="link-btn" href="index.html">🏠 Startseite</a>
-    </div>
-  </header>
+      <div class="row">
+        <button class="btn btn-orange" onclick="prevCard()">⬅ Zurück</button>
+        <button class="btn btn-orange" onclick="nextCard()">➡ Weiter</button>
+      </div>
 
-  <main class="app-main">
-    <div class="card" onclick="flipCard()">
-      <p id="cardText">Lade Karte…</p>
-    </div>
+      <button class="btn btn-orange" onclick="markCard()">⭐ Merkliste</button>
+      <button class="btn btn-dark" onclick="flipCard()">🔁 Antwort</button>
+      <button class="btn btn-green" onclick="doneCard()">✅ Richtig</button>
 
-    <div class="nav-buttons">
-      <button onclick="prevCard()">⬅ Zurück</button>
-      <button onclick="nextCard()">➡ Weiter</button>
-    </div>
+      <a href="index.html" class="btn btn-dark">🏠 Startseite</a>
+    </main>
 
-    <div class="buttons">
-      <button class="mark" onclick="markCard()">⭐ Merkliste</button>
-      <button class="flip" onclick="flipCard()">🔁 Antwort</button>
-      <button class="done" onclick="doneCard()">✅ Richtig</button>
-    </div>
-  </main>
+  </div>
 
-</div> <!-- Ende .app -->
-
-<script src="data.js"></script>
-<script src="script.js"></script>
+  <script src="lernkarteikartenData.js"></script>
+  <script src="lernkarteikarten.js"></script>
 </body>
 </html>
