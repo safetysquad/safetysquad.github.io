@@ -72,9 +72,11 @@ function submitAnswer() {
       total: quiz.length * 2,
       wrongQuestions
     }));
+
+    localStorage.setItem("wrongQuestions", JSON.stringify(wrongQuestions));
+
     location.href = "quiz-stats.html";
   }
 }
 
 renderQuestion();
-
