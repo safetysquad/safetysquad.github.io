@@ -28,3 +28,30 @@
         <button onclick="toggleMode()">⭐ Nur Merkliste</button>
         <a href="stats.html" class="link-btn">📊 Statistik</a>
         <a href="index.html" class="link-btn">🏠 Startseite</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="card" id="card" onclick="flipCard()">
+        <p id="cardText">Lade Karte…</p>
+      </div>
+
+      <div class="nav-buttons">
+        <button onclick="prevCard()">⬅ Zurück</button>
+        <button onclick="nextCard()">➡ Weiter</button>
+      </div>
+
+      <div class="buttons">
+        <button onclick="markCard()">⭐ Merkliste</button>
+        <button onclick="flipCard()">🔁 Antwort</button>
+        <button onclick="doneCard()">✅ Richtig</button>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- WICHTIG: REIHENFOLGE -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
