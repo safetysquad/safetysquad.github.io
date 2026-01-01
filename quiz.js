@@ -1,12 +1,24 @@
 const params = new URLSearchParams(window.location.search);
 const quizNr = params.get("quiz");
+const mode = params.get("mode"); // normal | wrong
 
-let questions = quizData[quizNr];
+let questions = [];
 let index = 0;
 let score = 0;
 let wrongQuestions = [];
 
+if (mode === "wrong") {
+  questions = JSON.parse(localStorage.getItem("wrongQuestions")) || [];
+} else {
+  questions = quizData[quizNr] || [];
+}
+
 function renderQuestion() {
+  if (!questions[index]) {
+    finishQuiz();
+    return;
+  }
+
   const q = questions[index];
   document.getElementById("question").innerText = q.question;
 
@@ -35,31 +47,34 @@ function submitAnswer() {
     checked.every(v => q.correct.includes(v));
 
   if (correct) {
-    score += q.points;
+    score += q.points || 1;
   } else {
     wrongQuestions.push(q);
-    saveWrong(q);
+    saveAnalysis(q);
   }
 
   index++;
-  index < questions.length ? renderQuestion() : finishQuiz();
+  renderQuestion();
 }
 
 function updateProgress() {
-  const percent = Math.round(((index) / questions.length) * 100);
+  const percent = Math.round((index / questions.length) * 100);
   document.getElementById("progressBar").style.width = percent + "%";
 }
 
 function finishQuiz() {
-  localStorage.setItem("wrongQuestions", JSON.stringify(wrongQuestions));
+  if (mode !== "wrong") {
+    localStorage.setItem("wrongQuestions", JSON.stringify(wrongQuestions));
+  }
+
   document.getElementById("quiz").innerHTML = `
-    <h2>Ergebnis</h2>
+    <h2>✅ Fertig!</h2>
     <p>Punkte: ${score}</p>
-    <a href="analysis.html">📊 Lernanalyse</a>
+    <a class="menu-btn" href="analysis.html">📊 Zur Lernanalyse</a>
   `;
 }
 
-function saveWrong(q) {
+function saveAnalysis(q) {
   let stats = JSON.parse(localStorage.getItem("analysis")) || {};
   stats[q.id] = (stats[q.id] || 0) + 1;
   localStorage.setItem("analysis", JSON.stringify(stats));
