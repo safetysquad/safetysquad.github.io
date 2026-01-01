@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>SAFETY SQUAD – Lernanalyse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <header>
+    <h1>📊 Lernanalyse</h1>
+    <p>Deine häufigsten Fehler</p>
+  </header>
+
+  <main>
+    <section>
+      <h3>❌ Häufig falsch beantwortet</h3>
+      <ul id="errorList"></ul>
+    </section>
+
+    <section style="margin-top:2rem;">
+      <a class="menu-btn" href="quiz-run.html?mode=wrong">
+        🔁 Falsche Fragen erneut üben
+      </a>
+    </section>
+  </main>
+
+  <footer style="margin-top:2rem; text-align:center;">
+    <a href="index.html">⬅ Startseite</a>
+  </footer>
+</div>
+
+<script src="quiz-data.js"></script>
+<script src="analysis.js"></script>
+</body>
+</html>
 
