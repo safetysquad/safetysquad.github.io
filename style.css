@@ -131,4 +131,24 @@ main {
 .quiz-card:active {
   transform: scale(0.98);
 }
+.quiz-answers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+.quiz-answer {
+  padding: 0.8rem;
+  border-radius: 14px;
+  border: none;
+  background: #334155;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.quiz-answer.selected {
+  background: #22c55e;
+  color: #022c22;
+}
 
