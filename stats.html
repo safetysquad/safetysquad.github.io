@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <title>SAFETY SQUAD – Statistik</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Statistik – SAFETY SQUAD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+<div class="app">
 
 <header>
   <h1>📊 Statistik</h1>
   <p>Dein Lernfortschritt</p>
 </header>
 
-<main class="stats-page">
+<main>
 
-  <div class="stat-box">
-    <p>📄 Gesamt Karten</p>
-    <b id="totalCards">0</b>
+  <div class="stats">
+    <div>📄 Gesamt<br><b id="totalCards">0</b></div>
+    <div>✅ Erledigt<br><b id="doneCards">0</b></div>
+    <div>⭐ Merkliste<br><b id="markCards">0</b></div>
   </div>
 
-  <div class="stat-box">
-    <p>✅ Erledigt</p>
-    <b id="doneCards">0</b>
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <div class="stat-box">
-    <p>⭐ Merkliste</p>
-    <b id="markCards">0</b>
-  </div>
+  <p style="text-align:center; font-size:.9rem;">
+    Fortschritt: <b id="progressPercent">0%</b>
+  </p>
 
-  <div class="stat-box">
-    <p>📊 Fortschritt</p>
-    <b id="percentDone">0%</b>
-  </div>
+  <button class="btn danger" onclick="resetProgress()">
+    🧹 Lernfortschritt zurücksetzen
+  </button>
 
-  <div class="progress" style="margin-top:1rem;">
-    <div id="progressBar"></div>
-  </div>
-
-  <div class="top-buttons" style="margin-top:2rem;">
-    <a class="link-btn" href="index.html">🏠 Startseite</a>
-    <button class="reset" onclick="resetAll()">🧹 Fortschritt löschen</button>
-  </div>
+  <a href="index.html" class="btn secondary">
+    🔙 Zur Startseite
+  </a>
 
 </main>
 
+</div>
+
 <script src="data.js"></script>
-<script src="stats.js"></script>
+<script src="script.js"></script>
+<script>
+  renderStats();
+</script>
 </body>
 </html>
