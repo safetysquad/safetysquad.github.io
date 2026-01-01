@@ -81,3 +81,29 @@ function toggleMode() {
 document.addEventListener("DOMContentLoaded", () => {
   renderCard();
 });
+function renderStats() {
+  const state = JSON.parse(localStorage.getItem("state")) || {};
+
+  const total = cards.length;
+  const values = Object.values(state);
+
+  const done = values.filter(v => v === "done").length;
+  const mark = values.filter(v => v === "mark").length;
+
+  const percent = total === 0 ? 0 : Math.round((done / total) * 100);
+
+  const totalEl = document.getElementById("totalCards");
+  const doneEl = document.getElementById("doneCards");
+  const markEl = document.getElementById("markCards");
+  const percentEl = document.getElementById("progressPercent");
+  const barEl = document.getElementById("progressBar");
+
+  if (!totalEl) return; // Schutz falls auf anderer Seite
+
+  totalEl.innerText = total;
+  doneEl.innerText = done;
+  markEl.innerText = mark;
+  percentEl.innerText = percent + "%";
+  barEl.style.width = percent + "%";
+}
+
