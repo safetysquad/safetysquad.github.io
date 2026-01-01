@@ -17,34 +17,14 @@
       <div class="stats">
         <div>✅ Erledigt<br><b id="doneCount">0</b></div>
         <div>⭐ Merkliste<br><b id="markCount">0</b></div>
-        <div>📄 Karte<br><b id="cardCounter">1 / 51</b></div>
+        <div>📄 Karte<br><b id="cardCounter">0 / 0</b></div>
       </div>
 
       <div class="progress">
         <div id="progressBar"></div>
       </div>
-    </header>
 
-    <main>
-      <div class="card" onclick="flipCard()">
-        <p id="cardText">Lade Karte…</p>
-      </div>
-
-      <div class="row">
-        <button class="btn btn-orange" onclick="prevCard()">⬅ Zurück</button>
-        <button class="btn btn-orange" onclick="nextCard()">➡ Weiter</button>
-      </div>
-
-      <button class="btn btn-orange" onclick="markCard()">⭐ Merkliste</button>
-      <button class="btn btn-dark" onclick="flipCard()">🔁 Antwort</button>
-      <button class="btn btn-green" onclick="doneCard()">✅ Richtig</button>
-
-      <a href="index.html" class="btn btn-dark">🏠 Startseite</a>
-    </main>
-
-  </div>
-
-  <script src="lernkarteikartenData.js"></script>
-  <script src="lernkarteikarten.js"></script>
-</body>
-</html>
+      <div class="top-buttons">
+        <button onclick="toggleMode()">⭐ Nur Merkliste</button>
+        <a href="stats.html" class="link-btn">📊 Statistik</a>
+        <a href="index.html" class="link-btn">🏠 Startseite</a>
