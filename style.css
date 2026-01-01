@@ -1,128 +1,190 @@
-/* ========== RESET ========== */
+/* ===============================
+   RESET & BASIS
+================================ */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ========== BASE ========== */
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(180deg, #020617, #020617);
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
   color: #e5e7eb;
-  min-height: 100vh;
 }
 
-/* ========== APP CONTAINER ========== */
+/* ===============================
+   APP CONTAINER (WICHTIG)
+================================ */
 .app {
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 24px 16px 40px;
   min-height: 100vh;
+  max-width: 420px;              /* 🔑 Mobile-First Fix */
+  margin: 0 auto;
+  padding: 24px 16px 32px;
   display: flex;
   flex-direction: column;
 }
 
-/* ========== HEADER ========== */
+/* ===============================
+   HEADER
+================================ */
 header {
   text-align: center;
   margin-bottom: 24px;
 }
 
 header h1 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 700;
   margin-bottom: 6px;
 }
 
 header p {
-  opacity: 0.8;
   font-size: 0.95rem;
+  color: #9ca3af;
 }
 
-/* ========== STATS ========== */
+/* ===============================
+   STATS
+================================ */
 .stats {
   display: flex;
   justify-content: space-between;
-  margin-top: 16px;
-  font-size: 0.85rem;
-  opacity: 0.9;
+  margin-top: 18px;
+  gap: 8px;
 }
 
 .stats div {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 10px 6px;
+  font-size: 0.75rem;
   text-align: center;
 }
 
-/* ========== PROGRESS ========== */
-.progress {
-  background: #1f2933;
-  height: 10px;
-  border-radius: 999px;
-  overflow: hidden;
-  margin: 16px 0;
+.stats b {
+  display: block;
+  font-size: 1rem;
+  margin-top: 4px;
 }
 
-.progress div {
+/* ===============================
+   PROGRESS BAR
+================================ */
+.progress {
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 14px;
+}
+
+#progressBar {
   height: 100%;
   width: 0%;
-  background: #22c55e;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
   transition: width 0.3s ease;
 }
 
-/* ========== MAIN ========== */
+/* ===============================
+   MAIN
+================================ */
 main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
 }
 
-/* ========== CARD ========== */
+/* ===============================
+   CARD
+================================ */
 .card {
   background: #1f2937;
   border-radius: 20px;
-  padding: 24px;
+  padding: 28px 20px;
   min-height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 1.05rem;
-  margin-bottom: 24px;
+  line-height: 1.5;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-/* ========== BUTTONS ========== */
+/* ===============================
+   BUTTON SYSTEM
+================================ */
 .btn {
   width: 100%;
-  padding: 16px;
+  padding: 14px;
   border-radius: 16px;
-  border: none;
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 12px;
+  border: none;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: block;
 }
 
 /* Farben */
-.btn-green { background: #22c55e; color: #022c22; }
-.btn-orange { background: #f59e0b; color: #1f1300; }
-.btn-blue { background: #3b82f6; color: white; }
-.btn-dark { background: #1f2937; color: white; }
+.btn-green {
+  background: #22c55e;
+  color: #022c22;
+}
 
-/* ========== BUTTON GROUPS ========== */
+.btn-orange {
+  background: #f59e0b;
+  color: #1f1300;
+}
+
+.btn-dark {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+.btn-blue {
+  background: #3b82f6;
+  color: #eff6ff;
+}
+
+/* ===============================
+   BUTTON ROW (Zurück / Weiter)
+================================ */
 .row {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .row .btn {
   flex: 1;
 }
 
-/* ========== LINKS ========== */
-a {
-  text-decoration: none;
+/* ===============================
+   LINKS ALS BUTTONS
+================================ */
+a.btn {
+  display: block;
 }
 
-/* ========== DESKTOP ========== */
+/* ===============================
+   DESKTOP OPTIMIERUNG
+================================ */
 @media (min-width: 768px) {
   .app {
-    max-width: 420px;
+    max-width: 480px;
+    padding: 32px 20px;
   }
-}
+
+  header h1 {
+    font-size: 1.9rem;
+  }
+
+  .card {
+    font-size: 1.1rem;
