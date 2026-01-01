@@ -1,105 +1,83 @@
-let index = 0;
+let currentIndex = 0;
 let showAnswer = false;
-let mode = "all";
+let onlyMarked = false;
 
-let state = JSON.parse(localStorage.getItem("state")) || {};
-let filteredCards = [];
+let doneCards = JSON.parse(localStorage.getItem("safety_doneCards")) || [];
+let markedCards = JSON.parse(localStorage.getItem("safety_markedCards")) || [];
 
-function updateFilteredCards() {
-  filteredCards =
-    mode === "mark"
-      ? cards.filter(c => state[c.id] === "mark")
-      : cards.filter(c => state[c.id] !== "done");
-
-  filteredCards.sort((a, b) => a.id - b.id);
-
-  if (index >= filteredCards.length) index = 0;
+function getActiveCards() {
+  return onlyMarked
+    ? cards.filter(c => markedCards.includes(c.id))
+    : cards;
 }
 
-function currentCard() {
-  return filteredCards[index] || null;
-}
+function renderCard() {
+  const activeCards = getActiveCards();
 
-function render() {
-  const card = currentCard();
-  const cardText = document.getElementById("cardText");
-
-  if (!card) {
-    cardText.innerText = "🎉 Keine Karten mehr!";
+  if (activeCards.length === 0) {
+    document.getElementById("cardText").textContent = "Keine Karten vorhanden";
     return;
   }
 
-  cardText.innerText = showAnswer ? card.answer : card.question;
+  if (currentIndex >= activeCards.length) currentIndex = activeCards.length - 1;
+  if (currentIndex < 0) currentIndex = 0;
 
-  const values = Object.values(state);
-  const done = values.filter(v => v === "done").length;
-  const mark = values.filter(v => v === "mark").length;
+  const card = activeCards[currentIndex];
 
-  document.getElementById("doneCount").innerText = done;
-  document.getElementById("markCount").innerText = mark;
-  document.getElementById("cardCounter").innerText =
-    `${index + 1} / ${filteredCards.length}`;
+  document.getElementById("cardText").textContent =
+    showAnswer ? card.answer : card.question;
 
-  document.getElementById("progressBar").style.width =
-    `${(done / cards.length) * 100}%`;
+  document.getElementById("doneCount").textContent = doneCards.length;
+  document.getElementById("markCount").textContent = markedCards.length;
+  document.getElementById("cardCounter").textContent =
+    `${currentIndex + 1} / ${activeCards.length}`;
+
+  const progress = ((currentIndex + 1) / activeCards.length) * 100;
+  document.getElementById("progressBar").style.width = progress + "%";
 }
 
 function flipCard() {
   showAnswer = !showAnswer;
-  render();
+  renderCard();
 }
 
 function nextCard() {
-  if (!filteredCards.length) return;
   showAnswer = false;
-  index = (index + 1) % filteredCards.length;
-  render();
+  currentIndex++;
+  renderCard();
 }
 
 function prevCard() {
-  if (!filteredCards.length) return;
   showAnswer = false;
-  index = (index - 1 + filteredCards.length) % filteredCards.length;
-  render();
-}
-
-function doneCard() {
-  const currentId = currentCard().id;
-  state[currentId] = "done";
-  saveAndNext(currentId);
+  currentIndex--;
+  renderCard();
 }
 
 function markCard() {
-  const currentId = currentCard().id;
-  state[currentId] = "mark";
-  saveAndNext(currentId);
+  const card = getActiveCards()[currentIndex];
+  if (!markedCards.includes(card.id)) {
+    markedCards.push(card.id);
+    localStorage.setItem("safety_markedCards", JSON.stringify(markedCards));
+  }
+  nextCard();
 }
 
-function saveAndNext(currentId) {
-  localStorage.setItem("state", JSON.stringify(state));
-  updateFilteredCards();
-
-  const nextIndex = filteredCards.findIndex(c => c.id > currentId);
-  index = nextIndex !== -1 ? nextIndex : 0;
-
-  showAnswer = false;
-  render();
+function doneCard() {
+  const card = getActiveCards()[currentIndex];
+  if (!doneCards.includes(card.id)) {
+    doneCards.push(card.id);
+    localStorage.setItem("safety_doneCards", JSON.stringify(doneCards));
+  }
+  nextCard();
 }
 
 function toggleMode() {
-  mode = mode === "all" ? "mark" : "all";
-  document.getElementById("toggleMode").innerText =
-    mode === "mark" ? "📚 Alle Karten" : "⭐ Nur Merkliste";
-  index = 0;
-  updateFilteredCards();
-  render();
+  onlyMarked = !onlyMarked;
+  currentIndex = 0;
+  renderCard();
 }
 
-function resetProgress() {
-  if (!confirm("Willst du wirklich alles zurücksetzen?")) return;
-  localStorage.removeItem("state");
-  location.reload();
-}
-
-updateFilteredCards();
-render();
+// 🔥 WICHTIG: START
+document.addEventListener("DOMContentLoaded", () => {
+  renderCard();
+});
