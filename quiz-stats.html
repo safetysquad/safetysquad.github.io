@@ -11,12 +11,15 @@
 <div class="app">
 
 <header>
-  <h1>📊 Auswertung</h1>
+  <h1>📊 Quiz Auswertung</h1>
 </header>
 
 <main id="result"></main>
 
-<a href="index.html" class="link-btn">⬅ Startseite</a>
+<div class="buttons">
+  <a href="index.html" class="link-btn">⬅ Startseite</a>
+  <a href="quiz-repeat.html" class="done">🔁 Falsche Fragen üben</a>
+</div>
 
 </div>
 
@@ -24,21 +27,14 @@
 const data = JSON.parse(localStorage.getItem("quizResult"));
 const div = document.getElementById("result");
 
-div.innerHTML = `
-  <p><b>Punkte:</b> ${data.points} / ${data.total}</p>
-  <p><b>Falsche Fragen:</b> ${data.wrongQuestions.length}</p>
-`;
-
-if (data.wrongQuestions.length > 0) {
-  const ul = document.createElement("ul");
-  data.wrongQuestions.forEach(q => {
-    const li = document.createElement("li");
-    li.innerText = q.question;
-    ul.appendChild(li);
-  });
-  div.appendChild(ul);
+if (!data) {
+  div.innerHTML = "<p>Keine Daten vorhanden.</p>";
+} else {
+  div.innerHTML = `
+    <p><b>Punkte:</b> ${data.points} / ${data.total}</p>
+    <p><b>Falsche Fragen:</b> ${data.wrongQuestions.length}</p>
+  `;
 }
 </script>
 </body>
 </html>
-
