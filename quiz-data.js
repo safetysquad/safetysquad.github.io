@@ -1,31 +1,29 @@
-const quizzes = {
+const quizData = {
   1: [
     {
-      question: "Was ist Recht?",
+      id: "q1",
+      question: "Art. 2 GG – freie Entfaltung der Persönlichkeit?",
       answers: [
-        { text: "Gesamtheit aller Gesetze", correct: true },
-        { text: "Nur Strafrecht", correct: false },
-        { text: "Regeln ohne Bedeutung", correct: false }
-      ]
+        "Ist ein Menschenrecht",
+        "Ist ein Bürgerrecht",
+        "Beinhaltet informationelle Selbstbestimmung",
+        "Ist uneingeschränkt"
+      ],
+      correct: [0, 2],
+      points: 2,
+      topic: "Grundrechte"
     },
     {
-      question: "Wie viele Staatsgewalten gibt es?",
+      id: "q2",
+      question: "Was ist ein Bürgerrecht?",
       answers: [
-        { text: "2", correct: false },
-        { text: "3", correct: true },
-        { text: "4", correct: false }
-      ]
-    }
-  ],
-
-  2: [
-    {
-      question: "Was sind Grundrechte?",
-      answers: [
-        { text: "Abwehrrechte gegen den Staat", correct: true },
-        { text: "Pflichten der Bürger", correct: false }
-      ]
+        "Gilt für alle Menschen",
+        "Gilt nur für Deutsche",
+        "Ist immer einschränkbar"
+      ],
+      correct: [1],
+      points: 1,
+      topic: "Grundrechte"
     }
   ]
 };
-
