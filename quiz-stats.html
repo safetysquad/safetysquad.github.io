@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz Auswertung</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<div class="app">
+
+<header>
+  <h1>📊 Auswertung</h1>
+</header>
+
+<main id="result"></main>
+
+<a href="index.html" class="link-btn">⬅ Startseite</a>
+
+</div>
+
+<script>
+const data = JSON.parse(localStorage.getItem("quizResult"));
+const div = document.getElementById("result");
+
+div.innerHTML = `
+  <p><b>Punkte:</b> ${data.points} / ${data.total}</p>
+  <p><b>Falsche Fragen:</b> ${data.wrongQuestions.length}</p>
+`;
+
+if (data.wrongQuestions.length > 0) {
+  const ul = document.createElement("ul");
+  data.wrongQuestions.forEach(q => {
+    const li = document.createElement("li");
+    li.innerText = q.question;
+    ul.appendChild(li);
+  });
+  div.appendChild(ul);
+}
+</script>
+</body>
+</html>
 
