@@ -5,25 +5,26 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 html, body {
   height: 100%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
   background: radial-gradient(circle at top, #0f172a, #020617);
   color: #e5e7eb;
 }
 
 /* ===============================
-   APP CONTAINER (WICHTIG)
+   APP WRAPPER (SEHR WICHTIG)
 ================================ */
 .app {
   min-height: 100vh;
-  max-width: 420px;              /* 🔑 Mobile-First Fix */
-  margin: 0 auto;
-  padding: 24px 16px 32px;
   display: flex;
   flex-direction: column;
+  padding: 16px;
 }
 
 /* ===============================
@@ -31,18 +32,17 @@ html, body {
 ================================ */
 header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 header h1 {
   font-size: 1.6rem;
-  font-weight: 700;
   margin-bottom: 6px;
 }
 
 header p {
-  font-size: 0.95rem;
-  color: #9ca3af;
+  opacity: 0.85;
+  margin-bottom: 12px;
 }
 
 /* ===============================
@@ -51,34 +51,28 @@ header p {
 .stats {
   display: flex;
   justify-content: space-between;
-  margin-top: 18px;
   gap: 8px;
+  margin-bottom: 12px;
 }
 
 .stats div {
   flex: 1;
-  background: rgba(255,255,255,0.05);
-  border-radius: 14px;
-  padding: 10px 6px;
-  font-size: 0.75rem;
-  text-align: center;
-}
-
-.stats b {
-  display: block;
-  font-size: 1rem;
-  margin-top: 4px;
+  background: #020617;
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 0.8rem;
 }
 
 /* ===============================
    PROGRESS BAR
 ================================ */
 .progress {
-  height: 8px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 99px;
+  width: 100%;
+  height: 10px;
+  background: #1e293b;
+  border-radius: 999px;
   overflow: hidden;
-  margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 #progressBar {
@@ -89,88 +83,107 @@ header p {
 }
 
 /* ===============================
-   MAIN
+   TOP BUTTONS
+================================ */
+.top-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.top-buttons button,
+.top-buttons .link-btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #f59e0b;
+  color: #020617;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* ===============================
+   MAIN CONTENT
 ================================ */
 main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-top: 20px;
+  justify-content: center;
 }
 
 /* ===============================
    CARD
 ================================ */
 .card {
-  background: #1f2937;
+  background: #1e293b;
   border-radius: 20px;
-  padding: 28px 20px;
-  min-height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 28px;
   text-align: center;
   font-size: 1.05rem;
   line-height: 1.5;
-  cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  margin-bottom: 18px;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ===============================
-   BUTTON SYSTEM
+   NAV BUTTONS
 ================================ */
-.btn {
-  width: 100%;
-  padding: 14px;
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.nav-buttons button {
+  flex: 1;
+  padding: 16px;
   border-radius: 16px;
+  border: none;
   font-size: 1rem;
   font-weight: 600;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-}
-
-/* Farben */
-.btn-green {
-  background: #22c55e;
-  color: #022c22;
-}
-
-.btn-orange {
   background: #f59e0b;
-  color: #1f1300;
+  color: #020617;
 }
 
-.btn-dark {
-  background: #1f2937;
+/* ===============================
+   ACTION BUTTONS
+================================ */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.buttons button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Farbvarianten */
+.buttons button:nth-child(1) {
+  background: #f59e0b;
+  color: #020617;
+}
+
+.buttons button:nth-child(2) {
+  background: #334155;
   color: #e5e7eb;
 }
 
-.btn-blue {
-  background: #3b82f6;
-  color: #eff6ff;
-}
-
-/* ===============================
-   BUTTON ROW (Zurück / Weiter)
-================================ */
-.row {
-  display: flex;
-  gap: 12px;
-}
-
-.row .btn {
-  flex: 1;
-}
-
-/* ===============================
-   LINKS ALS BUTTONS
-================================ */
-a.btn {
-  display: block;
+.buttons button:nth-child(3) {
+  background: #22c55e;
+  color: #022c22;
 }
 
 /* ===============================
@@ -179,12 +192,10 @@ a.btn {
 @media (min-width: 768px) {
   .app {
     max-width: 480px;
-    padding: 32px 20px;
-  }
-
-  header h1 {
-    font-size: 1.9rem;
+    margin: 0 auto;
   }
 
   .card {
     font-size: 1.1rem;
+  }
+}
