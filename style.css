@@ -101,3 +101,34 @@ main {
     min-height: 300px;
   }
 }
+.quiz-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.quiz-card {
+  display: block;
+  padding: 1.2rem;
+  border-radius: 18px;
+  background: #1e293b;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.quiz-card h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.quiz-card p {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  color: #cbd5f5;
+}
+
+.quiz-card:active {
+  transform: scale(0.98);
+}
+
