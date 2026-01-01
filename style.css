@@ -199,3 +199,27 @@ main {
     font-size: 1.1rem;
   }
 }
+/* ===============================
+   STARTSEITE BUTTONS
+================================ */
+.start-btn {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  border-radius: 18px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.start-btn.green {
+  background: #22c55e;
+  color: #022c22;
+}
+
+.start-btn.blue {
+  background: #3b82f6;
+  color: #eff6ff;
+}
+
