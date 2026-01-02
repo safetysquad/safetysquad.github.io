@@ -13,6 +13,21 @@
 <header>
   <h1>📚 Lernkarteikarten</h1>
 
+  <!-- 🔝 TOP BUTTONS -->
+  <div class="top-buttons">
+    <button class="btn secondary" onclick="toggleMode()">
+      ⭐ Nur Merkliste
+    </button>
+
+    <a href="stats.html" class="btn secondary">
+      📊 Statistik
+    </a>
+
+    <a href="index.html" class="btn secondary">
+      ⬅ Startseite
+    </a>
+  </div>
+
   <div class="stats">
     <div>✅ Erledigt<br><b id="doneCount">0</b></div>
     <div>⭐ Merkliste<br><b id="markCount">0</b></div>
@@ -34,9 +49,11 @@
     <button class="btn warn" onclick="nextCard()">➡ Weiter</button>
   </div>
 
-  <button class="btn secondary" onclick="flipCard()">🔁 Antwort</button>
-  <button class="btn warn" onclick="markCard()">⭐ Merkliste</button>
-  <button class="btn" onclick="doneCard()">✅ Richtig</button>
+  <div class="action-buttons">
+    <button class="btn secondary" onclick="flipCard()">🔁 Antwort</button>
+    <button class="btn warn" onclick="markCard()">⭐ Merkliste</button>
+    <button class="btn" onclick="doneCard()">✅ Richtig</button>
+  </div>
 </main>
 
 </div>
