@@ -133,37 +133,41 @@ function evaluateQuiz() {
 function renderResult(points, maxPoints, percent, wrongQuestions) {
   let html = `
     <h2>Ergebnis</h2>
-    <p><b>${points}</b> von <b>${maxPoints}</b> Punkten</p>
-    <p><b>${percent}%</b> erreicht</p>
-    <hr>
+    <div class="result-box">
+      <div><b>${points}</b> / ${maxPoints} Punkte</div>
+      <div><b>${percent}%</b> erreicht</div>
+    </div>
   `;
 
   if (wrongQuestions.length > 0) {
     html += `<h3>❌ Falsch beantwortete Fragen</h3>`;
 
-    wrongQuestions.forEach(w => {
+    wrongQuestions.forEach((w, i) => {
       const q = w.question;
 
-      html += `<div class="card" style="margin-bottom:1rem;">`;
-      html += `<b>${q.question}</b><br><br>`;
+      html += `
+        <div class="wrong-card">
+          <div class="wrong-title">❌ Frage ${i + 1}</div>
+          <div class="wrong-question">${q.question}</div>
 
-      html += `<u>Deine Antwort:</u><br>`;
-      if (w.given.length === 0) {
-        html += `– keine Antwort –<br>`;
-      } else {
-        w.given.forEach(id => {
-          const a = q.answers.find(x => x.id === id);
-          html += `❌ ${id}. ${a.text}<br>`;
-        });
-      }
+          <div class="answer-block wrong">
+            <b>Deine Antwort</b>
+            ${w.given.length === 0 ? "<div>– keine Antwort –</div>" : ""}
+            ${w.given.map(id => {
+              const a = q.answers.find(x => x.id === id);
+              return `<div>❌ ${id}. ${a.text}</div>`;
+            }).join("")}
+          </div>
 
-      html += `<br><u>Richtige Antwort:</u><br>`;
-      q.correct.forEach(id => {
-        const a = q.answers.find(x => x.id === id);
-        html += `✅ ${id}. ${a.text}<br>`;
-      });
-
-      html += `</div>`;
+          <div class="answer-block correct">
+            <b>Richtige Antwort</b>
+            ${q.correct.map(id => {
+              const a = q.answers.find(x => x.id === id);
+              return `<div>✅ ${id}. ${a.text}</div>`;
+            }).join("")}
+          </div>
+        </div>
+      `;
     });
   } else {
     html += `<p>🎉 Alle Fragen richtig beantwortet!</p>`;
