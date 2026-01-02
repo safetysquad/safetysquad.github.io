@@ -49,12 +49,21 @@
     <button class="btn warn" onclick="nextCard()">➡ Weiter</button>
   </div>
 
-  <div class="action-buttons">
-    <button class="btn secondary" onclick="flipCard()">🔁 Antwort</button>
-    <button class="btn warn" onclick="markCard()">⭐ Merkliste</button>
-    <button class="btn" onclick="doneCard()">✅ Richtig</button>
+  <div class="actions">
+    <button class="btn secondary" onclick="markCard()">⭐ Merkliste</button>
+    <button class="btn" onclick="flipCard()">🔁 Antwort</button>
+    <button class="btn success" onclick="doneCard()">✅ Richtig</button>
+  </div>
+
+  <button class="btn secondary" onclick="toggleMenu()">☰ Mehr</button>
+
+  <div id="moreMenu" class="more-menu hidden">
+    <button onclick="toggleMode()">⭐ Nur Merkliste</button>
+    <a href="stats.html">📊 Statistik</a>
+    <a href="index.html">⬅ Startseite</a>
   </div>
 </main>
+
 
 </div>
 
