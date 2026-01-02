@@ -9,16 +9,33 @@
 
 <body>
 <div class="app">
-  <header>
-    <h1 id="quizTitle">Quiz</h1>
-  </header>
 
-  <main id="quizContainer">
-    <p>Lade Quiz…</p>
-  </main>
+<header>
+  <h1 id="quizTitle">Quiz</h1>
+
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <p id="counter"></p>
+</header>
+
+<main>
+  <div class="card">
+    <p id="questionText"></p>
+  </div>
+
+  <div id="answers" class="actions"></div>
+
+  <div class="nav">
+    <button class="btn warn" onclick="prevQuestion()">⬅ Zurück</button>
+    <button class="btn" onclick="nextQuestion()">➡ Weiter</button>
+  </div>
+</main>
+
 </div>
 
-<!-- WICHTIG: REIHENFOLGE -->
+<!-- WICHTIG: Reihenfolge -->
 <script src="quiz-data.js"></script>
 <script src="quiz-run.js"></script>
 </body>
