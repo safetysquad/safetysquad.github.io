@@ -43,18 +43,24 @@ function renderQuestion() {
   `;
 }
 
-function toggleAnswer(id) {
-  const q = quiz[current];
-  const arr = userAnswers[q.id];
+function toggleAnswer(answerId) {
+  const q = quiz.questions[currentIndex];
 
-  if (arr.includes(id)) {
-    userAnswers[q.id] = arr.filter(x => x !== id);
-  } else {
-    userAnswers[q.id].push(id);
+  if (!userAnswers[q.id]) {
+    userAnswers[q.id] = [];
   }
 
-  renderQuestion();
+  const selected = userAnswers[q.id];
+
+  if (selected.includes(answerId)) {
+    userAnswers[q.id] = selected.filter(a => a !== answerId);
+  } else {
+    userAnswers[q.id].push(answerId);
+  }
+
+  renderAnswers(); // ❗ KEIN automatisches Weiter
 }
+
 
 function nextQuestion() {
   current++;
