@@ -10,13 +10,15 @@ let markedCards = JSON.parse(localStorage.getItem("safety_markedCards")) || [];
 
 
 // ===============================
-// AKTIVE KARTEN
+// AKTIVE KARTEN (WICHTIGER FIX)
 // ===============================
 function getActiveCards() {
   if (onlyMarked) {
-    return cards.filter(c => markedCards.includes(c.id));
+    return cards.filter(
+      c => markedCards.includes(c.id) && !doneCards.includes(c.id)
+    );
   }
-  return cards;
+  return cards.filter(c => !doneCards.includes(c.id));
 }
 
 
@@ -25,12 +27,13 @@ function getActiveCards() {
 // ===============================
 function renderCard() {
   const activeCards = getActiveCards();
-
   const cardText = document.getElementById("cardText");
   if (!cardText) return;
 
   if (activeCards.length === 0) {
-    cardText.textContent = "⭐ Keine Karten in der Merkliste";
+    cardText.textContent = onlyMarked
+      ? "⭐ Keine Karten in der Merkliste"
+      : "🎉 Alle Karten erledigt";
     updateStats(0, 0);
     return;
   }
@@ -58,11 +61,14 @@ function updateStats(activeLength, index) {
   if (markEl) markEl.textContent = markedCards.length;
 
   if (counterEl) {
-    counterEl.textContent = `${index + 1} / ${activeLength}`;
+    counterEl.textContent =
+      activeLength === 0 ? "0 / 0" : `${index + 1} / ${activeLength}`;
   }
 
   if (barEl && activeLength > 0) {
     barEl.style.width = ((index + 1) / activeLength) * 100 + "%";
+  } else if (barEl) {
+    barEl.style.width = "0%";
   }
 }
 
@@ -113,7 +119,7 @@ function doneCard() {
 
 
 // ===============================
-// ⭐ TOGGLE MODUS (FIX)
+// ⭐ MODUS WECHSEL (JETZT FUNKTIONIERT ES)
 // ===============================
 function toggleMode() {
   onlyMarked = !onlyMarked;
@@ -135,9 +141,9 @@ function toggleMode() {
 // STATISTIKSEITE
 // ===============================
 function renderStats() {
+  const total = cards.length;
   const done = doneCards.length;
   const mark = markedCards.length;
-  const total = cards.length;
   const percent = total === 0 ? 0 : Math.round((done / total) * 100);
 
   const totalEl = document.getElementById("totalCards");
