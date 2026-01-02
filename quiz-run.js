@@ -111,16 +111,52 @@ function evaluateQuiz() {
     maxPoints += q.points;
 
     const correct = [...q.correct].sort().join(",");
-    const given = (userAnswers[q.id] || []).sort().join(",");
+    const givenArr = userAnswers[q.id] || [];
+    const given = [...givenArr].sort().join(",");
 
     if (correct === given) {
       points += q.points;
     } else {
       wrongQuestions.push({
         question: q,
-        given: userAnswers[q.id] || []
+        given: givenArr
       });
     }
+  });
+
+  const percent = Math.round((points / maxPoints) * 100);
+  const passed = percent === 100;
+
+  saveQuizResult(quiz.id, points, maxPoints, percent, passed);
+  renderResult(points, maxPoints, percent, wrongQuestions, passed);
+}
+function saveQuizResult(quizId, points, maxPoints, percent, passed) {
+  const key = "safety_quiz_results";
+  const data = JSON.parse(localStorage.getItem(key)) || {};
+
+  if (!data[quizId]) {
+    data[quizId] = {
+      attempts: 0,
+      bestPercent: 0
+    };
+  }
+
+  data[quizId].attempts += 1;
+  data[quizId].lastResult = {
+    points,
+    maxPoints,
+    percent,
+    passed,
+    date: new Date().toISOString()
+  };
+
+  if (percent > data[quizId].bestPercent) {
+    data[quizId].bestPercent = percent;
+  }
+
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
   });
 
   const percent = Math.round((points / maxPoints) * 100);
@@ -130,24 +166,28 @@ function evaluateQuiz() {
 // ==============================
 // ERGEBNIS + FALSCHE FRAGEN
 // ==============================
-function renderResult(points, maxPoints, percent, wrongQuestions) {
+function renderResult(points, maxPoints, percent, wrongQuestions, passed) {
   let html = `
     <h2>Ergebnis</h2>
+
     <div class="result-box">
       <div><b>${points}</b> / ${maxPoints} Punkte</div>
-      <div><b>${percent}%</b> erreicht</div>
+      <div><b>${percent}%</b></div>
+    </div>
+
+    <div class="result-status ${passed ? "passed" : "failed"}">
+      ${passed ? "✅ BESTANDEN" : "❌ NICHT BESTANDEN – 100 % erforderlich"}
     </div>
   `;
 
   if (wrongQuestions.length > 0) {
-    html += `<h3>❌ Falsch beantwortete Fragen</h3>`;
+    html += `<h3>Falsch beantwortete Fragen</h3>`;
 
     wrongQuestions.forEach((w, i) => {
       const q = w.question;
 
       html += `
         <div class="wrong-card">
-          <div class="wrong-title">❌ Frage ${i + 1}</div>
           <div class="wrong-question">${q.question}</div>
 
           <div class="answer-block wrong">
@@ -169,11 +209,19 @@ function renderResult(points, maxPoints, percent, wrongQuestions) {
         </div>
       `;
     });
-  } else {
-    html += `<p>🎉 Alle Fragen richtig beantwortet!</p>`;
   }
 
-  html += `<a href="quiz.html" class="btn">⬅ Zurück zur Quiz-Auswahl</a>`;
+  html += `
+    <button class="btn secondary" onclick="restartQuiz()">🔁 Test wiederholen</button>
+    <a href="quiz.html" class="btn">⬅ Zur Quiz-Auswahl</a>
+  `;
 
   document.querySelector("main").innerHTML = html;
 }
+function restartQuiz() {
+  currentIndex = 0;
+  userAnswers = {};
+  renderQuestion();
+  updateProgress();
+}
+
