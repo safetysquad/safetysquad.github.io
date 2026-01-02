@@ -6,18 +6,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const quizId = params.get("id");
 
-  quiz = quizzes.find(q => q.id === quizId);
-
-  if (!quiz || !quiz.questions || quiz.questions.length === 0) {
-    document.querySelector("main").innerHTML =
-      "<p>❌ Quiz oder Fragen nicht gefunden</p>";
+  if (!quizId || !quizzes[quizId]) {
+    document.body.innerHTML = "<h2>❌ Quiz nicht gefunden</h2>";
     return;
   }
+
+  quiz = {
+    id: quizId,
+    title: quizId.toUpperCase(),
+    questions: quizzes[quizId]
+  };
 
   document.getElementById("quizTitle").innerText = quiz.title;
   renderQuestion();
   updateProgress();
 });
+
 
 function renderQuestion() {
   const q = quiz.questions[currentIndex];
