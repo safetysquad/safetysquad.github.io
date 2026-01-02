@@ -55,7 +55,7 @@ main {
 }
 
 /* ===============================
-   BUTTONS
+   BUTTONS – RUHIG & KLAR
 ================================ */
 .btn {
   width: 100%;
@@ -67,24 +67,28 @@ main {
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  background: #22c55e;
+  background: #22c55e;   /* Hauptaktion */
   color: #022c22;
 }
 
+/* Neutrale Nebenaktion */
 .btn.secondary {
-  background: #3b82f6;
-  color: white;
+  background: #334155;
+  color: #e5e7eb;
 }
 
+/* Navigation (Zurück / Weiter) */
 .btn.warn {
-  background: #f59e0b;
-  color: #1f1300;
+  background: #1e293b;
+  color: #e5e7eb;
 }
 
+/* Kritisch (Reset, Löschen – später) */
 .btn.danger {
-  background: #ef4444;
-  color: white;
+  background: #7f1d1d;
+  color: #fecaca;
 }
+
 
 /* ===============================
    CARD
