@@ -168,4 +168,34 @@ main {
   flex-direction: column;
   gap: 10px;
 }
+.actions {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.more-menu {
+  background: #0f172a;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.more-menu a,
+.more-menu button {
+  background: #1e293b;
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: none;
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
 
