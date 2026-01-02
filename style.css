@@ -227,4 +227,50 @@ main {
     flex-direction: column;
   }
 }
+/* ===============================
+   QUIZ ERGEBNIS
+================================ */
+
+.result-box {
+  background: #1e293b;
+  padding: 1rem;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.wrong-card {
+  background: #1e293b;
+  border-radius: 18px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.wrong-title {
+  font-weight: 700;
+  margin-bottom: .4rem;
+}
+
+.wrong-question {
+  font-size: .95rem;
+  margin-bottom: .8rem;
+  opacity: .9;
+}
+
+.answer-block {
+  padding: .7rem;
+  border-radius: 12px;
+  margin-top: .6rem;
+  font-size: .9rem;
+}
+
+.answer-block.wrong {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.answer-block.correct {
+  background: rgba(34, 197, 94, 0.15);
+}
 
