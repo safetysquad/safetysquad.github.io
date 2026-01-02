@@ -1,48 +1,60 @@
-const params = new URLSearchParams(window.location.search);
-const quizKey = params.get("quiz");
+// ==============================
+// GRUNDVARIABLEN
+// ==============================
+let quiz = null;
+let currentIndex = 0;
+let userAnswers = {};
 
-if (!quizKey || !QUIZZES[quizKey]) {
-  document.getElementById("quizContainer").innerHTML =
-    "<p>❌ Quiz nicht gefunden</p>";
-  throw new Error("Quiz existiert nicht");
-}
+// ==============================
+// QUIZ LADEN
+// ==============================
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const quizId = params.get("id");
 
-const quiz = QUIZZES[quizKey];
-let current = 0;
+  quiz = quizzes.find(q => q.id === quizId);
 
-// speichert Auswahl pro Frage
-const userAnswers = {};
+  if (!quiz) {
+    document.body.innerHTML = "<p style='color:white;padding:20px'>Quiz nicht gefunden</p>";
+    return;
+  }
 
-renderQuestion();
+  document.getElementById("quizTitle").innerText = quiz.title;
+  renderQuestion();
+  updateProgress();
+});
 
+// ==============================
+// FRAGE RENDERn
+// ==============================
 function renderQuestion() {
-  const q = quiz[current];
-  if (!userAnswers[q.id]) userAnswers[q.id] = [];
+  const q = quiz.questions[currentIndex];
 
-  const answersHtml = q.answers.map(a => {
-    const active = userAnswers[q.id].includes(a.id) ? "active" : "";
-    return `
-      <button class="btn secondary ${active}"
-        onclick="toggleAnswer('${a.id}')">
-        ${a.id}) ${a.text}
-      </button>
-    `;
-  }).join("");
+  document.getElementById("questionText").innerText = q.question;
 
-  document.getElementById("quizContainer").innerHTML = `
-    <p><b>Frage ${q.id} von ${quiz.length}</b></p>
-    <p>${q.question}</p>
+  const answersBox = document.getElementById("answers");
+  answersBox.innerHTML = "";
 
-    <div class="actions">
-      ${answersHtml}
-    </div>
+  q.answers.forEach(a => {
+    const btn = document.createElement("button");
+    btn.className = "btn secondary";
+    btn.innerText = `${a.id}. ${a.text}`;
 
-    <button class="btn" onclick="nextQuestion()">
-      ➡ Weiter
-    </button>
-  `;
+    if (userAnswers[q.id]?.includes(a.id)) {
+      btn.style.opacity = "0.6";
+    }
+
+    btn.onclick = () => toggleAnswer(a.id);
+    answersBox.appendChild(btn);
+  });
+
+  document.getElementById("counter").innerText =
+    `Frage ${currentIndex + 1} von ${quiz.questions.length}`;
 }
 
+// ==============================
+// ANTWORT AUSWÄHLEN (KEIN AUTO-WEITER)
+// ==============================
 function toggleAnswer(answerId) {
   const q = quiz.questions[currentIndex];
 
@@ -58,24 +70,45 @@ function toggleAnswer(answerId) {
     userAnswers[q.id].push(answerId);
   }
 
-  renderAnswers(); // ❗ KEIN automatisches Weiter
-}
-
-
-function nextQuestion() {
-  current++;
-
-  if (current >= quiz.length) {
-    finishQuiz();
-    return;
-  }
-
   renderQuestion();
 }
 
+// ==============================
+// NAVIGATION
+// ==============================
+function nextQuestion() {
+  if (currentIndex < quiz.questions.length - 1) {
+    currentIndex++;
+    renderQuestion();
+    updateProgress();
+  } else {
+    evaluateQuiz();
+  }
+}
+
+function prevQuestion() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    renderQuestion();
+    updateProgress();
+  }
+}
+
+// ==============================
+// FORTSCHRITT
+// ==============================
+function updateProgress() {
+  const percent = ((currentIndex + 1) / quiz.questions.length) * 100;
+  document.getElementById("progressBar").style.width = percent + "%";
+}
+
+// ==============================
+// AUSWERTUNG (KERNLOGIK)
+// ==============================
 function evaluateQuiz() {
   let points = 0;
   let maxPoints = 0;
+  let wrongQuestions = [];
 
   quiz.questions.forEach(q => {
     maxPoints += q.points;
@@ -85,10 +118,63 @@ function evaluateQuiz() {
 
     if (correct === given) {
       points += q.points;
+    } else {
+      wrongQuestions.push(q);
     }
   });
 
   const percent = Math.round((points / maxPoints) * 100);
-  showResult(points, maxPoints, percent);
+  renderResult(points, maxPoints, percent, wrongQuestions);
 }
 
+// ==============================
+// ERGEBNIS ANZEIGEN
+// ==============================
+function renderResult(points, maxPoints, percent, wrongQuestions) {
+  const main = document.querySelector("main");
+
+  main.innerHTML = `
+    <div class="card">
+      <h2>Ergebnis</h2>
+      <p><b>${points}</b> von <b>${maxPoints}</b> Punkten</p>
+      <p><b>${percent}%</b> erreicht</p>
+      <br>
+      <a class="btn" href="quiz.html">⬅ Zurück zur Quiz-Auswahl</a>
+      ${
+        wrongQuestions.length > 0
+          ? `<button class="btn warn" onclick="retryWrong()">❌ Falsche Fragen üben</button>`
+          : ""
+      }
+    </div>
+  `;
+
+  window._wrongQuestions = wrongQuestions;
+}
+
+// ==============================
+// FALSCHE FRAGEN ERNEUT ÜBEN
+// ==============================
+function retryWrong() {
+  quiz = {
+    ...quiz,
+    questions: window._wrongQuestions
+  };
+
+  currentIndex = 0;
+  userAnswers = {};
+  document.querySelector("main").innerHTML = `
+    <div id="progress" class="progress"><div id="progressBar"></div></div>
+    <p id="counter"></p>
+    <div class="card">
+      <p id="questionText"></p>
+    </div>
+    <div id="answers"></div>
+    <div class="nav">
+      <button class="btn warn" onclick="prevQuestion()">⬅ Zurück</button>
+      <button class="btn" onclick="nextQuestion()">➡ Weiter</button>
+    </div>
+  `;
+
+  renderQuestion();
+  updateProgress();
+}
