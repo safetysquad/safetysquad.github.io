@@ -10,12 +10,13 @@ let markedCards = JSON.parse(localStorage.getItem("safety_markedCards")) || [];
 
 
 // ===============================
-// KARTENFILTER
+// AKTIVE KARTEN
 // ===============================
 function getActiveCards() {
-  return onlyMarked
-    ? cards.filter(c => markedCards.includes(c.id))
-    : cards;
+  if (onlyMarked) {
+    return cards.filter(c => markedCards.includes(c.id));
+  }
+  return cards;
 }
 
 
@@ -25,23 +26,29 @@ function getActiveCards() {
 function renderCard() {
   const activeCards = getActiveCards();
 
-  if (!activeCards || activeCards.length === 0) {
-    const el = document.getElementById("cardText");
-    if (el) el.textContent = "🎉 Keine Karten vorhanden";
+  const cardText = document.getElementById("cardText");
+  if (!cardText) return;
+
+  if (activeCards.length === 0) {
+    cardText.textContent = "⭐ Keine Karten in der Merkliste";
+    updateStats(0, 0);
     return;
   }
 
-  if (currentIndex >= activeCards.length) currentIndex = activeCards.length - 1;
+  if (currentIndex >= activeCards.length) currentIndex = 0;
   if (currentIndex < 0) currentIndex = 0;
 
   const card = activeCards[currentIndex];
+  cardText.textContent = showAnswer ? card.answer : card.question;
 
-  const cardText = document.getElementById("cardText");
-  if (cardText) {
-    cardText.textContent = showAnswer ? card.answer : card.question;
-  }
+  updateStats(activeCards.length, currentIndex);
+}
 
-  // Stats oben
+
+// ===============================
+// STATS OBEN
+// ===============================
+function updateStats(activeLength, index) {
   const doneEl = document.getElementById("doneCount");
   const markEl = document.getElementById("markCount");
   const counterEl = document.getElementById("cardCounter");
@@ -49,19 +56,19 @@ function renderCard() {
 
   if (doneEl) doneEl.textContent = doneCards.length;
   if (markEl) markEl.textContent = markedCards.length;
+
   if (counterEl) {
-    counterEl.textContent = `${currentIndex + 1} / ${activeCards.length}`;
+    counterEl.textContent = `${index + 1} / ${activeLength}`;
   }
 
-  if (barEl) {
-    const progress = ((currentIndex + 1) / activeCards.length) * 100;
-    barEl.style.width = progress + "%";
+  if (barEl && activeLength > 0) {
+    barEl.style.width = ((index + 1) / activeLength) * 100 + "%";
   }
 }
 
 
 // ===============================
-// ACTIONS
+// AKTIONEN
 // ===============================
 function flipCard() {
   showAnswer = !showAnswer;
@@ -89,7 +96,7 @@ function markCard() {
     markedCards.push(card.id);
     localStorage.setItem("safety_markedCards", JSON.stringify(markedCards));
   }
-  nextCard(); // 👉 IMMER weiter
+  nextCard();
 }
 
 function doneCard() {
@@ -101,12 +108,17 @@ function doneCard() {
     doneCards.push(card.id);
     localStorage.setItem("safety_doneCards", JSON.stringify(doneCards));
   }
-  nextCard(); // 👉 IMMER weiter
+  nextCard();
 }
 
+
+// ===============================
+// ⭐ TOGGLE MODUS (FIX)
+// ===============================
 function toggleMode() {
   onlyMarked = !onlyMarked;
   currentIndex = 0;
+  showAnswer = false;
 
   const btn = document.getElementById("toggleMode");
   if (btn) {
@@ -123,12 +135,9 @@ function toggleMode() {
 // STATISTIKSEITE
 // ===============================
 function renderStats() {
-  const doneCards = JSON.parse(localStorage.getItem("safety_doneCards")) || [];
-  const markedCards = JSON.parse(localStorage.getItem("safety_markedCards")) || [];
-
-  const total = cards.length;
   const done = doneCards.length;
   const mark = markedCards.length;
+  const total = cards.length;
   const percent = total === 0 ? 0 : Math.round((done / total) * 100);
 
   const totalEl = document.getElementById("totalCards");
@@ -137,7 +146,7 @@ function renderStats() {
   const percentEl = document.getElementById("progressPercent");
   const barEl = document.getElementById("progressBar");
 
-  if (!totalEl) return; // Schutz: nur auf Statistik-Seite
+  if (!totalEl) return;
 
   totalEl.textContent = total;
   doneEl.textContent = done;
@@ -148,15 +157,13 @@ function renderStats() {
 
 
 // ===============================
-// RESET (nur Statistikseite)
+// RESET (Statistik)
 // ===============================
 function resetProgress() {
-  const ok = confirm("Willst du wirklich ALLE Lernfortschritte löschen?");
-  if (!ok) return;
+  if (!confirm("Willst du wirklich ALLES zurücksetzen?")) return;
 
   localStorage.removeItem("safety_doneCards");
   localStorage.removeItem("safety_markedCards");
-
   location.reload();
 }
 
