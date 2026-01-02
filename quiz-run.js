@@ -67,22 +67,15 @@ function nextQuestion() {
   renderQuestion();
 }
 
-function finishQuiz() {
+function evaluateQuiz() {
   let points = 0;
   let maxPoints = 0;
 
-  quiz.forEach(q => {
+  quiz.questions.forEach(q => {
     maxPoints += q.points;
 
-    const correct = q.answers
-      .filter(a => a.correct)
-      .map(a => a.id)
-      .sort()
-      .join(",");
-
-    const given = (userAnswers[q.id] || [])
-      .sort()
-      .join(",");
+    const correct = [...q.correct].sort().join(",");
+    const given = (userAnswers[q.id] || []).sort().join(",");
 
     if (correct === given) {
       points += q.points;
@@ -90,10 +83,6 @@ function finishQuiz() {
   });
 
   const percent = Math.round((points / maxPoints) * 100);
-
-  document.getElementById("quizContainer").innerHTML = `
-    <h2>📊 Ergebnis</h2>
-    <p><b>${points}</b> von <b>${maxPoints}</b> Punkten</p>
-    <p><b>${percent}%</b> erreicht</p>
-  `;
+  showResult(points, maxPoints, percent);
 }
+
