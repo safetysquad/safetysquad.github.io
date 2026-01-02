@@ -1,4 +1,4 @@
-const QUIZZES = {
+const quizzes = {
   quiz1: [
     {
       id: 1,
