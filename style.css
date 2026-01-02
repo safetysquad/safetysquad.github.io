@@ -273,4 +273,21 @@ main {
 .answer-block.correct {
   background: rgba(34, 197, 94, 0.15);
 }
+.result-status {
+  padding: 12px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: 700;
+  margin: 12px 0;
+}
+
+.result-status.passed {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.result-status.failed {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
 
