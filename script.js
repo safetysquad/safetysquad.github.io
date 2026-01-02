@@ -181,3 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCard();
   renderStats();
 });
+function toggleMenu() {
+  document.getElementById("moreMenu").classList.toggle("hidden");
+}
+
