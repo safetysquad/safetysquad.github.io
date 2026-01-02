@@ -88,6 +88,10 @@ main {
   background: #7f1d1d;
   color: #fecaca;
 }
+.btn.secondary.active {
+  background: #22c55e;
+  color: #022c22;
+}
 
 
 /* ===============================
