@@ -307,13 +307,7 @@ const cards = [
   {
     "id": 62, 
     "question": "Welche Maßnahmen können bzgl. Des Datenschutzes zum Einsatz kommen?",
-    "answer": "-Zutrittskontrolle -Zugangskontrolle 
--Zugriffskontrolle 
--Trennungs-/ Zweckbindungskontrolle 
--Pseudonymisierung 
--Weitergabekontrolle 
--Eingabekontrolle 
--Verfügbarkeitskontrolle" 
+    "answer": "Zutrittskontrolle, Zugangskontrolle, Zugriffskontrolle, Trennungs-/ Zweckbindungskontrolle, Pseudonymisierung, Weitergabekontrolle, Eingabekontrolle, Verfügbarkeitskontrolle" 
   },
 
 ];
