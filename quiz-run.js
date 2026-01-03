@@ -1,5 +1,5 @@
 // ==============================
-// GRUNDVARIABLEN
+// VARIABLEN
 // ==============================
 let quizId = null;
 let questions = [];
@@ -14,12 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
   quizId = params.get("id");
 
   if (!quizId || !quizzes[quizId]) {
-    document.querySelector("main").innerHTML = "<h2>❌ Quiz nicht gefunden</h2>";
+    document.querySelector("main").innerHTML =
+      "<h2>❌ Quiz nicht gefunden</h2>";
     return;
   }
 
-  quiz = quizzes[quizId];
-  document.getElementById("quizTitle").innerText = quiz.title;
+  questions = quizzes[quizId];
+
+  document.getElementById("quizTitle").innerText =
+    `Quiz ${quizId.replace("quiz", "")}`;
 
   renderQuestion();
   updateProgress();
@@ -29,11 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // FRAGE RENDERN
 // ==============================
 function renderQuestion() {
-  const q = quiz.questions[currentIndex];
+  const q = questions[currentIndex];
 
   document.getElementById("questionText").innerText = q.question;
   document.getElementById("counter").innerText =
-    `Frage ${currentIndex + 1} von ${quiz.questions.length}`;
+    `Frage ${currentIndex + 1} von ${questions.length}`;
 
   const answersBox = document.getElementById("answers");
   answersBox.innerHTML = "";
@@ -53,7 +56,7 @@ function renderQuestion() {
 }
 
 // ==============================
-// ANTWORT AUSWÄHLEN (KEIN AUTO-WEITER)
+// ANTWORT AUSWÄHLEN
 // ==============================
 function toggleAnswer(questionId, answerId) {
   if (!userAnswers[questionId]) userAnswers[questionId] = [];
@@ -73,7 +76,7 @@ function toggleAnswer(questionId, answerId) {
 // NAVIGATION
 // ==============================
 function nextQuestion() {
-  if (currentIndex < quiz.questions.length - 1) {
+  if (currentIndex < questions.length - 1) {
     currentIndex++;
     renderQuestion();
     updateProgress();
@@ -94,7 +97,7 @@ function prevQuestion() {
 // FORTSCHRITT
 // ==============================
 function updateProgress() {
-  const percent = ((currentIndex + 1) / quiz.questions.length) * 100;
+  const percent = ((currentIndex + 1) / questions.length) * 100;
   document.getElementById("progressBar").style.width = percent + "%";
 }
 
@@ -105,7 +108,7 @@ function evaluateQuiz() {
   let points = 0;
   let maxPoints = 0;
 
-  quiz.questions.forEach(q => {
+  questions.forEach(q => {
     maxPoints += q.points;
 
     const correct = [...q.correct].sort().join(",");
@@ -132,7 +135,7 @@ function saveResult(percent) {
     passed: false
   };
 
-  old.attempts += 1;
+  old.attempts++;
   if (percent > old.bestPercent) old.bestPercent = percent;
   if (percent === 100) old.passed = true;
 
