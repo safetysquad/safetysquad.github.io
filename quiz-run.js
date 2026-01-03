@@ -8,6 +8,12 @@ let quizId = null;
 let currentIndex = 0;
 let userAnswers = {};
 
+function getTextById(ids = [], answers = []) {
+  return answers
+    .filter(a => ids.includes(a.id))
+    .map(a => a.text);
+}
+
 // ==============================
 // QUIZ LADEN
 // ==============================
