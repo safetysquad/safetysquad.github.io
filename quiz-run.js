@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // FRAGE RENDERn
 // ==============================
 function renderQuestion() {
-  const q = questions[currentIndex];
+  const q = quiz[currentIndex];
+
+  if (!q) return;
 
   document.getElementById("questionText").innerText = q.question;
 
@@ -41,18 +43,14 @@ function renderQuestion() {
     const btn = document.createElement("button");
     btn.className = "btn secondary";
     btn.innerText = `${a.id}. ${a.text}`;
-
-    if (userAnswers[q.id]?.includes(a.id)) {
-      btn.style.opacity = "0.6";
-    }
-
-    btn.onclick = () => toggleAnswer(q.id, a.id);
+    btn.onclick = () => toggleAnswer(a.id);
     answersBox.appendChild(btn);
   });
 
   document.getElementById("counter").innerText =
-    `Frage ${currentIndex + 1} von ${questions.length}`;
+    `Frage ${currentIndex + 1} von ${quiz.length}`;
 }
+
 
 // ==============================
 // ANTWORT AUSWÄHLEN (MEHRFACH)
