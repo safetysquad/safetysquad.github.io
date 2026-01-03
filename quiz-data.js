@@ -1844,6 +1844,248 @@ quizzes.quiz5 = [
     correct: ["c", "d"],
     points: 2
   }
+],
+    quizzes.quiz7 = [
+  {
+    id: 1,
+    question: "Wie lange ist die Gültigkeit der bestandenen Sachkundeprüfung nach §34a GewO?",
+    answers: [
+      { id: "a", text: "5 Jahre" },
+      { id: "b", text: "2 Jahre" },
+      { id: "c", text: "Unbegrenzt" },
+      { id: "d", text: "Sie muss jährlich erneuert werden." }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 2,
+    question: "Welche Daten einer Person sind besonders durch den Datenschutz in Deutschland geschützt?",
+    answers: [
+      { id: "a", text: "Anschrift" },
+      { id: "b", text: "Name, Vorname" },
+      { id: "c", text: "Gesundheitsdaten" },
+      { id: "d", text: "Bankverbindung" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 3,
+    question: "Wen muss man nach einem Arbeitsunfall grundsätzlich aufsuchen?",
+    answers: [
+      { id: "a", text: "Den Heilpraktiker" },
+      { id: "b", text: "Den Hausarzt" },
+      { id: "c", text: "Den Durchgangsarzt" },
+      { id: "d", text: "Den Betriebsarzt" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 4,
+    question: "Welche der folgenden Verhaltensweisen eines Sicherheitsmitarbeiters kann als unzulässig angesehen werden?",
+    answers: [
+      { id: "a", text: "Das Ansprechen von Personen im Rahmen der üblichen Sicherheitskontrollen." },
+      { id: "b", text: "Eine Person ohne rechtliche Befugnis durchsuchen." },
+      { id: "c", text: "Sich als Polizeibeamter ausgeben" },
+      { id: "d", text: "Ruhiges und professionelles Verhalten gegenüber aggressiven Personen." }
+    ],
+    correct: ["b","c"],
+    points: 1
+  },
+  {
+    id: 5,
+    question: "Welche Pflichten hat ein Sicherheitsmitarbeiter gegenüber seinem Auftraggeber?",
+    answers: [
+      { id: "a", text: "Geheimhaltungspflicht über vertrauliche Daten" },
+      { id: "b", text: "Weitergabe von internen Firmeninformationen an Dritte" },
+      { id: "c", text: "Private Nutzung von Überwachungstechnik während der Arbeitszeit" },
+      { id: "d", text: "Pünktliches Erscheinen und ordnungsgemäße Dienstausführung" }
+    ],
+    correct: ["a","d"],
+    points: 1
+  },
+  {
+    id: 6,
+    question: "Was bedeutet „aktives Zuhören“?",
+    answers: [
+      { id: "a", text: "Kein Interesse am Gespräch zeigen" },
+      { id: "b", text: "Den Gesprächspartner durch permanenten Blickkontakt einzuschüchtern" },
+      { id: "c", text: "Solange ich auch den Gesprächsinhalt verstehe, kann ich auch andere Dinge nebenbei machen." },
+      { id: "d", text: "Dem Gesprächspartner aufmerksam zuhören und gegebenenfalls Fragen stellen." }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 7,
+    question: "Welche der unten genannten Antworten ist eine 'Sache' nach §90 BGB?",
+    answers: [
+      { id: "a", text: "Mensch" },
+      { id: "b", text: "Tier" },
+      { id: "c", text: "Gebäude" },
+      { id: "d", text: "Strom" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 8,
+    question: "Welche der unten genannten Antworten ist laut Strafgesetzbuch (StGB) eine Straftat?",
+    answers: [
+      { id: "a", text: "Person A schlägt Person B ohne Grund in das Gesicht." },
+      { id: "b", text: "Person A benutzt das Auto von Person B, welches dieser ihm ausgeliehen hat." },
+      { id: "c", text: "Person A nimmt ohne Einwilligung den Laptop von Person B mit." },
+      { id: "d", text: "Person A fährt Fahrrad ohne Licht bei Dunkelheit." }
+    ],
+    correct: ["a","c"],
+    points: 1
+  },
+  {
+    id: 9,
+    question: "Welche Waffen sind laut Waffengesetz nicht verboten?",
+    answers: [
+      { id: "a", text: "Schießkugelschreiber" },
+      { id: "b", text: "Butterflymesser" },
+      { id: "c", text: "Schreckschuss-, Reizstoff-, Signalwaffen" },
+      { id: "d", text: "Stahlrute, Totschläger, Schlagringe" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 10,
+    question: "Wo können Bürger eine Strafanzeige erstatten?",
+    answers: [
+      { id: "a", text: "Bei der Feuerwehr" },
+      { id: "b", text: "Amtsgericht" },
+      { id: "c", text: "Polizei" },
+      { id: "d", text: "Bei Sicherheitsmitarbeitern" }
+    ],
+    correct: ["b","c"],
+    points: 1
+  },
+  {
+    id: 11,
+    question: "Welche Kategorien von Sicherheitsverglasung gibt es?",
+    answers: [
+      { id: "a", text: "Unzerstörbares Glas" },
+      { id: "b", text: "Durchwurfhemmendes Glas" },
+      { id: "c", text: "Durchschusshemmendes Glas" },
+      { id: "d", text: "Doppelverglasung" }
+    ],
+    correct: ["b","c"],
+    points: 1
+  },
+  {
+    id: 12,
+    question: "Wie viele Bundesländer hat die Bundesrepublik Deutschland?",
+    answers: [
+      { id: "a", text: "16" },
+      { id: "b", text: "Keine, sie ist ein Einheitsstaat wie Frankreich" },
+      { id: "c", text: "19" },
+      { id: "d", text: "12" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 13,
+    question: "Welche der folgenden Tätigkeiten gehören zu den Aufgaben eines Sicherheitsmitarbeiters?",
+    answers: [
+      { id: "a", text: "Anfertigen von Berichten über sicherheitsrelevante Vorkommnisse." },
+      { id: "b", text: "Anwendung von Gewalt zur Durchsetzung von Vorschriften." },
+      { id: "c", text: "Durchsetzung des Hausrechts im Auftrag des Eigentümers." },
+      { id: "d", text: "Aufklärung von Straftaten." }
+    ],
+    correct: ["a","c"],
+    points: 1
+  },
+  {
+    id: 14,
+    question: "Was ist ein Vorurteil?",
+    answers: [
+      { id: "a", text: "Vorurteile sind immer negativ behaftet." },
+      { id: "b", text: "Vorurteile basieren auf ungeprüften Meinungen anderer Menschen." },
+      { id: "c", text: "Vorurteile lassen sich nie wieder rückgängig machen." },
+      { id: "d", text: "Es gibt positive und negative Vorurteile." }
+    ],
+    correct: ["b","d"],
+    points: 1
+  },
+  {
+    id: 15,
+    question: "Was ist eine Notwehrhandlung?",
+    answers: [
+      { id: "a", text: "Eine Handlung, um sich für eine Beleidigung zu rächen" },
+      { id: "b", text: "Eine Handlung, die immer erlaubt ist, wenn man sich bedroht fühlt." },
+      { id: "c", text: "Eine Handlung, um sich oder andere vor einem rechtswidrigen Angriff zu schützen" },
+      { id: "d", text: "Eine Handlung, die nur von Polizisten durchgeführt werden darf." }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 16,
+    question: "Ein Sicherheitsunternehmen hat den Auftrag der Kasernenbewachung. Hierzu müssen die Sicherheitsmitarbeiter mit Schusswaffen und Munition ausgerüstet werden. Was ist im Umgang mit Schusswaffen und Munition zu beachten?",
+    answers: [
+      { id: "a", text: "Sicherheitsmitarbeiter dürfen diese in ihrer Freizeit benutzen" },
+      { id: "b", text: "Die Sicherheitsmitarbeiter müssen nichts beachten." },
+      { id: "c", text: "Die Sicherheitsmitarbeiter müssen sich an die geltenden waffenrechtlichen Gesetze halten (z.B. WaffG, SprengG)." },
+      { id: "d", text: "Solange keine berauschenden Mittel konsumiert wurden, ist der Umgang bedenkenlos." }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 17,
+    question: "Was sollte ein Sicherheitsmitarbeiter tun, wenn er auf eine Gefahrensituation stößt?",
+    answers: [
+      { id: "a", text: "Den Vorfall ignorieren und warten, bis sich die Situation von selbst regelt." },
+      { id: "b", text: "Alle Personen aus dem Gefahrenbereich entfernen und die Polizei informieren." },
+      { id: "c", text: "Sofort in die Situation eingreifen, ohne nach den gesetzlichen Vorgaben zu handeln." },
+      { id: "d", text: "Ruhig bleiben, die Situation beobachten und gegebenenfalls Unterstützung anfordern." }
+    ],
+    correct: ["b","d"],
+    points: 1
+  },
+  {
+    id: 18,
+    question: "Was beschreibt das Eisbergmodell?",
+    answers: [
+      { id: "a", text: "Ein Eisberg schmilzt in der Sonne und verändert dadurch seine Form." },
+      { id: "b", text: "Alle Menschen verhalten sich immer gleich, egal in welcher Situation." },
+      { id: "c", text: "Ein Eisberg ist eine Gefahr für Schiffe auf dem Meer." },
+      { id: "d", text: "Nur ein kleiner Teil unseres Verhaltens ist sichtbar, der größte Teil bleibt verborgen." }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 19,
+    question: "Was sind die Aufgaben des „Privaten Sicherheitsgewerbes“?",
+    answers: [
+      { id: "a", text: "Sie erfüllen meist Sicherheitsaufgaben im privaten Bereich." },
+      { id: "b", text: "Sie erfüllen grundsätzlich hoheitliche Aufgaben." },
+      { id: "c", text: "Es gibt kein “privates Sicherheitsgewerbe”." },
+      { id: "d", text: "Kooperationen von privater und öffentlicher Sicherheit sind möglich." }
+    ],
+    correct: ["a","d"],
+    points: 1
+  },
+  {
+    id: 20,
+    question: "Sie bewachen ein Objekt und stellen bei einem Rundgang fest, dass eine Person am Haupteingang sitzt und gerade dabei ist, sich eine Spritze in die Armbeuge zu setzen. Wie verhalten Sie sich?",
+    answers: [
+      { id: "a", text: "Ich störe die Person dabei und werfe sie direkt vom Gelände." },
+      { id: "b", text: "Je nach Lage und Aggressivität der Person rufe ich Verstärkung - Polizei oder andere Sicherheitsmitarbeiter." },
+      { id: "c", text: "Ich versuche der Person die Spritze zu entreißen." },
+      { id: "d", text: "Ich lasse die Person zunächst in Ruhe ihre Rauschmittel konsumieren und spreche sie dann ruhig, mit ausreichendem Abstand, an." }
+    ],
+    correct: ["b","d"],
+    points: 1
+  }
 ]
 };
 
