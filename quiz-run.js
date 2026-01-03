@@ -1,4 +1,4 @@
-console.log("QUIZ-RUN.JS VERSION 2 GELADEN");
+console.log("QUIZ-RUN.JS VERSION 3 GELADEN");
 
 // ==============================
 // GRUNDVARIABLEN
