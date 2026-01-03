@@ -2086,6 +2086,191 @@ quizzes.quiz5 = [
     correct: ["b","d"],
     points: 1
   }
+],
+    quizzes.quiz8 = [
+  {
+    id: 1,
+    question: "Welches sind im Grundgesetz geschützte Rechtsgüter?",
+    answers: [
+      { id: "a", text: "Vertragsrechte" },
+      { id: "b", text: "Freiheitsrechte" },
+      { id: "c", text: "Ehre" },
+      { id: "d", text: "Streitrechte" }
+    ],
+    correct: ["b","c"],
+    points: 2
+  },
+  {
+    id: 2,
+    question: "Das Grundrecht der Unverletzlichkeit der Wohnung ist in Art. 13 GG verankert. Welche der nachstehenden Antworten treffen auf dieses Grundrecht zu?",
+    answers: [
+      { id: "a", text: "Angeordnete Durchsuchungen sind nur zulässig im Sinne des Strafprozessrechtes, nicht aber im Sinne des Zivilrechtes." },
+      { id: "b", text: "Menschen ohne deutsche Staatsbürgerschaft haben dieses Grundrecht gemäß Artikel 13 GG nicht." },
+      { id: "c", text: "Es ist ein individuelles Abwehrrecht gegen alle Organe öffentlicher Gewalt. Es regelt also keine Mietverhältnisse und schafft auch keinen Wohnraumanspruch." },
+      { id: "d", text: "Dieses Grundrecht gilt ausschließlich für Eigentumswohnungen, nicht jedoch für Mietwohnungen." },
+      { id: "e", text: "Dieses Recht steht nur dem Eigentümer einer Wohnung zu." },
+      { id: "f", text: "Durchsuchungen dürfen nur aufgrund eines richterlichen Beschlusses, bei Gefahr in Verzug aber auch durch die in den Gesetzen vorgesehenen Organe angeordnet und nur in der dort vorgeschriebenen Form durchgeführt." }
+    ],
+    correct: ["c","f"],
+    points: 2
+  },
+  {
+    id: 3,
+    question: "Prüfen Sie die nachfolgenden Aussagen zu den Grundrechten und kreuzen Sie die richtigen Antwort(en) an.",
+    answers: [
+      { id: "a", text: "Der Bürger kann seine Grundrechte notfalls gerichtlich durchsetzen, weil die Staatsgewalten an die Grundrechte gebunden sind und diese achten sowie schützen müssen. So geschrieben zum Beispiel im Artikel 1 Absatz 1 des Grundgesetzes." },
+      { id: "b", text: "Grundrechte gelten absolut und dürfen nicht eingeschränkt werden." },
+      { id: "c", text: "Einige der Grundrechte zählen zu den Bürgerrechten. Zum Beispiel: Wahlrecht, Versammlungsfreiheit, freie Berufswahl, etc." }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 4,
+    question: "Es gibt in Deutschland eine 'horizontale' Gewaltenteilung. Welche der nachfolgenden Aussagen ist in Bezug auf diese Gewalten korrekt?",
+    answers: [
+      { id: "a", text: "die Antworten 2, 4 und 6 sind richtig" },
+      { id: "b", text: "die Antworten 1 , 2 und 5 sind richtig" },
+      { id: "c", text: "die Antworten 1, 3 und 5 sind richtig" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 5,
+    question: "Welche Institutionen zählen zur 'gesetzgebenden Gewalt'?",
+    answers: [
+      { id: "a", text: "Der Bundestag" },
+      { id: "b", text: "Die Staatsanwaltschaft" },
+      { id: "c", text: "Die Regierungen der Bundesländer" },
+      { id: "d", text: "Der Bundesrat" }
+    ],
+    correct: ["a","d"],
+    points: 2
+  },
+  {
+    id: 6,
+    question: "Was bedeutet „staatliches Gewaltmonopol\"?",
+    answers: [
+      { id: "a", text: "Das staatliche Sicherheitsmonopol entspringt der rechtsstaatlichen Verpflichtung die Sicherheit aller Bürger zu garantieren" },
+      { id: "b", text: "Gewalt ist als äußerstes Mittel grundsätzlich nur den staatlichen Organen vorbehalten" },
+      { id: "c", text: "Die Rechtsordnung verpflichtet jeden Bürger Gefährdungen der Allgemeinheit auch mit Gewalt abwehren zu können" },
+      { id: "d", text: "Gewaltanwendung durch Einzelne ist nur ausnahmsweise zulässig und auf Notsituationen beschränkt" }
+    ],
+    correct: ["b","d"],
+    points: 2
+  },
+  {
+    id: 7,
+    question: "Das Recht auf freie Entfaltung seiner Persönlichkeit (Art. 2 GG) ...",
+    answers: [
+      { id: "a", text: "ist ein Grundrecht, welches in keiner Weise eingeschränkt werden darf" },
+      { id: "b", text: "stellt jedem Menschen frei, zu tun und zu lassen, was er möchte." },
+      { id: "c", text: "ist ein Menschenrecht" },
+      { id: "d", text: "ist ein Bürgerrecht" },
+      { id: "e", text: "beinhaltet auch das informationelle Selbstbestimmungsrecht" },
+      { id: "f", text: "erlaubt jedem Menschen in Deutschland seinen Wohnsitz und Aufenthaltsort frei zu bestimmen" }
+    ],
+    correct: ["c","e"],
+    points: 2
+  },
+  {
+    id: 8,
+    question: "Welche Begriffe sind dem Bürgerlichen Recht zuzuordnen?",
+    answers: [
+      { id: "a", text: "Besitzdiener" },
+      { id: "b", text: "Bewacherregister" },
+      { id: "c", text: "Gewaltmonopol" },
+      { id: "d", text: "Unerlaubte Handlung" },
+      { id: "e", text: "Exekutive" }
+    ],
+    correct: ["a","d"],
+    points: 2
+  },
+  {
+    id: 9,
+    question: "Was für Rechte dürfen Wachpersonen, die Kontrollgänge im öffentlichen Verkehrsraum durchführen, eigenverantwortlich ausüben?",
+    answers: [
+      { id: "a", text: "Sie dürfen bei Verkehrsordnungswidrigkeiten Verwarnungsgelder erheben, z. B. beim Parken im Parkverbot" },
+      { id: "b", text: "Sie dürfen zur Abwehr von Gefahren für die öffentliche Sicherheit und Ordnung wie Polizeibeamte tätig werden, z. B. Platzverweise erteilen" },
+      { id: "c", text: "Sie dürfen aufgrund eines privatrechtlichen Auftragsverhältnisses tätig werden d.h., sie dürfen Notwehr- und Notstandsrechte und übertragene Selbsthilferechte wahrnehmen" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 10,
+    question: "Welche Aussagen zu den Rechtfertigungsgründen sind richtig?",
+    answers: [
+      { id: "a", text: "Rechtfertigungsgründe sind z. B. Notwehr-und Notstandsrechte, die jeder Person zustehen" },
+      { id: "b", text: "Rechtfertigungsgründe dürfen nur dann angewendet werden, wenn Hilfe des Staates nicht rechtzeitig zu erlangen ist" },
+      { id: "c", text: "Rechtfertigungsgründe sind der Rechtsordnung zu entnehmen, z. B. dem StGB, der StPO und dem BGB" },
+      { id: "d", text: "Rechtfertigungsgründe sind z. B. die Schuldunfähigkeit des Kindes und die Notwehrüberschreitung" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 11,
+    question: "In welchem Verhältnis stehen sich Staat und Bürger im öffentlichen Recht gegenüber?",
+    answers: [
+      { id: "a", text: "Staat und Bürger sind gleichberechtigt" },
+      { id: "b", text: "Der Staat ist dem Bürger übergeordnet" },
+      { id: "c", text: "Unabhängig von den Rechtsgebieten, ist der Staat dem Bürger immer übergeordnet." },
+      { id: "d", text: "Es gibt keinen Unterschied zwischen öffentlichem Recht und privatem Recht. In beiden Rechtsgebieten stehen sich Staat und Bürger gleich gegenüber." },
+      { id: "e", text: "Der Bürger ist dem Staat übergeordnet" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 12,
+    question: "Der Bewachungsgewerbetreibende und seine Sicherheitsmitarbeiter dürfen bei der Durchführung von Bewachungsaufgaben gegenüber Dritten bestimmte Rechte eigenverantwortlich ausüben. Welche Rechte sind dies?",
+    answers: [
+      { id: "a", text: "übertragene Selbsthilferechte" },
+      { id: "b", text: "Verkehrsregelung nach Verkehrsunfällen" },
+      { id: "c", text: "Notwehr- und Notstandsrechte z.B.: im Sinne des StGB und des BGB" },
+      { id: "d", text: "Beschlagnahme von Diebesgut" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 13,
+    question: "Im deutschen Rechtssystem sind Rechtfertigungsgründe festgelegt. Worin besteht deren Zweck?",
+    answers: [
+      { id: "a", text: "Sie können strafbares Handeln rechtfertigen . . . zum Beispiel die Notwehr gem. §32 StGB oder die vorläufige Festnahme gemäß § 127 Abs. 1 StPO" },
+      { id: "b", text: "Sie können verbotenes Handeln entschuldigen" },
+      { id: "c", text: "Sie können unerlaubtes Handeln rechtfertigen . . . zum Beispiel die Notwehr gemäß § 227 BGB oder der (verteidigende) Notstand gemäß § 228 BGB" },
+      { id: "d", text: "Sie können ordnungswidriges Handeln entschuldigen" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 14,
+    question: "Welche grundsätzlichen Aufgaben hat die Polizei in Deutschland?",
+    answers: [
+      { id: "a", text: "Verfolgung von Straftaten und Ordnungswidrigkeiten" },
+      { id: "b", text: "Leitung des Ermittlungsverfahrens (Anklagebehörde)" },
+      { id: "c", text: "Abwehr von Gefahren für die öffentliche Sicherheit und Ordnung" },
+      { id: "d", text: "Durchsetzung privater Rechte (z.B. Hausverbot)" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 15,
+    question: "Im deutschen Rechtssystem sind Rechtfertigungsgründe verankert. Was ist deren Sinn und Zweck?",
+    answers: [
+      { id: "a", text: "Sie können strafbares Handeln rechtfertigen" },
+      { id: "b", text: "Sie können verbotenes Handeln entschuldigen" },
+      { id: "c", text: "Sie können unerlaubtes Handeln rechtfertigen" },
+      { id: "d", text: "Sie können ordnungswidriges Handeln entschuldigen" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  }
 ]
 };
 
