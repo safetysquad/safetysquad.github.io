@@ -321,4 +321,305 @@ const quizzes = {
       points: 2
     }
   ]
+    quiz2: [
+  {
+    id: 1,
+    question: "Welche Rechte haben Wachpersonen bei der Durchführung von Bewachungsaufgaben?",
+    answers: [
+      { id: "a", text: "Sie dürfen als Beliehene vom Staat übertragene Befugnisse eigenverantwortlich ausüben." },
+      { id: "b", text: "Sie dürfen eigenverantwortlich Polizeirechte ausüben, wenn sie die Grundsätze der Verhältnismäßigkeit und Zweckmäßigkeit beachten." },
+      { id: "c", text: "Sie dürfen gegenüber Dritten z. B. nur die Rechte eigenverantwortlich ausüben, die jedermann zustehen, etwa die Notwehr oder den Notstand." },
+      { id: "d", text: "" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 2,
+    question: "Welche der folgenden Grundrechte des Grundgesetzes sind Bürgerrechte?",
+    answers: [
+      { id: "a", text: "Freie Berufswahl" },
+      { id: "b", text: "Gleichheit vor dem Gesetz" },
+      { id: "c", text: "Schutz der Menschenwürde" },
+      { id: "d", text: "Versammlungsfreiheit" }
+    ],
+    correct: ["a","d"],
+    points: 2
+  },
+  {
+    id: 3,
+    question: "Was wird unter dem Privatrecht verstanden?",
+    answers: [
+      { id: "a", text: "Das Privatrecht beschreibt die Rechtsfolgen für Straftaten und Ordnungswidrigkeiten, z.B. Geld- oder Freiheitsstrafen, Geldbußen" },
+      { id: "b", text: "Das Privatrecht ist ein Teil des öffentlichen Rechts und regelt die Rechtsbeziehung zwischen Staat und Bürger" },
+      { id: "c", text: "Das Privatrecht legt im Wesentlichen fest, welche Freiheiten, Rechte und Pflichten die Menschen im Verhältnis zueinander haben" },
+      { id: "d", text: "Das Privatrecht regelt die Rechtsbeziehungen zwischen gleichgestellten natürlichen und juristischen Personen" }
+    ],
+    correct: ["c","d"],
+    points: 2
+  },
+  {
+    id: 4,
+    question: "Welche Aussagen treffen auf private Sicherheitsdienste zu?",
+    answers: [
+      { id: "a", text: "Private Sicherheitsdienstleister und deren Mitarbeiter besitzen die Eigenschaft und die Befugnisse von Hilfspolizeibeamten" },
+      { id: "b", text: "Private Sicherheitsdienstleister dürfen bei der Durchführung von Bewachungsaufgaben gegenüber Dritten bestimmte Rechte eigenverantwortlich ausüben. Dazu zählen Notwehr- und Notstandsrechte und vom Auftraggeber vertraglich übertragene Selbsthilferechte" },
+      { id: "c", text: "Private Sicherheitsdienstleister gewährleisten bei Kontrollgängen im öffentlichen Verkehrsraum Sicherheit und Ordnung auf der Basis von privatrechtlichen Verträgen" },
+      { id: "d", text: "Private Sicherheitsdienstleister sind für die öffentliche Sicherheit und Ordnung verantwortlich. Die Grundlage hierfür sind privatrechtliche Vereinbarungen" }
+    ],
+    correct: ["b","c"],
+    points: 2
+  },
+  {
+    id: 5,
+    question: "Was für Rechte dürfen Wachpersonen, die Kontrollgänge im öffentlichen Verkehrsraum durchführen, eigenverantwortlich ausüben?",
+    answers: [
+      { id: "a", text: "Sie dürfen zur Abwehr von Gefahren für die öffentliche Sicherheit und Ordnung wie Polizeibeamte tätig werden, z. B. Platzverweise erteilen" },
+      { id: "b", text: "Sie dürfen aufgrund eines privatrechtlichen Auftragsverhältnisses tätig werden d.h., sie dürfen Notwehr- und Notstandsrechte und übertragene Selbsthilferechte wahrnehmen" },
+      { id: "c", text: "Sie dürfen bei Verkehrsordnungswidrigkeiten Verwarnungsgelder erheben, z. B. beim Parken im Parkverbot" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 6,
+    question: "Welche Funktionen erfüllen die Grundrechte des Grundgesetzes?",
+    answers: [
+      { id: "a", text: "Sie schützen den Bürger gegen staatliche Eingriffe in seinen Freiheitsbereich. Es sind Abwehrrechte des Bürgers" },
+      { id: "b", text: "Sie garantieren jedem Bürger auf dem Gebiet der Bundesrepublik Deutschland das Recht auf Arbeit" },
+      { id: "c", text: "Sie begrenzen die Staatsgewalt. Dies bedeutet, dass der Staat die Grundrechte bei seinen Entscheidungen beachten muss" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 7,
+    question: "Wer ist im Bereich der Judikative beschäftigt?",
+    answers: [
+      { id: "a", text: "Sachbearbeiter der Gewerbebehörde" },
+      { id: "b", text: "Justizvollzugsbeamte" },
+      { id: "c", text: "Polzeivollzugsbeamte" },
+      { id: "d", text: "Richter" }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 8,
+    question: "Welche Institutionen zählen zur \"gesetzgebenden Gewalt\"?",
+    answers: [
+      { id: "a", text: "Die Staatsanwaltschaft" },
+      { id: "b", text: "Die Regierungen der Bundesländer" },
+      { id: "c", text: "Der Bundestag" },
+      { id: "d", text: "Der Bundesrat" }
+    ],
+    correct: ["c","d"],
+    points: 2
+  },
+  {
+    id: 9,
+    question: "Es gibt in Deutschland eine \"horizontale\" Gewaltenteilung. Welche der nachfolgenden Aussagen ist korrekt?",
+    answers: [
+      { id: "a", text: "die Antworten 1, 3 und 5 sind richtig" },
+      { id: "b", text: "die Antworten 2, 4 und 6 sind richtig" },
+      { id: "c", text: "die Antworten 1 , 2 und 5 sind richtig" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 10,
+    question: "Welche Rechte haben SMA gegenüber anderen Bürgern bei der Durchführung von Bewachungsaufgaben?",
+    answers: [
+      { id: "a", text: "in Gefahrensituationen die Befugnisse eines Bediensteten von Sicherheitsbehör¬den" },
+      { id: "b", text: "in Erfüllung des Auftrages die vom Auftraggeber vertraglich übertragenen Besitz¬- und Selbsthilferechte" },
+      { id: "c", text: "in Ausnahmesituationen die Notwehr- und Notstandsrechte" }
+    ],
+    correct: ["b","c"],
+    points: 2
+  },
+  {
+    id: 11,
+    question: "In welchem Bereich ist die Polizei zuständig?",
+    answers: [
+      { id: "a", text: "Im privaten Bereich z.B. mit Durchsuchungsbeschluss oder bei Gefahr im Verzug" },
+      { id: "b", text: "Immer in allen Bereichen" },
+      { id: "c", text: "Grundsätzlich im öffentlichen Bereich" },
+      { id: "d", text: "Nur im öffentlichen Bereich" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 12,
+    question: "Welche der nachfolgenden Aussagen verstößt gegen die Rechtsordnung der Bundesrepublik Deutschland?",
+    answers: [
+      { id: "a", text: "Das Anspucken einer Wachperson, welche den Einlass eines Kaufhauses sichert." },
+      { id: "b", text: "Die Durchsuchung einer Wohnung durch die Polizei, auf Grund eines Durchsuchungsbeschlusses." },
+      { id: "c", text: "Die Bestrafung einer Person mit einer Geldstrafe ohne gesetzliche Grundlage" },
+      { id: "d", text: "Die Untersagung einer Bewachungserlaubnis auf Grund von drei Vorstrafen, wegen verschiedener Verbrechen in den letzten drei Jahren" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 13,
+    question: "Wer darf in der Bundesrepublik Deutschland Gesetze erlassen, die bundesweit gelten?",
+    answers: [
+      { id: "a", text: "Landtag" },
+      { id: "b", text: "Bundesregierung" },
+      { id: "c", text: "Bundestag" },
+      { id: "d", text: "Landesregierung" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 14,
+    question: "Welche Aussagen zu den Befugnissen einer Wachperson sind richtig?",
+    answers: [
+      { id: "a", text: "Wachpersonen dürfen bei der Durchführung von Bewachungsaufgaben gegenüber Dritten z.B. Notstandsrechte eigenverantwortlich ausüben" },
+      { id: "b", text: "Wachpersonen haben die gleichen Befugnisse wie Polizeibeamte oder Hilfspolizeibeamte, z.B. die Durchsuchung eines Täters nach Waffen." },
+      { id: "c", text: "Wachpersonen müssen bei der Inanspruchnahme ihrer Befugnisse den Grundsatz der Erforderlichkeit beachten" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 15,
+    question: "Welche Maßnahme dürfen Wachpersonen durchführen?",
+    answers: [
+      { id: "a", text: "Sie dürfen Taschenkontrollen durchführen, wenn die von der Kontrolle betroffene Person damit einverstanden ist." },
+      { id: "b", text: "Sie dürfen einen auf frischer Tat betroffenen Dieb ohne dessen Einwilligung durchsuchen, um ihm das Diebesgut abzunehmen." },
+      { id: "c", text: "Sie dürfen als Türsteher bei Einlasskontrollen aufgefundene Reizstoffsprühgeräte beschlagnahmen." }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 16,
+    question: "Welche grundsätzlichen Aufgaben hat die Polizei in Deutschland?",
+    answers: [
+      { id: "a", text: "Abwehr von Gefahren für die öffentliche Sicherheit und Ordnung" },
+      { id: "b", text: "Leitung des Ermittlungsverfahrens (Anklagebehörde)" },
+      { id: "c", text: "Verfolgung von Straftaten und Ordnungswidrigkeiten" },
+      { id: "d", text: "Durchsetzung privater Rechte (z.B. Hausverbot)" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 17,
+    question: "Das Recht auf freie Entfaltung seiner Persönlichkeit (Art. 2 GG) ...",
+    answers: [
+      { id: "a", text: "beinhaltet auch das informationelle Selbstbestimmungsrecht" },
+      { id: "b", text: "ist ein Bürgerrecht" },
+      { id: "c", text: "ist ein Menschenrecht" },
+      { id: "d", text: "stellt jedem Menschen frei, zu tun und zu lassen, was er möchte." },
+      { id: "e", text: "erlaubt jedem Menschen in Deutschland seinen Wohnsitz und Aufenthaltsort frei zu bestimmen" },
+      { id: "f", text: "ist ein Grundrecht, welches in keiner Weise eingeschränkt werden darf" }
+    ],
+    correct: ["a","c"],
+    points: 1
+  },
+  {
+    id: 18,
+    question: "Was sind wesentliche Aufgaben der Polizei, des Bundes und der Länder?",
+    answers: [
+      { id: "a", text: "Bürger dabei zu unterstützen, ihre zivilrechtlichen Ansprüche gegen andere Bürger durchzusetzen" },
+      { id: "b", text: "Die Gefahrenabwehr zum Wohle der öffentlichen Sicherheit und Ordnung" },
+      { id: "c", text: "Straftaten zu erforschen und zu verfolgen" }
+    ],
+    correct: ["b","c"],
+    points: 2
+  },
+  {
+    id: 19,
+    question: "Welche Kooperationsmöglichkeit ist im Rahmen einer Public-Private-Partnership-Vereinbarung zwischen der Polizei und einem privaten Sicherheitsdienst denkbar?",
+    answers: [
+      { id: "a", text: "Gemeinschaftliche und arbeitsteilige Strafverfolgung, z.B. Verhaftung von Straftätern" },
+      { id: "b", text: "Hilfeleistung und Informationsaustausch, z.B. bei Sach- und Personenfahndungen" },
+      { id: "c", text: "Verkehrsüberwachung mit repressiven und präventiven Maßnahmen, z.B. durch Verkehrskontrollen" },
+      { id: "d", text: "Verkehrslenkung und Verkehrsregelung im Einzelfall, z.B. bei Großveranstaltungen" }
+    ],
+    correct: ["b","d"],
+    points: 2
+  },
+  {
+    id: 20,
+    question: "Welche Aufgaben hat die Staatsanwaltschaft?",
+    answers: [
+      { id: "a", text: "Lenkung des Ermittlungsverfahrens" },
+      { id: "b", text: "Leitung des Strafverfahrens" },
+      { id: "c", text: "Erlass von Haftbefehlen" },
+      { id: "d", text: "Erhebung der Anklage" }
+    ],
+    correct: ["a","d"],
+    points: 1
+  },
+  {
+    id: 21,
+    question: "Welche Begriffe sind dem Bürgerlichen Recht zuzuordnen?",
+    answers: [
+      { id: "a", text: "Unerlaubte Handlung" },
+      { id: "b", text: "Gewaltmonopol" },
+      { id: "c", text: "Exekutive" },
+      { id: "d", text: "Besitzdiener" },
+      { id: "e", text: "Bewacherregister" }
+    ],
+    correct: ["a","d"],
+    points: 1
+  },
+  {
+    id: 22,
+    question: "In welchem Verhältnis stehen sich Staat und Bürger im öffentlichen Recht gegenüber?",
+    answers: [
+      { id: "a", text: "Staat und Bürger sind gleichberechtigt" },
+      { id: "b", text: "Es gibt keinen Unterschied zwischen öffentlichem Recht und privatem Recht. In beiden Rechtsgebieten stehen sich Staat und Bürger gleich gegenüber." },
+      { id: "c", text: "Der Staat ist dem Bürger übergeordnet" },
+      { id: "d", text: "Unabhängig von den Rechtsgebieten, ist der Staat dem Bürger immer übergeordnet." },
+      { id: "e", text: "Der Bürger ist dem Staat übergeordnet" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 23,
+    question: "Kaufhausdetektiv Klaus hat den Auftrag, einen Diebstahl aufzuklären. Klaus soll den Täter befragen. Auf was sollte Klaus den Täter vor Beginn der Befragung hinweisen?",
+    answers: [
+      { id: "a", text: "Klaus sollte den Täter darauf hinweisen, dass er nur mit einer Geldstrafe zu rechnen habe, wenn er den Diebstahl zugibt." },
+      { id: "b", text: "Klaus sollte den Täter darauf hinweisen, dass die Angabe seiner Personalien freiwillig ist." },
+      { id: "c", text: "Klaus sollte den Täter darauf hinweisen, dass er nicht verpflichtet ist, zum Vorwurf des Diebstahls auszusagen." },
+      { id: "d", text: "Klaus sollte den Täter darauf hinweisen, dass er seine Taschen nach einem Ausweis durchsuchen darf, wenn er seine Personalien nicht angeben will." }
+    ],
+    correct: ["b","c"],
+    points: 2
+  },
+  {
+    id: 24,
+    question: "Welche der folgenden Aussagen beschreibt die Anwendbarkeit des Opportunitätsprinzips bei Ordnungswidrigkeiten (Owi) im deutschen Recht am besten?",
+    answers: [
+      { id: "a", text: "Das Opportunitätsprinzip ist nur bei geringfügigen Ordnungswidrigkeiten anwendbar, bei denen die mögliche Geldbuße 50 Euro nicht übersteigt." },
+      { id: "b", text: "Das Opportunitätsprinzip und das Legalitätsprinzip finden unabhängig voneinander im Ordnungswidrigkeitenrecht Anwendung, da beide im öffentlichen Recht dem Staat die Möglichkeit geben eine Ordnungswidrigkeit nicht zu verfolgen." },
+      { id: "c", text: "Das Opportunitätsprinzip gilt grundsätzlich bei Ordnungswidrigkeiten, sodass die Verfolgungsbehörde nach pflichtgemäßem Ermessen entscheiden kann, ob sie eine Verfolgung aufnimmt." },
+      { id: "d", text: "Das Opportunitätsprinzip ist bei Ordnungswidrigkeiten ausgeschlossen, es gilt ausschließlich das Legalitätsprinzip." },
+      { id: "e", text: "Die Verfolgungsbehörde muss bei Ordnungswidrigkeiten immer ein Verfahren einleiten, hat aber Ermessen bei der Festsetzung der Geldbuße." }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 25,
+    question: "Im deutschen Rechtssystem sind Rechtfertigungsgründe verankert. Was ist deren Sinn und Zweck?",
+    answers: [
+      { id: "a", text: "Sie können strafbares Handeln rechtfertigen" },
+      { id: "b", text: "Sie können unerlaubtes Handeln rechtfertigen" },
+      { id: "c", text: "Sie können verbotenes Handeln entschuldigen" },
+      { id: "d", text: "Sie können ordnungswidriges Handeln entschuldigen" }
+    ],
+    correct: ["a","b"],
+    points: 2
+  }
+    ]
 };
+
