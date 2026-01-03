@@ -1,4 +1,4 @@
-console.log("QUIZ-RUN.JS VERSION 1 GELADEN");
+console.log("QUIZ-RUN.JS VERSION 2 GELADEN");
 
 // ==============================
 // GRUNDVARIABLEN
@@ -170,25 +170,10 @@ function renderResult(points, maxPoints, percent, results) {
     </div>
   `;
 
-  // ❌❌❌ NUR FALSCHE FRAGEN ANZEIGEN
   results.forEach(r => {
     if (!r.isCorrect) {
-
-      // 🔹 Hilfsfunktion: IDs → Antworttexte
-      const getTextById = (ids, answers) =>
-        answers
-          .filter(a => ids.includes(a.id))
-          .map(a => a.text);
-
-      const userTexts = getTextById(
-        r.givenAnswers || [],
-        r.answers
-      );
-
-      const correctTexts = getTextById(
-        r.correctAnswers,
-        r.answers
-      );
+      const userTexts = getTextById(r.givenAnswers, r.answers);
+      const correctTexts = getTextById(r.correctAnswers, r.answers);
 
       html += `
         <div class="result-card wrong">
@@ -214,7 +199,6 @@ function renderResult(points, maxPoints, percent, results) {
 
   main.innerHTML = html;
 }
-
 
 // ==============================
 // STATISTIK SPEICHERN
