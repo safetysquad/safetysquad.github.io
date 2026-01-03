@@ -25,13 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
   updateProgress();
 });
 
-
 // ==============================
 // FRAGE RENDERn
 // ==============================
 function renderQuestion() {
   const q = quiz[currentIndex];
-
   if (!q) return;
 
   document.getElementById("questionText").innerText = q.question;
@@ -42,15 +40,21 @@ function renderQuestion() {
   q.answers.forEach(a => {
     const btn = document.createElement("button");
     btn.className = "btn secondary";
+
+    // ✅ Aktiv-Zustand anzeigen
+    if (userAnswers[q.id]?.includes(a.id)) {
+      btn.classList.add("active");
+    }
+
     btn.innerText = `${a.id}. ${a.text}`;
     btn.onclick = () => toggleAnswer(a.id);
+
     answersBox.appendChild(btn);
   });
 
   document.getElementById("counter").innerText =
     `Frage ${currentIndex + 1} von ${quiz.length}`;
 }
-
 
 // ==============================
 // ANTWORT AUSWÄHLEN (MEHRFACH)
@@ -70,9 +74,8 @@ function toggleAnswer(answerId) {
     userAnswers[q.id].push(answerId);
   }
 
-  renderQuestion(); // 🔥 WICHTIG: neu rendern
+  renderQuestion();
 }
-
 
 // ==============================
 // NAVIGATION
@@ -103,37 +106,33 @@ function updateProgress() {
   document.getElementById("progressBar").style.width = percent + "%";
 }
 
-
 // ==============================
 // AUSWERTUNG
 // ==============================
 function evaluateQuiz() {
   let points = 0;
   let maxPoints = 0;
-
   const results = [];
 
-  questions.forEach(q => {
+  quiz.forEach(q => {
     maxPoints += q.points;
 
     const given = (userAnswers[q.id] || []).sort().join(",");
-    const correct = q.correct.sort().join(",");
+    const correct = [...q.correct].sort().join(",");
 
     const isCorrect = given === correct;
-
     if (isCorrect) points += q.points;
 
     results.push({
       question: q.question,
-      correctAnswers: q.correct,
-      givenAnswers: userAnswers[q.id] || [],
       answers: q.answers,
+      correct: q.correct,
+      given: userAnswers[q.id] || [],
       isCorrect
     });
   });
 
   const percent = Math.round((points / maxPoints) * 100);
-
   saveStats(percent);
   renderResult(points, maxPoints, percent, results);
 }
@@ -141,7 +140,7 @@ function evaluateQuiz() {
 // ==============================
 // ERGEBNIS ANZEIGEN
 // ==============================
-function renderResult(points, maxPoints, percent, wrongQuestions) {
+function renderResult(points, maxPoints, percent, results) {
   const main = document.querySelector("main");
 
   let html = `
@@ -150,9 +149,10 @@ function renderResult(points, maxPoints, percent, wrongQuestions) {
       <p><b>${points}</b> von <b>${maxPoints}</b> Punkten</p>
       <p><b>${percent}%</b> erreicht</p>
 
-      ${percent === 100 
-        ? `<div class="badge success">✅ Bestanden</div>`
-        : `<div class="badge warn">❌ Noch nicht bestanden</div>`
+      ${
+        percent === 100
+          ? `<div class="badge success">✅ Bestanden</div>`
+          : `<div class="badge warn">❌ Noch nicht bestanden</div>`
       }
 
       <button class="btn" onclick="restartQuiz()">🔁 Test wiederholen</button>
@@ -160,27 +160,20 @@ function renderResult(points, maxPoints, percent, wrongQuestions) {
     </div>
   `;
 
-  if (wrongQuestions.length > 0) {
-    html += `<h3>❌ Falsch beantwortete Fragen</h3>`;
-
-    wrongQuestions.forEach(q => {
-      const user = (userAnswers[q.id] || []).join(", ");
-      const correct = q.correct.join(", ");
-
+  results.forEach(r => {
+    if (!r.isCorrect) {
       html += `
         <div class="result-card wrong">
-          <p class="question">${q.question}</p>
-
-          <p class="answer user">❌ Deine Antwort: ${user || "—"}</p>
-          <p class="answer correct">✅ Richtige Antwort: ${correct}</p>
+          <p class="question">${r.question}</p>
+          <p class="answer user">❌ Deine Antwort: ${r.given.join(", ") || "—"}</p>
+          <p class="answer correct">✅ Richtige Antwort: ${r.correct.join(", ")}</p>
         </div>
       `;
-    });
-  }
+    }
+  });
 
   main.innerHTML = html;
 }
-
 
 // ==============================
 // STATISTIK SPEICHERN
@@ -205,17 +198,6 @@ function saveStats(percent) {
 function restartQuiz() {
   currentIndex = 0;
   userAnswers = {};
-  document.querySelector("main").innerHTML = `
-    <div class="card">
-      <p id="questionText"></p>
-    </div>
-    <div id="answers"></div>
-    <div class="nav">
-      <button class="btn warn" onclick="prevQuestion()">⬅ Zurück</button>
-      <button class="btn warn" onclick="nextQuestion()">➡ Weiter</button>
-    </div>
-    <p id="counter"></p>
-  `;
   renderQuestion();
   updateProgress();
 }
