@@ -2515,6 +2515,310 @@ quiz7: [
     correct: ["c","d"],
     points: 2
   }
+],
+
+  quiz10: [
+  {
+    id: 1,
+    question: "Was regelt das Privatrecht?",
+    answers: [
+      { id: "a", text: "Es regelt die Rechtsbeziehungen der Bürger zum Staat und seinen Einrichtungen, z. B, zu Polizei und Verwaltungsbehörden" },
+      { id: "b", text: "Es regelt die Schadensersatzpflicht nach unerlaubten Handlungen" },
+      { id: "c", text: "Es regelt, unter welchen Voraussetzungen das Verhalten eines Menschen strafbar ist" },
+      { id: "d", text: "Es regelt die Rechtsbeziehungen von natürlichen und juristischen Personen untereinander" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 2,
+    question: "Welche Aussagen zur Menschenwürde sind gemäß Art. 1 Grundgesetz richtig?",
+    answers: [
+      { id: "a", text: "Geschützt ist jeder Mensch, der sich im Geltungsbereich des GG aufhält, z. B. Minderjährige Kinder, Straftäter und Ausländer" },
+      { id: "b", text: "Geschützt sind ebenso juristische Personen und die Menschheit" },
+      { id: "c", text: "Durch die Menschenwürde sind nur die höchsten Grundrechte 'Recht auf Leben' und 'Recht auf körperliche Unversehrtheit' geschützt." },
+      { id: "d", text: "Der Staat ist verpflichtet, die Menschenwürde zu achten und zu schützen" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 3,
+    question: "Welche Bedeutung hat das Grundgesetz?",
+    answers: [
+      { id: "a", text: "Das Grundgesetz gilt nur zwischen Bürgern." },
+      { id: "b", text: "Das Grundgesetz müssen auch Sicherheitsmitarbeiter im Dienst beachten." },
+      { id: "c", text: "Das Grundgesetz bietet nur Schutz des Bürgers vor dem Staat." },
+      { id: "d", text: "Das Grundgesetz gilt auch zwischen Bürger und Bürger (so genannte Drittwirkung der Grundrechte)." }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 4,
+    question: "Wer darf in der Bundesrepublik Deutschland Gesetze erlassen, die bundesweit gelten?",
+    answers: [
+      { id: "a", text: "Landtag" },
+      { id: "b", text: "Bundesregierung" },
+      { id: "c", text: "Landesregierung" },
+      { id: "d", text: "Bundestag" }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 5,
+    question: "Erklären Sie den Begriff 'Gewaltenteilung'!",
+    answers: [
+      { id: "a", text: "Die Gewalten sind geteilt, das heißt nicht jeder Polizist darf alle Polizeirechte ausüben." },
+      { id: "b", text: "Es gibt 3 Gewalten: Gericht, Staatsanwalt, Polizei." },
+      { id: "c", text: "Die 3 Gewalten sind: Legislative, Exekutive, Judikative" },
+      { id: "d", text: "Die Gewalten kontrollieren sich gegenseitig." }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 6,
+    question: "Im deutschen Rechtssystem sind Rechtfertigungsgründe verankert. Was ist deren Sinn und Zweck?",
+    answers: [
+      { id: "a", text: "Sie können unerlaubtes Handeln rechtfertigen" },
+      { id: "b", text: "Sie können ordnungswidriges Handeln entschuldigen" },
+      { id: "c", text: "Sie können verbotenes Handeln entschuldigen" },
+      { id: "d", text: "Sie können strafbares Handeln rechtfertigen" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 7,
+    question: "Die BRD ist gemäß Grundgesetz ein Bundesstaat. Was bedeutet dies im Sinne des Föderalismus?",
+    answers: [
+      { id: "a", text: "Die Bundesländer wirken über den Bundesrat bei der Gesetzgebung mit" },
+      { id: "b", text: "Im Bundesstaat sind die staatlichen Aufgaben zwischen Bund und Ländern aufgeteilt. Die Länder haben z. B. im Polizei- und Sicherheitsrecht eigene Gesetzgebungskompetenzen" },
+      { id: "c", text: "Der Bundesstaat wird zentral von der Hauptstadt Berlin aus regiert. Alle politischen Entscheidungen gelten einheitlich für die Bundesrepublik Deutschland" },
+      { id: "d", text: "Nur der Bund als Zentralstaat darf Gesetze beschließen und verabschieden. Die Bundesländer müssen diese Gesetze ausführen" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 8,
+    question: "Welche Aussagen treffen auf private Sicherheitsdienste zu?",
+    answers: [
+      { id: "a", text: "Private Sicherheitsdienstleister sind für die öffentliche Sicherheit und Ordnung verantwortlich. Die Grundlage hierfür sind privatrechtliche Vereinbarungen" },
+      { id: "b", text: "Private Sicherheitsdienstleister und deren Mitarbeiter besitzen die Eigenschaft und die Befugnisse von Hilfspolizeibeamten" },
+      { id: "c", text: "Private Sicherheitsdienstleister dürfen bei der Durchführung von Bewachungsaufgaben gegenüber Dritten bestimmte Rechte eigenverantwortlich ausüben. Dazu zählen Notwehr- und Notstandsrechte und vom Auftraggeber vertraglich übertragene Selbsthilferechte" },
+      { id: "d", text: "Private Sicherheitsdienstleister gewährleisten bei Kontrollgängen im öffentlichen Verkehrsraum Sicherheit und Ordnung auf der Basis von privatrechtlichen Verträgen" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 9,
+    question: "Bei Großveranstaltungen kann es notwendig sein, die Zufahrtskontrollen von Parkplätzen im öffentlichen Bereich durch privates Sicherheitspersonal zu regeln. Welche Voraussetzung kann eine solche Sonderregelung erlauben?",
+    answers: [
+      { id: "a", text: "Genehmigung von Ordnungsamt und örtl. Polizeibehörde" },
+      { id: "b", text: "Nachweis eines vorliegenden Gewohnheitsrechts" },
+      { id: "c", text: "Übertragene Besitzrechte durch die Polizei" },
+      { id: "d", text: "Entscheidung des zuständigen Auftraggebers" },
+      { id: "e", text: "Public-Private-Partnership-Vereinbarung" },
+      { id: "f", text: "Entscheidung durch den Bewachungsgewerbetreibenden" }
+    ],
+    correct: ["a", "e"],
+    points: 2
+  },
+  {
+    id: 10,
+    question: "Erklären Sie den Begriff 'Public Private Partnership' (PPP)",
+    answers: [
+      { id: "a", text: "Ein privater Sicherheitsmitarbeiter kann z.B. bei einer Veranstaltung dem Ordnungsamt helfen, wenn das so vereinbart wurde." },
+      { id: "b", text: "Der Staat und eine private Wachfirma gründen einen Verein, dessen Mitarbeiter Hilfsbeamte sind." },
+      { id: "c", text: "Sicherheitsmitarbeitern einer privaten Wachfirma werden hoheitliche Rechte eines Polizisten übertragen." },
+      { id: "d", text: "Eine Zusammenarbeit von staatlichen und privaten Stellen. Ja, wie zum Beispiel im Rahmen von Bewachungen für staatliche Einrichtungen wie militärische Anlagen." }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 11,
+    question: "Der Bewachungsgewerbetreibende und seine Sicherheitsmitarbeiter dürfen bei der Durchführung von Bewachungsaufgaben gegenüber Dritten bestimmte Rechte eigenverantwortlich ausüben. Welche Rechte sind dies?",
+    answers: [
+      { id: "a", text: "Verkehrsregelung nach Verkehrsunfällen" },
+      { id: "b", text: "Beschlagnahme von Diebesgut" },
+      { id: "c", text: "Notwehr- und Notstandsrechte z.B.: im Sinne des StGB und des BGB" },
+      { id: "d", text: "übertragene Selbsthilferechte" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 12,
+    question: "Was ist im Strafrecht, das dem öffentlichen Recht zugeordnet wird, geregelt?",
+    answers: [
+      { id: "a", text: "Die Schuldunfähigkeit des Kindes" },
+      { id: "b", text: "Der Angriffsnotstand" },
+      { id: "c", text: "Die Anwendung von Besitzschutzrechten" },
+      { id: "d", text: "Das Stellen eines Strafantrags" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 13,
+    question: "Welche Aussagen zu den Grundrechten im Grundgesetz sind richtig?",
+    answers: [
+      { id: "a", text: "Sie schützen die Rechte des Bürgers vor unzulässigen Eingriffen des Staates." },
+      { id: "b", text: "Sie können jederzeit durch Sicherheitsbehörden zum Zwecke der Aufgabenerfüllung eingeschränkt werden." },
+      { id: "c", text: "Sie binden Gesetzgebung, vollziehende Gewalt und Rechtsprechung als unmittelbar geltendes Recht." }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 14,
+    question: "Welche der folgenden Rechte ist ein Grundrecht?",
+    answers: [
+      { id: "a", text: "Gleichheit vor dem Gesetz" },
+      { id: "b", text: "Recht auf Strafverfolgung" },
+      { id: "c", text: "Bürgerliches Recht" },
+      { id: "d", text: "Unverletzlichkeit der Wohnung" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 15,
+    question: "Wer ist im Bereich der Judikative beschäftigt?",
+    answers: [
+      { id: "a", text: "Richter" },
+      { id: "b", text: "Polizeivollzugsbeamte" },
+      { id: "c", text: "Sachbearbeiter der Gewerbebehörde" },
+      { id: "d", text: "Justizvollzugsbeamte" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 16,
+    question: "Welche der beschriebenen Handlungen darf ein Kaufhausdetektiv durchführen?",
+    answers: [
+      { id: "a", text: "Vorbeugende Beschlagnahme von mitgeführten Sachen, um einem Diebstahl vorab zu vermeiden" },
+      { id: "b", text: "Festnahme eines auf frischer Tat betroffenen Straftäters, dessen Identität unbekannt ist, bis zum Eintreffen der gerufenen Polizei" },
+      { id: "c", text: "Fesseln eines Ladendiebes mit Handfesseln, falls dies im Rahmen der Gewaltprävention notwendig ist" },
+      { id: "d", text: "Vorläufige Festnahme eines bekannten Straftäters, nach wiederholter Begehung von Straftaten, um ein Hausverbot zu erteilen" },
+      { id: "e", text: "Durchsuchung der mitgeführten Tasche eines Tatverdächtigen, falls sich darin die gestohlene Ware befindet" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 17,
+    question: "Welche grundsätzlichen Aussagen zum Bundes- und Landesrecht in der Bundesrepublik Deutschland sind richtig?",
+    answers: [
+      { id: "a", text: "Das Bundesrecht betrifft nur das Straf- und Gewerberecht" },
+      { id: "b", text: "Das Landesrecht umfasst z. B. das Polizeirecht" },
+      { id: "c", text: "Das Bundesrecht bricht Länderrecht" },
+      { id: "d", text: "Das Bundesrecht und das Landesrecht sind gleichgestellt" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 18,
+    question: "Welche Aussagen zu den Befugnissen einer Wachperson sind richtig?",
+    answers: [
+      { id: "a", text: "Wachpersonen müssen bei der Inanspruchnahme ihrer Befugnisse den Grundsatz der Erforderlichkeit beachten" },
+      { id: "b", text: "Wachpersonen dürfen bei der Durchführung von Bewachungsaufgaben gegenüber Dritten z.B. Notstandsrechte eigenverantwortlich ausüben" },
+      { id: "c", text: "Wachpersonen haben die gleichen Befugnisse wie Polizeibeamte oder Hilfspolizeibeamte, z.B. die Durchsuchung eines Täters nach Waffen." }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 19,
+    question: "Bei der Durchführung von Bewachungsaufgaben dürfen Sicherheitsmitarbeiter eigenverantwortlich bestimmte Rechte ausüben. Welche Rechte gehören dazu?",
+    answers: [
+      { id: "a", text: "Sicherstellung von Fahrzeugen" },
+      { id: "b", text: "Beschlagnahme von Beweismitteln" },
+      { id: "c", text: "Notwehr- und Notstandsrechte" },
+      { id: "d", text: "Vorläufige Festnahme" },
+      { id: "e", text: "Durchsuchung von Sachen" },
+      { id: "f", text: "Gewahrsamsnahme von Menschen" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 20,
+    question: "Welche grundsätzlichen Aufgaben hat die Polizei in Deutschland?",
+    answers: [
+      { id: "a", text: "Leitung des Ermittlungsverfahrens (Anklagebehörde)" },
+      { id: "b", text: "Durchsetzung privater Rechte (z.B. Hausverbot)" },
+      { id: "c", text: "Verfolgung von Straftaten und Ordnungswidrigkeiten" },
+      { id: "d", text: "Abwehr von Gefahren für die öffentliche Sicherheit und Ordnung" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 21,
+    question: "Was sind Aufgaben der Polizei?",
+    answers: [
+      { id: "a", text: "Verhütung einer bevorstehenden Straftat" },
+      { id: "b", text: "Strafverfolgung" },
+      { id: "c", text: "Klageerhebung" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 22,
+    question: "Welche Rechtsvorschriften sind als Gesetze eingestuft?",
+    answers: [
+      { id: "a", text: "Die Gewerbeordnung" },
+      { id: "b", text: "Die Strafprozessordnung" },
+      { id: "c", text: "Die Unfallverhütungsvorschrift DGUV Vorschrift 23" },
+      { id: "d", text: "Die Bewachungsverordnung" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 23,
+    question: "Was besagen die Gleichheitsgrundsätze gemäß Art. 3 Grundgesetz?",
+    answers: [
+      { id: "a", text: "Die Gleichberechtigung zwischen Mann und Frau kann durch Gesetze eingeschränkt werden" },
+      { id: "b", text: "Alle Menschen sind vor dem Gesetz gleich" },
+      { id: "c", text: "Ein generelles Nachtarbeitsverbot für Frauen ist mit den Gleichheitsgrundsätzen vereinbar" },
+      { id: "d", text: "Männer und Frauen sind gleichberechtigt" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 24,
+    question: "Im Grundgesetz steht, dass die 'Freiheit der Person' unverletzlich ist. Welche Aussagen dazu sind richtig?",
+    answers: [
+      { id: "a", text: "In der Regel ist bei jeder natürlichen Person deren körperliche Bewegungsfreiheit geschützt." },
+      { id: "b", text: "Eingriffe in die Freiheit der Person sind nur aufgrund eines Gesetzes zulässig, z. B. der StPO." },
+      { id: "c", text: "Eingriffe in die Freiheit der Person dürfen nur durch Hoheitsträger wie die Polizei vorgenommen werden." },
+      { id: "d", text: "Dieses Grundrecht erlaubt es jeder Person, jeden beliebigen Ort in Deutschland aufzusuchen." }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 25,
+    question: "Welche Maßnahme dürfen Wachpersonen durchführen?",
+    answers: [
+      { id: "a", text: "Sie dürfen einen auf frischer Tat betroffenen Dieb ohne dessen Einwilligung durchsuchen, um ihm das Diebesgut abzunehmen." },
+      { id: "b", text: "Sie dürfen als Türsteher bei Einlasskontrollen aufgefundene Reizstoffsprühgeräte beschlagnahmen." },
+      { id: "c", text: "Sie dürfen Taschenkontrollen durchführen, wenn die von der Kontrolle betroffene Person damit einverstanden ist." }
+    ],
+    correct: ["c"],
+    points: 1
+  }
 ]
 };
 
