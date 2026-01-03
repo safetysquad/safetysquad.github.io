@@ -621,6 +621,7 @@ quiz2: [
     points: 2
   }
   ],
+  
 quiz3: [
   {
     id: 1,
@@ -921,7 +922,8 @@ quiz3: [
     points: 2
   }
   ],
-  quiz4 = [
+  
+quiz4: [
   {
     id: 1,
     question: "Welche Aussagen zur Polizei und zum Bewachungsgewerbe sind richtig?",
@@ -1246,6 +1248,6 @@ quiz3: [
     correct: ["c", "e"],
     points: 2
   }
-  ];
+  ]
 };
 
