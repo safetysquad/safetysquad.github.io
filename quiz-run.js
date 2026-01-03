@@ -139,54 +139,46 @@ function evaluateQuiz() {
 // ==============================
 // ERGEBNIS ANZEIGEN
 // ==============================
-function renderResult(points, maxPoints, percent, results) {
+function renderResult(points, maxPoints, percent, wrongQuestions) {
   const main = document.querySelector("main");
 
-  main.innerHTML = `
-    <div class="card">
+  let html = `
+    <div class="result-summary">
       <h2>Ergebnis</h2>
-      <div class="result-box">
       <p><b>${points}</b> von <b>${maxPoints}</b> Punkten</p>
-      <p><b>${percent}%</b> ${
-        percent === 100 ? "✅ Bestanden" : "❌ Nicht bestanden"
-      }</p>
+      <p><b>${percent}%</b> erreicht</p>
+
+      ${percent === 100 
+        ? `<div class="badge success">✅ Bestanden</div>`
+        : `<div class="badge warn">❌ Noch nicht bestanden</div>`
+      }
+
+      <button class="btn" onclick="restartQuiz()">🔁 Test wiederholen</button>
+      <a href="quiz.html" class="btn secondary">⬅ Zur Quiz-Auswahl</a>
     </div>
-    <div id="resultList"></div>
-    <button class="btn" onclick="restartQuiz()">🔁 Test wiederholen</button>
   `;
 
-  const list = document.getElementById("resultList");
+  if (wrongQuestions.length > 0) {
+    html += `<h3>❌ Falsch beantwortete Fragen</h3>`;
 
-  results.forEach((r, i) => {
-    const div = document.createElement("div");
-    div.className = "card";
-    div.style.border =
-      r.isCorrect ? "2px solid #22c55e" : "2px solid #ef4444";
+    wrongQuestions.forEach(q => {
+      const user = (userAnswers[q.id] || []).join(", ");
+      const correct = q.correct.join(", ");
 
-    const correctText = r.answers
-      .filter(a => r.correctAnswers.includes(a.id))
-      .map(a => `${a.id}. ${a.text}`)
-      .join("<br>");
+      html += `
+        <div class="result-card wrong">
+          <p class="question">${q.question}</p>
 
-    const givenText = r.answers
-      .filter(a => r.givenAnswers.includes(a.id))
-      .map(a => `${a.id}. ${a.text}`)
-      .join("<br>") || "—";
+          <p class="answer user">❌ Deine Antwort: ${user || "—"}</p>
+          <p class="answer correct">✅ Richtige Antwort: ${correct}</p>
+        </div>
+      `;
+    });
+  }
 
-    div.innerHTML = `
-      <p><b>Frage ${i + 1}</b></p>
-      <p>${r.question}</p>
-      ${
-        r.isCorrect
-          ? "<p>✅ Richtig</p>"
-          : `<p>❌ Deine Antwort:</p><p>${givenText}</p>
-             <p>✅ Richtige Antwort:</p><p>${correctText}</p>`
-      }
-    `;
-
-    list.appendChild(div);
-  });
+  main.innerHTML = html;
 }
+
 
 // ==============================
 // STATISTIK SPEICHERN
