@@ -1547,6 +1547,303 @@ quizzes.quiz5 = [
     correct: ["b", "d"],
     points: 1
   }
+],
+  quizzes.quiz6 = [
+  {
+    id: 1,
+    question: "Gemäß DS-GVO ist die Verarbeitung „besonderer Kategorien personenbezogener Daten“ grundsätzlich verboten. Was sind solche Daten?",
+    answers: [
+      { id: "a", text: "Anschrift des Arbeitnehmers" },
+      { id: "b", text: "Gesundheitsdaten" },
+      { id: "c", text: "Name, Vorname, Geburtsdatum" },
+      { id: "d", text: "Gewerkschaftszugehörigkeit" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 2,
+    question: "Was sind nicht automatisierte Dateien gemäß BDSG?",
+    answers: [
+      { id: "a", text: "Arbeitnehmerdaten in Personalakten, die Informationen über das Beschäftigungsverhältnis enthalten, z. B. über das Gehalt" },
+      { id: "b", text: "Sammlungen von personenbezogenen Daten auf Datenträgern wie z. B CDs, USB-Sticks oder Festplatten" },
+      { id: "c", text: "Sammlungen von personenbezogenen Daten in digitalen Akten, die gleichartig aufgebaut sind und nach bestimmten Merkmalen ausgewertet werden können, z. B. nach dem Alter" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 3,
+    question: "Die EU-Datenschutz-Grundverordnung (DSGVO) enthält Vorschriften zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten und zum freien Verkehr solcher Daten. Welche der folgenden Aussagen dazu ist richtig?",
+    answers: [
+      { id: "a", text: "Der freie Verkehr personenbezogener Daten in der Europäischen Union soll durch die Verordnung eingeschränkt werden" },
+      { id: "b", text: "Die EU-Bürger sollen durch die Verordnung vor übermäßiger Datentransparenz und Bürokratie geschützt werden" },
+      { id: "c", text: "Zweck der Verordnung ist es, eine Harmonisierung und Vereinheitlichung der Datenschutzvorschriften innerhalb der Europäischen Union zu erreichen" },
+      { id: "d", text: "Der Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten ist ein Grundrecht" }
+    ],
+    correct: ["c", "d"],
+    points: 1
+  },
+  {
+    id: 4,
+    question: "Welche allgemeinen Pflichten haben Unternehmen, in denen personenbezogene Daten bearbeitet werden?",
+    answers: [
+      { id: "a", text: "Besondere Überwachungspflichten gegenüber den betroffenen Mitarbeitern, die mit personenbezogenen Daten arbeiten" },
+      { id: "b", text: "Verpflichtung der betroffenen Beschäftigten auf die systematische und lückenlose Erfassung von personenbezogenen Daten" },
+      { id: "c", text: "Die mit Datenverarbeitung beschäftigen Personen müssen schriftlich auf das Datengeheimnis verpflichtet werden" },
+      { id: "d", text: "Verpflichtung zu technischen und organisatorischen Maßnahmen zur Einhaltung des Bundesdatenschutzgesetzes" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 5,
+    question: "Für wen gelten die Bestimmungen des Bundesdatenschutzgesetzes?",
+    answers: [
+      { id: "a", text: "Für private Stellen (z.B. Unternehmen, Verbände, Vereine)" },
+      { id: "b", text: "Für die öffentlichen Stellen (z.B. Behörden, Ämter)" },
+      { id: "c", text: "Für Einzelpersonen und Familien (somit für Jedermann)" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 6,
+    question: "Wann sind gemäß BDSG personenbezogene Daten zu löschen?",
+    answers: [
+      { id: "a", text: "Wenn nach Erhebung der Daten eine Frist von 12 Monaten vergangen ist." },
+      { id: "b", text: "Wenn ihre Speicherung unzulässig ist." },
+      { id: "c", text: "Wenn der Zweck, für den die Daten benötigt wurden, wegfällt." }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 7,
+    question: "Wann darf grundsätzlich in einem privaten, befriedeten Besitztum eine Videoüberwachung durchgeführt werden?",
+    answers: [
+      { id: "a", text: "…wenn die Personen, die das Gelände betreten wollen, darauf hingewiesen werden." },
+      { id: "b", text: "…wenn die Kameras sichtbar sind." },
+      { id: "c", text: "…wenn die zuständige Behörde es genehmigt hat." },
+      { id: "d", text: "…wenn der Besitzer zustimmt, immer ohne Einschränkungen." }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 8,
+    question: "Wann ist die Videoüberwachung öffentlich zugänglicher Räume gemäß Bundesdatenschutzgesetz (BDSG) zulässig?",
+    answers: [
+      { id: "a", text: "wenn im Zugangsbereich sichtbar auf die Überwachung und auf die überwachende Stelle hingewiesen wird" },
+      { id: "b", text: "nur mit ausdrücklicher Genehmigung der zuständigen Datenschutzbeauftragten des Bundes und der Länder" },
+      { id: "c", text: "mit schriftlicher Einwilligung der von der Videoüberwachung betroffenen Kunden in einem Warenhaus" },
+      { id: "d", text: "wenn dies zur Wahrnehmung des Hausrechtes erforderlich ist und die schutzwürdigen Interessen der Betroffenen nicht überwiegen" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 9,
+    question: "Welche Aussagen zur Videoüberwachung gemäß BDSG sind richtig?",
+    answers: [
+      { id: "a", text: "Die Vorschriften des BDSG gelten auch für die Videoüberwachung innerhalb der Wohnung natürlicher Personen" },
+      { id: "b", text: "Die Videoüberwachung öffentlich zugänglicher Räume zur „Wahrnehmung des Hausrechts“ dient der Verhinderung und Aufklärung von Straftaten" },
+      { id: "c", text: "Die Videoüberwachung ist zulässig zur Überwachung des Verhaltens und der Arbeitsleistung von Beschäftigten" },
+      { id: "d", text: "Auf die Videoüberwachung muss hingewiesen werden. Ausreichend hierfür ist die Anbringung eines Bildsymbols „Videoüberwachung“ im Eingangsbereich" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 10,
+    question: "Unter welchen Voraussetzungen ist gemäß DS-GVO und BDSG die Videoüberwachung zulässig?",
+    answers: [
+      { id: "a", text: "Wenn die Videoüberwachung ausschließlich auf umfriedetem Betriebsgelände zum Schutz vor Diebstahl stattfindet" },
+      { id: "b", text: "Wenn am Ort der Videoüberwachung für betroffene Personen an einer zugänglichen Stelle Informationen zur Verfügung stehen, u. a. der Name und die Kontaktdaten der für die Videoüberwachung verantwortlichen Person bekannt gemacht werden" },
+      { id: "c", text: "Wenn zur schnellen und eindeutigen Identifizierung natürlicher Personen Gesichtserkennungssoftware eingesetzt wird" },
+      { id: "d", text: "Wenn die Videoüberwachung z. B. der Wahrnehmung des Hausrechts dient und keine schutzwürdigen Interessen der Betroffenen überwiegen" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 11,
+    question: "Eine Wachperson hat einen Fahrgast ohne gültigen Fahrschein angetroffen. Die Wachperson will die personenbezogenen Daten des Fahrgastes erheben. Was muss die Wachperson gemäß DS-GVO beachten, damit diese Maßnahme rechtmäßig ist?",
+    answers: [
+      { id: "a", text: "Die Wachperson muss nachweisen können, dass der Fahrgast mit der Erhebung seiner Daten einverstanden war, z. B. durch eine schriftliche Erklärung" },
+      { id: "b", text: "Für diese Maßnahme muss eine Erlaubnis der zuständigen Sicherheitsbehörde vorliegen" },
+      { id: "c", text: "Der Fahrgast muss in die Erhebung seiner personenbezogenen Daten einwilligen" },
+      { id: "d", text: "Diese Vorgehensweise muss mit dem Auftraggeber vertraglich vereinbart sein" }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 12,
+    question: "Unter welchen Voraussetzungen dürfen gemäß DS-GVO und BDSG personenbezogene Daten verarbeitet werden?",
+    answers: [
+      { id: "a", text: "Wenn der Betroffene zugestimmt hat. Die Zustimmung ist selbst dann erforderlich, wenn die Verarbeitung zur Erfüllung einer rechtlichen Verpflichtung erforderlich ist, z. B. für die Anmeldung einer Wachperson über das Bewacherregister" },
+      { id: "b", text: "Wenn der Verantwortliche nachweisen kann, dass die betroffene Person in die Verarbeitung ihrer personenbezogenen Daten eingewilligt hat" },
+      { id: "c", text: "Wenn die Verarbeitung personenbezogener Daten automatisiert erfolgen soll, z. B. durch Computer. Die Einwilligung des Betroffenen ist nicht erforderlich, wenn die personenbezogenen Daten in Akten manuell verarbeitet werden" },
+      { id: "d", text: "Wenn die betroffene Person ihre Einwilligung zur Verarbeitung der sie betreffenden personenbezogenen Daten für einen oder mehrere bestimmte Zwecke gegeben hat" }
+    ],
+    correct: ["b", "d"],
+    points: 1
+  },
+  {
+    id: 13,
+    question: "Wann ist das BDSG anzuwenden?",
+    answers: [
+      { id: "a", text: "wenn nicht öffentliche Stellen personenbezogene Daten mithilfe von Datenverarbeitungsanlagen verarbeiten, nutzen oder erheben" },
+      { id: "b", text: "wenn jemand für familiäre Zwecke personenbezogene Daten erhebt, verarbeitet oder nutzt, z.B. um eine Geburtstagsliste zu erstellen" },
+      { id: "c", text: "wenn öffentliche Stellen des Bundes personenbezogene Daten erheben, verarbeiten oder nutzen" }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 14,
+    question: "Ein Ladendetektiv hat eine Person auf frischer Tat bei einem Diebstahl betroffen. Für die Sicherung der Strafverfolgung ist die Erhebung der personenbezogenen Daten der Person notwendig. Die Daten der Person und der Tathergang werden in einem Bericht verarbeitet. Ist die Verarbeitung der personenbezogenen Daten in dem Bericht sowie dessen Verwendung für die Strafanzeige gemäß DS-GVO zulässig?",
+    answers: [
+      { id: "a", text: "Nein, da für die Strafverfolgung, hier des Diebstahls, ausschließlich die Polizei zuständig ist." },
+      { id: "b", text: "Ja, wenn die zuständige Datenschutz-Aufsichtsbehörde das Erstellen des Berichts und die Stellung der Strafanzeige erlaubt hat." },
+      { id: "c", text: "Ja, wenn die Daten in rechtmäßiger Weise und in einer für den Dieb nachvollziehbaren Weise verarbeitet werden." },
+      { id: "d", text: "Ja, wenn der Dieb in die Verarbeitung seiner Daten freiwillig einwilligt, z. B. in Form einer unmissverständlichen mündlichen Erklärung." }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 15,
+    question: "Was ist gemäß BDSG unter Speichern von personenbezogenen Daten zu verstehen?",
+    answers: [
+      { id: "a", text: "Das Verwenden bzw. Verarbeiten von personenbezogenen Daten" },
+      { id: "b", text: "Das Beschaffen von personenbezogenen Daten über den Betroffenen" },
+      { id: "c", text: "Das Erfassen, Aufnehmen oder Aufbewahren solcher Daten auf einem Datenträger zum Zwecke ihrer weiteren Verarbeitung oder Nutzung" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 16,
+    question: "Welchem Prinzip unterliegt die Erhebung, Verarbeitung und Nutzung von personenbezogenen Daten nach dem Bundesdatenschutzgesetz?",
+    answers: [
+      { id: "a", text: "Prinzip der Datenvermeidung" },
+      { id: "b", text: "Prinzip der Datennutzung" },
+      { id: "c", text: "Prinzip der Datenüberwachung" },
+      { id: "d", text: "Prinzip der Datensparsamkeit" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 17,
+    question: "Wann ist die Videoüberwachung öffentlich zugänglicher Räume gemäß BDSG zulässig?",
+    answers: [
+      { id: "a", text: "Nur mit Genehmigung der zuständigen Datenschutzbeauftragten des Bundes und der Länder" },
+      { id: "b", text: "Mit schriftlicher Einwilligung der von der Videoüberwachung betroffenen Personen, z. B. den Kunden in einem Geschäft" },
+      { id: "c", text: "Jederzeit und in allen Räumen, um Diebstähle zu verhindern, z. B. in Umkleideräumen eines Bekleidungsgeschäftes" },
+      { id: "d", text: "Wenn dies zur Wahrnehmung des Hausrechts erforderlich ist und schutzwürdige Interessen der Betroffenen nicht überwiegen" }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 18,
+    question: "Was sind gemäß DS-GVO besondere Kategorien personenbezogener Daten?",
+    answers: [
+      { id: "a", text: "Politische Meinungen, weltanschauliche Überzeugungen" },
+      { id: "b", text: "Geburtsort, Name, Vorname, Geburtsort" },
+      { id: "c", text: "Gewerkschaftszugehörigkeit, Gesundheitsdaten" },
+      { id: "d", text: "Kennzeichen am Pkw, Kfz-Versicherung" }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 19,
+    question: "Wann sind gemäß BDSG personenbezogene Daten zu löschen?",
+    answers: [
+      { id: "a", text: "Wenn die Speicherung länger als sechs Monate andauert" },
+      { id: "b", text: "Wenn die Speicherung der Daten nicht mehr erforderlich ist" },
+      { id: "c", text: "Wenn es der Betroffene ausdrücklich verlangt" },
+      { id: "d", text: "Wenn ihre Speicherung unzulässig ist" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 20,
+    question: "Darf eine Wachperson im Sinne der DS-GVO bei einer Zutrittskontrolle zu einem Wachobjekt die personenbezogenen Daten von Besuchern erheben?",
+    answers: [
+      { id: "a", text: "Ja, wenn der Besucher für diesen konkreten Fall freiwillig und nach ausreichender Information unmissverständlich zugestimmt hat" },
+      { id: "b", text: "Nein, dies ist verboten" },
+      { id: "c", text: "Ja, ohne Einschränkungen" },
+      { id: "d", text: "Ja, wenn der Auftraggeber die Datenerhebung zwingend als Voraussetzung für das Betreten des Wachobjekts vorschreibt" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 21,
+    question: "Auf der Festplatte eines Computers sind personenbezogene Daten gespeichert. Von welchem Straftatbestand des StGB wird der unbefugte Zugriff auf diese personenbezogenen Daten erfasst?",
+    answers: [
+      { id: "a", text: "Ausspähen von Daten (§ 202a StGB)" },
+      { id: "b", text: "Verletzung des Briefgeheimnisses (§ 202 StGB)" },
+      { id: "c", text: "Unterschlagung (246 StGB)" },
+      { id: "d", text: "Diebstahl (§ 242 StGB)" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 22,
+    question: "In welchem Fall dürfen Sicherheitskräfte im Rahmen ihrer Dienstausübung personenbezogene Daten erheben und verarbeiten?",
+    answers: [
+      { id: "a", text: "Falls die Dienstanweisung dies festschreibt" },
+      { id: "b", text: "Falls dadurch kein Tatbestand des Strafgesetzbuches erfüllt wird" },
+      { id: "c", text: "Wenn der Betroffene eingewilligt hat" },
+      { id: "d", text: "Wenn dieses durch eine Rechtsvorschrift eindeutig geregelt ist" }
+    ],
+    correct: ["c", "d"],
+    points: 1
+  },
+  {
+    id: 23,
+    question: "Was ist der Sinn des BDSG?",
+    answers: [
+      { id: "a", text: "Es schützt die informationelle Selbstbestimmung." },
+      { id: "b", text: "Es schützt Daten des Bundes, deswegen heißt es ja Bundesdatenschutzgesetz." },
+      { id: "c", text: "Es schützt nur geheime Firmendaten." },
+      { id: "d", text: "Es soll Schutz vor Missbrauch personenbezognener Daten bieten." }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 24,
+    question: "Was sind öffentliche Stellen des Bundes gemäß DS-GVO und BDSG?",
+    answers: [
+      { id: "a", text: "Bewachungsunternehmen" },
+      { id: "b", text: "Automobilkonzerne" },
+      { id: "c", text: "Bundeskriminalamt" },
+      { id: "d", text: "Deutsche Rentenversicherung Bund" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 25,
+    question: "Welche Aussagen zur DS-GVO sind richtig?",
+    answers: [
+      { id: "a", text: "Sie gilt für die familiäre Verarbeitung personenbezogener Daten, z. B. für das Führen eines Anschriftenverzeichnisses, die keinen Bezug zur beruflichen Tätigkeit haben" },
+      { id: "b", text: "Sie gilt für die Verarbeitung personenbezogener Daten durch die zuständigen Behörden zum Zwecke der Abwehr von Gefahren für die öffentliche Sicherheit" },
+      { id: "c", text: "Sie gilt für die ganz oder teilweise automatisierte Verarbeitung personenbezogener Daten" },
+      { id: "d", text: "Sie gilt für die nichtautomatisierte Verarbeitung personenbezogener Daten, die in einem Dateisystem gespeichert sind oder gespeichert werden" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  }
 ]
 };
 
