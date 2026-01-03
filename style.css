@@ -293,3 +293,10 @@ main {
   color: #86efac;
 }
 
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1.2rem;
+}
+
