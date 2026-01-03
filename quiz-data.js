@@ -1248,6 +1248,7 @@ quiz4: [
     correct: ["c", "e"],
     points: 2
   }
+  ], 
   
 quiz5: [
   {
@@ -1548,6 +1549,7 @@ quiz5: [
     points: 1
   }
 ],
+  
   quiz6: [
   {
     id: 1,
@@ -1845,6 +1847,7 @@ quiz5: [
     points: 2
   }
 ],
+  
 quiz7: [
   {
     id: 1,
@@ -2815,6 +2818,865 @@ quiz7: [
       { id: "a", text: "Sie dürfen einen auf frischer Tat betroffenen Dieb ohne dessen Einwilligung durchsuchen, um ihm das Diebesgut abzunehmen." },
       { id: "b", text: "Sie dürfen als Türsteher bei Einlasskontrollen aufgefundene Reizstoffsprühgeräte beschlagnahmen." },
       { id: "c", text: "Sie dürfen Taschenkontrollen durchführen, wenn die von der Kontrolle betroffene Person damit einverstanden ist." }
+    ],
+    correct: ["c"],
+    points: 1
+  }
+],
+  
+quiz11: [
+  {
+    id: 1,
+    question: "Was regelt das Privatrecht?",
+    answers: [
+      { id: "a", text: "Es regelt die Rechtsbeziehungen von natürlichen und juristischen Personen untereinander" },
+      { id: "b", text: "Es regelt die Schadensersatzpflicht nach unerlaubten Handlungen" },
+      { id: "c", text: "Es regelt die Rechtsbeziehungen der Bürger zum Staat und seinen Einrichtungen, z. B, zu Polizei und Verwaltungsbehörden" },
+      { id: "d", text: "Es regelt, unter welchen Voraussetzungen das Verhalten eines Menschen strafbar ist" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 2,
+    question: "Welche der folgenden Grundrechte sind für die Wachbranche relevant?",
+    answers: [
+      { id: "a", text: "Keines" },
+      { id: "b", text: "Recht auf Menschenwürde" },
+      { id: "c", text: "Freizügigkeit" },
+      { id: "d", text: "Unverletzlichkeit der Wohnung" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 3,
+    question: "Welche Aussage in Bezug auf sogenannte Public-Private-Partnership-Kooperationen (PPP-Kooperationen) ist richtig?",
+    answers: [
+      { id: "a", text: "PPP-Kooperationen zwischen Polizei und privaten Sicherheitsdiensten sind eine staatliche Maßnahme, bei welcher die Polizei durch Sicherheitsdienste ersetzt wird" },
+      { id: "b", text: "Private Sicherheitsdienste, die eine sogenannte PPP-Kooperation eingehen, verfügen über besondere hoheitliche Befugnisse ohne die Aufsicht staatlicher Behörden" },
+      { id: "c", text: "PPP-Kooperationen zwischen Polizei und privaten Sicherheitsdiensten beinhalten meistens lediglich einen gegenseitigen Informations- und Erfahrungsaustausch" },
+      { id: "d", text: "PPP-Kooperationen zwischen privaten Sicherheitsunternehmen und Behörden (z.B. der Polizei) sind uneinheitlich und regional sehr unterschiedlich geregelt" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 4,
+    question: "Erklären Sie den Begriff 'Gewaltmonopol'!",
+    answers: [
+      { id: "a", text: "Private können im Rahmen der Jedermannsrechte gegen das Gewaltmonopol des Staates ausnahmsweise verstoßen." },
+      { id: "b", text: "Gewaltmonopol bedeutet, nur der Chef der Wachfirma hat das Sagen." },
+      { id: "c", text: "Gewaltmonopol bedeutet, dass ausschließlich nur die Polizei Gewalt anwenden darf." },
+      { id: "d", text: "Der Staat hat die absolute Herrschaft über jegliche Gewaltanwendung, es gibt keine Ausnahmen." },
+      { id: "e", text: "Der Staat hat das Gewaltmonopol, kann seine Rechte aber voll auf Private übertragen" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 5,
+    question: "In welche Rechtsgebiete wird die deutsche Rechtsordnung grundsätzlich eingeteilt?",
+    answers: [
+      { id: "a", text: "Hoheitsrecht" },
+      { id: "b", text: "Bürgerrechte" },
+      { id: "c", text: "Privates Recht" },
+      { id: "d", text: "Öffentliches Recht" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 6,
+    question: "Welche Aussagen über die Grundrechte des GG treffen zu?",
+    answers: [
+      { id: "a", text: "Einige Grundrechte beinhalten Ansprüche gegenüber dem Staat, wie z. B. Art. 19 GG, Recht auf Rechtsschutz durch gerichtliche Verfahren." },
+      { id: "b", text: "Einige Grundrechte sind Abwehrrechte und schützen gegen unzulässige Eingriffe des Staates wie z. B. Art. 13 GG, Unverletzlichkeit der Wohnung." },
+      { id: "c", text: "Einige Grundrechte können gemäß Art. 19 GG eingeschränkt werden, wie z. B. die Würde des Menschen." }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 7,
+    question: "Was sind wesentliche Aufgaben der Polizei, des Bundes und der Länder?",
+    answers: [
+      { id: "a", text: "Straftaten zu erforschen und zu verfolgen" },
+      { id: "b", text: "Die Gefahrenabwehr zum Wohle der öffentlichen Sicherheit und Ordnung" },
+      { id: "c", text: "Bürger dabei zu unterstützen, ihre zivilrechtlichen Ansprüche gegen andere Bürger durchzusetzen" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 8,
+    question: "Welche Grundrechte des Grundgesetzes sind Bürgerrechte?",
+    answers: [
+      { id: "a", text: "Freie Berufswahl" },
+      { id: "b", text: "Schutz der Menschenwürde" },
+      { id: "c", text: "Gleichheit vor dem Gesetz" },
+      { id: "d", text: "Versammlungsfreiheit" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 9,
+    question: "Welche Aussage zur Zuständigkeit des Sicherheitsgewerbes ist richtig?",
+    answers: [
+      { id: "a", text: "Das Sicherheitsgewerbe ist zuständig in den Bereichen, die ihm vertraglich vom Auftraggeber zugewiesen werden" },
+      { id: "b", text: "Das Sicherheitsgewerbe ist zuständig für die innere Sicherheit der Bundesländer" },
+      { id: "c", text: "Das Sicherheitsgewerbe ist zuständig in den Bereichen, die ihm von den Sicherheitsbehörden zugewiesen werden" },
+      { id: "d", text: "Das Sicherheitsgewerbe ist zuständig für die Aufrechterhaltung der öffentlichen Sicherheit und Ordnung" },
+      { id: "e", text: "Das Sicherheitsgewerbe ist zuständig für das korrekte Abwiegen von Rinderhack an der Fleischtheke" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 10,
+    question: "Welche Aussagen zur Menschenwürde sind gemäß Art. 1 Grundgesetz richtig?",
+    answers: [
+      { id: "a", text: "Der Staat ist verpflichtet, die Menschenwürde zu achten und zu schützen" },
+      { id: "b", text: "Durch die Menschenwürde sind nur die höchsten Grundrechte 'Recht auf Leben' und 'Recht auf körperliche Unversehrtheit' geschützt." },
+      { id: "c", text: "Geschützt sind ebenso juristische Personen und die Menschheit" },
+      { id: "d", text: "Geschützt ist jeder Mensch, der sich im Geltungsbereich des GG aufhält, z. B. Minderjährige Kinder, Straftäter und Ausländer" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 11,
+    question: "Welche Institutionen zählen zur 'gesetzgebenden Gewalt'?",
+    answers: [
+      { id: "a", text: "Der Bundesrat" },
+      { id: "b", text: "Die Regierungen der Bundesländer" },
+      { id: "c", text: "Die Staatsanwaltschaft" },
+      { id: "d", text: "Der Bundestag" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 12,
+    question: "Vervollständigen Sie den folgenden Satz: Die Grundrechte (Artikel 1 bis 19 Grundgesetz) sind in erster Linie Abwehrrechte …",
+    answers: [
+      { id: "a", text: "... des öffentlichen Rechts gegenüber den Bürgern." },
+      { id: "b", text: "... welche ausschließlich den deutschen Staatsbürgern zur Verfügung stehen." },
+      { id: "c", text: "... des Privatrechts gegenüber unerlaubten Handlungen." },
+      { id: "d", text: "... des Staates gegen Verletzung von Rechtsgütern durch Straftaten." },
+      { id: "e", text: "... des Bürgers gegenüber staatlicher Machtentfaltung." },
+      { id: "f", text: "... der Polizei, um bei ihren Einsätzen gegenüber dem Bürger geschützt zu sein" }
+    ],
+    correct: ["e"],
+    points: 1
+  },
+  {
+    id: 13,
+    question: "Jugendliche Randalierer blockieren für Gäste den Zugang zu einer Diskothek. Welche Aussagen zu diesem Fall sind richtig?",
+    answers: [
+      { id: "a", text: "Die Türsteher können sich auf die Rechtfertigungsgründe Notwehr bzw. Besitzwehr stützen, um das Verhalten der Jugendlichen zu unterbinden." },
+      { id: "b", text: "Das Verhalten der Jugendlichen erfüllt den Tatbestand der Nötigung; zivilrechtlich liegt verbotene Eigenmacht in Form der Besitzstörung vor." },
+      { id: "c", text: "Der Betreiber der Diskothek muss die Polizei verständigen, da nur die Polizei befugt ist, das störende Verhalten der Jugendlichen zu beseitigen." },
+      { id: "d", text: "Die Türsteher begehen Amtsanmaßung, wenn sie die Weisung des Diskotheken-Betreibers befolgen und die Jugendlichen entfernen." }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 14,
+    question: "Wie ist das rechtliche Verhältnis zwischen Staat und Bürger im Öffentlichen Recht?",
+    answers: [
+      { id: "a", text: "Es kommt auf den Einzelfall an." },
+      { id: "b", text: "Der Staat ist übergeordnet." },
+      { id: "c", text: "Beide Seiten sind gleichberechtigt." },
+      { id: "d", text: "Der Bürger hat keine Rechte." }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 15,
+    question: "Welche Aussagen zum Privatrecht sind richtig?",
+    answers: [
+      { id: "a", text: "Es regelt die rechtlichen Beziehungen der Bürger zum Staat und seinen Einrichtungen" },
+      { id: "b", text: "Es regelt die rechtlichen Beziehungen der Bürger untereinander" },
+      { id: "c", text: "Es regelt z. B. die Besitz- und Eigentumsrechte an Sachen" },
+      { id: "d", text: "Es umfasst auch die Gewerbeordnung, die die Voraussetzungen für den Betrieb von Sicherheitsunternehmen regelt" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 16,
+    question: "In welchem Bereich ist die Polizei zuständig?",
+    answers: [
+      { id: "a", text: "Immer in allen Bereichen" },
+      { id: "b", text: "Im privaten Bereich z.B. mit Durchsuchungsbeschluss oder bei Gefahr im Verzug" },
+      { id: "c", text: "Grundsätzlich im öffentlichen Bereich" },
+      { id: "d", text: "Nur im öffentlichen Bereich" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 17,
+    question: "Beenden Sie den Satz korrekt: Deutschland ist …",
+    answers: [
+      { id: "a", text: "... ein demokratischer und sozialistischer Einheitsstaat." },
+      { id: "b", text: "... ist eine föderaldemokratische Einheitsrepublik mit 17 Bundesländer" },
+      { id: "c", text: "... eine demokratisch orientierte Monarchie" },
+      { id: "d", text: "... ein föderalistisch organisierter Bundesstaat." },
+      { id: "e", text: "... ein demokratischer und sozialer Staat." },
+      { id: "f", text: "... eine sozialdemokratische Volksrepublik." }
+    ],
+    correct: ["d", "e"],
+    points: 2
+  },
+  {
+    id: 18,
+    question: "Welche der nachfolgenden Aussagen unterscheidet die Polizei vom Sicherheitsgewerbe?",
+    answers: [
+      { id: "a", text: "Das Sicherheitsgewerbe wird in privaten Bereichen nur tätig, wenn der Auftraggeber das verlangt" },
+      { id: "b", text: "Die Polizei ist unter anderem Bundessache. Sie arbeitet auf der Grundlage des Polizeigesetzes des Bundes" },
+      { id: "c", text: "Die Polizei verfügt über hoheitliche Sonderrechte, z.B. Sonderwegerecht durch Blaulicht und Martinshorn" },
+      { id: "d", text: "Private Sicherheitsmitarbeiter haben den Status von Hilfsbeamten der Staatsanwaltschaft" },
+      { id: "e", text: "Das Sicherheitsgewerbe erfüllt niemals Präventivaufgaben" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 19,
+    question: "Bei der Durchführung von Bewachungsaufgaben dürfen Sicherheitsmitarbeiter eigenverantwortlich bestimmte Rechte ausüben. Welche Rechte gehören dazu?",
+    answers: [
+      { id: "a", text: "Beschlagnahme von Beweismitteln" },
+      { id: "b", text: "Durchsuchung von Sachen" },
+      { id: "c", text: "Vorläufige Festnahme" },
+      { id: "d", text: "Gewahrsamsnahme von Menschen" },
+      { id: "e", text: "Notwehr- und Notstandsrechte" },
+      { id: "f", text: "Sicherstellung von Fahrzeugen" }
+    ],
+    correct: ["c", "e"],
+    points: 2
+  },
+  {
+    id: 20,
+    question: "Das Recht auf Leben und körperliche Unversehrtheit (Art. 2 GG)…",
+    answers: [
+      { id: "a", text: "... ist ein Abwehrrecht und richtet sich u.a. gegen Eingriffe des Staates." },
+      { id: "b", text: "... ist ein Bürgerrecht." },
+      { id: "c", text: "... ist ein Menschenrecht." },
+      { id: "d", text: "... schützt nur die psychische Unversehrtheit der Bürger." }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  }
+],
+
+  quiz12: [
+  {
+    id: 1,
+    question: "Welche Aussagen zum staatlichen Gewaltmonopol sind richtig?",
+    answers: [
+      { id: "a", text: "Die Anwendung staatlicher Gewalt ist nur unter engen gesetzlichen Vorausset-zungen zulässig." },
+      { id: "b", text: "Der Bürger darf in keiner Situation Gewalt anwenden." },
+      { id: "c", text: "Der Staat darf zur Aufrechterhaltung der öffentlichen Sicherheit und Ordnung willkürlich Gewalt anwenden." },
+      { id: "d", text: "Die Anwendung von Gewalt ist grundsätzlich nur den staatlichen Organen erlaubt." }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 2,
+    question: "Welche Angaben muss der Bewacherausweis von Sicherheitsmitarbeitern gemäß BewachV enthalten?",
+    answers: [
+      { id: "a", text: "Name, Vorname des Sicherheitsmitarbeiters, Gültigkeitsdauer des Ausweises, Privatanschrift und Geburtsdatum des Sicherheitsmitarbeiters" },
+      { id: "b", text: "Bezeichnung und Anschrift des Gewerbebetriebes, Bewacherregisteridentifikationsnummer des Gewerbebetriebes und der Wachperson" },
+      { id: "c", text: "Name, Vorname und Unterschrift des Sicherheitsmitarbeiters, Name, Anschrift und Unterschrift des Gewerbetreibenden oder seines Vertreters" },
+      { id: "d", text: "Gültigkeitsdauer, Lichtbild des Gewerbetreibenden, Name, Vorname des Sicherheitsmitarbeiters sowie seine Zugehörigkeit zur Krankenkasse" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 3,
+    question: "Welche Aufgaben hat die Staatsanwaltschaft?",
+    answers: [
+      { id: "a", text: "Leitung des Strafverfahrens" },
+      { id: "b", text: "Erhebung der Anklage" },
+      { id: "c", text: "Erlass von Haftbefehlen" },
+      { id: "d", text: "Lenkung des Ermittlungsverfahrens" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 4,
+    question: "Wer beabsichtigt, ein Bewachungsgewerbe auszuüben, bedarf einer Erlaubnis. Wann wird diese Erlaubnis gemäß GewO versagt?",
+    answers: [
+      { id: "a", text: "Wenn der Antragsteller in ungeordneten Vermögensverhältnissen lebt" },
+      { id: "b", text: "Wenn der Antragsteller das 21. Lebensjahr noch nicht vollendet hat" },
+      { id: "c", text: "Wenn der Antragsteller nicht die deutsche Staatsbürgerschaft besitzt" },
+      { id: "d", text: "Wenn der Antragsteller nicht über die erforderliche Zuverlässigkeit verfügt" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 5,
+    question: "Welches sind im Grundgesetz geschützte Rechtsgüter?",
+    answers: [
+      { id: "a", text: "Vertragsrechte" },
+      { id: "b", text: "Ehre" },
+      { id: "c", text: "Freiheitsrechte" },
+      { id: "d", text: "Streitrechte" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 6,
+    question: "Nach der BewachV sind SMA schriftlich zu verpflichten, auch nach ihrem Ausscheiden aus dem Betrieb Verschwiegenheit über Geschäfts- und Betriebsgeheimnisse einzuhalten. Was sind solche Geschäftsgeheimnisse?",
+    answers: [
+      { id: "a", text: "Betriebspläne von Bewachungsobjekten" },
+      { id: "b", text: "Arbeitszeiten und Anschrift des Bewachungsobjektes" },
+      { id: "c", text: "Inhalte des Arbeitsvertrages (z.B. Lohnvereinbarung)" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 7,
+    question: "Das Recht auf freie Entfaltung seiner Persönlichkeit (Art. 2 GG) ...",
+    answers: [
+      { id: "a", text: "ist ein Bürgerrecht" },
+      { id: "b", text: "ist ein Grundrecht, welches in keiner Weise eingeschränkt werden darf" },
+      { id: "c", text: "beinhaltet auch das informationelle Selbstbestimmungsrecht" },
+      { id: "d", text: "stellt jedem Menschen frei, zu tun und zu lassen, was er möchte." },
+      { id: "e", text: "ist ein Menschenrecht" },
+      { id: "f", text: "erlaubt jedem Menschen in Deutschland seinen Wohnsitz und Aufenthaltsort frei zu bestimmen" }
+    ],
+    correct: ["c", "e"],
+    points: 2
+  },
+  {
+    id: 8,
+    question: "Nach § 17 der Bewachungsverordnung muss der Sicherheitsdienstleister (Gewerbetreibende) eine Dienstanweisung verfassen. Was muss aus rechtlicher Sicht unbedingt in der Dienstanweisung enthalten sein?",
+    answers: [
+      { id: "a", text: "Hinweis, dass die Sicherheitsmitarbeiter während des Dienstes nur mit Zustimmung des Sicherheitsdienstleisters (Gewerbetreibende) eine Schusswaffe, Hieb-und Stoßwaffen sowie Reizstoffsprühgeräte führen dürfen" },
+      { id: "b", text: "Dass die Wachperson nicht die Eigenschaft und die Befugnisse eines Polizeivollzugsbeamten, oder eines sonstigen Bediensteten einer Behörde besitzt" },
+      { id: "c", text: "Hinweis, dass die Sicherheitsmitarbeiter regelmäßig an Dienstbesprechungen teilnehmen müssen" },
+      { id: "d", text: "Hinweis, dass die Unfallverhütungsvorschriften eingehalten werden müssen" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 9,
+    question: "Auf Grund welcher rechtlichen Grundlagen werden private Sicherheitsmitarbeiter tätig?",
+    answers: [
+      { id: "a", text: "Besitzdienerrechte" },
+      { id: "b", text: "Auf Grundlage der Jedermannsrechte sowie Rechtfertigungsgründe" },
+      { id: "c", text: "Sicherheitsmitarbeiter benötigen keine Rechtsgrundlage, sie haben Sonderrechte und können alles notwendige einleiten um Gerechtigkeit walten zu lassen." },
+      { id: "d", text: "Auf rechtlicher Grundlage der DSGVO der Europäischen Union" },
+      { id: "e", text: "Hoheitliche Rechte" },
+      { id: "f", text: "Anweisungen des Auftraggebers" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 10,
+    question: "Wozu ist ein Sicherheitsunternehmer nach der Bewachungsverordnung verpflichtet?",
+    answers: [
+      { id: "a", text: "Er hat eine Rechtsschutzversicherung abzuschließen" },
+      { id: "b", text: "Er darf grundsätzlich keine zuverlässigen Personen beschäftigen" },
+      { id: "c", text: "Er muss eine Haftpflichtversicherung abschließen" },
+      { id: "d", text: "Er hat seinen Wachpersonen einen Dienstausweis auszustellen" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 11,
+    question: "Bei Großveranstaltungen kann es notwendig sein, die Zufahrtskontrollen von Parkplätzen im öffentlichen Bereich durch privates Sicherheitspersonal zu regeln. Welche Voraussetzung kann eine solche Sonderregelung erlauben?",
+    answers: [
+      { id: "a", text: "Public-Private-Partnership-Vereinbarung" },
+      { id: "b", text: "Nachweis eines vorliegenden Gewohnheitsrechts" },
+      { id: "c", text: "Entscheidung des zuständigen Auftraggebers" },
+      { id: "d", text: "Übertragene Besitzrechte durch die Polizei" },
+      { id: "e", text: "Entscheidung durch den Bewachungsgewerbetreibenden" },
+      { id: "f", text: "Genehmigung von Ordnungsamt und örtl. Polizeibehörde" }
+    ],
+    correct: ["a", "f"],
+    points: 2
+  },
+  {
+    id: 12,
+    question: "Wer benötigt zur Durchführung von Bewachungsaufgaben keine IHK- Unterrichtung gemäß § 34a GewO?",
+    answers: [
+      { id: "a", text: "Polizeibeamte nach bestandener Laufbahnprüfung" },
+      { id: "b", text: "Alle Zeit- und Berufssoldaten mit mindestens 4-jähriger Dienstzeit" },
+      { id: "c", text: "Personen mit bestandener Sachkundeprüfung gem. § 34a GewO" },
+      { id: "d", text: "Sicherheitsmitarbeiter mit mindestens 3-jähriger Berufserfahrung" }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 13,
+    question: "Welche Aussagen treffen auf das Grundrecht der Unverletzlichkeit der Wohnung gemäß GG zu?",
+    answers: [
+      { id: "a", text: "Es ist ein individuelles Abwehrrecht des Bürgers gegen die Staatsgewalt." },
+      { id: "b", text: "Es schreibt vor, dass Durchsuchungen nur durch den Richter angeordnet werden dürfen, jedoch bei 'Gefahr im Verzug' auch durch die Staatsanwaltschaft und durch die Polizei eine Wohnung betreten werden darf." },
+      { id: "c", text: "Es steht nur dem Eigentümer einer Wohnung zu." },
+      { id: "d", text: "Es garantiert den rechtlichen Anspruch auf eine Wohnung." }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 14,
+    question: "Zu welchem Zeitpunkt hat der Gewerbetreibende die Wachpersonen, die er beschäftigen möchte, bei der zuständigen Behörde anzumelden?",
+    answers: [
+      { id: "a", text: "Rechtzeitig vor Beginn der Beschäftigung" },
+      { id: "b", text: "Spätestens vier Wochen vor Arbeitsbeginn" },
+      { id: "c", text: "Spätestens bis zum Ende der Probezeit" },
+      { id: "d", text: "Frühestens am ersten Arbeitstag" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 15,
+    question: "Was kennzeichnet das öffentliche Recht?",
+    answers: [
+      { id: "a", text: "Das Prinzip der Über- und Unterordnung zwischen Staat und Bürger" },
+      { id: "b", text: "Das Prinzip der Gleichordnung zwischen Staat und Bürger" },
+      { id: "c", text: "Das Prinzip der Über- und Unterordnung zwischen Bürger und Bürger" },
+      { id: "d", text: "Das Prinzip der Gleichordnung zwischen Bürger und Bürger" },
+      { id: "e", text: "Das Prinzip der Über- und Unterordnung zwischen natürliche und juristische Personen" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 16,
+    question: "Welche Angaben muss der Bewacherausweis gemäß BewachV enthalten?",
+    answers: [
+      { id: "a", text: "Wohnanschrift und Geburtsdatum der Wachperson." },
+      { id: "b", text: "Namen und Anschrift des Gewerbetreibenden." },
+      { id: "c", text: "Unterschrift des Gewerbetreibenden und des Sachbearbeiters der zuständigen Gewerbebehörde." },
+      { id: "d", text: "Lichtbild, Namen und Vornamen der Wachperson." }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 17,
+    question: "Was verstößt gegen die Rechtsordnung der Bundesrepublik Deutschland?",
+    answers: [
+      { id: "a", text: "Die Bestrafung einer Person mit einer mehrjährigen Freiheitsstrafe ohne gesetzliche Grundlage" },
+      { id: "b", text: "Die Erzwingung eines Geständnisses durch Anwendung von Folter, z.B. durch Schläge" },
+      { id: "c", text: "Die Sicherstellung von Gegenständen zu Beweiszwecken durch die Polizei" },
+      { id: "d", text: "Die Verweigerung der Erteilung einer Erlaubnis für das Bewachungsgewerbe aufgrund Unzuverlässigkeit des Antragstellers" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 18,
+    question: "Für welche Tätigkeit ist der Nachweis der Sachkundeprüfung gemäß § 34a GewO erforderlich?",
+    answers: [
+      { id: "a", text: "Geld- und Werttransport" },
+      { id: "b", text: "Schutz vor Ladendieben" },
+      { id: "c", text: "Zugangskontrollen an Fußballstadien" },
+      { id: "d", text: "Ordnungsdienst bei Veranstaltungen" },
+      { id: "e", text: "Objekt- und Personenschutz" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 19,
+    question: "Im deutschen Rechtssystem sind Rechtfertigungsgründe festgelegt. Worin besteht deren Zweck?",
+    answers: [
+      { id: "a", text: "Sie können ordnungswidriges Handeln entschuldigen" },
+      { id: "b", text: "Sie können strafbares Handeln rechtfertigen" },
+      { id: "c", text: "Sie können unerlaubtes Handeln rechtfertigen" },
+      { id: "d", text: "Sie können verbotenes Handeln entschuldigen" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 20,
+    question: "Welche Behörde kann gemäß GewO dem Gewerbetreibenden die Beschäftigung einer Wachperson mit Bewachungsaufgaben untersagen, wenn die Wachperson nicht die für ihre Tätigkeit erforderliche Zuverlässigkeit besitzt?",
+    answers: [
+      { id: "a", text: "Die nach Landesrecht zuständige Gewerbebehörde" },
+      { id: "b", text: "Die Staatsanwaltschaft" },
+      { id: "c", text: "Die Verwaltungs-Berufsgenossenschaft" },
+      { id: "d", text: "Die Bundesagentur für Arbeit" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 21,
+    question: "Was wird unter dem Privatrecht verstanden?",
+    answers: [
+      { id: "a", text: "Das Privatrecht regelt die Rechtsbeziehungen zwischen gleichgestellten natürlichen und juristischen Personen" },
+      { id: "b", text: "Das Privatrecht ist ein Teil des öffentlichen Rechts und regelt die Rechtsbeziehung zwischen Staat und Bürger" },
+      { id: "c", text: "Das Privatrecht beschreibt die Rechtsfolgen für Straftaten und Ordnungswidrigkeiten, z.B. Geld- oder Freiheitsstrafen, Geldbußen" },
+      { id: "d", text: "Das Privatrecht legt im Wesentlichen fest, welche Freiheiten, Rechte und Pflichten die Menschen im Verhältnis zueinander haben" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 22,
+    question: "Was ist gem. § 19 BewachV hinsichtlich der Dienstkleidung zu beachten?",
+    answers: [
+      { id: "a", text: "Darf nicht mit Polizei- oder Militäruniformen zu verwechseln sein." },
+      { id: "b", text: "Es muss eine Dienstmütze getragen werden." },
+      { id: "c", text: "Ist stets im Dienst zu tragen." },
+      { id: "d", text: "Ist nur im Objektschutz zu tragen." }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 23,
+    question: "Im deutschen Rechtssystem sind Rechtfertigungsgründe verankert. Was ist deren Sinn und Zweck?",
+    answers: [
+      { id: "a", text: "Sie können unerlaubtes Handeln rechtfertigen" },
+      { id: "b", text: "Sie können strafbares Handeln rechtfertigen" },
+      { id: "c", text: "Sie können ordnungswidriges Handeln entschuldigen" },
+      { id: "d", text: "Sie können verbotenes Handeln entschuldigen" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 24,
+    question: "Wann darf gemäß der BewachV der Bewachungsgewerbetreibende Wachpersonen mit der Durchführung von Bewachungsaufgaben beschäftigen?",
+    answers: [
+      { id: "a", text: "Wenn sie ein Abschlusszeugnis aus einem anderen Berufszweig besitzen, z. B. aus einem Handwerkerberuf." },
+      { id: "b", text: "Wenn sie volljährig sind oder z. B. erfolgreich eine Ausbildung zur Fachkraft für Schutz und Sicherheit abgeschlossen haben." },
+      { id: "c", text: "Wenn sie die erforderliche Zuverlässigkeit besitzen und fachkundig sind." },
+      { id: "d", text: "Wenn sie die deutsche Staatsangehörigkeit besitzen und das 18. Lebensjahr vollendet haben." }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 25,
+    question: "Erklären Sie den Begriff 'Public Private Partnership' (PPP)",
+    answers: [
+      { id: "a", text: "Ein privater Sicherheitsmitarbeiter kann z.B. bei einer Veranstaltung dem Ordnungsamt helfen, wenn das so vereinbart wurde." },
+      { id: "b", text: "Eine Zusammenarbeit von staatlichen und privaten Stellen." },
+      { id: "c", text: "Der Staat und eine private Wachfirma gründen einen Verein, dessen Mitarbeiter Hilfsbeamte sind." },
+      { id: "d", text: "Sicherheitsmitarbeitern einer privaten Wachfirma werden hoheitliche Rechte eines Polizisten übertragen." }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 26,
+    question: "Wo sind die Pflichten für SMA beschrieben?",
+    answers: [
+      { id: "a", text: "in der BewachV" },
+      { id: "b", text: "im Grundgesetz" },
+      { id: "c", text: "in der Strafprozessordnung (StPO)" },
+      { id: "d", text: "in der DGUV 23" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 27,
+    question: "Welche Aussagen zum Privatrecht sind richtig?",
+    answers: [
+      { id: "a", text: "Es umfasst auch die Gewerbeordnung, die die Voraussetzungen für den Betrieb von Sicherheitsunternehmen regelt" },
+      { id: "b", text: "Es regelt die rechtlichen Beziehungen der Bürger untereinander" },
+      { id: "c", text: "Es regelt z. B. die Besitz- und Eigentumsrechte an Sachen" },
+      { id: "d", text: "Es regelt die rechtlichen Beziehungen der Bürger zum Staat und seinen Einrichtungen" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 28,
+    question: "Müssen Sicherheitsmitarbeiter einer Wachfirma ihren Dienstausweis gemäß § 18 BewachV sichtbar tragen?",
+    answers: [
+      { id: "a", text: "Bei Tätigkeiten, die eine Sachkunde nach § 34a GewO erfordern, außer Ladendetektive, ist ein Schild mit ihrem Namen oder einer Kennnummer sowie der Bezeichnung des Gewerbebetriebs sichtbar zu tragen." },
+      { id: "b", text: "Ja, alle" },
+      { id: "c", text: "Nur Türsteher, Ladendetektive und Citystreifen" },
+      { id: "d", text: "Nein, er muss aber mitgeführt werden" }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 29,
+    question: "Welche Aussagen zum Recht auf freie Entfaltung der Persönlichkeit gemäß Grundgesetz sind richtig?",
+    answers: [
+      { id: "a", text: "Das Recht auf freie Entfaltung der Persönlichkeit ist ein Bürgerrecht. Einschränkungen durch Gesetze sind unzulässig" },
+      { id: "b", text: "Dieses Grundrecht beinhaltet den Schutz der Privatsphäre sowie das informationelle Selbstbestimmungsrecht" },
+      { id: "c", text: "Solange keine Rechte anderer Personen verletzt werden oder gegen die Verfassung verstoßen wird, kann jeder frei tun und lassen, was er will" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 30,
+    question: "Das Unterrichtungsverfahren braucht gemäß BewachV nicht absolviert werden, wenn ...",
+    answers: [
+      { id: "a", text: "die Person Abschlüsse im Rahmen einer Laufbahnprüfung besitzt, z.B. für den mittleren Polizeivollzugsdienst." },
+      { id: "b", text: "die Person den Nachweis erbringt, dass sie in allen Sachgebieten des Unterrichtungsverfahrens über ausreichende Kenntnisse verfügt." },
+      { id: "c", text: "die Person bei der Bundeswehr mindestens 3 Jahre im Wachdienst tätig war." }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 31,
+    question: "Erklären Sie den Begriff 'Gewaltmonopol'!",
+    answers: [
+      { id: "a", text: "Private können im Rahmen der Jedermannsrechte gegen das Gewaltmonopol des Staates ausnahmsweise verstoßen." },
+      { id: "b", text: "Der Staat hat das Gewaltmonopol, kann seine Rechte aber voll auf Private übertragen" },
+      { id: "c", text: "Gewaltmonopol bedeutet, nur der Chef der Wachfirma hat das Sagen." },
+      { id: "d", text: "Gewaltmonopol bedeutet, dass ausschließlich nur die Polizei Gewalt anwenden darf." },
+      { id: "e", text: "Der Staat hat die absolute Herrschaft über jegliche Gewaltanwendung, es gibt keine Ausnahmen." }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 32,
+    question: "Welche Unterlagen sind gemäß BewachV Sicherheitsmitarbeitern gegen Empfangsbestätigung auszuhändigen?",
+    answers: [
+      { id: "a", text: "Die Unfallverhütungsvorschrift Wach- und Sicherungsdienste einschließlich der dazu ergangenen Durchführungsanweisungen" },
+      { id: "b", text: "Die Betriebsvereinbarungen des zu bewachenden Betriebes" },
+      { id: "c", text: "Die Allgemeinen Geschäftsbedingungen des Arbeitgebers" },
+      { id: "d", text: "Der Abdruck der Dienstanweisung" }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 33,
+    question: "Welche der folgenden Grundrechte sind für die Wachbranche relevant?",
+    answers: [
+      { id: "a", text: "Recht auf Menschenwürde" },
+      { id: "b", text: "Unverletzlichkeit der Wohnung" },
+      { id: "c", text: "Keines" },
+      { id: "d", text: "Freizügigkeit" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 34,
+    question: "Wer ist gemäß BewachV von der Unterrichtung befreit?",
+    answers: [
+      { id: "a", text: "Personen mit einem Abschluss für die Laufbahnprüfung für den mittleren Justizvollzugsdienst." },
+      { id: "b", text: "Personen mit einem Abschluss für die Laufbahnprüfung für den mittleren Zolldienst mit Berechtigung zum Führen einer Waffe." },
+      { id: "c", text: "Personen, die über eine mindestens zweijährige Berufserfahrung im Sicherheitsgewerbe verfügen." },
+      { id: "d", text: "Personen, die einen erfolgreichen Abschluss eines rechtswissenschaftlichen Hochschulstudiums besitzen." }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 35,
+    question: "Was ist im Strafrecht, das dem öffentlichen Recht zugeordnet wird, geregelt?",
+    answers: [
+      { id: "a", text: "Das Stellen eines Strafantrags" },
+      { id: "b", text: "Der Angriffsnotstand" },
+      { id: "c", text: "Die Anwendung von Besitzschutzrechten" },
+      { id: "d", text: "Die Schuldunfähigkeit des Kindes" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 36,
+    question: "Wann besitzt eine Wachperson nicht die erforderliche Zuverlässigkeit gemäß § 34a GewO?",
+    answers: [
+      { id: "a", text: "Wenn sie Mitglied in einem Verein ist, der nach dem Vereinsgesetz als Organisation unanfechtbar verboten wurde" },
+      { id: "b", text: "Wenn sie Mitglied einer demokratisch legitimierten politischen Partei ist" },
+      { id: "c", text: "Wenn sie wegen eines Verbrechens, z. B. Raub, vor zehn Jahren rechtskräftig verurteilt worden ist" },
+      { id: "d", text: "Wenn sie vor drei Jahren rechtskräftig wegen Beleidigung zu einer Geldstrafe von 60 Tagessätzen verurteilt worden ist" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 37,
+    question: "Was für Rechte dürfen Wachpersonen, die Kontrollgänge im öffentlichen Verkehrsraum durchführen, eigenverantwortlich ausüben?",
+    answers: [
+      { id: "a", text: "Sie dürfen zur Abwehr von Gefahren für die öffentliche Sicherheit und Ordnung wie Polizeibeamte handeln." },
+      { id: "b", text: "Sie dürfen die Jedermannsrechte ausüben, z. B. Wegweisung, Festhalten, Notwehr" },
+      { id: "c", text: "Sie dürfen Anzeigen erstatten und Ordnungswidrigkeiten feststellen" },
+      { id: "d", text: "Sie dürfen Durchsuchungen durchführen" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 38,
+    question: "Welche der folgenden Pflichten sind Sicherheitsmitarbeiter bei der Aufnahme ihrer Tätigkeit zu beachten?",
+    answers: [
+      { id: "a", text: "Schweigepflicht über Geschäfts- und Betriebsgeheimnisse" },
+      { id: "b", text: "Pflicht zur ordnungsgemäßen Führung von Einsatzberichten" },
+      { id: "c", text: "Pflicht zur Meldung von Unfällen und Störungen" },
+      { id: "d", text: "Recht zur Mitnahme von Fundgegenständen" }
+    ],
+    correct: ["a", "b", "c"],
+    points: 3
+  },
+  {
+    id: 39,
+    question: "Wachpersonen dürfen Gewalt anwenden im Rahmen von …",
+    answers: [
+      { id: "a", text: "Notwehr gemäß § 32 StGB" },
+      { id: "b", text: "Notstand gemäß § 34 StGB" },
+      { id: "c", text: "Hoheitlicher Aufgabenübertragung durch die Polizei" },
+      { id: "d", text: "Jedermannsrechten zur Selbsthilfe" }
+    ],
+    correct: ["a", "b", "d"],
+    points: 3
+  },
+  {
+    id: 40,
+    question: "Welche Aussagen zum Umgang mit Daten von Kunden, Gästen und Besuchern sind richtig?",
+    answers: [
+      { id: "a", text: "Personenbezogene Daten müssen vertraulich behandelt werden" },
+      { id: "b", text: "Daten dürfen nur für den jeweiligen Zweck verarbeitet werden" },
+      { id: "c", text: "Es gilt die DSGVO der EU" },
+      { id: "d", text: "Alle Sicherheitsmitarbeiter dürfen personenbezogene Daten für private Zwecke nutzen" }
+    ],
+    correct: ["a", "b", "c"],
+    points: 3
+  }
+],
+
+  quiz13: [
+  {
+    id: 1,
+    question: "Was für Rechte dürfen Wachpersonen, die Kontrollgänge im öffentlichen Verkehrsraum durchführen, eigenverantwortlich ausüben?",
+    answers: [
+      { id: "a", text: "Sie dürfen bei Verkehrsordnungswidrigkeiten Verwarnungsgelder erheben, z. B. beim Parken im Parkverbot" },
+      { id: "b", text: "Sie dürfen aufgrund eines privatrechtlichen Auftragsverhältnisses tätig werden d.h., sie dürfen Notwehr- und Notstandsrechte und übertragene Selbsthilferechte wahrnehmen" },
+      { id: "c", text: "Sie dürfen zur Abwehr von Gefahren für die öffentliche Sicherheit und Ordnung wie Polizeibeamte tätig werden, z. B. Platzverweise erteilen" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 2,
+    question: "Die Wachperson S ist aktives Mitglied in einem Verein, der nach dem Vereinsgesetz als Organisation unanfechtbar verboten wurde. Was bedeutet dies gemäß § 34a GewO und BewachV?",
+    answers: [
+      { id: "a", text: "S gilt trotz seiner Mitgliedschaft als zuverlässig, wenn keine einschlägigen Verurteilungen in der unbeschränkten Auskunft aus dem Bundeszentralregister eingetragen sind, wie z. B. gefährliche Körperverletzung." },
+      { id: "b", text: "Der Bewachungsgewerbetreibende darf S nicht mit Bewachungsaufgaben beschäftigen, wenn dies das zuständige Landesamt für Verfassungsschutz fordert." },
+      { id: "c", text: "Die zuständige Gewerbebehörde kann dem Bewachungsgewerbetreibenden die Beschäftigung von S mit Bewachungsaufgaben untersagen, wenn S die erforderliche Zuverlässigkeit nicht besitzt." }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 3,
+    question: "Welche Aussage zum Recht auf informationelle Selbstbestimmung ist richtig? Das Recht auf informationelle Selbstbestimmung...",
+    answers: [
+      { id: "a", text: "...wurde 1973 nach einer Grundgesetz-Änderung vom Bundesgerichtshof festgelegt und verabschiedet." },
+      { id: "b", text: "...ist im Artikel 5 GG, dem Recht auf freie Meinungsäußerung, sowie der Versammlungsfreiheit in Artikel 8 GG, verankert." },
+      { id: "c", text: "...geht aus dem Recht auf Menschenwürde Artikel 1 GG und dem allgemeinen Persönlichkeitsrecht Artikel 2 GG hervor." },
+      { id: "d", text: "...wurde 1983 vom Bundesverfassungsgericht aus dem sogenannten „Volkszählungsurteil\" abgeleitet." }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 4,
+    question: "Es gibt in Deutschland eine \"horizontale\" Gewaltenteilung. Welche der nachfolgenden Aussagen ist in Bezug auf diese Gewalten korrekt?",
+    answers: [
+      { id: "a", text: "die Antworten 2, 4 und 6 sind richtig" },
+      { id: "b", text: "die Antworten 1, 3 und 5 sind richtig" },
+      { id: "c", text: "die Antworten 1, 2 und 5 sind richtig" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 5,
+    question: "Gemäß Bewachungsverordnung müssen Sie einen Bewacherausweis mitführen. In diesem Bewacherausweis müssen verschiedene Informationen zwingend hinterlegt sein:",
+    answers: [
+      { id: "a", text: "Antwort 1; 2 und 3 sind richtig" },
+      { id: "b", text: "Antwort 2 und 4 sind richtig" },
+      { id: "c", text: "Antwort 1; 3 und 4 sind richtig" },
+      { id: "d", text: "Antwort 1; 3 und 5 sind richtig" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 6,
+    question: "Wann ist die Videoüberwachung öffentlich zugänglicher Räume gemäß BDSG zulässig?",
+    answers: [
+      { id: "a", text: "Jederzeit und in allen Räumen, um Diebstähle zu verhindern, z. B. in Umkleideräumen eines Bekleidungsgeschäftes" },
+      { id: "b", text: "Wenn dies zur Wahrnehmung des Hausrechts erforderlich ist und schutzwürdige Interessen der Betroffenen nicht überwiegen" },
+      { id: "c", text: "Mit schriftlicher Einwilligung der von der Videoüberwachung betroffenen Personen, z. B. den Kunden in einem Geschäft" },
+      { id: "d", text: "Nur mit Genehmigung der zuständigen Datenschutzbeauftragten des Bundes und der Länder" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 7,
+    question: "Welche Aussagen zu den Grundrechten im Grundgesetz sind richtig?",
+    answers: [
+      { id: "a", text: "Sie können jederzeit durch Sicherheitsbehörden zum Zwecke der Aufgabenerfüllung eingeschränkt werden." },
+      { id: "b", text: "Sie binden Gesetzgebung, vollziehende Gewalt und Rechtsprechung als unmittelbar geltendes Recht." },
+      { id: "c", text: "Sie schützen die Rechte des Bürgers vor unzulässigen Eingriffen des Staates." }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 8,
+    question: "Sicherheitsmitarbeiter, die im Einlassbereich von gastgewerblichen Diskotheken als Türsteher Bewachungen durchführen, müssen gemäß der BewachV gut sichtbar ein Kennschild bzw. Namensschild tragen. Welche Angaben muss das Kennschild bzw. Namensschild enthalten?",
+    answers: [
+      { id: "a", text: "Name und Anschrift des Türstehers" },
+      { id: "b", text: "Name und Anschrift des Bewachungsgewerbetreibenden" },
+      { id: "c", text: "Name des Türstehers oder eine Kennnummer, die er vom Bewachungsgewerbetreibenden erhalten hat" },
+      { id: "d", text: "Name des Bewachungsgewerbetreibenden bzw. seiner Firma" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 9,
+    question: "Welche Aussagen zur DS-GVO sind richtig?",
+    answers: [
+      { id: "a", text: "Sie gilt für die ganz oder teilweise automatisierte Verarbeitung personenbezogener Daten" },
+      { id: "b", text: "Sie gilt für die nichtautomatisierte Verarbeitung personenbezogener Daten, die in einem Dateisystem gespeichert sind oder gespeichert werden" },
+      { id: "c", text: "Sie gilt für die familiäre Verarbeitung personenbezogener Daten, z. B. für das Führen eines Anschriftenverzeichnisses, die keinen Bezug zur beruflichen Tätigkeit haben" },
+      { id: "d", text: "Sie gilt für die Verarbeitung personenbezogener Daten durch die zuständigen Behörden zum Zwecke der Abwehr von Gefahren für die öffentliche Sicherheit" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 10,
+    question: "Welche Aussage zur inneren Sicherheit ist richtig?",
+    answers: [
+      { id: "a", text: "Für die Abwehr von Gefahren ist jeder Bürger stets selber verantwortlich und hat die erforderlichen Gegenmaßnahmen zu treffen" },
+      { id: "b", text: "Die innere Sicherheit basiert auf dem Sicherheitsmonopol des Staates" },
+      { id: "c", text: "Die Gewährleistung der inneren Sicherheit, insbesondere die Abwehr von Gefahren, ist in erster Linie eine staatliche Angelegenheit" },
+      { id: "d", text: "Der einzelne Bürger braucht für die Durchsetzung seiner Rechte die staatliche Hilfe nicht in Anspruch zu nehmen" },
+      { id: "e", text: "Die Gewährleistung der inneren Sicherheit und Ordnung ist eine der wichtigsten Aufgaben von privaten Sicherheitsdiensten" }
     ],
     correct: ["c"],
     points: 1
