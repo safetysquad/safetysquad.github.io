@@ -200,6 +200,7 @@ function renderResult(points, maxPoints, percent, results) {
   main.innerHTML = html;
 }
 
+
 // ==============================
 // STATISTIK SPEICHERN
 // ==============================
