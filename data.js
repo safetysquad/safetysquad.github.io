@@ -303,5 +303,17 @@ const cards = [
     "id": 61,
     "question": "Welche Aufgaben hat der Datenschutzbeauftragte?",
     "answer": "Innerbetriebliche Organisation des Datenschutzes, Überwachung der Datenverarbeitung, Schulung und Sensibilisierung der Mitarbeiter, Vorabkontrolle sensibler Daten"
-  }
+  },
+  {
+    "id": 62, 
+    "question": "Welche Maßnahmen können bzgl. Des Datenschutzes zum Einsatz kommen?",
+    "answer": "-Zutrittskontrolle -Zugangskontrolle 
+-Zugriffskontrolle 
+-Trennungs-/ Zweckbindungskontrolle 
+-Pseudonymisierung 
+-Weitergabekontrolle 
+-Eingabekontrolle 
+-Verfügbarkeitskontrolle" 
+  },
+
 ];
