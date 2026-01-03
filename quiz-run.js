@@ -198,6 +198,9 @@ function renderResult(points, maxPoints, percent, passed, wrong) {
 function restartQuiz() {
   currentIndex = 0;
   userAnswers = {};
+
+  restoreQuizLayout();
   renderQuestion();
   updateProgress();
 }
+
