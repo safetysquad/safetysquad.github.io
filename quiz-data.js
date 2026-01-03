@@ -921,5 +921,6 @@ quiz3: [
     correct: ["a","b"],
     points: 2
   }
-]
-},
+  ]
+};
+
