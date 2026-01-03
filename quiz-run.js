@@ -167,8 +167,21 @@ function renderResult(points, maxPoints, percent, results) {
       html += `
         <div class="result-card wrong">
           <p class="question">${r.question}</p>
-          <p class="answer user">❌ Deine Antwort: ${r.given.join(", ") || "—"}</p>
-          <p class="answer correct">✅ Richtige Antwort: ${r.correct.join(", ")}</p>
+          const getTextById = (ids, answers) =>
+  answers
+    .filter(a => ids.includes(a.id))
+    .map(a => a.text);
+
+const userTexts = getTextById(
+  userAnswers[q.id] || [],
+  q.answers
+);
+
+const correctTexts = getTextById(
+  q.correct,
+  q.answers
+);
+
         </div>
       `;
     }
