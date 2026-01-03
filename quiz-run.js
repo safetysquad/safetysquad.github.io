@@ -1,8 +1,8 @@
 // ==============================
 // GRUNDVARIABLEN
 // ==============================
+let quiz = null;
 let quizId = null;
-let questions = [];
 let currentIndex = 0;
 let userAnswers = {};
 
@@ -13,16 +13,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   quizId = params.get("id");
 
-  if (!quizId || !quizzes[quizId]) {
-    document.querySelector("main").innerHTML =
-      "<p>❌ Quiz nicht gefunden</p>";
+  quiz = quizzes[quizId];
+
+  if (!quiz) {
+    document.body.innerHTML = "<h2>❌ Quiz nicht gefunden</h2>";
     return;
   }
 
-  questions = quizzes[quizId];
+  document.getElementById("quizTitle").innerText = `📝 ${quizId.toUpperCase()}`;
   renderQuestion();
   updateProgress();
 });
+
 
 // ==============================
 // FRAGE RENDERn
