@@ -1,10 +1,10 @@
 // ==============================
 // GRUNDVARIABLEN
 // ==============================
-let quiz = null;
+let quizId = null;
+let questions = [];
 let currentIndex = 0;
 let userAnswers = {};
-let quizId = null;
 
 // ==============================
 // QUIZ LADEN
