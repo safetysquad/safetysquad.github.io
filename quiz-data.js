@@ -322,8 +322,7 @@ const quizzes = {
     }
   ]
 };
-const quizzes = {
-  quiz2: [
+quiz2: [
   {
     id: 1,
     question: "Welche Rechte haben Wachpersonen bei der Durchführung von Bewachungsaufgaben?",
@@ -623,8 +622,7 @@ const quizzes = {
     points: 2
   }
 ];
-const quizzes = {
-  quiz3: [
+quiz3: [
   {
     id: 1,
     question: "Ladendetektiv L soll im Dienst einen Teleskopschlagstock mitführen. Unter welchen Voraussetzungen ist dies gemäß BewachV zulässig?",
