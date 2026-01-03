@@ -321,8 +321,9 @@ const quizzes = {
       points: 2
     }
   ]
-  const quizzes = {  
-    quiz2: [
+};
+const quizzes = {
+  quiz2: [
   {
     id: 1,
     question: "Welche Rechte haben Wachpersonen bei der Durchführung von Bewachungsaufgaben?",
@@ -621,6 +622,4 @@ const quizzes = {
     correct: ["a","b"],
     points: 2
   }
-    ]
-};
-
+];
