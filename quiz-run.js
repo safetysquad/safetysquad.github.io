@@ -55,21 +55,24 @@ function renderQuestion() {
 // ==============================
 // ANTWORT AUSWÄHLEN (MEHRFACH)
 // ==============================
-function toggleAnswer(questionId, answerId) {
-  if (!userAnswers[questionId]) {
-    userAnswers[questionId] = [];
+function toggleAnswer(answerId) {
+  const q = quiz[currentIndex];
+
+  if (!userAnswers[q.id]) {
+    userAnswers[q.id] = [];
   }
 
-  const list = userAnswers[questionId];
+  const selected = userAnswers[q.id];
 
-  if (list.includes(answerId)) {
-    userAnswers[questionId] = list.filter(a => a !== answerId);
+  if (selected.includes(answerId)) {
+    userAnswers[q.id] = selected.filter(a => a !== answerId);
   } else {
-    userAnswers[questionId].push(answerId);
+    userAnswers[q.id].push(answerId);
   }
 
-  renderQuestion();
+  renderQuestion(); // 🔥 WICHTIG: neu rendern
 }
+
 
 // ==============================
 // NAVIGATION
