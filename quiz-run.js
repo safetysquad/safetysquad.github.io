@@ -1,5 +1,5 @@
 // ==============================
-// VARIABLEN
+// GRUNDVARIABLEN
 // ==============================
 let quizId = null;
 let questions = [];
@@ -15,28 +15,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!quizId || !quizzes[quizId]) {
     document.querySelector("main").innerHTML =
-      "<h2>❌ Quiz nicht gefunden</h2>";
+      "<p>❌ Quiz nicht gefunden</p>";
     return;
   }
 
   questions = quizzes[quizId];
-
-  document.getElementById("quizTitle").innerText =
-    `Quiz ${quizId.replace("quiz", "")}`;
-
   renderQuestion();
   updateProgress();
 });
 
 // ==============================
-// FRAGE RENDERN
+// FRAGE RENDERn
 // ==============================
 function renderQuestion() {
   const q = questions[currentIndex];
 
   document.getElementById("questionText").innerText = q.question;
-  document.getElementById("counter").innerText =
-    `Frage ${currentIndex + 1} von ${questions.length}`;
 
   const answersBox = document.getElementById("answers");
   answersBox.innerHTML = "";
@@ -53,18 +47,23 @@ function renderQuestion() {
     btn.onclick = () => toggleAnswer(q.id, a.id);
     answersBox.appendChild(btn);
   });
+
+  document.getElementById("counter").innerText =
+    `Frage ${currentIndex + 1} von ${questions.length}`;
 }
 
 // ==============================
-// ANTWORT AUSWÄHLEN
+// ANTWORT AUSWÄHLEN (MEHRFACH)
 // ==============================
 function toggleAnswer(questionId, answerId) {
-  if (!userAnswers[questionId]) userAnswers[questionId] = [];
+  if (!userAnswers[questionId]) {
+    userAnswers[questionId] = [];
+  }
 
-  const selected = userAnswers[questionId];
+  const list = userAnswers[questionId];
 
-  if (selected.includes(answerId)) {
-    userAnswers[questionId] = selected.filter(a => a !== answerId);
+  if (list.includes(answerId)) {
+    userAnswers[questionId] = list.filter(a => a !== answerId);
   } else {
     userAnswers[questionId].push(answerId);
   }
@@ -108,57 +107,99 @@ function evaluateQuiz() {
   let points = 0;
   let maxPoints = 0;
 
+  const results = [];
+
   questions.forEach(q => {
     maxPoints += q.points;
 
-    const correct = [...q.correct].sort().join(",");
     const given = (userAnswers[q.id] || []).sort().join(",");
+    const correct = q.correct.sort().join(",");
 
-    if (correct === given) {
-      points += q.points;
-    }
+    const isCorrect = given === correct;
+
+    if (isCorrect) points += q.points;
+
+    results.push({
+      question: q.question,
+      correctAnswers: q.correct,
+      givenAnswers: userAnswers[q.id] || [],
+      answers: q.answers,
+      isCorrect
+    });
   });
 
   const percent = Math.round((points / maxPoints) * 100);
-  saveResult(percent);
-  renderResult(points, maxPoints, percent);
-}
 
-// ==============================
-// ERGEBNIS SPEICHERN
-// ==============================
-function saveResult(percent) {
-  const key = `safety_quiz_${quizId}`;
-  const old = JSON.parse(localStorage.getItem(key)) || {
-    bestPercent: 0,
-    attempts: 0,
-    passed: false
-  };
-
-  old.attempts++;
-  if (percent > old.bestPercent) old.bestPercent = percent;
-  if (percent === 100) old.passed = true;
-
-  localStorage.setItem(key, JSON.stringify(old));
+  saveStats(percent);
+  renderResult(points, maxPoints, percent, results);
 }
 
 // ==============================
 // ERGEBNIS ANZEIGEN
 // ==============================
-function renderResult(points, maxPoints, percent) {
-  const passed = percent === 100;
+function renderResult(points, maxPoints, percent, results) {
+  const main = document.querySelector("main");
 
-  document.querySelector("main").innerHTML = `
+  main.innerHTML = `
     <div class="card">
-      <h2>📊 Ergebnis</h2>
+      <h2>Ergebnis</h2>
       <p><b>${points}</b> von <b>${maxPoints}</b> Punkten</p>
-      <p><b>${percent}%</b> erreicht</p>
-      ${passed ? "<h3>🏆 BESTANDEN</h3>" : "<h3>❌ Nicht bestanden</h3>"}
+      <p><b>${percent}%</b> ${
+        percent === 100 ? "✅ Bestanden" : "❌ Nicht bestanden"
+      }</p>
     </div>
-
+    <div id="resultList"></div>
     <button class="btn" onclick="restartQuiz()">🔁 Test wiederholen</button>
-    <a class="btn secondary" href="quiz.html">⬅ Zurück zur Quiz-Auswahl</a>
   `;
+
+  const list = document.getElementById("resultList");
+
+  results.forEach((r, i) => {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.style.border =
+      r.isCorrect ? "2px solid #22c55e" : "2px solid #ef4444";
+
+    const correctText = r.answers
+      .filter(a => r.correctAnswers.includes(a.id))
+      .map(a => `${a.id}. ${a.text}`)
+      .join("<br>");
+
+    const givenText = r.answers
+      .filter(a => r.givenAnswers.includes(a.id))
+      .map(a => `${a.id}. ${a.text}`)
+      .join("<br>") || "—";
+
+    div.innerHTML = `
+      <p><b>Frage ${i + 1}</b></p>
+      <p>${r.question}</p>
+      ${
+        r.isCorrect
+          ? "<p>✅ Richtig</p>"
+          : `<p>❌ Deine Antwort:</p><p>${givenText}</p>
+             <p>✅ Richtige Antwort:</p><p>${correctText}</p>`
+      }
+    `;
+
+    list.appendChild(div);
+  });
+}
+
+// ==============================
+// STATISTIK SPEICHERN
+// ==============================
+function saveStats(percent) {
+  const attemptsKey = `safety_${quizId}_attempts`;
+  const bestKey = `safety_${quizId}_best`;
+
+  const attempts = Number(localStorage.getItem(attemptsKey) || 0) + 1;
+  localStorage.setItem(attemptsKey, attempts);
+
+  const best = Math.max(
+    percent,
+    Number(localStorage.getItem(bestKey) || 0)
+  );
+  localStorage.setItem(bestKey, best);
 }
 
 // ==============================
@@ -167,5 +208,17 @@ function renderResult(points, maxPoints, percent) {
 function restartQuiz() {
   currentIndex = 0;
   userAnswers = {};
-  location.reload();
+  document.querySelector("main").innerHTML = `
+    <div class="card">
+      <p id="questionText"></p>
+    </div>
+    <div id="answers"></div>
+    <div class="nav">
+      <button class="btn warn" onclick="prevQuestion()">⬅ Zurück</button>
+      <button class="btn warn" onclick="nextQuestion()">➡ Weiter</button>
+    </div>
+    <p id="counter"></p>
+  `;
+  renderQuestion();
+  updateProgress();
 }
