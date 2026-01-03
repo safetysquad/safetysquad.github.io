@@ -203,4 +203,26 @@ function restartQuiz() {
   renderQuestion();
   updateProgress();
 }
+function restoreQuizLayout() {
+  document.querySelector("main").innerHTML = `
+    <h2 id="quizTitle">Quiz</h2>
+
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+
+    <p id="counter"></p>
+
+    <div class="card">
+      <p id="questionText"></p>
+    </div>
+
+    <div id="answers" class="answers"></div>
+
+    <div class="nav">
+      <button class="btn secondary" onclick="prevQuestion()">⬅ Zurück</button>
+      <button class="btn" onclick="nextQuestion()">➡ Weiter</button>
+    </div>
+  `;
+}
 
