@@ -623,3 +623,304 @@ const quizzes = {
     points: 2
   }
 ];
+const quizzes = {
+  quiz3: [
+  {
+    id: 1,
+    question: "Ladendetektiv L soll im Dienst einen Teleskopschlagstock mitführen. Unter welchen Voraussetzungen ist dies gemäß BewachV zulässig?",
+    answers: [
+      { id: "a", text: "Wenn der Auftraggeber zustimmt" },
+      { id: "b", text: "Wenn der Bewachungsgewerbetreibende dies durch seine Zustimmung genehmigt hat." },
+      { id: "c", text: "Wenn L diese Hiebwaffe zur Eigensicherung benötigt" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 2,
+    question: "Welche Rechtsvorschriften gewährleisten in der Bundesrepublik Deutschland die Gewerbefreiheit?",
+    answers: [
+      { id: "a", text: "Die Gewerbeordnung." },
+      { id: "b", text: "Das Bürgerliche Gesetzbuch." },
+      { id: "c", text: "Das Grundgesetz." },
+      { id: "d", text: "Die Bewachungsverordnung." }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 3,
+    question: "Für alle Arten des Bewachungsgewerbes müssen Wachpersonen Kenntnisse über fachspezifische Rechte, Pflichten und Befugnisse besitzen. Welche Sachgebiete fallen darunter?",
+    answers: [
+      { id: "a", text: "Arbeitsrecht" },
+      { id: "b", text: "Umweltrecht" },
+      { id: "c", text: "Datenschutzrecht" },
+      { id: "d", text: "Bürgerliches Gesetzbuch" }
+    ],
+    correct: ["c","d"],
+    points: 2
+  },
+  {
+    id: 4,
+    question: "Wer muss gemäß BewachV ein Schild (Kennschild/Namensschild) tragen?",
+    answers: [
+      { id: "a", text: "Wachpersonen, die die Bewachungstätigkeit 'Schutz: vor Ladendieben' durchführen" },
+      { id: "b", text: "Wachpersonen, die in nicht-leitender Funktion Asylunterkünfte bewachen, z.B. im Eingangsbereich" },
+      { id: "c", text: "Wachpersonen, die die Bewachungstätigkeit 'Geld- und Werttransport' durchführen" },
+      { id: "d", text: "Gewerbetreibende, die als Wachperson tätig werden und die Bewachungstätigkeit 'Kontrollgänge im öffentlichen Verkehrsraum' durchführen" }
+    ],
+    correct: ["b","d"],
+    points: 2
+  },
+  {
+    id: 5,
+    question: "Ein SMA will als 'Ladendetektiv' arbeiten. Mit welchem Nachweis kann er diese Tätigkeit gemäß gewerberechtlicher Bestimmungen ausüben?",
+    answers: [
+      { id: "a", text: "mit dem Nachweis einer vor der IHK erfolgreich abgelegten Sachkundeprüfung gemäß § 34a GewO" },
+      { id: "b", text: "mit dem Nachweis der Teilnahme am Unterrichtungsverfahren einer IHK gemäß §34a GewO" },
+      { id: "c", text: "mit dem Nachweis des Abschlusses einer Berufsausbildung als Einzelhandelskaufmann" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 6,
+    question: "Welche Voraussetzungen muss ein Sicherheitsmitarbeiter gemäß § 34a GewO und BewachV erfüllen, um im Sicherheitsgewerbe arbeiten zu dürfen?",
+    answers: [
+      { id: "a", text: "Er muss einen Berufsabschluss besitzen und mindestens 21 Jahre alt sein" },
+      { id: "b", text: "Er muss zuverlässig sein und das 18. Lebensjahr vollendet haben" },
+      { id: "c", text: "Er muss am Unterrichtungsverfahren für Bewachungspersonal teilgenommen haben" },
+      { id: "d", text: "Er muss die deutsche Staatsangehörigkeit besitzen" }
+    ],
+    correct: ["b","c"],
+    points: 2
+  },
+  {
+    id: 7,
+    question: "Welche der folgenden Tätigkeiten erfordern die Ablegung der IHK-Sachkundeprüfung gemäß § 34a GewO?",
+    answers: [
+      { id: "a", text: "Parkplatzeinweisungen im öffentlichen Verkehrsraum" },
+      { id: "b", text: "Bewachungen von gefährdeten Objekten" },
+      { id: "c", text: "Kontrollgänge im öffentlichen Verkehrsraum" },
+      { id: "d", text: "Tätigkeiten zum Schutz vor Ladendieben" }
+    ],
+    correct: ["c","d"],
+    points: 2
+  },
+  {
+    id: 8,
+    question: "Welche Pflicht muss der Gewerbetreibende gemäß BewachV erfüllen?",
+    answers: [
+      { id: "a", text: "Er muss dafür sorgen, dass seine Wachperson die Sachkundeprüfung erfolgreich ablegen, damit sie Bewachungstätigkeiten wie Geld- und Werttransporte durchführen dürfen" },
+      { id: "b", text: "Er muss seine Wachpersonen spätestens vor der ersten Aufnahme der Bewachungstätigkeiten einen Ausweis ausstellen" },
+      { id: "c", text: "Er muss zur Überprüfung der Zuverlässigkeit seiner Wachperson eine unbeschränkte Auskunft aus dem Bundeszentralregister einholen." },
+      { id: "d", text: "Er muss seine Wachpersonen Dienstkleidung zur Verfügung stellen, die bei allen Bewachungstätigkeiten getragen werden muss" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 9,
+    question: "Wer benötigt die bestandene Sachkundeprüfung?",
+    answers: [
+      { id: "a", text: "Geld- und Wertransporteure" },
+      { id: "b", text: "So genannte 'Citystreifen'" },
+      { id: "c", text: "Grundsätzlich alle Wachdienstmitarbeiter, die Einlasskontrollen durchführen (z. B. bei Veranstaltungen)" },
+      { id: "d", text: "Türsteher im Einlassbereich gastgewerblicher Diskotheken" }
+    ],
+    correct: ["b","d"],
+    points: 2
+  },
+  {
+    id: 10,
+    question: "Gemäß Bewachungsverordnung müssen Sie einen Bewacherausweis mitführen. Welche Informationen müssen zwingend hinterlegt sein?",
+    answers: [
+      { id: "a", text: "Antwort 1; 3 und 4 sind richtig" },
+      { id: "b", text: "Antwort 2 und 4 sind richtig" },
+      { id: "c", text: "Antwort 1; 3 und 5 sind richtig" },
+      { id: "d", text: "Antwort 1; 2 und 3 sind richtig" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 11,
+    question: "Welche Aussagen zur Anzeigepflicht eines selbstständigen Betriebes sind gemäß GewO richtig?",
+    answers: [
+      { id: "a", text: "Die Anzeigepflicht gilt nur für das erlaubnispflichtige Bewachungsgewerbe" },
+      { id: "b", text: "Die Anzeigepflicht besteht nur, wenn das Gewerbe begonnen wird" },
+      { id: "c", text: "Die Anzeigepflicht dient dem Zweck, die staatliche Überwachung der Gewerbeausübung zu ermöglichen, z. B. durch die Gewerbeaufsicht" },
+      { id: "d", text: "Wer vorsätzlich oder fahrlässig seiner Anzeigepflicht nicht nachkommt, handelt gemäß GewO ordnungswidrig" }
+    ],
+    correct: ["c","d"],
+    points: 2
+  },
+  {
+    id: 12,
+    question: "Für welche Tätigkeiten ist gemäß § 34a GewO eine vor der Industrie- und Handelskammer erfolgreich abgelegte Sachkundeprüfung erforderlich?",
+    answers: [
+      { id: "a", text: "Für die Bewachung des Einlassbereiches eines Hotels, in dem ein Sommerball veranstaltet wird" },
+      { id: "b", text: "Für die ausschließliche Entgegennahme und Weiterleitung von Alarmmeldungen durch Notrufzentralen" },
+      { id: "c", text: "Für die Durchführung von Kontrollgängen in der Fußgängerzone einer Stadt" },
+      { id: "d", text: "Für die Bewachung von Asyl- und Flüchtlingsunterkünften in leitender Funktion" }
+    ],
+    correct: ["c","d"],
+    points: 2
+  },
+  {
+    id: 13,
+    question: "Welche Aussage zur Regelung von Dienstkleidung ist laut Bewachungsverordnung richtig?",
+    answers: [
+      { id: "a", text: "Sicherheitsmitarbeiter, die ein befriedetes Besitztum in Ausübung ihres Dienstes betreten sollen, müssen eine Dienstkleidung tragen" },
+      { id: "b", text: "Sicherheitsmitarbeiter müssen nur dann Dienstkleidung tragen, wenn dies vom Auftraggeber ausdrücklich gefordert wird" },
+      { id: "c", text: "Sicherheitsmitarbeiter haben grundsätzlich die Pflicht, eine Uniform zu tragen, welche den Uniformen der behördlichen Vollzugsorgane ähnlich sein sollte" },
+      { id: "d", text: "Private Sicherheitsmitarbeiter müssen grundsätzlich überall und ausnahmslos in jedem Tätigkeitsbereich eine Dienstkleidung tragen" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 14,
+    question: "Welche Unterlagen benötigt die Erlaubnisbehörde unter anderem, um den Antrag auf Erteilung einer Bewachungserlaubnis gemäß § 34a GewO zu prüfen?",
+    answers: [
+      { id: "a", text: "Den Nachweis der erforderlichen Sachkundeprüfung für das Bewachungsgewerbe" },
+      { id: "b", text: "Die Bescheinigung über die Teilnahme am Unterrichtungsverfahren" },
+      { id: "c", text: "Ein persönliches Führungszeugnis zur Überprüfung der Zuverlässigkeit des Antragstellers" },
+      { id: "d", text: "Eine unbeschränkte Auskunft aus dem Bundeszentralregister zur Überprüfung der Zuverlässigkeit des Antragstellers" }
+    ],
+    correct: ["a","d"],
+    points: 2
+  },
+  {
+    id: 15,
+    question: "Was besagt § 17 BewachV hinsichtlich der Dienstanweisung?",
+    answers: [
+      { id: "a", text: "Mitarbeiter dürfen nur mit ausdrücklicher Genehmigung der Firmenleitung im Dienst Waffen tragen." },
+      { id: "b", text: "Jeder Mitarbeiter muss gegen Empfangsbescheinigung ein Exemplar der Dienstanweisung erhalten." },
+      { id: "c", text: "Die Dienstanweisung ist immer zu befolgen." },
+      { id: "d", text: "Die Dienstanweisung ist im Dienst bei sich zu führen." }
+    ],
+    correct: ["a","b"],
+    points: 2
+  },
+  {
+    id: 16,
+    question: "Was legt die Bewachungsverordnung bezüglich der Dienstkleidung des Wachpersonals fest?",
+    answers: [
+      { id: "a", text: "Alle privaten Sicherheitskräfte haben die Pflicht eine erkennbare Dienstkleidung zu tragen" },
+      { id: "b", text: "Wachpersonen, die eingefriedetes Besitztum in Ausübung ihres Dienstes betreten, müssen eine Dienstkleidung tragen" },
+      { id: "c", text: "Die Dienstkleidung von Wachpersonal sollte den amtlichen Uniformen ähnlich sein, damit das Sicherheitspersonal besser zu erkennen ist" },
+      { id: "d", text: "Die Dienstkleidung von Wachpersonal darf nicht mit amtlichen Uniformen verwechselt werden können" }
+    ],
+    correct: ["b","d"],
+    points: 2
+  },
+  {
+    id: 17,
+    question: "Was muss ein Dienstausweis gemäß Bewachungsverordnung (BewachV) beinhalten?",
+    answers: [
+      { id: "a", text: "Namen und Anschrift des Gewerbetreibenden" },
+      { id: "b", text: "Namen und Vornamen des Gewerbetreibenden" },
+      { id: "c", text: "Namen und Anschrift des Ausweisinhabers" },
+      { id: "d", text: "Namen und Vornamen des Ausweisinhabers" }
+    ],
+    correct: ["a","d"],
+    points: 2
+  },
+  {
+    id: 18,
+    question: "Wo sind die Pflichten für SMA beschrieben?",
+    answers: [
+      { id: "a", text: "in der DGUV 23" },
+      { id: "b", text: "im Grundgesetz" },
+      { id: "c", text: "in der BewachV" },
+      { id: "d", text: "in der Strafprozessordnung (StPO)" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 19,
+    question: "Wann besitzt eine Wachperson nicht die erforderliche Zuverlässigkeit gemäß § 34a GewO?",
+    answers: [
+      { id: "a", text: "Wenn sie vor drei Jahren rechtskräftig wegen Beleidigung zu einer Geldstrafe von 60 Tagessätzen verurteilt worden ist" },
+      { id: "b", text: "Wenn sie wegen eines Verbrechens, z. B. Raub, vor zehn Jahren rechtskräftig verurteilt worden ist" },
+      { id: "c", text: "Wenn sie Mitglied einer demokratisch legitimierten politischen Partei ist" },
+      { id: "d", text: "Wenn sie Mitglied in einem Verein ist, der nach dem Vereinsgesetz als Organisation unanfechtbar verboten wurde" }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 20,
+    question: "Wer benötigt zur Durchführung von Bewachungsaufgaben keine IHK-Unterrichtung gemäß § 34a Gewerbeordnung (GewO)?",
+    answers: [
+      { id: "a", text: "Personen mit bestandener Sachkundeprüfung gem. § 34a GewO" },
+      { id: "b", text: "Sicherheitsmitarbeiter mit mindestens 3-jähriger Berufserfahrung" },
+      { id: "c", text: "Alle Zeit- und Berufssoldaten mit mindestens 4-jähriger Dienstzeit" },
+      { id: "d", text: "Polizeibeamte nach bestandener Laufbahnprüfung" }
+    ],
+    correct: ["a","d"],
+    points: 2
+  },
+  {
+    id: 21,
+    question: "Wozu ist ein Sicherheitsunternehmer nach der Bewachungsverordnung verpflichtet?",
+    answers: [
+      { id: "a", text: "Er muss eine Haftpflichtversicherung abschließen" },
+      { id: "b", text: "Er hat eine Rechtsschutzversicherung abzuschließen" },
+      { id: "c", text: "Er hat seinen Wachpersonen einen Dienstausweis auszustellen" },
+      { id: "d", text: "Er darf grundsätzlich keine zuverlässigen Personen beschäftigen" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 22,
+    question: "Welche Angaben muss der Bewacherausweis von Sicherheitsmitarbeitern gemäß BewachV enthalten?",
+    answers: [
+      { id: "a", text: "Name, Vorname des Sicherheitsmitarbeiters, Gültigkeitsdauer des Ausweises, Privatanschrift und Geburtsdatum des Sicherheitsmitarbeiters" },
+      { id: "b", text: "Name, Vorname und Unterschrift des Sicherheitsmitarbeiters, Name, Anschrift und Unterschrift des Gewerbetreibenden oder seines Vertreters" },
+      { id: "c", text: "Gültigkeitsdauer, Lichtbild des Gewerbetreibenden, Name, Vorname des Sicherheitsmitarbeiters sowie seine Zugehörigkeit zur Krankenkasse" },
+      { id: "d", text: "Bezeichnung und Anschrift des Gewerbebetriebes, Bewacherregisteridentifikationsnummer des Gewerbebetriebes und der Wachperson" }
+    ],
+    correct: ["b","d"],
+    points: 2
+  },
+  {
+    id: 23,
+    question: "Müssen Wachpersonen ihren Bewacherausweis gemäß BewachV sichtbar tragen?",
+    answers: [
+      { id: "a", text: "Ja, während des Wachdienstes. Ausgenommen davon ist der 'Personenschutz'. Personenschützer müssen den Ausweis nur mitführen" },
+      { id: "b", text: "Nein, während des Wachdienstes müssen Wachpersonen den Ausweis mitführen und auf Verlangen den Beauftragten der Vollzugsbehörden vorzeigen" },
+      { id: "c", text: "Ja, während des Wachdienstes. Dies gilt aber nur für sachkundepflichtige Bewachungstätigkeiten wie 'Kontrollgänge im öffentlichen Verkehrsraum'" },
+      { id: "d", text: "Ja, während des Wachdienstes. Diese Tragepflicht entfällt allerdings, wenn die Wachpersonen ein Kennschild bzw. ein Namensschild sichtbar tragen" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 24,
+    question: "Welche Regelung muss eine Dienstanweisung gemäß Bewachungsverordnung enthalten?",
+    answers: [
+      { id: "a", text: "Dienstanweisungen müssen die besonderen Eingriffsbefugnisse des Wachpersonals regeln" },
+      { id: "b", text: "Dienstanweisungen müssen den Hinweis enthalten, dass die Wachpersonen nicht die Eigenschaft und die Befugnisse eines Polizeibeamten besitzen" },
+      { id: "c", text: "Dienstanweisungen müssen Regelungen zum Führen von Waffen sowie zur Anzeige¬pflicht bei Waffengebrauch enthalten" },
+      { id: "d", text: "Dienstkleidungen und Abzeichen der Wachpersonen dürfen nicht mit amtlichen Uniformen verwechselt werden können" }
+    ],
+    correct: ["b","c"],
+    points: 2
+  },
+  {
+    id: 25,
+    question: "Welche der nachfolgenden Tätigkeitsbereiche im Sicherheitsgewerbe haben die Pflicht sichtbar ein Schild mit ihrem Namen oder einer Kennnummer zu tragen?",
+    answers: [
+      { id: "a", text: "Türsteher - am Einlassbereich gastgewerblicher Diskotheken" },
+      { id: "b", text: "Citystreifen - bei Kontrollgängen im öffentlichen Verkehrsraum" },
+      { id: "c", text: "Kaufhausdetektive" },
+      { id: "d", text: "Werkschutzmitarbeiter" }
+    ],
+    correct: ["a","b"],
+    points: 2
+  }
+];
