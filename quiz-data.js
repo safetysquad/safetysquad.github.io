@@ -920,6 +920,332 @@ quiz3: [
     correct: ["a","b"],
     points: 2
   }
-  ]
+  ],
+  quiz4 = [
+  {
+    id: 1,
+    question: "Welche Aussagen zur Polizei und zum Bewachungsgewerbe sind richtig?",
+    answers: [
+      { id: "a", text: "Das Bewachungsgewerbe übt eine aktive Obhutsfunktion aus, die in menschlicher Tätigkeit besteht" },
+      { id: "b", text: "Wesentliche Aufgaben der Polizei sind die Gefahrenabwehr und die Strafverfolgung" },
+      { id: "c", text: "Wachpersonen besitzen die Befugnisse von Beauftragten der Vollzugsbehörden, z. B. der Polizeibehörden" },
+      { id: "d", text: "Das Bewachungsgewerbe bewacht ausschließlich fremdes Eigentum" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+
+  {
+    id: 2,
+    question: "Was bedeutet „staatliches Gewaltmonopol“?",
+    answers: [
+      { id: "a", text: "Gewalt ist als äußerstes Mittel grundsätzlich nur den staatlichen Organen vorbehalten" },
+      { id: "b", text: "Die Rechtsordnung verpflichtet jeden Bürger, Gefährdungen der Allgemeinheit auch mit Gewalt abzuwehren" },
+      { id: "c", text: "Das staatliche Sicherheitsmonopol entspringt der Verpflichtung, Sicherheit zu garantieren" },
+      { id: "d", text: "Gewaltanwendung durch Einzelne ist nur ausnahmsweise zulässig und auf Notsituationen beschränkt" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+
+  {
+    id: 3,
+    question: "Die Grundrechte (Art. 1–19 GG) sind in erster Linie Abwehrrechte …",
+    answers: [
+      { id: "a", text: "… der Polizei" },
+      { id: "b", text: "… ausschließlich deutscher Staatsbürger" },
+      { id: "c", text: "… des Privatrechts" },
+      { id: "d", text: "… des Bürgers gegenüber staatlicher Machtentfaltung" }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+
+  {
+    id: 4,
+    question: "Welche Aussagen zur Gewaltenteilung sind korrekt?",
+    answers: [
+      { id: "a", text: "Die Antworten 1, 2 und 5 sind richtig" },
+      { id: "b", text: "Die Antworten 1, 3 und 5 sind richtig" },
+      { id: "c", text: "Die Antworten 2, 4 und 6 sind richtig" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+
+  {
+    id: 5,
+    question: "Welche Funktionen erfüllen die Grundrechte des Grundgesetzes?",
+    answers: [
+      { id: "a", text: "Schutz des Bürgers gegen staatliche Eingriffe" },
+      { id: "b", text: "Garantie eines Rechts auf Arbeit" },
+      { id: "c", text: "Begrenzung der Staatsgewalt" }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+
+  {
+    id: 6,
+    question: "Was bedeutet das Gewaltmonopol?",
+    answers: [
+      { id: "a", text: "Der Staat hat uneingeschränkte Gewalt ohne Ausnahmen" },
+      { id: "b", text: "Nur der Chef der Wachfirma entscheidet" },
+      { id: "c", text: "Der Staat überträgt Gewalt vollständig auf Private" },
+      { id: "d", text: "Nur die Polizei darf Gewalt anwenden" },
+      { id: "e", text: "Private dürfen im Rahmen der Jedermannsrechte ausnahmsweise handeln" }
+    ],
+    correct: ["e"],
+    points: 1
+  },
+
+  {
+    id: 7,
+    question: "In welchem Bereich ist die Polizei zuständig?",
+    answers: [
+      { id: "a", text: "Immer in allen Bereichen" },
+      { id: "b", text: "Im privaten Bereich bei Durchsuchungsbeschluss oder Gefahr im Verzug" },
+      { id: "c", text: "Nur im öffentlichen Bereich" },
+      { id: "d", text: "Grundsätzlich im öffentlichen Bereich" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+
+  {
+    id: 8,
+    question: "Welchen Zweck haben Rechtfertigungsgründe?",
+    answers: [
+      { id: "a", text: "Entschuldigung ordnungswidrigen Handelns" },
+      { id: "b", text: "Entschuldigung verbotenen Handelns" },
+      { id: "c", text: "Rechtfertigung strafbaren Handelns" },
+      { id: "d", text: "Rechtfertigung unerlaubten Handelns" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+
+  {
+    id: 9,
+    question: "In welche Rechtsgebiete wird die deutsche Rechtsordnung eingeteilt?",
+    answers: [
+      { id: "a", text: "Öffentliches Recht" },
+      { id: "b", text: "Politisches Recht" },
+      { id: "c", text: "Privat- / Zivilrecht" },
+      { id: "d", text: "Recht des Stärkeren" }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+
+  {
+    id: 10,
+    question: "Was kennzeichnet das öffentliche Recht?",
+    answers: [
+      { id: "a", text: "Gleichordnung zwischen Staat und Bürger" },
+      { id: "b", text: "Über- und Unterordnung zwischen Staat und Bürger" },
+      { id: "c", text: "Gleichordnung zwischen Bürgern" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+
+  {
+    id: 11,
+    question: "Welche Rechte dürfen SMA im öffentlichen Verkehrsraum ausüben?",
+    answers: [
+      { id: "a", text: "Notwehr-, Notstands- und übertragene Selbsthilferechte" },
+      { id: "b", text: "Bußgelder erheben" },
+      { id: "c", text: "Platzverweise wie die Polizei" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+
+  {
+    id: 12,
+    question: "Welche Aussagen zur Freiheit der Person sind richtig?",
+    answers: [
+      { id: "a", text: "Eingriffe nur auf gesetzlicher Grundlage zulässig" },
+      { id: "b", text: "Freie Ortswahl ohne Einschränkung" },
+      { id: "c", text: "Nur Polizei darf eingreifen" },
+      { id: "d", text: "Körperliche Bewegungsfreiheit ist geschützt" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+
+  {
+    id: 13,
+    question: "Was bedeutet Gewaltenteilung?",
+    answers: [
+      { id: "a", text: "Drei Gewalten: Gericht, Polizei, Staatsanwalt" },
+      { id: "b", text: "Nicht jeder Polizist darf alles" },
+      { id: "c", text: "Gewalten kontrollieren sich gegenseitig" },
+      { id: "d", text: "Legislative, Exekutive, Judikative" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+
+  {
+    id: 14,
+    question: "Welche Institutionen zählen zur gesetzgebenden Gewalt?",
+    answers: [
+      { id: "a", text: "Regierungen der Bundesländer" },
+      { id: "b", text: "Landtage" },
+      { id: "c", text: "Bundestag" },
+      { id: "d", text: "Staatsanwaltschaft" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+
+  {
+    id: 15,
+    question: "Worauf muss ein Kaufhausdetektiv vor einer Befragung hinweisen?",
+    answers: [
+      { id: "a", text: "Durchsuchung der Taschen bei Verweigerung" },
+      { id: "b", text: "Nur Geldstrafe bei Geständnis" },
+      { id: "c", text: "Angabe der Personalien ist freiwillig" },
+      { id: "d", text: "Keine Aussagepflicht zum Tatvorwurf" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+
+  {
+    id: 16,
+    question: "Welche Rechtsvorschriften gelten als Gesetze?",
+    answers: [
+      { id: "a", text: "Bewachungsverordnung" },
+      { id: "b", text: "Gewerbeordnung" },
+      { id: "c", text: "Strafprozessordnung" },
+      { id: "d", text: "DGUV Vorschrift 23" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+
+  {
+    id: 17,
+    question: "Art. 2 GG – Recht auf Leben und körperliche Unversehrtheit …",
+    answers: [
+      { id: "a", text: "Schützt nur psychische Unversehrtheit" },
+      { id: "b", text: "Ist ein Menschenrecht" },
+      { id: "c", text: "Ist ein Abwehrrecht gegen den Staat" },
+      { id: "d", text: "Ist ein reines Bürgerrecht" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+
+  {
+    id: 18,
+    question: "Welche Aussage zur Zuständigkeit des Sicherheitsgewerbes ist richtig?",
+    answers: [
+      { id: "a", text: "Zuständig nach Auftrag des Auftraggebers" },
+      { id: "b", text: "Zuständig für öffentliche Sicherheit" },
+      { id: "c", text: "Zuständig nach Weisung der Polizei" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+
+  {
+    id: 19,
+    question: "Welche Grundrechte sind Bürgerrechte?",
+    answers: [
+      { id: "a", text: "Menschenwürde" },
+      { id: "b", text: "Gleichheit vor dem Gesetz" },
+      { id: "c", text: "Freie Berufswahl" },
+      { id: "d", text: "Versammlungsfreiheit" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+
+  {
+    id: 20,
+    question: "Welche Aussagen verstoßen gegen die Rechtsordnung?",
+    answers: [
+      { id: "a", text: "Durchsuchung mit Beschluss" },
+      { id: "b", text: "Strafe ohne gesetzliche Grundlage" },
+      { id: "c", text: "Untersagung bei Vorstrafen" },
+      { id: "d", text: "Anspucken einer Wachperson" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  
+  {
+    id: 21,
+    question: "In welche drei „Gewalten“ teilt sich unser Staat laut Grundgesetz auf?",
+    answers: [
+      { id: "a", text: "Staat, Volk, Medien" },
+      { id: "b", text: "Judikative, Legislative, Richtersprechung" },
+      { id: "c", text: "Legislative, Exekutive, Judikative" },
+      { id: "d", text: "Gericht, Staatsanwaltschaft, Polizei" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+
+  {
+    id: 22,
+    question: "Welche Voraussetzung kann eine Sonderregelung bei Zufahrtskontrollen im öffentlichen Bereich erlauben?",
+    answers: [
+      { id: "a", text: "Entscheidung des Bewachungsgewerbetreibenden" },
+      { id: "b", text: "Nachweis eines Gewohnheitsrechts" },
+      { id: "c", text: "Public-Private-Partnership-Vereinbarung" },
+      { id: "d", text: "Genehmigung von Ordnungsamt und örtlicher Polizeibehörde" },
+      { id: "e", text: "Entscheidung des Auftraggebers" },
+      { id: "f", text: "Übertragene Besitzrechte durch die Polizei" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+
+  {
+    id: 23,
+    question: "Was wird unter dem Privatrecht verstanden?",
+    answers: [
+      { id: "a", text: "Rechtsfolgen für Straftaten und Ordnungswidrigkeiten" },
+      { id: "b", text: "Rechtsbeziehungen zwischen gleichgestellten Personen" },
+      { id: "c", text: "Teil des öffentlichen Rechts" },
+      { id: "d", text: "Regelung von Rechten und Pflichten zwischen Bürgern" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+
+  {
+    id: 24,
+    question: "Welche Aussagen zum Privatrecht sind richtig?",
+    answers: [
+      { id: "a", text: "Es regelt Besitz- und Eigentumsrechte" },
+      { id: "b", text: "Es regelt die rechtlichen Beziehungen der Bürger untereinander" },
+      { id: "c", text: "Es umfasst die Gewerbeordnung" },
+      { id: "d", text: "Es regelt Beziehungen zwischen Bürger und Staat" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+
+  {
+    id: 25,
+    question: "Welche Aussagen zum Grundrecht der Unverletzlichkeit der Wohnung (Art. 13 GG) sind richtig?",
+    answers: [
+      { id: "a", text: "Durchsuchungen sind nur strafprozessual zulässig" },
+      { id: "b", text: "Gilt nicht für Nicht-Deutsche" },
+      { id: "c", text: "Individuelles Abwehrrecht gegen staatliche Gewalt" },
+      { id: "d", text: "Gilt nur für Eigentumswohnungen" },
+      { id: "e", text: "Durchsuchungen nur mit richterlichem Beschluss, außer bei Gefahr im Verzug" },
+      { id: "f", text: "Steht nur dem Eigentümer zu" }
+    ],
+    correct: ["c", "e"],
+    points: 2
+  }
+  ];
 };
 
