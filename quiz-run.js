@@ -143,6 +143,7 @@ function renderResult(points, maxPoints, percent, results) {
   main.innerHTML = `
     <div class="card">
       <h2>Ergebnis</h2>
+      <div class="result-box">
       <p><b>${points}</b> von <b>${maxPoints}</b> Punkten</p>
       <p><b>${percent}%</b> ${
         percent === 100 ? "✅ Bestanden" : "❌ Nicht bestanden"
