@@ -231,63 +231,65 @@ main {
    QUIZ ERGEBNIS
 ================================ */
 
-.result-box {
+/* ===============================
+   QUIZ RESULT
+================================ */
+
+.result-summary {
   background: #1e293b;
-  padding: 1rem;
-  border-radius: 16px;
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: space-between;
-  font-size: 1rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
 }
 
-.wrong-card {
+.result-summary h2 {
+  margin-bottom: .5rem;
+}
+
+.badge {
+  margin: 1rem auto;
+  padding: .6rem 1rem;
+  border-radius: 14px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.badge.success {
+  background: #22c55e;
+  color: #022c22;
+}
+
+.badge.warn {
+  background: #f59e0b;
+  color: #422006;
+}
+
+.result-card {
   background: #1e293b;
   border-radius: 18px;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  padding: 1.2rem;
+  margin: 1rem 0;
 }
 
-.wrong-title {
-  font-weight: 700;
-  margin-bottom: .4rem;
+.result-card.wrong {
+  border: 1px solid #ef4444;
 }
 
-.wrong-question {
+.result-card .question {
+  font-weight: 600;
+  margin-bottom: .6rem;
+}
+
+.result-card .answer {
   font-size: .95rem;
-  margin-bottom: .8rem;
-  opacity: .9;
+  margin: .3rem 0;
 }
 
-.answer-block {
-  padding: .7rem;
-  border-radius: 12px;
-  margin-top: .6rem;
-  font-size: .9rem;
+.result-card .answer.user {
+  color: #fca5a5;
 }
 
-.answer-block.wrong {
-  background: rgba(239, 68, 68, 0.15);
-}
-
-.answer-block.correct {
-  background: rgba(34, 197, 94, 0.15);
-}
-.result-status {
-  padding: 12px;
-  border-radius: 14px;
-  text-align: center;
-  font-weight: 700;
-  margin: 12px 0;
-}
-
-.result-status.passed {
-  background: rgba(34, 197, 94, 0.2);
-  color: #22c55e;
-}
-
-.result-status.failed {
-  background: rgba(239, 68, 68, 0.2);
-  color: #ef4444;
+.result-card .answer.correct {
+  color: #86efac;
 }
 
