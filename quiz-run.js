@@ -156,32 +156,49 @@ function renderResult(points, maxPoints, percent, results) {
       }
 
       <div class="result-actions">
-  <button class="btn" onclick="restartQuiz()">🔁 Test wiederholen</button>
-  <a href="quiz.html" class="btn secondary">⬅ Zur Quiz-Auswahl</a>
-</div>
-
+        <button class="btn" onclick="restartQuiz()">🔁 Test wiederholen</button>
+        <a href="quiz.html" class="btn secondary">⬅ Zur Quiz-Auswahl</a>
+      </div>
+    </div>
   `;
 
+  // ❌❌❌ NUR FALSCHE FRAGEN ANZEIGEN
   results.forEach(r => {
     if (!r.isCorrect) {
+
+      // 🔹 Hilfsfunktion: IDs → Antworttexte
+      const getTextById = (ids, answers) =>
+        answers
+          .filter(a => ids.includes(a.id))
+          .map(a => a.text);
+
+      const userTexts = getTextById(
+        r.givenAnswers || [],
+        r.answers
+      );
+
+      const correctTexts = getTextById(
+        r.correctAnswers,
+        r.answers
+      );
+
       html += `
         <div class="result-card wrong">
           <p class="question">${r.question}</p>
-          const getTextById = (ids, answers) =>
-  answers
-    .filter(a => ids.includes(a.id))
-    .map(a => a.text);
 
-const userTexts = getTextById(
-  userAnswers[q.id] || [],
-  q.answers
-);
+          <p class="answer user">❌ Deine Antwort:</p>
+          <ul class="answer-list user">
+            ${
+              userTexts.length
+                ? userTexts.map(t => `<li>${t}</li>`).join("")
+                : "<li>—</li>"
+            }
+          </ul>
 
-const correctTexts = getTextById(
-  q.correct,
-  q.answers
-);
-
+          <p class="answer correct">✅ Richtige Antwort:</p>
+          <ul class="answer-list correct">
+            ${correctTexts.map(t => `<li>${t}</li>`).join("")}
+          </ul>
         </div>
       `;
     }
@@ -189,6 +206,7 @@ const correctTexts = getTextById(
 
   main.innerHTML = html;
 }
+
 
 // ==============================
 // STATISTIK SPEICHERN
