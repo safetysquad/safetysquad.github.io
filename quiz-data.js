@@ -1248,8 +1248,8 @@ quiz4: [
     correct: ["c", "e"],
     points: 2
   }
-],
-quizzes.quiz5 = [
+  
+quiz5: [
   {
     id: 1,
     question: "Welche Aussagen zur DS-GVO sind richtig?",
@@ -1548,7 +1548,7 @@ quizzes.quiz5 = [
     points: 1
   }
 ],
-  quizzes.quiz6 = [
+  quiz6: [
   {
     id: 1,
     question: "Gemäß DS-GVO ist die Verarbeitung „besonderer Kategorien personenbezogener Daten“ grundsätzlich verboten. Was sind solche Daten?",
@@ -1845,7 +1845,7 @@ quizzes.quiz5 = [
     points: 2
   }
 ],
-    quizzes.quiz7 = [
+quiz7: [
   {
     id: 1,
     question: "Wie lange ist die Gültigkeit der bestandenen Sachkundeprüfung nach §34a GewO?",
@@ -2087,7 +2087,8 @@ quizzes.quiz5 = [
     points: 1
   }
 ],
-    quizzes.quiz8 = [
+
+  quiz8: [
   {
     id: 1,
     question: "Welches sind im Grundgesetz geschützte Rechtsgüter?",
@@ -2269,6 +2270,249 @@ quizzes.quiz5 = [
       { id: "d", text: "Sie können ordnungswidriges Handeln entschuldigen" }
     ],
     correct: ["a","c"],
+    points: 2
+  }
+],
+
+  quiz9: [
+  {
+    id: 1,
+    question: "Welche Aussage zur Zuständigkeit des Sicherheitsgewerbes ist richtig?",
+    answers: [
+      { id: "a", text: "Das Sicherheitsgewerbe ist zuständig für das korrekte Abwiegen von Rinderhack an der Fleischtheke" },
+      { id: "b", text: "Das Sicherheitsgewerbe ist zuständig für die Aufrechterhaltung der öffentlichen Sicherheit und Ordnung" },
+      { id: "c", text: "Das Sicherheitsgewerbe ist zuständig in den Bereichen, die ihm vertraglich vom Auftraggeber zugewiesen werden" },
+      { id: "d", text: "Das Sicherheitsgewerbe ist zuständig in den Bereichen, die ihm von den Sicherheitsbehörden zugewiesen werden" },
+      { id: "e", text: "Das Sicherheitsgewerbe ist zuständig für die innere Sicherheit der Bundesländer" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 2,
+    question: "Erklären Sie den Begriff 'Gewaltenteilung'!",
+    answers: [
+      { id: "a", text: "Die Gewalten kontrollieren sich gegenseitig." },
+      { id: "b", text: "Die 3 Gewalten sind: Legislative , Exekutive, Judikative," },
+      { id: "c", text: "Die Gewalten sind geteilt, das heißt nicht jeder Polizist darf alle Polizeirechte ausüben." },
+      { id: "d", text: "Es gibt 3 Gewalten: Gericht, Staatsanwalt, Polizei." }
+    ],
+    correct: ["a","b"],
+    points: 2
+  },
+  {
+    id: 3,
+    question: "Welche Aussagen zur Menschenwürde sind gemäß Art. 1 Grundgesetz richtig?",
+    answers: [
+      { id: "a", text: "Durch die Menschenwürde sind nur die höchsten Grundrechte 'Recht auf Leben' und 'Recht auf körperliche Unversehrtheit‘ geschützt." },
+      { id: "b", text: "Geschützt ist jeder Mensch, der sich im Geltungsbereich des GG aufhält, z. B. Minderjährige Kinder, Straftäter und Ausländer" },
+      { id: "c", text: "Geschützt sind ebenso juristische Personen und die Menschheit" },
+      { id: "d", text: "Der Staat ist verpflichtet, die Menschenwürde zu achten und zu schützen" }
+    ],
+    correct: ["b","d"],
+    points: 2
+  },
+  {
+    id: 4,
+    question: "Was sind wesentliche Aufgaben der Polizei, des Bundes und der Länder?",
+    answers: [
+      { id: "a", text: "Straftaten zu erforschen und zu verfolgen" },
+      { id: "b", text: "Bürger dabei zu unterstützen, ihre zivilrechtlichen Ansprüche gegen andere Bürger durchzusetzen" },
+      { id: "c", text: "Die Gefahrenabwehr zum Wohle der öffentlichen Sicherheit und Ordnung" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 5,
+    question: "Erklären Sie den Begriff 'Gewaltmonopol'!",
+    answers: [
+      { id: "a", text: "Gewaltmonopol bedeutet, dass ausschließlich nur die Polizei Gewalt anwenden darf." },
+      { id: "b", text: "Private können im Rahmen der Jedermannsrechte gegen das Gewaltmonopol des Staates ausnahmsweise verstoßen." },
+      { id: "c", text: "Der Staat hat die absolute Herrschaft über jegliche Gewaltanwendung, es gibt keine Ausnahmen." },
+      { id: "d", text: "Der Staat hat das Gewaltmonopol, kann seine Rechte aber voll auf Private übertragen" },
+      { id: "e", text: "Gewaltmonopol bedeutet, nur der Chef der Wachfirma hat das Sagen." }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 6,
+    question: "Welche der folgenden Grundrechte des Grundgesetzes sind Bürgerrechte?",
+    answers: [
+      { id: "a", text: "Versammlungsfreiheit" },
+      { id: "b", text: "Gleichheit vor dem Gesetz" },
+      { id: "c", text: "Schutz der Menschenwürde" },
+      { id: "d", text: "Freie Berufswahl" }
+    ],
+    correct: ["a","d"],
+    points: 2
+  },
+  {
+    id: 7,
+    question: "Welche Rechtsbereiche werden dem privaten Recht zugeordnet?",
+    answers: [
+      { id: "a", text: "Arbeitsrecht" },
+      { id: "b", text: "Sozialrecht" },
+      { id: "c", text: "Handelsrecht" },
+      { id: "d", text: "Gewerberecht" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 8,
+    question: "In welchem Bereich ist die Polizei zuständig?",
+    answers: [
+      { id: "a", text: "Nur im öffentlichen Bereich" },
+      { id: "b", text: "Grundsätzlich im öffentlichen Bereich" },
+      { id: "c", text: "Immer in allen Bereichen" },
+      { id: "d", text: "Im privaten Bereich z.B. mit Durchsuchungsbeschluss oder bei Gefahr im Verzug" }
+    ],
+    correct: ["b","d"],
+    points: 2
+  },
+  {
+    id: 9,
+    question: "Was regelt das Privatrecht (bürgerliches Recht)?",
+    answers: [
+      { id: "a", text: "Es regelt die Folgen, wenn ein Bürger von einem anderen Schadensersatz fordert." },
+      { id: "b", text: "Es regelt das rechtliche Verhältnis zwischen Bürger und Staat" },
+      { id: "c", text: "Es regelt die Folgen, wenn ein Bürger eine Straftat begeht." },
+      { id: "d", text: "Es regelt Verhältnisse zwischen Bürgern." }
+    ],
+    correct: ["a","d"],
+    points: 2
+  },
+  {
+    id: 10,
+    question: "Welche der nachfolgenden Aussagen, verstößt gegen die Rechtsordnung der Bundesrepublik Deutschland?",
+    answers: [
+      { id: "a", text: "Das Anspucken einer Wachperson, welche den Einlass eines Kaufhauses sichert." },
+      { id: "b", text: "Die Durchsuchung einer Wohnung durch die Polizei, auf Grund eines Durchsuchungsbeschlusses." },
+      { id: "c", text: "Die Bestrafung einer Person mit einer Geldstrafe ohne gesetzliche Grundlage" },
+      { id: "d", text: "Die Untersagung einer Bewachungserlaubnis auf Grund von drei Vorstrafen, wegen verschiedener Verbrechen in den letzten drei Jahren" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 11,
+    question: "Im deutschen Rechtssystem sind Rechtfertigungsgründe festgelegt. Worin besteht deren Zweck?",
+    answers: [
+      { id: "a", text: "Sie können strafbares Handeln rechtfertigen . . . zum Beispiel die Notwehr gem. §32 StGB oder die vorläufige Festnahme gemäß § 127 Abs. 1 StPO" },
+      { id: "b", text: "Sie können verbotenes Handeln entschuldigen" },
+      { id: "c", text: "Sie können unerlaubtes Handeln rechtfertigen . . . zum Beispiel die Notwehr gemäß § 227 BGB oder der (verteidigende) Notstand gemäß § 228 BGB" },
+      { id: "d", text: "Sie können ordnungswidriges Handeln entschuldigen" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 12,
+    question: "Welche Aussagen zum Grundrecht auf Leben sind gemäß Grundgesetz richtig?",
+    answers: [
+      { id: "a", text: "In das Grundrecht auf Leben kann aufgrund eines Gesetzes eingegriffen werden, z. B. durch Notwehr gemäß § 32 StGB" },
+      { id: "b", text: "Das Recht auf Leben ist ein Bürgerrecht und steht deshalb nur deutschen Staatsbürgern zu" },
+      { id: "c", text: "Es ist ein Menschenrecht, das für alle Menschen gilt, die sich auf dem Staatsgebiet der Bundesrepublik Deutschland aufhalten" },
+      { id: "d", text: "In dieses Grundrecht darf nicht eingegriffen werden, weil es eines der höchsten Rechtsgüter des Menschen ist" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 13,
+    question: "Das Recht auf Leben und körperliche Unversehrtheit (Art. 2 GG)…",
+    answers: [
+      { id: "a", text: "…ist ein Bürgerrecht." },
+      { id: "b", text: "…ist ein Menschenrecht." },
+      { id: "c", text: "…ist ein Abwehrrecht und richtet sich u.a. gegen Eingriffe des Staates." },
+      { id: "d", text: "…schützt nur die psychische Unversehrtheit der Bürger." }
+    ],
+    correct: ["b","c"],
+    points: 2
+  },
+  {
+    id: 14,
+    question: "Wozu dienen die Grundrechte?",
+    answers: [
+      { id: "a", text: "Als Abwehrrechte der Bürger gegenüber dem Staat" },
+      { id: "b", text: "Abschreckung der Allgemeinheit vor strafbaren Handlungen" },
+      { id: "c", text: "Als Eingriffsrechte des Staates gegenüber dem Bürger" },
+      { id: "d", text: "Regelung des Rechtsverhältnisses der Bürger untereinander" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 15,
+    question: "Welche Rechte stehen den Wachpersonen im Bewachungsgewerbe zu ?",
+    answers: [
+      { id: "a", text: "Sie dürfen Taschen und Kleidung eines festgenommenen Straftäters nach einem Ausweis durchsuchen" },
+      { id: "b", text: "Sie dürfen Notwehr- und Notstandsrechte zur Angriffs- bzw. Gefahrenabwehr anwenden." },
+      { id: "c", text: "Sie dürfen Straftäter zur Identitätsfeststellung bis zu 12 Stunden festhalten." },
+      { id: "d", text: "Sie dürfen vertraglich übertragene Selbsthilferechte ausüben." }
+    ],
+    correct: ["b","d"],
+    points: 2
+  },
+  {
+    id: 16,
+    question: "Im deutschen Rechtssystem sind Rechtfertigungsgründe verankert. Was ist deren Sinn und Zweck?",
+    answers: [
+      { id: "a", text: "Sie können unerlaubtes Handeln rechtfertigen" },
+      { id: "b", text: "Sie können verbotenes Handeln entschuldigen" },
+      { id: "c", text: "Sie können strafbares Handeln rechtfertigen" },
+      { id: "d", text: "Sie können ordnungswidriges Handeln entschuldigen" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 17,
+    question: "Der Bewachungsgewerbetreibende und seine Sicherheitsmitarbeiter dürfen bei der Durchführung von Bewachungsaufgaben gegenüber Dritten bestimmte Rechte eigenverantwortlich ausüben. Welche Rechte sind dies?",
+    answers: [
+      { id: "a", text: "Notwehr- und Notstandsrechte z.B.: im Sinne des StGB und des BGB" },
+      { id: "b", text: "Verkehrsregelung nach Verkehrsunfällen" },
+      { id: "c", text: "übertragene Selbsthilferechte" },
+      { id: "d", text: "Beschlagnahme von Diebesgut" }
+    ],
+    correct: ["a","c"],
+    points: 2
+  },
+  {
+    id: 18,
+    question: "Welche Kooperationsmöglichkeit ist im Rahmen einer Public-Private-Partnership-Vereinbarung zwischen der Polizei und einem privaten Sicherheitsdienst denkbar?",
+    answers: [
+      { id: "a", text: "Verkehrsüberwachung mit repressiven und präventiven Maßnahmen, z.B. durch Verkehrskontrollen" },
+      { id: "b", text: "Gemeinschaftliche und arbeitsteilige Strafverfolgung, z.B. Verhaftung von Straftätern" },
+      { id: "c", text: "Verkehrslenkung und Verkehrsregelung im Einzelfall, z.B. bei Großveranstaltungen" },
+      { id: "d", text: "Hilfeleistung und Informationsaustausch, z.B. bei Sach- und Personenfahndungen" }
+    ],
+    correct: ["c","d"],
+    points: 2
+  },
+  {
+    id: 19,
+    question: "Welche Aussagen zu den Grundrechten im Grundgesetz sind richtig?",
+    answers: [
+      { id: "a", text: "Sie schützen die Rechte des Bürgers vor unzulässigen Eingriffen des Staates." },
+      { id: "b", text: "Sie binden Gesetzgebung, vollziehende Gewalt und Rechtsprechung als unmittelbar geltendes Recht." },
+      { id: "c", text: "Sie können jederzeit durch Sicherheitsbehörden zum Zwecke der Aufgabenerfüllung eingeschränkt werden." }
+    ],
+    correct: ["a","b"],
+    points: 2
+  },
+  {
+    id: 20,
+    question: "Welche Aussage in Bezug auf sogenannte Public-Private-Partnership-Kooperationen (PPP-Kooperationen) ist richtig?",
+    answers: [
+      { id: "a", text: "Private Sicherheitsdienste, die eine sogenannte ‚PPP-Kooperation' eingehen, verfügen über besondere hoheitliche Befugnisse ohne die Aufsicht staatlicher Behörden" },
+      { id: "b", text: "‚PPP-Kooperationen‘ zwischen Polizei und privaten Sicherheitsdiensten sind eine staatliche Maßnahme, bei welcher die Polizei durch Sicherheitsdienste ersetzt wird" },
+      { id: "c", text: "‚PPP-Kooperationen‘ zwischen Polizei und privaten Sicherheitsdiensten beinhalten meistens lediglich einen gegenseitigen Informations- und Erfahrungsaustausch" },
+      { id: "d", text: "‚PPP-Kooperationen‘ zwischen privaten Sicherheitsunternehmen und Behörden (z.B. der Polizei) sind uneinheitlich und regional sehr unterschiedlich geregelt" }
+    ],
+    correct: ["c","d"],
     points: 2
   }
 ]
