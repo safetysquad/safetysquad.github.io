@@ -96,9 +96,10 @@ function prevQuestion() {
 // FORTSCHRITT
 // ==============================
 function updateProgress() {
-  const percent = ((currentIndex + 1) / questions.length) * 100;
+  const percent = ((currentIndex + 1) / quiz.length) * 100;
   document.getElementById("progressBar").style.width = percent + "%";
 }
+
 
 // ==============================
 // AUSWERTUNG
