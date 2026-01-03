@@ -78,7 +78,7 @@ function toggleAnswer(answerId) {
 // NAVIGATION
 // ==============================
 function nextQuestion() {
-  if (currentIndex < questions.length - 1) {
+  if (currentIndex < quiz.length - 1) {
     currentIndex++;
     renderQuestion();
     updateProgress();
