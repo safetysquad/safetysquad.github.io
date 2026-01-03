@@ -300,3 +300,15 @@ main {
   margin-top: 1.2rem;
 }
 
+.answer-list {
+  margin: .4rem 0 .8rem 1rem;
+  font-size: .95rem;
+}
+
+.answer-list.user li {
+  color: #fca5a5;
+}
+
+.answer-list.correct li {
+  color: #86efac;
+}
