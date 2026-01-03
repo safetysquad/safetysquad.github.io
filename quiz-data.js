@@ -320,8 +320,8 @@ const quizzes = {
       correct: ["b", "d"],
       points: 2
     }
-  ]
-};
+  ],
+  
 quiz2: [
   {
     id: 1,
@@ -621,7 +621,7 @@ quiz2: [
     correct: ["a","b"],
     points: 2
   }
-];
+  ],
 quiz3: [
   {
     id: 1,
@@ -921,4 +921,5 @@ quiz3: [
     correct: ["a","b"],
     points: 2
   }
-];
+]
+},
