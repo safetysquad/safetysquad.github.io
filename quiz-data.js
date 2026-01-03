@@ -1248,6 +1248,305 @@ quiz4: [
     correct: ["c", "e"],
     points: 2
   }
-  ]
+],
+quizzes.quiz5 = [
+  {
+    id: 1,
+    question: "Welche Aussagen zur DS-GVO sind richtig?",
+    answers: [
+      { id: "a", text: "Sie gilt für die familiäre Verarbeitung personenbezogener Daten, z.B. für das Führen von Anschriftenverzeichnissen, die keinen Bezug zu einer beruflichen Tätigkeit haben" },
+      { id: "b", text: "Sie gilt für die ganz oder teilweise automatisierte Verarbeitung personenbezogener Daten" },
+      { id: "c", text: "Sie gilt für die nichtautomatisierte Verarbeitung personenbezogener Daten, die in einem Dateisystem gespeichert sind oder gespeichert werden" },
+      { id: "d", text: "Sie gilt für die Verarbeitung personenbezogener Daten durch die zuständigen Behörden zum Zwecke der Abwehr von Gefahren für die öffentliche Sicherheit" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 2,
+    question: "Wann wird das BDSG angewendet?",
+    answers: [
+      { id: "a", text: "Wenn personenbezogene Daten von Teilnehmern einer betrieblichen Fortbildungsmaßnahme zu Übungszwecken anonymisiert genutzt werden" },
+      { id: "b", text: "Wenn personenbezogene Daten erhoben werden sollen, obwohl der Betroffene keine Einwilligung gegeben hat" },
+      { id: "c", text: "Wenn personenbezogene Daten durch Familienmitglieder zu familiären Zwecken erhoben, verarbeitet oder genutzt werden" },
+      { id: "d", text: "Wenn personenbezogene Daten unter Einsatz von Datenverarbeitungsanlagen erhoben, verarbeitet oder genutzt werden" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 3,
+    question: "Welche Aussagen zur Videoüberwachung öffentlich zugänglicher Räume sind gemäß BDSG richtig?",
+    answers: [
+      { id: "a", text: "Die durch die Videoüberwachung erhobenen Daten dürfen ein Jahr lang gespeichert oder verwendet werden. Danach müssen sie unverzüglich gelöscht werden" },
+      { id: "b", text: "Sie ist zulässig, wenn sie zur Wahrnehmung des Hausrechts erforderlich ist und keine Anhaltspunkte bestehen, dass schutzwürdige Interessen der Betroffenen entgegenstehen" },
+      { id: "c", text: "Sie ist nur erlaubt zur Überwachung von Fahrzeugen und öffentlich zugänglichen Einrichtungen des öffentlichen Schienen- und Busverkehrs" },
+      { id: "d", text: "Wenn sich Personen in öffentlich zugänglichen Einkaufszentren aufhalten und von der Videoüberwachung betroffen sind, gilt der Schutz von Leben, Gesundheit oder Freiheit als besonders schutzwürdiges Interesse" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 4,
+    question: "Welches ist ein wichtiger Grundsatz im Bundesdatenschutzgesetz?",
+    answers: [
+      { id: "a", text: "Grundsätzlich ist die Erhebung, Verarbeitung und Nutzung personenbezogener Daten verboten" },
+      { id: "b", text: "Grundsätzlich ist die Erhebung, Verarbeitung und Nutzung personenbezogener Daten eine zivilrechtliche Angelegenheit und deshalb gesetzlich nicht geregelt" },
+      { id: "c", text: "Grundsätzlich ist die Erhebung, Verarbeitung und Nutzung personenbezogener Daten erlaubt, soweit kein Straftatbestand aus dem Strafgesetzbuch (StGB) erfüllt wird" }
+    ],
+    correct: ["a"],
+    points: 0
+  },
+  {
+    id: 5,
+    question: "Welche allgemeinen Pflichten haben Unternehmen, in denen personenbezogene Daten bearbeitet werden?",
+    answers: [
+      { id: "a", text: "Verpflichtung zu technischen und organisatorischen Maßnahmen zur Einhaltung des Bundesdatenschutzgesetzes" },
+      { id: "b", text: "Die mit Datenverarbeitung beschäftigen Personen müssen schriftlich auf das Datengeheimnis verpflichtet werden" },
+      { id: "c", text: "Besondere Überwachungspflichten gegenüber den betroffenen Mitarbeitern, die mit personenbezogenen Daten arbeiten" },
+      { id: "d", text: "Verpflichtung der betroffenen Beschäftigten auf die systematische und lückenlose Erfassung von personenbezogenen Daten" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 6,
+    question: "In welchem Fall dürfen Sicherheitskräfte im Rahmen ihrer Dienstausübung personenbezogene Daten erheben und verarbeiten?",
+    answers: [
+      { id: "a", text: "Falls die Dienstanweisung dies festschreibt" },
+      { id: "b", text: "Wenn der Betroffene eingewilligt hat" },
+      { id: "c", text: "Wenn dieses durch eine Rechtsvorschrift eindeutig geregelt ist" },
+      { id: "d", text: "Falls dadurch kein Tatbestand des Strafgesetzbuches erfüllt wird" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 7,
+    question: "Die private Videoüberwachung öffentlich zugänglicher Räume ist nur zulässig, falls",
+    answers: [
+      { id: "a", text: "...die Beeinträchtigung der schutzwürdigen Interessen durch ein Jedermannsrecht gerechtfertigt ist." },
+      { id: "b", text: "...sie zur Wahrnehmung berechtigter Interessen für konkret festgelegte Zwecke erforderlich ist." },
+      { id: "c", text: "...die zuständige Polizeibehörde die Verhältnismäßigkeit geprüft und eine entsprechende Genehmigung erteilt hat." },
+      { id: "d", text: "...keine Anhaltspunkte bestehen, dass schutzwürdige Interessen der Betroffenen überwiegen." }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 8,
+    question: "Was ist eine 'nicht automatisierte Datei' im Sinne des BDSG?",
+    answers: [
+      { id: "a", text: "Disketten, Magnetbänder" },
+      { id: "b", text: "Computerprogramm, das manuell bedient werden muss." },
+      { id: "c", text: "Akten, Wachbücher" },
+      { id: "d", text: "Karteikarten" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 9,
+    question: "Was ist der Sinn des BDSG?",
+    answers: [
+      { id: "a", text: "Es schützt Daten des Bundes, deswegen heißt es ja Bundesdatenschutzgesetz." },
+      { id: "b", text: "Es schützt die informationelle Selbstbestimmung." },
+      { id: "c", text: "Es schützt nur geheime Firmendaten." },
+      { id: "d", text: "Es soll Schutz vor Missbrauch personenbezognener Daten bieten." }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 10,
+    question: "Darf eine Wachperson im Sinne der DS-GVO bei einer Zutrittskontrolle zu einem Wachobjekt die personenbezogenen Daten von Besuchern erheben?",
+    answers: [
+      { id: "a", text: "Nein, dies ist verboten" },
+      { id: "b", text: "Ja, wenn der Besucher für diesen konkreten Fall freiwillig und nach ausreichender Information unmissverständlich zugestimmt hat" },
+      { id: "c", text: "Ja, wenn der Auftraggeber die Datenerhebung zwingend als Voraussetzung für das Betreten des Wachobjekts vorschreibt" },
+      { id: "d", text: "Ja, ohne Einschränkungen" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 11,
+    question: "Welchem Prinzip unterliegt die Erhebung, Verarbeitung und Nutzung von personenbezogenen Daten nach dem Bundesdatenschutzgesetz?",
+    answers: [
+      { id: "a", text: "Prinzip der Datennutzung" },
+      { id: "b", text: "Prinzip der Datensparsamkeit" },
+      { id: "c", text: "Prinzip der Datenüberwachung" },
+      { id: "d", text: "Prinzip der Datenvermeidung" }
+    ],
+    correct: ["b", "d"],
+    points: 0
+  },
+  {
+    id: 12,
+    question: "Was sind personenbezogene Daten im Sinne des Bundesdatenschutzgesetz (BDSG)?",
+    answers: [
+      { id: "a", text: "Ausgefüllter Wahlzettel in der Wahlurne." },
+      { id: "b", text: "Bewertung politischer Parteien im Rahmen einer anonymen Meinungsumfrage." },
+      { id: "c", text: "Name, Vorname, Alter, Personalausweisnummer." }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 13,
+    question: "Was ist ein Datenschutzbeauftragter, was darf er?",
+    answers: [
+      { id: "a", text: "Er wird benötigt, wenn mindestens 20 Personen ständig mit der automatisierten Verarbeitung personenbezogener Daten beschäftigt sind." },
+      { id: "b", text: "Derjenige, der im Betrieb für den Datenschutz zuständig ist." },
+      { id: "c", text: "Er ist nur für den Schutz von Betriebsgeheimnissen zuständig." },
+      { id: "d", text: "In Bezug auf Daten hat er hoheitliche Rechte." }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 14,
+    question: "Gemäß DS-GVO ist die Verarbeitung „besonderer Kategorien personenbezogener Daten“ grundsätzlich verboten. Was sind solche Daten?",
+    answers: [
+      { id: "a", text: "Anschrift des Arbeitnehmers" },
+      { id: "b", text: "Gesundheitsdaten" },
+      { id: "c", text: "Gewerkschaftszugehörigkeit" },
+      { id: "d", text: "Name, Vorname, Geburtsdatum" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 15,
+    question: "Was sind gemäß DS-GVO 'besondere Kategorien personenbezogener Daten'?",
+    answers: [
+      { id: "a", text: "Geburtsort, Name, Vorname" },
+      { id: "b", text: "Politische Meinungen, weltanschauliche Überzeugungen" },
+      { id: "c", text: "Kennzeichen am Pkw, Kfz-Versicherung" },
+      { id: "d", text: "Gewerkschaftszugehörigkeit, Gesundheitsdaten" }
+    ],
+    correct: ["b", "d"],
+    points: 1
+  },
+  {
+    id: 16,
+    question: "Wann sind gemäß BDSG personenbezogene Daten zu löschen?",
+    answers: [
+      { id: "a", text: "Wenn ihre Speicherung unzulässig ist" },
+      { id: "b", text: "Wenn die Speicherung der Daten nicht mehr erforderlich ist" },
+      { id: "c", text: "Wenn die Speicherung länger als sechs Monate andauert" },
+      { id: "d", text: "Wenn es der Betroffene ausdrücklich verlangt" }
+    ],
+    correct: ["a", "b"],
+    points: 1
+  },
+  {
+    id: 17,
+    question: "Wann muss gemäß DS-GVO der Verantwortliche die personenbezogenen Daten des Betroffenen unverzüglich löschen?",
+    answers: [
+      { id: "a", text: "Wenn diese Daten zur Ausübung des Rechts auf freie Meinungsäußerung verwendet werden" },
+      { id: "b", text: "Wenn die betroffene Person ihre Einwilligung widerruft und es an einer anderweitigen Rechtsgrundlage für die Verarbeitung fehlt" },
+      { id: "c", text: "Wenn diese Daten von vornherein unrechtmäßig verarbeitet wurden" },
+      { id: "d", text: "Wenn diese Daten verwendet werden, um Rechtsansprüche durchzusetzen" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 18,
+    question: "Welche Rechte hat man u.a., wenn es um die eigenen, von jemand anderem gespeicherten Daten geht?",
+    answers: [
+      { id: "a", text: "Recht auf Speicherung" },
+      { id: "b", text: "Recht auf Löschung" },
+      { id: "c", text: "Recht auf Auskunft" },
+      { id: "d", text: "Recht auf Weitergabe" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 19,
+    question: "Welche Art von Datenverarbeitung schützt das BDSG?",
+    answers: [
+      { id: "a", text: "Jegliche Art von Erhebung, Verarbeitung und Nutzung personenbezogener Daten" },
+      { id: "b", text: "Die nicht-automatisierten Dateien, die nach bestimmten Merkmalen erfasst, sortiert und ausgewertet werden" },
+      { id: "c", text: "Lediglich die Verarbeitung von wichtigen Daten, z.B. Betriebs- und Geschäftsgeheimnisse" },
+      { id: "d", text: "Die automatisierte Datenverarbeitung unter Einsatz von Datenverarbeitungsanlagen" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 20,
+    question: "Welche Aussagen zum Recht auf Auskunft sind gemäß BDSG richtig?",
+    answers: [
+      { id: "a", text: "Jeder muss grundsätzlich Auskunft über die zu seiner Person gespeicherten Daten erhalten, wenn er dieses beantragt" },
+      { id: "b", text: "Öffentliche Stellen dürfen die Auskunft im Einzelfall verweigern, wenn die Auskunft die öffentliche Sicherheit oder Ordnung gefährden würde" },
+      { id: "c", text: "Verlangt jemand Auskunft über die Daten, die zu seiner Person gespeichert sind, muss er dafür die Kosten tragen" }
+    ],
+    correct: ["a", "b"],
+    points: 1
+  },
+  {
+    id: 21,
+    question: "Wann ist die Videoüberwachung gemäß BDSG zulässig, sofern die schutzwürdigen Interessen der Betroffenen nicht überwiegen?",
+    answers: [
+      { id: "a", text: "Wenn es der Aufgabenerfüllung öffentlicher Stellen dient." },
+      { id: "b", text: "Wenn es der Überwachung der Arbeitszeiten der Beschäftigten dient." },
+      { id: "c", text: "Wenn es der Wahrnehmung des Hausrechts dient." },
+      { id: "d", text: "Wenn es der Auswertung der Arbeitsleistung der Mitarbeiter dient." }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 22,
+    question: "Das BDSG verpflichtet dazu, das Datengeheimnis zu beachten. Was ist damit gemeint?",
+    answers: [
+      { id: "a", text: "Das Datengeheimnis dient dem Schutz und der unbefugten Kenntnisnahme von Geschäftsgeheimnissen" },
+      { id: "b", text: "Mit der Datenverarbeitung beauftragte Personen müssen auf das Datengeheimnis verpflichtet werden. Dies gilt in ganz Europa" },
+      { id: "c", text: "Mit der Datenverarbeitung befasste Personen dürfen personenbezogene Daten nur befugt verarbeiten" },
+      { id: "d", text: "Wenn die mit der Verarbeitung personenbezogener Daten betrauten Personen ihre Tätigkeit beenden, besteht das Datengeheimnis fort" }
+    ],
+    correct: ["c", "d"],
+    points: 1
+  },
+  {
+    id: 23,
+    question: "Wann dürfen gemäß BDSG personenbezogene Daten erhoben, verarbeitet und genutzt werden?",
+    answers: [
+      { id: "a", text: "Wenn es das Bundesdatenschutzgesetz erlaub" },
+      { id: "b", text: "Wenn der Betroffene seine schriftliche Zustimmung gibt" },
+      { id: "c", text: "Wenn es der Datenschutzbeauftragte erlaubt" },
+      { id: "d", text: "Wenn der Betroffene mündlich zustimmt" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 24,
+    question: "Welche Rechtsfolgen können Verstöße gegen das BDSG bzw. DSGVO haben?",
+    answers: [
+      { id: "a", text: "Nur Geldstrafen bis 50.000,-EUR" },
+      { id: "b", text: "Geldbuße" },
+      { id: "c", text: "Freiheitsstrafe oder Geldstrafe" },
+      { id: "d", text: "Keine" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 25,
+    question: "Wann müssen gemäß DS-GVO personenbezogene Daten grundsätzlich gelöscht werden?",
+    answers: [
+      { id: "a", text: "Wenn es der Betroffene ausdrücklich verlangt" },
+      { id: "b", text: "Wenn sie unrechtmäßig verarbeitet wurden" },
+      { id: "c", text: "Wenn ihre Speicherung länger als sechs Monate andauert" },
+      { id: "d", text: "Wenn sie für Direktwerbung verwendet werden sollen und der Betroffene widerspricht" }
+    ],
+    correct: ["b", "d"],
+    points: 1
+  }
+]
 };
 
