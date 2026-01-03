@@ -1,4 +1,8 @@
-let quiz = null;
+// ==============================
+// GRUNDVARIABLEN
+// ==============================
+let quizId = null;
+let questions = [];
 let currentIndex = 0;
 let userAnswers = {};
 
@@ -7,32 +11,30 @@ let userAnswers = {};
 // ==============================
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
-  const quizId = params.get("id");
+  quizId = params.get("id");
 
   if (!quizId || !quizzes[quizId]) {
-    document.body.innerHTML = "<h2>❌ Quiz nicht gefunden</h2>";
+    document.querySelector("main").innerHTML = "<p>Quiz nicht gefunden</p>";
     return;
   }
 
-  quiz = {
-    id: quizId,
-    title: quizId.toUpperCase(),
-    questions: quizzes[quizId]
-  };
+  questions = quizzes[quizId];
 
-  document.getElementById("quizTitle").innerText = quiz.title;
   renderQuestion();
   updateProgress();
 });
 
 // ==============================
-// FRAGE ANZEIGEN
+// FRAGE RENDERN
 // ==============================
 function renderQuestion() {
-  const q = quiz.questions[currentIndex];
+  const q = questions[currentIndex];
+  if (!q) return;
 
   document.getElementById("questionText").innerText = q.question;
-  document.getElementById("answers").innerHTML = "";
+
+  const answersBox = document.getElementById("answers");
+  answersBox.innerHTML = "";
 
   q.answers.forEach(a => {
     const btn = document.createElement("button");
@@ -44,25 +46,25 @@ function renderQuestion() {
     }
 
     btn.onclick = () => toggleAnswer(q.id, a.id);
-    document.getElementById("answers").appendChild(btn);
+    answersBox.appendChild(btn);
   });
 
   document.getElementById("counter").innerText =
-    `Frage ${currentIndex + 1} von ${quiz.questions.length}`;
+    `Frage ${currentIndex + 1} von ${questions.length}`;
 }
 
 // ==============================
-// ANTWORT WÄHLEN (MULTI)
+// ANTWORT AUSWÄHLEN (MULTI)
 // ==============================
 function toggleAnswer(questionId, answerId) {
   if (!userAnswers[questionId]) {
     userAnswers[questionId] = [];
   }
 
-  const selected = userAnswers[questionId];
+  const arr = userAnswers[questionId];
 
-  if (selected.includes(answerId)) {
-    userAnswers[questionId] = selected.filter(a => a !== answerId);
+  if (arr.includes(answerId)) {
+    userAnswers[questionId] = arr.filter(a => a !== answerId);
   } else {
     userAnswers[questionId].push(answerId);
   }
@@ -74,7 +76,7 @@ function toggleAnswer(questionId, answerId) {
 // NAVIGATION
 // ==============================
 function nextQuestion() {
-  if (currentIndex < quiz.questions.length - 1) {
+  if (currentIndex < questions.length - 1) {
     currentIndex++;
     renderQuestion();
     updateProgress();
@@ -95,7 +97,7 @@ function prevQuestion() {
 // FORTSCHRITT
 // ==============================
 function updateProgress() {
-  const percent = ((currentIndex + 1) / quiz.questions.length) * 100;
+  const percent = ((currentIndex + 1) / questions.length) * 100;
   document.getElementById("progressBar").style.width = percent + "%";
 }
 
@@ -105,107 +107,78 @@ function updateProgress() {
 function evaluateQuiz() {
   let points = 0;
   let maxPoints = 0;
-  let wrongQuestions = [];
 
-  quiz.questions.forEach(q => {
+  const wrong = [];
+
+  questions.forEach(q => {
     maxPoints += q.points;
 
     const correct = [...q.correct].sort().join(",");
-    const givenArr = userAnswers[q.id] || [];
-    const given = [...givenArr].sort().join(",");
+    const given = (userAnswers[q.id] || []).sort().join(",");
 
     if (correct === given) {
       points += q.points;
     } else {
-      wrongQuestions.push({
-        question: q,
-        given: givenArr
-      });
+      wrong.push({ q, given: userAnswers[q.id] || [] });
     }
   });
 
   const percent = Math.round((points / maxPoints) * 100);
   const passed = percent === 100;
 
-  saveQuizResult(quiz.id, points, maxPoints, percent, passed);
-  renderResult(points, maxPoints, percent, wrongQuestions, passed);
+  saveResult(points, maxPoints, percent, passed);
+  renderResult(points, maxPoints, percent, passed, wrong);
 }
-function saveQuizResult(quizId, points, maxPoints, percent, passed) {
+
+// ==============================
+// ERGEBNIS SPEICHERN
+// ==============================
+function saveResult(points, maxPoints, percent, passed) {
   const key = "safety_quiz_results";
   const data = JSON.parse(localStorage.getItem(key)) || {};
 
   if (!data[quizId]) {
-    data[quizId] = {
-      attempts: 0,
-      bestPercent: 0
-    };
+    data[quizId] = { attempts: 0, best: 0 };
   }
 
   data[quizId].attempts += 1;
-  data[quizId].lastResult = {
-    points,
-    maxPoints,
-    percent,
-    passed,
-    date: new Date().toISOString()
-  };
-
-  if (percent > data[quizId].bestPercent) {
-    data[quizId].bestPercent = percent;
-  }
+  data[quizId].best = Math.max(data[quizId].best, percent);
+  data[quizId].last = { points, maxPoints, percent, passed };
 
   localStorage.setItem(key, JSON.stringify(data));
 }
 
-  });
-
-  const percent = Math.round((points / maxPoints) * 100);
-  renderResult(points, maxPoints, percent, wrongQuestions);
-}
-
 // ==============================
-// ERGEBNIS + FALSCHE FRAGEN
+// ERGEBNIS ANZEIGEN
 // ==============================
-function renderResult(points, maxPoints, percent, wrongQuestions, passed) {
+function renderResult(points, maxPoints, percent, passed, wrong) {
   let html = `
     <h2>Ergebnis</h2>
-
-    <div class="result-box">
-      <div><b>${points}</b> / ${maxPoints} Punkte</div>
-      <div><b>${percent}%</b></div>
-    </div>
-
-    <div class="result-status ${passed ? "passed" : "failed"}">
-      ${passed ? "✅ BESTANDEN" : "❌ NICHT BESTANDEN – 100 % erforderlich"}
-    </div>
+    <p><b>${points}</b> von ${maxPoints} Punkten</p>
+    <p><b>${percent}%</b></p>
+    <p>${passed ? "✅ BESTANDEN" : "❌ NICHT BESTANDEN (100 % nötig)"}</p>
   `;
 
-  if (wrongQuestions.length > 0) {
-    html += `<h3>Falsch beantwortete Fragen</h3>`;
+  if (wrong.length > 0) {
+    html += "<h3>Falsch beantwortete Fragen</h3>";
 
-    wrongQuestions.forEach((w, i) => {
-      const q = w.question;
-
+    wrong.forEach(w => {
       html += `
         <div class="wrong-card">
-          <div class="wrong-question">${q.question}</div>
+          <p><b>${w.q.question}</b></p>
 
-          <div class="answer-block wrong">
-            <b>Deine Antwort</b>
-            ${w.given.length === 0 ? "<div>– keine Antwort –</div>" : ""}
-            ${w.given.map(id => {
-              const a = q.answers.find(x => x.id === id);
-              return `<div>❌ ${id}. ${a.text}</div>`;
-            }).join("")}
-          </div>
+          <p>❌ Deine Antwort:</p>
+          ${w.given.length === 0 ? "<p>– keine –</p>" : ""}
+          ${w.given.map(id => {
+            const a = w.q.answers.find(x => x.id === id);
+            return `<p>${id}. ${a.text}</p>`;
+          }).join("")}
 
-          <div class="answer-block correct">
-            <b>Richtige Antwort</b>
-            ${q.correct.map(id => {
-              const a = q.answers.find(x => x.id === id);
-              return `<div>✅ ${id}. ${a.text}</div>`;
-            }).join("")}
-          </div>
+          <p>✅ Richtige Antwort:</p>
+          ${w.q.correct.map(id => {
+            const a = w.q.answers.find(x => x.id === id);
+            return `<p>${id}. ${a.text}</p>`;
+          }).join("")}
         </div>
       `;
     });
@@ -218,10 +191,13 @@ function renderResult(points, maxPoints, percent, wrongQuestions, passed) {
 
   document.querySelector("main").innerHTML = html;
 }
+
+// ==============================
+// QUIZ NEUSTART
+// ==============================
 function restartQuiz() {
   currentIndex = 0;
   userAnswers = {};
   renderQuestion();
   updateProgress();
 }
-
