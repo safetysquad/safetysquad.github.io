@@ -155,9 +155,11 @@ function renderResult(points, maxPoints, percent, results) {
           : `<div class="badge warn">❌ Noch nicht bestanden</div>`
       }
 
-      <button class="btn" onclick="restartQuiz()">🔁 Test wiederholen</button>
-      <a href="quiz.html" class="btn secondary">⬅ Zur Quiz-Auswahl</a>
-    </div>
+      <div class="result-actions">
+  <button class="btn" onclick="restartQuiz()">🔁 Test wiederholen</button>
+  <a href="quiz.html" class="btn secondary">⬅ Zur Quiz-Auswahl</a>
+</div>
+
   `;
 
   results.forEach(r => {
