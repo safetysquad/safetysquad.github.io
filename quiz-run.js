@@ -1,4 +1,4 @@
-console.log("QUIZ-RUN.JS VERSION 3 GELADEN");
+console.log("QUIZ-RUN.JS VERSION 1 GELADEN");
 
 // ==============================
 // GRUNDVARIABLEN
@@ -126,24 +126,24 @@ function evaluateQuiz() {
     maxPoints += q.points;
 
     const given = (userAnswers[q.id] || []).sort().join(",");
-    const correct = [...q.correct].sort().join(",");
-
+    const correct = q.correct.sort().join(",");
     const isCorrect = given === correct;
+
     if (isCorrect) points += q.points;
 
     results.push({
       question: q.question,
+      correctAnswers: q.correct,
+      givenAnswers: userAnswers[q.id] || [],
       answers: q.answers,
-      correct: q.correct,
-      given: userAnswers[q.id] || [],
       isCorrect
     });
   });
 
   const percent = Math.round((points / maxPoints) * 100);
-  saveStats(percent);
   renderResult(points, maxPoints, percent, results);
 }
+
 
 // ==============================
 // ERGEBNIS ANZEIGEN
