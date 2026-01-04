@@ -40,9 +40,15 @@ function renderQuestion() {
   const q = quiz[currentIndex];
   if (!q) return;
 
-  document.getElementById("questionText").innerText = q.question;
-
+  const questionTextEl = document.getElementById("questionText");
   const answersBox = document.getElementById("answers");
+
+  // -----------------------------
+  // Punkteanzeige über der Frage
+  // -----------------------------
+  questionTextEl.innerHTML = `🧠 Diese Frage ist <b>${q.points}</b> Punkt${q.points > 1 ? "e" : ""} wert<br>${q.question}`;
+
+  // Antwortencontainer leeren
   answersBox.innerHTML = "";
 
   q.answers.forEach(a => {
@@ -60,6 +66,7 @@ function renderQuestion() {
     answersBox.appendChild(btn);
   });
 
+  // Fragezähler aktualisieren
   document.getElementById("counter").innerText =
     `Frage ${currentIndex + 1} von ${quiz.length}`;
 }
