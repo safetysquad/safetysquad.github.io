@@ -43,19 +43,33 @@ function renderQuestion() {
   const questionTextEl = document.getElementById("questionText");
   const answersBox = document.getElementById("answers");
 
-  // -----------------------------
-  // Punkteanzeige über der Frage
-  // -----------------------------
-  questionTextEl.innerHTML = `<b>${q.points}</b> Punkt${q.points > 1 ? "e" : ""} <br>${q.question}`;
+  // =============================
+  // Punkteanzeige unter Progress
+  // =============================
+  let pointsEl = document.getElementById("questionPoints");
 
-  // Antwortencontainer leeren
+  if (!pointsEl) {
+    pointsEl = document.createElement("div");
+    pointsEl.id = "questionPoints";
+
+    const progressEl = document.querySelector(".progress");
+    progressEl.insertAdjacentElement("afterend", pointsEl);
+  }
+
+  pointsEl.innerText = `🧠 ${q.points} Punkt${q.points > 1 ? "e" : ""}`;
+
+  // =============================
+  // Frage setzen
+  // =============================
+  questionTextEl.innerText = q.question;
+
+  // Antworten leeren
   answersBox.innerHTML = "";
 
   q.answers.forEach(a => {
     const btn = document.createElement("button");
     btn.className = "btn secondary";
 
-    // ✅ Aktiv-Zustand anzeigen
     if (userAnswers[q.id]?.includes(a.id)) {
       btn.classList.add("active");
     }
@@ -66,7 +80,6 @@ function renderQuestion() {
     answersBox.appendChild(btn);
   });
 
-  // Fragezähler aktualisieren
   document.getElementById("counter").innerText =
     `Frage ${currentIndex + 1} von ${quiz.length}`;
 }
