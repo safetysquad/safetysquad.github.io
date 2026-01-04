@@ -312,3 +312,9 @@ main {
 .answer-list.correct li {
   color: #86efac;
 }
+#questionText {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #007acc;
+}
+
