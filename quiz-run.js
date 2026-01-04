@@ -161,9 +161,12 @@ function evaluateQuiz() {
   });
 
   const percent = Math.round((points / maxPoints) * 100);
-  renderResult(points, maxPoints, percent, results);
-}
 
+// Statistik speichern
+saveStats(percent);
+
+renderResult(points, maxPoints, percent, results);
+}
 
 // ==============================
 // ERGEBNIS ANZEIGEN
