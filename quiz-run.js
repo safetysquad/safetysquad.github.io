@@ -46,7 +46,7 @@ function renderQuestion() {
   // -----------------------------
   // Punkteanzeige über der Frage
   // -----------------------------
-  questionTextEl.innerHTML = `🧠 Diese Frage ist <b>${q.points}</b> Punkt${q.points > 1 ? "e" : ""} wert<br>${q.question}`;
+  questionTextEl.innerHTML = `<b>${q.points}</b> Punkt${q.points > 1 ? "e" : ""} <br>${q.question}`;
 
   // Antwortencontainer leeren
   answersBox.innerHTML = "";
