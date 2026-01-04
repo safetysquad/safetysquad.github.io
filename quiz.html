@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz – SAFETY SQUAD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css?v=6">
+</head>
+
+<body>
+<div class="app">
+
+  <!-- ================= HEADER ================= -->
+  <header class="header-bar">
+    <button class="burger" onclick="toggleMenu()">☰</button>
+
+    <div class="header-text">
+      <h1>📝 Quiz</h1>
+      <p>Wähle einen Test</p>
+    </div>
+  </header>
+
+  <!-- ================= BURGER MENÜ ================= -->
+  <div id="moreMenu" class="more-menu hidden">
+    <a href="stats.html">📊 Statistik</a>
+    <a href="index.html">⬅ Startseite</a>
+  </div>
+
+  <!-- ================= QUIZ LINKS ================= -->
+  <main>
+    <a href="quiz-run.html?id=quiz1" class="btn quiz-link">Quiz 1</a>
+    <a href="quiz-run.html?id=quiz2" class="btn quiz-link">Quiz 2</a>
+    <a href="quiz-run.html?id=quiz3" class="btn quiz-link">Quiz 3</a>
+    <a href="quiz-run.html?id=quiz4" class="btn quiz-link">Quiz 4</a>
+    <a href="quiz-run.html?id=quiz5" class="btn quiz-link">Quiz 5</a>
+    <a href="quiz-run.html?id=quiz6" class="btn quiz-link">Quiz 6</a>
+    <a href="quiz-run.html?id=quiz7" class="btn quiz-link">Quiz 7</a>
+    <a href="quiz-run.html?id=quiz8" class="btn quiz-link">Quiz 8</a>
+    <a href="quiz-run.html?id=quiz9" class="btn quiz-link">Quiz 9</a>
+    <a href="quiz-run.html?id=quiz10" class="btn quiz-link">Quiz 10</a>
+    <a href="quiz-run.html?id=quiz11" class="btn quiz-link">Quiz 11</a>
+    <a href="quiz-run.html?id=quiz12" class="btn quiz-link">Quiz 12</a>
+    <a href="quiz-run.html?id=quiz13" class="btn quiz-link">Quiz 13</a>
+  </main>
+
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+  // ================= Quiz Badges + 100% Handler =================
+  document.querySelectorAll(".quiz-link").forEach(link => {
+    const url = new URL(link.href);
+    const quizId = url.searchParams.get("id");
+
+    const best = localStorage.getItem(`safety_${quizId}_best`);
+
+    const badge = document.createElement("span");
+    badge.classList.add("quiz-badge");
+
+    if (!best) {
+      badge.innerText = "Neu";
+      badge.classList.add("new");
+    } else {
+      badge.innerText = `${best}%`;
+      if (Number(best) === 100) badge.classList.add("gold");
+    }
+
+    link.appendChild(badge);
+
+    // Klick-Handler für 100% Quiz
+    link.addEventListener("click", function(e) {
+      if (Number(best) === 100) {
+        e.preventDefault();
+        window.location.href = `quiz-run.html?id=${quizId}&showResult=1`;
+      }
+    });
+  });
+
+  // ================= Burger Menü =================
+  function toggleMenu() {
+    const menu = document.getElementById("moreMenu");
+    if (menu) menu.classList.toggle("hidden");
+  }
+</script>
+
+</body>
+</html>

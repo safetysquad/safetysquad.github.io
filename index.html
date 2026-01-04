@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- iPhone / iOS Home-Bildschirm Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icon-152.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="icon-120.png">
+
+  <!-- Android / Web App Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" sizes="192x192" href="icon-180.png">
+
+  <meta charset="UTF-8">
+  <title>SAFETY SQUAD</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+<div class="app">
+
+  <header>
+    <h1>📘 SAFETY SQUAD</h1>
+    <p>Teste dein Wissen Schritt für Schritt</p>
+  </header>
+
+  <main>
+    <a href="lernkarteikarten.html" class="btn">📚 Lernkarteikarten</a>
+    <a href="quiz.html" class="btn secondary">📝 Quiz</a>
+    <a href="pdfs.html" class="btn secondary">📄 PDF Unterlagen</a>
+
+
+    <!-- ================= UPDATE BUTTON ================= -->
+    <button class="btn warn" onclick="forceUpdate()">🔄 Update laden</button>
+  </main>
+
+</div>
+
+<script>
+function forceUpdate() {
+  const timestamp = Date.now(); // aktueller Zeitstempel
+
+  // ================= CSS NEU LADEN =================
+  document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+    const href = link.getAttribute('href').split('?')[0];
+    link.setAttribute('href', href + '?v=' + timestamp);
+  });
+
+  // ================= JS NEU LADEN =================
+  document.querySelectorAll('script[src]').forEach(script => {
+    const src = script.getAttribute('src').split('?')[0];
+    const newScript = document.createElement('script');
+    newScript.src = src + '?v=' + timestamp;
+    document.body.appendChild(newScript);
+    script.remove(); // alte Script entfernen
+  });
+
+  alert('🔄 Seite und Assets werden neu geladen!');
+}
+</script>
+
+</body>
+</html>

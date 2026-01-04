@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Statistik – SAFETY SQUAD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="app">
+
+<header>
+  <h1>📊 Statistik</h1>
+  <p>Dein Lernfortschritt</p>
+</header>
+
+<main>
+
+  <div class="stats">
+    <div>📄 Gesamt<br><b id="totalCards">0</b></div>
+    <div>✅ Erledigt<br><b id="doneCards">0</b></div>
+    <div>⭐ Merkliste<br><b id="markCards">0</b></div>
+  </div>
+
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <p style="text-align:center; font-size:.9rem;">
+    Fortschritt: <b id="progressPercent">0%</b>
+  </p>
+
+  <button class="btn danger" onclick="resetProgress()">
+    🧹 Lernfortschritt zurücksetzen
+  </button>
+
+  <hr style="margin:2rem 0; opacity:.2;">
+
+<h2 style="text-align:center;">📝 Quiz-Statistik</h2>
+
+<div id="quizStats" class="stats" style="margin-top:1rem;"></div>
+
+<button class="btn danger" onclick="resetQuizStats()">
+  🧹 Quiz-Statistik zurücksetzen
+</button>
+
+
+  <a href="index.html" class="btn secondary">
+    🔙 Zur Startseite
+  </a>
+
+</main>
+
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>
+  renderStats();
+</script>
+</body>
+</html>

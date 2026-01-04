@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>SAFETY SQUAD – Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<div class="app">
+
+  <header>
+    <h1 id="quizTitle">📝 Quiz</h1>
+    <p id="counter">Frage 1 von 1</p>
+
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <p id="questionText">Lade Frage…</p>
+    </div>
+
+    <div id="answers" class="action-buttons"></div>
+
+    <div class="nav">
+      <button class="btn warn" onclick="prevQuestion()">⬅ Zurück</button>
+      <button class="btn warn" onclick="nextQuestion()">➡ Weiter</button>
+    </div>
+  </main>
+
+</div>
+
+<script src="quiz-data.js"></script>
+<script src="quiz-run.js?v=2"></script>
+</body>
+</html>
