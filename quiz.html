@@ -32,5 +32,42 @@
 </main>
 
 </div>
+  ...
+<main>
+  <a href="quiz-run.html?id=quiz1" class="btn quiz-link">Quiz 1</a>
+  <a href="quiz-run.html?id=quiz2" class="btn quiz-link">Quiz 2</a>
+  <a href="quiz-run.html?id=quiz3" class="btn quiz-link">Quiz 3</a>
+  ...
+</main>
+
+</div>
+
+
+<script>
+document.querySelectorAll(".quiz-link").forEach(link => {
+  const url = new URL(link.href);
+  const quizId = url.searchParams.get("id");
+
+  const best = localStorage.getItem(`safety_${quizId}_best`);
+  const attempts = localStorage.getItem(`safety_${quizId}_attempts`);
+
+  const badge = document.createElement("span");
+  badge.classList.add("quiz-badge");
+
+  if (!best) {
+    badge.innerText = "Neu";
+    badge.classList.add("new");
+  } else {
+    badge.innerText = `${best}%`;
+
+    if (Number(best) === 100) {
+      badge.classList.add("gold");
+    }
+  }
+
+  link.appendChild(badge);
+});
+</script>
+
 </body>
 </html>
