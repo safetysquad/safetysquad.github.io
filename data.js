@@ -309,5 +309,55 @@ const cards = [
     "question": "Welche Maßnahmen können bzgl. Des Datenschutzes zum Einsatz kommen?",
     "answer": "Zutrittskontrolle, Zugangskontrolle, Zugriffskontrolle, Trennungs-/ Zweckbindungskontrolle, Pseudonymisierung, Weitergabekontrolle, Eingabekontrolle, Verfügbarkeitskontrolle" 
   },
+  {
+  id: 63,
+  question: "Was ist eine unerlaubte Handlung?",
+  answer: "Eine unerlaubte Handlung ist eine widerrechtliche (rechtswidrige) und schuldhafte Verletzung eines Rechtsguts."
+},
+{
+  id: 64,
+  question: "Wie unterscheiden sich Eigentum und Besitz?",
+  answer: "Der Eigentümer hat die rechtliche Verfügungsgewalt über eine Sache.\nDer Besitzer hat die tatsächliche Verfügungsgewalt über eine Sache."
+},
+{
+  id: 65,
+  question: "Was ist eine Sache?",
+  answer: "Sachen sind körperliche Gegenstände, unabhängig davon, ob sie fest, flüssig oder gasförmig sind."
+},
+{
+  id: 66,
+  question: "Sind Tiere Sachen?",
+  answer: "Tiere sind keine Sachen. Sie werden durch besondere Gesetze geschützt (Tierschutzgesetz). Auf Tiere sind jedoch die für Sachen geltenden Vorschriften entsprechend anzuwenden, soweit nichts anderes bestimmt ist."
+},
+{
+  id: 67,
+  question: "Wann ist man zum Schadenersatz verpflichtet?",
+  answer: "Wer einem anderen vorsätzlich oder fahrlässig ein Rechtsgut verletzt, ist zum Schadenersatz verpflichtet."
+},
+{
+  id: 68,
+  question: "Welche Haftungsarten kennen wir?",
+  answer: "Verschuldenshaftung\nGefährdungshaftung"
+},
+{
+  id: 69,
+  question: "Welche drei Pflichten gehören zum Fundrecht?",
+  answer: "Anzeigepflicht\nVerwahrungspflicht\nAblieferungspflicht\n(Wert der Sache ab 10 €)"
+},
+{
+  id: 70,
+  question: "Was ist ein Anspruch?",
+  answer: "Ein Anspruch ist das Recht, von einem anderen ein Tun oder ein Unterlassen zu verlangen (z. B. das Recht auf Zahlung von Schadenersatz)."
+},
+{
+  id: 71,
+  question: "Was ist verbotene Eigenmacht?",
+  answer: "Verbotene Eigenmacht liegt vor, wenn jemand den Besitz eines anderen widerrechtlich entzieht oder stört.\nBesitzentziehung / Besitzstörung"
+},
+{
+  id: 72,
+  question: "Was ist Selbsthilfe des Besitzers?",
+  answer: "Selbsthilfe des Besitzers ist:\nBesitzkehr gegen eine Besitzentziehung\nBesitzwehr gegen eine Besitzstörung"
+},
 
 ];
