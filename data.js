@@ -359,5 +359,51 @@ const cards = [
   question: "Was ist Selbsthilfe des Besitzers?",
   answer: "Selbsthilfe des Besitzers ist:\nBesitzkehr gegen eine Besitzentziehung\nBesitzwehr gegen eine Besitzstörung"
 },
+  {
+  id: 73,
+  question: "Welche Rechte stehen dem SMA zu?",
+  answer: "Jedermannsrechte / Ausnahmerechte\nÜbertragene Selbsthilferechte\nGegebenenfalls das Hausrecht"
+},
+{
+  id: 74,
+  question: "Was ist Hausrecht?",
+  answer: "Das Hausrecht ist das Recht, über den Zutritt und die Dauer des Aufenthalts anderer Personen in den eigenen Wohn- und Geschäftsräumen oder auf dem befriedeten Besitztum zu entscheiden."
+},
+{
+  id: 75,
+  question: "Was versteht man unter dem Schikaneverbot?",
+  answer: "Die Ausübung eines Rechts ist unzulässig, wenn sie ausschließlich dazu dient, einem anderen Schaden zuzufügen."
+},
+{
+  id: 76,
+  question: "Was ist Notwehr?",
+  answer: "Notwehr ist die Verteidigung, die erforderlich ist, um einen gegenwärtigen, rechtswidrigen Angriff von sich oder einem anderen abzuwenden.\n\nErforderlich: Wahl des mildesten geeigneten Mittels\nGegenwärtig: unmittelbar bevorstehend, andauernd oder noch nicht beendet\nRechtswidrig: kein Rechtfertigungsgrund liegt vor"
+},
+{
+  id: 77,
+  question: "Was besagt der Verteidigungsnotstand (Defensivnotstand)?",
+  answer: "Von einer fremden Sache geht eine drohende Gefahr aus.\nDie Sache, von der die Gefahr ausgeht, wird beschädigt oder zerstört, um die Gefahr von sich oder einem anderen abzuwenden."
+},
+{
+  id: 78,
+  question: "Was besagt der Angriffsnotstand (Aggressivnotstand)?",
+  answer: "Es droht eine Gefahr.\nIch wirke auf die Sache eines anderen ein, um mithilfe dieser Sache die Gefahr abzuwenden.\nDer Eigentümer darf die Einwirkung nicht verbieten, kann jedoch Schadenersatz verlangen."
+},
+{
+  id: 79,
+  question: "Nach welchem Gesetz im BGB darf ich eine Person festnehmen und warum?",
+  answer: "§ 229 BGB – Selbsthilfe\nZur Sicherung eines Anspruchs, wenn:\n- die Identität nicht festgestellt werden kann,\n- obrigkeitliche Hilfe nicht rechtzeitig zu erlangen ist,\n- der Verpflichtete flüchten will und\n- die Durchsetzung des Anspruchs sonst verhindert oder wesentlich erschwert würde."
+},
+{
+  id: 80,
+  question: "Welche Rechtfertigungsgründe stehen im BGB?",
+  answer: "Notwehr\n(Allgemeine) Selbsthilfe\nVerteidigender (defensiver) Notstand\nAngreifender (aggressiver) Notstand\nSelbsthilfe des Besitzers / Besitzdieners"
+},
+{
+  id: 81,
+  question: "Was ist ein Besitzdiener?",
+  answer: "Ein Besitzdiener ist, wer für den Besitzer dessen Selbsthilferechte und das Hausrecht weisungsgebunden in dessen Haushalt oder Erwerbsgeschäft ausübt."
+},
+
 
 ];
