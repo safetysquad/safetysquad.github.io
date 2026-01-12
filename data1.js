@@ -499,8 +499,7 @@ const cards = [
     "question": "Was ist bei der Bearbeitung fremder Daten zu beachten?",
     "answer": "Nicht an Unbefugte weitergeben und Datenschutzgrundsätze einhalten."
   },
-  const cards = [
-  {
+   {
     "id": 101,
     "question": "Wo sind Sicherheitsmitarbeiter tätig?",
     "answer": "Überwiegend im privaten Hausrechtsbereich. In Einzelfällen auch im öffentlichen Bereich."
@@ -1000,7 +999,6 @@ const cards = [
     "question": "Was sind die Pflichten des Finders einer Sache?",
     "answer": "Anzeige, Aufbewahrung und Abgabe an Berechtigte oder Behörden."
   },
-  const cards = [
   {
     "id": 201,
     "question": "Was ist ein Finderlohn?",
