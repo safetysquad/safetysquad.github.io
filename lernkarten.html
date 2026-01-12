@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>SAFETY SQUAD – Lernkarten Original</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+<div class="app">
+
+<header>
+  <h1>📚 Lernkarten Original</h1>
+
+  <div class="stats">
+    <div>✅ Erledigt<br><b id="doneCount">0</b></div>
+    <div>⭐ Merkliste<br><b id="markCount">0</b></div>
+    <div>📄<br><b id="cardCounter">0 / 0</b></div>
+  </div>
+
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+</header>
+
+<main>
+  <div class="card" onclick="flipCard()">
+    <p id="cardText">Lade Karte…</p>
+  </div>
+
+ <div class="nav">
+  <button class="btn warn" onclick="prevCard()">⬅ Zurück</button>
+  <button class="btn warn" onclick="nextCard()">➡ Weiter</button>
+</div>
+
+<div class="actions">
+  <button class="btn secondary" onclick="markCard()">⭐ Merkliste</button>
+  <button class="btn secondary" onclick="flipCard()">🔁 Antwort</button>
+  <button class="btn" onclick="doneCard()">✅ Richtig</button>
+</div>
+
+
+  <button class="btn secondary" onclick="toggleMenu()">☰ Mehr</button>
+
+  <div id="moreMenu" class="more-menu hidden">
+    <button onclick="toggleMode()">⭐ Nur Merkliste</button>
+    <a href="stats.html">📊 Statistik</a>
+    <a href="index.html">⬅ Startseite</a>
+  </div>
+</main>
+
+
+</div>
+
+<script src="data1.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
