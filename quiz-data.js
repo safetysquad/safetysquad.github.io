@@ -4754,7 +4754,252 @@ quiz11: [
     correct: ["a","d"],
     points: 2
   },
+],
+  quiz17: [
+  {
+    id: 1,
+    question: "Welches sind im Grundgesetz verankerte Verfassungsprinzipien Deutschlands?",
+    answers: [
+      { id: "a", text: "Rechtsstaat." },
+      { id: "b", text: "Demokratie." },
+      { id: "c", text: "Umweltschutz." },
+      { id: "d", text: "Monarchie." }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 2,
+    question: "Welche Unterlagen muss der Gewerbetreibende seinen Wachpersonen beim ersten Dienstantritt gegen Empfangsbescheinigung aushändigen?",
+    answers: [
+      { id: "a", text: "Dienstanweisung" },
+      { id: "b", text: "DGUV Vorschrift 23" },
+      { id: "c", text: "§ 34a Gewerbeordnung" },
+      { id: "d", text: "Arbeitsvertrag" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 3,
+    question: "Unter welchen Voraussetzungen ist ein Sicherheitsunternehmen nach dem BDSG verpflichtet einen Beauftragten für Datenschutz schriftlich zu bestellen?",
+    answers: [
+      { id: "a", text: "Falls im Unternehmen mindestens drei Personen mit der automatisierten Verarbeitung personenbezogener Daten beschäftigt sind" },
+      { id: "b", text: "Falls im Unternehmen mehr als neunzehn Personen mit der automatisierten Verarbeitung personenbezogener Daten beschäftigt sind" },
+      { id: "c", text: "Alle Sicherheitsunternehmen sind ausnahmslos dazu verpflichtet einen Beauftragten für den Datenschutz zu bestellen" },
+      { id: "d", text: "Sicherheitsunternehmen brauchen grundsätzlich keinen Beauftragten für den Datenschutz zu bestellen" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 4,
+    question: "Der Revierfahrer „A\" überfährt mit dem Dienstwagen unabsichtlich die Katze von „B\", die ihm plötzlich vor das Fahrzeug läuft. Was liegt hier zivilrechtlich vor?",
+    answers: [
+      { id: "a", text: "Unerlaubtes Entfernen vom Unfallort gemäß § 142 StGB" },
+      { id: "b", text: "Fahrlässige Tötung gemäß § 222 StGB" },
+      { id: "c", text: "Sachbeschädigung gemäß § 303 StGB" },
+      { id: "d", text: "Ein Sachmangel gemäß § 434 BGB" },
+      { id: "e", text: "Schadenersatzpflicht gemäß § 823 BGB" }
+    ],
+    correct: ["e"],
+    points: 1
+  },
+  {
+    id: 5,
+    question: "Welche Aussagen zur Menschenwürde sind gemäß Art. 1 Grundgesetz richtig?",
+    answers: [
+      { id: "a", text: "Geschützt ist jeder Mensch, der sich im Geltungsbereich des GG aufhält, z. B. Minderjährige Kinder, Straftäter und Ausländer" },
+      { id: "b", text: "Der Staat ist verpflichtet, die Menschenwürde zu achten und zu schützen" },
+      { id: "c", text: "Durch die Menschenwürde sind nur die höchsten Grundrechte 'Recht auf Leben' und 'Recht auf körperliche Unversehrtheit' geschützt." },
+      { id: "d", text: "Geschützt sind ebenso juristische Personen und die Menschheit" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 6,
+    question: "Aufgrund des § 34a Abs. 2 der Gewerbeordnung, hat das Bundesministerium des Inneren und für Heimat die Bewachungsverordnung erlassen. Welche Aussagen sind in der Bewachungsverordnung geregelt?",
+    answers: [
+      { id: "a", text: "Festlegung einer Bekleidungsordnung." },
+      { id: "b", text: "Ausstattung mit bestimmten Ausrüstungsgegenständen." },
+      { id: "c", text: "Ausstellen von Dienstausweisen (Bewacherausweis)" },
+      { id: "d", text: "Aufzeichnung aller Bewachungsverträge in deutscher Sprache." }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 7,
+    question: "Wann ist die Videoüberwachung gemäß BDSG zulässig, sofern die schutzwürdigen Interessen der Betroffenen nicht überwiegen?",
+    answers: [
+      { id: "a", text: "Wenn es der Auswertung der Arbeitsleistung der Mitarbeiter dient." },
+      { id: "b", text: "Wenn es der Überwachung der Arbeitszeiten der Beschäftigten dient." },
+      { id: "c", text: "Wenn es der Wahrnehmung des Hausrechts dient." },
+      { id: "d", text: "Wenn es der Aufgabenerfüllung öffentlicher Stellen dient." }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 8,
+    question: "Was verbietet das 'Schikaneverbot' gemäß § 226 BGB?",
+    answers: [
+      { id: "a", text: "jemanden nicht in eine Diskothek zu lassen, weil er einen Schnauzbart hat" },
+      { id: "b", text: "einen Untergebenen eine berechtigte Abmahnung zu geben" },
+      { id: "c", text: "einen gestellten Dieb nach dem Ausweis zu fragen" },
+      { id: "d", text: "eine berechtigte Kontrolle unnötig in die Länge zu ziehen, um den anderen möglichst lange aufzuhalten" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 9,
+    question: "Was wird unter dem Privatrecht verstanden?",
+    answers: [
+      { id: "a", text: "Das Privatrecht regelt die Rechtsbeziehungen zwischen gleichgestellten natürlichen und juristischen Personen" },
+      { id: "b", text: "Das Privatrecht legt im Wesentlichen fest, welche Freiheiten, Rechte und Pflichten die Menschen im Verhältnis zueinander haben" },
+      { id: "c", text: "Das Privatrecht beschreibt die Rechtsfolgen für Straftaten und Ordnungswidrigkeiten, z.B. Geld- oder Freiheitsstrafen, Geldbußen" },
+      { id: "d", text: "Das Privatrecht ist ein Teil des öffentlichen Rechts und regelt die Rechtsbeziehung zwischen Staat und Bürger" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 10,
+    question: "Gemäß BewachV muss der Gewerbetreibende den Wachdienst durch eine Dienstanweisung regeln. Welche Hinweise müssen in der Dienstanweisung enthalten sein?",
+    answers: [
+      { id: "a", text: "Der Hinweis, dass Wachpersonen nicht die Eigenschaft und die Befugnisse von Polizeivollzugsbeamten oder sonstigen Bediensteten einer Behörde besitzen" },
+      { id: "b", text: "Der Hinweis, dass Wachpersonen bei allen Bewachungstätigkeiten ein Namensschild tragen müssen." },
+      { id: "c", text: "Der Hinweis, dass Wachpersonen während des Dienstes nur mit Zustimmung des Gewerbetreibenden eine Schusswaffe, Hieb- und Stoßwaffen sowie Reizstoffsprühgeräte führen dürfen" },
+      { id: "d", text: "Den Hinweis, dass Wachpersonen bei allen Bewachungstätigkeiten mit Ausnahme der Tätigkeit 'Schutz vor Ladendieben' Dienstkleidung tragen müssen" }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 11,
+    question: "Was sind gemäß DS-GVO besondere Kategorien personenbezogener Daten?",
+    answers: [
+      { id: "a", text: "Politische Meinungen, weltanschauliche Überzeugungen" },
+      { id: "b", text: "Geburtsort, Name, Vorname, Geburtsort" },
+      { id: "c", text: "Kennzeichen am Pkw, Kfz-Versicherung" },
+      { id: "d", text: "Gewerkschaftszugehörigkeit, Gesundheitsdaten" }
+    ],
+    correct: ["a", "d"],
+    points: 1
+  },
+  {
+    id: 12,
+    question: "Dürfen Wachpersonen zur Aufrechterhaltung der betrieblichen Sicherheit und Ordnung und zum Schutz von Leib, Leben sowie weiterer Rechtsgüter in die Rechte Dritter eingreifen?",
+    answers: [
+      { id: "a", text: "Nein, weil Wachpersonen nicht die Eigenschaft und Befugnisse eines Polizeivollzugsbeamten besitzen" },
+      { id: "b", text: "Ja, sie dürfen Befugnisse wie die Notwehr und Notstände zugunsten eines Auftraggegers unter Beachtung des Grundsatzes der Erforderlichkeit einsetzen" },
+      { id: "c", text: "Ja, sie dürfen im Rahmen der Wahrnehmung des Hausrechts des Auftraggebers das unbefugte Betreten des Betriebsgeländes und der Betriebsgebäude untersagen" },
+      { id: "d", text: "Ja, sie dürfen in die Rechte Dritter zur Durchsetzung von Sicherheitsinteressen des Auftraggebers uneingeschränkt eingreifen" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 13,
+    question: "Welche Aussage zur Zuständigkeit des Sicherheitsgewerbes ist richtig?",
+    answers: [
+      { id: "a", text: "Das Sicherheitsgewerbe ist zuständig in den Bereichen, die ihm von den Sicherheitsbehörden zugewiesen werden" },
+      { id: "b", text: "Das Sicherheitsgewerbe ist zuständig für die innere Sicherheit der Bundesländer" },
+      { id: "c", text: "Das Sicherheitsgewerbe ist zuständig für die Aufrechterhaltung der öffentlichen Sicherheit und Ordnung" },
+      { id: "d", text: "Das Sicherheitsgewerbe ist zuständig für das korrekte Abwiegen von Rinderhack an der Fleischtheke" },
+      { id: "e", text: "Das Sicherheitsgewerbe ist zuständig in den Bereichen, die ihm vertraglich vom Auftraggeber zugewiesen werden" }
+    ],
+    correct: ["e"],
+    points: 1
+  },
+  {
+    id: 14,
+    question: "Wer ist für die sichere Aufbewahrung der Schusswaffen und Munition im Gewerbebetrieb verantwortlich?",
+    answers: [
+      { id: "a", text: "Der Gewerbetreibende." },
+      { id: "b", text: "Jeder zur Führung bzw. Bereithaltung von Schusswaffen befugte Sicherheitsmitarbeiter." },
+      { id: "c", text: "Nur der Sicherheitsmitarbeiter, der über einen Waffenschein verfügt bzw. als Sachkundiger tätig werden darf." },
+      { id: "d", text: "Der Sicherheitsmitarbeiter, der gerade Dienst in der Sicherheitszentrale verrichtet." }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 15,
+    question: "Was sind wesentliche Prinzipien des Datenschutzrechts gemäß der DS-GVO?",
+    answers: [
+      { id: "a", text: "Personenbezogene Daten müssen sachlich richtig und erforderlichenfalls auf dem neuesten Stand sein" },
+      { id: "b", text: "Personenbezogene Daten müssen nur dann vor unbefugter Verarbeitung geschützt werden, wenn dies der Betroffene verlangt" },
+      { id: "c", text: "Personenbezogene Daten dürfen in beliebigem Umfang erhoben und verarbeitet werden" },
+      { id: "d", text: "Personenbezogene Daten müssen auf rechtmäßige Weise und nach Treu und Glauben verarbeitet werden" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 16,
+    question: "Welche Aussagen zur Stellung des Besitzdieners sind gemäß § 855 BGB richtig?",
+    answers: [
+      { id: "a", text: "Der Besitzdiener begründet keinen eigenen Besitz an der Sache, über die er die tatsächliche Gewalt für den Besitzer ausübt. Dies gilt z. B. für die zur Verfügung gestellte Dienstkleidung der Wachperson." },
+      { id: "b", text: "Der Besitzdiener hat ein eigenes Selbsthilferecht an der Sache, über die er die tatsächliche Gewalt für den Besitzer ausübt. Dies trifft auf alle Gegenstände zu, die ihm zur Durchführung des Dienstes überlassen wurden." },
+      { id: "c", text: "Der Besitzdiener übt die tatsächliche Gewalt über eine Sache für den Besitzer aus. Er ist dabei an die Weisungen des Besitzers gebunden." }
+    ],
+    correct: ["a", "c"],
+    points: 1
+  },
+  {
+    id: 17,
+    question: "Im deutschen Rechtssystem sind Rechtfertigungsgründe verankert. Was ist deren Sinn und Zweck?",
+    answers: [
+      { id: "a", text: "Sie können strafbares Handeln rechtfertigen" },
+      { id: "b", text: "Sie können unerlaubtes Handeln rechtfertigen" },
+      { id: "c", text: "Sie können verbotenes Handeln entschuldigen" },
+      { id: "d", text: "Sie können ordnungswidriges Handeln entschuldigen" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 18,
+    question: "Müssen Wachpersonen ihren Bewacherausweis gemäß BewachV sichtbar tragen?",
+    answers: [
+      { id: "a", text: "Ja, während des Wachdienstes. Diese Tragepflicht entfällt allerdings, wenn die Wachpersonen ein Kennschild bzw. ein Namensschild sichtbar tragen" },
+      { id: "b", text: "Ja, während des Wachdienstes. Dies gilt aber nur für sachkundepflichtige Bewachungstätigkeiten wie 'Kontrollgänge im öffentlichen Verkehrsraum'" },
+      { id: "c", text: "Nein, während des Wachdienstes müssen Wachpersonen den Ausweis mitführen und auf Verlangen den Beauftragten der Vollzugsbehörden vorzeigen" },
+      { id: "d", text: "Ja, während des Wachdienstes. Ausgenommen davon ist der 'Personenschutz'. Personenschützer müssen den Ausweis nur mitführen" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 19,
+    question: "Das BDSG verpflichtet dazu, das Datengeheimnis zu beachten. Was ist damit gemeint?",
+    answers: [
+      { id: "a", text: "Mit der Datenverarbeitung beauftragte Personen müssen auf das Datengeheimnis verpflichtet werden. Dies gilt in ganz Europa" },
+      { id: "b", text: "Wenn die mit der Verarbeitung personenbezogener Daten betrauten Personen ihre Tätigkeit beenden, besteht das Datengeheimnis fort" },
+      { id: "c", text: "Das Datengeheimnis dient dem Schutz und der unbefugten Kenntnisnahme von Geschäftsgeheimnissen" },
+      { id: "d", text: "Mit der Datenverarbeitung befasste Personen dürfen personenbezogene Daten nur befugt verarbeiten" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 20,
+    question: "Die nachstehenden Äußerungen nehmen Bezug auf die Ausübung und Durchsetzung von Rechten durch Staatsbürger. Entscheiden Sie sich für die richtige Aussage.",
+    answers: [
+      { id: "a", text: "Da Staatsbürger als Staatsvolk die eigentliche Staatsgewalt repräsentieren, dürfen sie auch ohne weitere Prüfung Gewalt im eigenen Interesse anwenden." },
+      { id: "b", text: "Die Anwendung von privater Gewalt ist in Ausnahmefällen ohne Einschränkung möglich." },
+      { id: "c", text: "Wer in Ausübung der ihm zustehenden Rechte, die Grenzen des zulässigen überschreitet, ist grundsätzlich entschuldigt." },
+      { id: "d", text: "Private Gewaltanwendung zur Durchsetzung vermeintlicher oder wirklicher Rechtspositionen, ist mit den rechtsstaatlichen Prinzipien nicht vereinbar." },
+      { id: "e", text: "Der Schutz und die Durchsetzung von Rechten ist, soweit sie den Einsatz von Zwangsmitteln erfordern, grundsätzlich Aufgabe des Staates." }
+    ],
+    correct: ["e"],
+    points: 1
+  }
 ];
+
 
 
 };
