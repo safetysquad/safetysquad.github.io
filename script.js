@@ -1,31 +1,30 @@
 // ===============================
-// STATE
+// === INITIAL STATE & DATENSET ===
 // ===============================
-const currentSet = document.body.dataset.set || "default";
+const currentSet = document.body.dataset.set; // "cards" oder "cards1"
+const cardsActive = currentSet === "cards1" ? cards1 : cards;
 
-let doneCards = JSON.parse(localStorage.getItem(`${currentSet}_doneCards`)) || [];
-let markedCards = JSON.parse(localStorage.getItem(`${currentSet}_markedCards`)) || [];
 let currentIndex = 0;
 let showAnswer = false;
 let onlyMarked = false;
 
+let doneCards = JSON.parse(localStorage.getItem(`${currentSet}_doneCards`)) || [];
+let markedCards = JSON.parse(localStorage.getItem(`${currentSet}_markedCards`)) || [];
+
 // ===============================
-// KARTEN GET
+// GET ACTIVE CARDS
 // ===============================
 function getActiveCards() {
-  const setCards = currentSet === "safety1" ? cards1 : cards;
-
   if (onlyMarked) {
-    return setCards.filter(
+    return cardsActive.filter(
       c => markedCards.includes(c.id) && !doneCards.includes(c.id)
     );
   }
-  return setCards.filter(c => !doneCards.includes(c.id));
+  return cardsActive.filter(c => !doneCards.includes(c.id));
 }
 
-
 // ===============================
-// RENDER CARD
+// RENDER KARTE
 // ===============================
 function renderCard() {
   const activeCards = getActiveCards();
@@ -136,7 +135,31 @@ function toggleMode() {
 }
 
 // ===============================
-// RESET (Statistik)
+// STATISTIKSEITE
+// ===============================
+function renderStats() {
+  const total = cardsActive.length;
+  const done = doneCards.length;
+  const mark = markedCards.length;
+  const percent = total === 0 ? 0 : Math.round((done / total) * 100);
+
+  const totalEl = document.getElementById("totalCards");
+  const doneEl = document.getElementById("doneCards");
+  const markEl = document.getElementById("markCards");
+  const percentEl = document.getElementById("progressPercent");
+  const barEl = document.getElementById("progressBar");
+
+  if (!totalEl) return;
+
+  totalEl.textContent = total;
+  doneEl.textContent = done;
+  markEl.textContent = mark;
+  percentEl.textContent = percent + "%";
+  if (barEl) barEl.style.width = percent + "%";
+}
+
+// ===============================
+// RESET LERNFORTSCHRITT
 // ===============================
 function resetProgress() {
   if (!confirm("Willst du wirklich ALLES zurücksetzen?")) return;
@@ -147,17 +170,63 @@ function resetProgress() {
 }
 
 // ===============================
-// START
+// BURGER MENÜ
+// ===============================
+function toggleMenu() {
+  const menu = document.getElementById("moreMenu");
+  if (menu) menu.classList.toggle("hidden");
+}
+
+// ===============================
+// QUIZ-STATISTIK
+// ===============================
+function renderQuizStats() {
+  const box = document.getElementById("quizStats");
+  if (!box) return;
+
+  box.innerHTML = "";
+  let hasData = false;
+
+  for (let i = 1; i <= 13; i++) {
+    const quizId = `quiz${i}`;
+    const attempts = localStorage.getItem(`safety_${quizId}_attempts`);
+    const best = localStorage.getItem(`safety_${quizId}_best`);
+
+    if (!attempts && !best) continue;
+
+    hasData = true;
+
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <b>${quizId.toUpperCase()}</b><br>
+      Versuche: ${attempts || 0}<br>
+      Bestwert: ${best || 0}%
+    `;
+    box.appendChild(div);
+  }
+
+  if (!hasData) {
+    box.innerHTML = "<p style='text-align:center;'>Noch keine Quiz-Daten vorhanden.</p>";
+  }
+}
+
+function resetQuizStats() {
+  if (!confirm("Quiz-Statistik wirklich zurücksetzen?")) return;
+
+  Object.keys(localStorage).forEach(key => {
+    if (key.startsWith("safety_quiz")) {
+      localStorage.removeItem(key);
+    }
+  });
+
+  renderQuizStats();
+}
+
+// ===============================
+// DOM CONTENT LOADED
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
   renderCard();
-
-  // Burger-Menü fix
-  const burger = document.getElementById("burgerBtn");
-  const menu = document.getElementById("moreMenu");
-  if (burger && menu) {
-    burger.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-    });
-  }
+  renderStats();
+  renderQuizStats();
 });
