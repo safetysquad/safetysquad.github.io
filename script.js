@@ -8,19 +8,22 @@ let onlyMarked = false;
 let doneCards = JSON.parse(localStorage.getItem("safety_doneCards")) || [];
 let markedCards = JSON.parse(localStorage.getItem("safety_markedCards")) || [];
 
+// ===============================
+// AKTIVES KARTEN-ARRAY AUTOMATISCH ERKENNEN
+// ===============================
+const cardsArray = typeof cards1 !== "undefined" ? cards1 : cards;
 
 // ===============================
-// AKTIVE KARTEN (WICHTIGER FIX)
+// AKTIVE KARTEN
 // ===============================
 function getActiveCards() {
   if (onlyMarked) {
-    return cards.filter(
+    return cardsArray.filter(
       c => markedCards.includes(c.id) && !doneCards.includes(c.id)
     );
   }
-  return cards.filter(c => !doneCards.includes(c.id));
+  return cardsArray.filter(c => !doneCards.includes(c.id));
 }
-
 
 // ===============================
 // RENDER KARTE
@@ -47,7 +50,6 @@ function renderCard() {
   updateStats(activeCards.length, currentIndex);
 }
 
-
 // ===============================
 // STATS OBEN
 // ===============================
@@ -71,7 +73,6 @@ function updateStats(activeLength, index) {
     barEl.style.width = "0%";
   }
 }
-
 
 // ===============================
 // AKTIONEN
@@ -117,9 +118,8 @@ function doneCard() {
   nextCard();
 }
 
-
 // ===============================
-// ⭐ MODUS WECHSEL (JETZT FUNKTIONIERT ES)
+// MODUS WECHSEL
 // ===============================
 function toggleMode() {
   onlyMarked = !onlyMarked;
@@ -136,12 +136,11 @@ function toggleMode() {
   renderCard();
 }
 
-
 // ===============================
 // STATISTIKSEITE
 // ===============================
 function renderStats() {
-  const total = cards.length;
+  const total = cardsArray.length;
   const done = doneCards.length;
   const mark = markedCards.length;
   const percent = total === 0 ? 0 : Math.round((done / total) * 100);
@@ -158,9 +157,8 @@ function renderStats() {
   doneEl.textContent = done;
   markEl.textContent = mark;
   percentEl.textContent = percent + "%";
-  barEl.style.width = percent + "%";
+  if (barEl) barEl.style.width = percent + "%";
 }
-
 
 // ===============================
 // RESET (Statistik)
@@ -172,7 +170,6 @@ function resetProgress() {
   localStorage.removeItem("safety_markedCards");
   location.reload();
 }
-
 
 // ===============================
 // START
@@ -186,6 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function toggleMenu() {
   document.getElementById("moreMenu").classList.toggle("hidden");
 }
+
 // ===============================
 // QUIZ-STATISTIK
 // ===============================
@@ -220,7 +218,6 @@ function renderQuizStats() {
     box.innerHTML = "<p style='text-align:center;'>Noch keine Quiz-Daten vorhanden.</p>";
   }
 }
-
 
 // ===============================
 // QUIZ RESET
