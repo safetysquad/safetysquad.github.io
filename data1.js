@@ -1500,7 +1500,7 @@ const cards = [
     "id": 300,
     "question": "Was ist ein Tätigkeitsdelikt?",
     "answer": "Eine Straftat, bei der allein das Handeln strafbar ist."
-  }
+  },
 ];
 
 
