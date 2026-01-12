@@ -1,4 +1,4 @@
-const cards = [
+const cards1 = [
   {
     "id": 1,
     "question": "Erkläre die Notwehr gem. § 32 StGB.",
