@@ -42,6 +42,7 @@ header p {
   font-size: .95rem;
   opacity: .8;
 }
+
 .header-bar {
   display: flex;
   align-items: center;
@@ -64,18 +65,26 @@ header p {
   position: absolute;
   top: 60px;
   left: 1rem;
-  background: #111;
-  border-radius: 8px;
-  padding: .5rem;
+  background: #0f172a;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,.4);
   z-index: 100;
 }
 
-.more-menu a {
+.more-menu a,
+.more-menu button {
   display: block;
-  padding: .5rem 1rem;
+  background: #1e293b;
   color: #fff;
+  padding: 12px;
+  border-radius: 12px;
   text-decoration: none;
+  border: none;
+  font-size: 1rem;
 }
 
 .more-menu a:hover {
@@ -85,7 +94,6 @@ header p {
 .hidden {
   display: none;
 }
-
 
 /* ===============================
    MAIN
@@ -113,30 +121,32 @@ main {
   text-decoration: none;
   background: #22c55e;   /* Hauptaktion */
   color: #022c22;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-/* Neutrale Nebenaktion */
+.btn:hover {
+  animation: pulse 0.6s;
+}
+
 .btn.secondary {
   background: #334155;
   color: #e5e7eb;
 }
 
-/* Navigation (Zurück / Weiter) */
 .btn.warn {
   background: #1e293b;
   color: #e5e7eb;
 }
 
-/* Kritisch (Reset, Löschen – später) */
 .btn.danger {
   background: #7f1d1d;
   color: #fecaca;
 }
+
 .btn.secondary.active {
   background: #22c55e;
   color: #022c22;
 }
-
 
 /* ===============================
    CARD
@@ -152,6 +162,9 @@ main {
   text-align: center;
   white-space: pre-line;
   font-size: 1.05rem;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.5s forwards;
 }
 
 /* ===============================
@@ -162,14 +175,17 @@ main {
   justify-content: space-between;
   gap: .5rem;
   font-size: .85rem;
-  margin-bottom: 1rem;  /* Abstand UNTER den Stats */
+  margin-bottom: 1rem;
 }
 
 .progress {
-  margin-top: .8rem;     /* Abstand ZWISCHEN Stats und Fortschrittsbalken */
-  margin-bottom: 1.2rem; /* Abstand UNTER dem Fortschrittsbalken */
+  margin-top: .8rem;
+  margin-bottom: 1.2rem;
+  height: 10px;
+  background: #1e293b;
+  border-radius: 10px;
+  overflow: hidden;
 }
-
 
 .stats div {
   background: #1e293b;
@@ -179,20 +195,11 @@ main {
   text-align: center;
 }
 
-/* ===============================
-   PROGRESS
-================================ */
-.progress {
-  height: 10px;
-  background: #1e293b;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
 .progress-bar {
   height: 100%;
   background: #22c55e;
   width: 0%;
+  transition: width 0.8s ease-in-out;
 }
 
 /* ===============================
@@ -215,7 +222,9 @@ main {
     max-width: 420px;
     margin: 0 auto;
   }
-}.top-buttons {
+}
+
+.top-buttons {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -227,43 +236,15 @@ main {
   flex-direction: column;
   gap: 10px;
 }
+
 .actions {
   display: flex;
   gap: 10px;
   margin: 12px 0;
 }
 
-.more-menu {
-  background: #0f172a;
-  border-radius: 14px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.more-menu a,
-.more-menu button {
-  background: #1e293b;
-  color: white;
-  padding: 12px;
-  border-radius: 12px;
-  text-decoration: none;
-  border: none;
-  font-size: 1rem;
-}
-
-.hidden {
-  display: none;
-}
 .actions .btn {
   flex: 1;
-}
-
-.actions {
-  display: flex;
-  gap: 10px;
 }
 
 @media (max-width: 360px) {
@@ -271,14 +252,10 @@ main {
     flex-direction: column;
   }
 }
-/* ===============================
-   QUIZ ERGEBNIS
-================================ */
 
 /* ===============================
    QUIZ RESULT
 ================================ */
-
 .result-summary {
   background: #1e293b;
   padding: 1.5rem;
@@ -356,6 +333,7 @@ main {
 .answer-list.correct li {
   color: #86efac;
 }
+
 #questionPoints {
   margin: 10px 0 14px;
   font-weight: bold;
@@ -398,6 +376,9 @@ main {
 
 .pdf-link {
   position: relative;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.5s forwards;
 }
 
 .pdf-badge {
@@ -414,5 +395,36 @@ main {
 }
 
 .pdf-badge.new {
-  background: #22c55e; /* grün für neue PDFs */
+  background: #22c55e;
+}
+
+/* ===============================
+   ANIMATIONEN
+================================= */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
