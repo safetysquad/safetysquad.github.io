@@ -43,37 +43,34 @@ header p {
   opacity: .8;
 }
 
-/* ===============================
-   STATS UND FORTSCHRITT
-================================ */
-.stats {
+.more-menu {
+  position: absolute;
+  top: 60px;
+  left: 1rem;
+  background: #111;
+  border-radius: 8px;
+  padding: .5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,.4);
+  z-index: 100;
   display: flex;
-  justify-content: space-between;
-  gap: .5rem;
-  font-size: .85rem;
-  margin-bottom: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.stats div {
+.more-menu a,
+.more-menu button {
   background: #1e293b;
-  padding: .6rem;
-  border-radius: 12px;
-  flex: 1;
-  text-align: center;
-}
-
-.progress {
-  height: 10px;
-  background: #1e293b;
+  color: white;
+  padding: 10px;
   border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 1rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
 }
 
-.progress-bar {
-  height: 100%;
-  background: #22c55e;
-  width: 0%;
+.hidden {
+  display: none;
 }
 
 /* ===============================
@@ -85,42 +82,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-
-/* ===============================
-   CARD
-================================ */
-.card {
-  background: #1e293b;
-  border-radius: 20px;
-  padding: 2rem;
-  min-height: 240px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  white-space: pre-line;
-  font-size: 1.05rem;
-  transition: transform 0.3s ease;
-  perspective: 1000px;
-  position: relative;
-}
-
-/* Icons oben rechts / unten rechts */
-.icon-top-right,
-.icon-bottom-right {
-  position: absolute;
-  font-size: 1.3rem;
-}
-
-.icon-top-right {
-  top: 8px;
-  right: 8px;
-}
-
-.icon-bottom-right {
-  bottom: 8px;
-  right: 8px;
 }
 
 /* ===============================
@@ -136,100 +97,76 @@ main {
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  background: #22c55e;
+  background: #22c55e;   /* Hauptaktion */
   color: #022c22;
 }
 
-.btn.secondary {
-  background: #334155;
-  color: #e5e7eb;
-}
+.btn.secondary { background: #334155; color: #e5e7eb; }
+.btn.warn { background: #1e293b; color: #e5e7eb; }
+.btn.danger { background: #7f1d1d; color: #fecaca; }
 
-.btn.warn {
+.actions { display: flex; gap: 10px; }
+.actions .btn { flex: 1; }
+
+.nav { display: flex; gap: 0.5rem; }
+.nav button { flex: 1; }
+
+/* ===============================
+   CARD
+================================ */
+.card {
   background: #1e293b;
-  color: #e5e7eb;
-}
-
-.btn.danger {
-  background: #7f1d1d;
-  color: #fecaca;
+  border-radius: 20px;
+  padding: 2rem;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: pre-line;
+  font-size: 1.05rem;
 }
 
 /* ===============================
-   NAVIGATION
+   STATS + PROGRESS
 ================================ */
-.nav {
+.stats {
   display: flex;
+  justify-content: space-between;
   gap: .5rem;
+  font-size: .85rem;
 }
 
-.nav button {
-  flex: 1;
-}
-
-/* ===============================
-   ACTION BUTTONS
-================================ */
-.actions {
-  display: flex;
-  gap: 10px;
-}
-
-.actions .btn {
-  flex: 1;
-}
-
-@media (max-width: 360px) {
-  .actions {
-    flex-direction: column;
-  }
-}
-
-/* ===============================
-   MORE MENU
-================================ */
-.more-menu {
-  background: #0f172a;
-  border-radius: 14px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.more-menu a,
-.more-menu button {
+.stats div {
   background: #1e293b;
-  color: white;
-  padding: 12px;
+  padding: .6rem;
   border-radius: 12px;
-  text-decoration: none;
-  border: none;
-  font-size: 1rem;
+  flex: 1;
+  text-align: center;
 }
 
-.hidden {
-  display: none;
+.progress {
+  height: 10px;
+  background: #1e293b;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: .8rem;
+  margin-bottom: 1.2rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #22c55e;
+  width: 0%;
 }
 
 /* ===============================
    DESKTOP
 ================================ */
 @media (min-width: 768px) {
-  .app {
-    max-width: 420px;
-    margin: 0 auto;
-  }
+  .app { max-width: 420px; margin: 0 auto; }
 }
 
-/* ===============================
-   MERKLISTE / ERLEDIGT ICONS
-================================ */
-.card.marked {
-  border: 2px solid #facc15;
-}
-
-.card.answer {
-  border: 2px solid #3b82f6;
+@media (max-width: 360px) {
+  .actions { flex-direction: column; }
 }
