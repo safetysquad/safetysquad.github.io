@@ -162,13 +162,22 @@ function renderStats() {
 }
 
 // ===============================
-// RESET (Statistik)
-function resetProgress() {
-  if (!confirm("Willst du wirklich ALLES zurücksetzen?")) return;
+// ===============================
+// RESET (Statistik pro Lernkarten-Set)
+// ===============================
+function resetProgress(prefix) {
+  if (!prefix) return; // kein Prefix angegeben
+  if (!confirm("Willst du wirklich ALLES für dieses Lernkarten-Set zurücksetzen?")) return;
 
-  localStorage.removeItem(`${STORAGE_PREFIX}_doneCards`);
-  localStorage.removeItem(`${STORAGE_PREFIX}_markedCards`);
-  location.reload();
+  localStorage.removeItem(`${prefix}_doneCards`);
+  localStorage.removeItem(`${prefix}_markedCards`);
+
+  // Neu rendern
+  if (prefix === "lernkarteikarten1") {
+    renderStatsSet('lernkarteikarten1', 'totalCards1', 'doneCards1', 'markCards1', 'progressPercent1', 'progressBar1');
+  } else if (prefix === "lernkarteikarten2") {
+    renderStatsSet('lernkarteikarten2', 'totalCards2', 'doneCards2', 'markCards2', 'progressPercent2', 'progressBar2');
+  }
 }
 
 // ===============================
