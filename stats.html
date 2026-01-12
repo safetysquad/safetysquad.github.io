@@ -17,8 +17,32 @@
 
 <main>
 
-  <!-- ================= SET 1 – Lernkarteikarten ================= -->
+  <!-- =============================== -->
+  <!-- Lernkarteikarten Statistik -->
+  <!-- =============================== -->
   <h2>📚 Lernkarteikarten</h2>
+  <div class="stats">
+    <div>📄 Gesamt<br><b id="totalCards">0</b></div>
+    <div>✅ Erledigt<br><b id="doneCards">0</b></div>
+    <div>⭐ Merkliste<br><b id="markCards">0</b></div>
+  </div>
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+  <p style="text-align:center; font-size:.9rem;">
+    Fortschritt: <b id="progressPercent">0%</b>
+  </p>
+
+  <button class="btn danger" onclick="resetProgress('cards')">
+    🧹 Lernkarteikarten zurücksetzen
+  </button>
+
+  <hr style="margin:2rem 0; opacity:.2;">
+
+  <!-- =============================== -->
+  <!-- Lernkarten Statistik -->
+  <!-- =============================== -->
+  <h2>📚 Lernkarten</h2>
   <div class="stats">
     <div>📄 Gesamt<br><b id="totalCards1">0</b></div>
     <div>✅ Erledigt<br><b id="doneCards1">0</b></div>
@@ -30,37 +54,12 @@
   <p style="text-align:center; font-size:.9rem;">
     Fortschritt: <b id="progressPercent1">0%</b>
   </p>
-  <button class="btn danger" onclick="resetProgress('cards')">
-    🧹 Lernfortschritt zurücksetzen
-  </button>
 
-  <hr style="margin:2rem 0; opacity:.2;">
-
-  <!-- ================= SET 2 – Lernkarten ================= -->
-  <h2>📝 Lernkarten</h2>
-  <div class="stats">
-    <div>📄 Gesamt<br><b id="totalCards2">0</b></div>
-    <div>✅ Erledigt<br><b id="doneCards2">0</b></div>
-    <div>⭐ Merkliste<br><b id="markCards2">0</b></div>
-  </div>
-  <div class="progress">
-    <div class="progress-bar" id="progressBar2"></div>
-  </div>
-  <p style="text-align:center; font-size:.9rem;">
-    Fortschritt: <b id="progressPercent2">0%</b>
-  </p>
   <button class="btn danger" onclick="resetProgress('cards1')">
-    🧹 Lernfortschritt zurücksetzen
+    🧹 Lernkarten zurücksetzen
   </button>
 
   <hr style="margin:2rem 0; opacity:.2;">
-
-  <!-- ================= QUIZ ================= -->
-  <h2 style="text-align:center;">📝 Quiz-Statistik</h2>
-  <div id="quizStats" class="stats" style="margin-top:1rem;"></div>
-  <button class="btn danger" onclick="resetQuizStats()">
-    🧹 Quiz-Statistik zurücksetzen
-  </button>
 
   <a href="index.html" class="btn secondary">
     🔙 Zur Startseite
@@ -70,39 +69,60 @@
 
 </div>
 
-<!-- ================= SCRIPTE ================= -->
 <script src="data.js"></script>
 <script src="data1.js"></script>
-<script src="script.js"></script>
 <script>
-  // ================= RENDER STATISTIK GETRENNT =================
-  function renderStatsSet(setName, prefix) {
-    const cardsSet = setName === 'cards1' ? cards1 : cards;
-    const done = JSON.parse(localStorage.getItem(`${setName}_doneCards`)) || [];
-    const marked = JSON.parse(localStorage.getItem(`${setName}_markedCards`)) || [];
-    const total = cardsSet.length;
-    const percent = total === 0 ? 0 : Math.round((done.length / total) * 100);
+  // ===============================
+  // Funktion um Statistik anzuzeigen
+  // ===============================
+  function renderStats(set) {
+    if(set === 'cards') {
+      const total = cards.length;
+      const done = JSON.parse(localStorage.getItem("doneCards"))?.length || 0;
+      const mark = JSON.parse(localStorage.getItem("markedCards"))?.length || 0;
+      const percent = total===0?0:Math.round((done/total)*100);
 
-    document.getElementById(`totalCards${prefix}`).textContent = total;
-    document.getElementById(`doneCards${prefix}`).textContent = done.length;
-    document.getElementById(`markCards${prefix}`).textContent = marked.length;
-    document.getElementById(`progressPercent${prefix}`).textContent = percent + "%";
-    document.getElementById(`progressBar${prefix}`).style.width = percent + "%";
+      document.getElementById("totalCards").textContent = total;
+      document.getElementById("doneCards").textContent = done;
+      document.getElementById("markCards").textContent = mark;
+      document.getElementById("progressPercent").textContent = percent + "%";
+      document.getElementById("progressBar").style.width = percent + "%";
+    }
+    if(set === 'cards1') {
+      const total = cards1.length;
+      const done = JSON.parse(localStorage.getItem("doneCards1"))?.length || 0;
+      const mark = JSON.parse(localStorage.getItem("markedCards1"))?.length || 0;
+      const percent = total===0?0:Math.round((done/total)*100);
+
+      document.getElementById("totalCards1").textContent = total;
+      document.getElementById("doneCards1").textContent = done;
+      document.getElementById("markCards1").textContent = mark;
+      document.getElementById("progressPercent1").textContent = percent + "%";
+      document.getElementById("progressBar1").style.width = percent + "%";
+    }
   }
 
-  function resetProgress(setName) {
-    if (!confirm("Willst du wirklich ALLES zurücksetzen?")) return;
-    localStorage.removeItem(`${setName}_doneCards`);
-    localStorage.removeItem(`${setName}_markedCards`);
-    location.reload();
+  function resetProgress(set) {
+    if(!confirm("Willst du wirklich ALLES zurücksetzen?")) return;
+    if(set==='cards') {
+      localStorage.removeItem("doneCards");
+      localStorage.removeItem("markedCards");
+    }
+    if(set==='cards1') {
+      localStorage.removeItem("doneCards1");
+      localStorage.removeItem("markedCards1");
+    }
+    renderStats('cards');
+    renderStats('cards1');
   }
 
+  // ===============================
+  // Statistik initial anzeigen
+  // ===============================
   document.addEventListener("DOMContentLoaded", () => {
-    renderStatsSet('cards', 1);
-    renderStatsSet('cards1', 2);
-    renderQuizStats();
+    renderStats('cards');
+    renderStats('cards1');
   });
 </script>
-
 </body>
 </html>
