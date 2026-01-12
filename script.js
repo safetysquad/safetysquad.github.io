@@ -39,7 +39,9 @@ function renderCard() {
     return;
   }
 
-  if (currentIndex >= activeCards.length) currentIndex = 0;
+  if (currentIndex >= activeCards.length) {
+    currentIndex = activeCards.length - 1;
+  }
   if (currentIndex < 0) currentIndex = 0;
 
   const card = activeCards[currentIndex];
@@ -97,11 +99,14 @@ function markCard() {
   if (!activeCards.length) return;
 
   const card = activeCards[currentIndex];
+
   if (!markedCards.includes(card.id)) {
     markedCards.push(card.id);
     localStorage.setItem(`${currentSet}_markedCards`, JSON.stringify(markedCards));
   }
-  nextCard();
+
+  showAnswer = false;
+  renderCard(); // 👈 Index bleibt gleich → nächste Karte rutscht nach
 }
 
 function doneCard() {
@@ -109,11 +114,20 @@ function doneCard() {
   if (!activeCards.length) return;
 
   const card = activeCards[currentIndex];
+
   if (!doneCards.includes(card.id)) {
     doneCards.push(card.id);
     localStorage.setItem(`${currentSet}_doneCards`, JSON.stringify(doneCards));
   }
-  nextCard();
+
+  showAnswer = false;
+
+  const newActive = getActiveCards();
+  if (currentIndex >= newActive.length) {
+    currentIndex = newActive.length - 1;
+  }
+
+  renderCard(); // 👈 korrekt nächste Karte
 }
 
 // ===============================
