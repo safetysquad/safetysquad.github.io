@@ -1,28 +1,29 @@
 // ===============================
+// KONFIGURATION: pro Lernkarten-Datei
+// ===============================
+const STORAGE_PREFIX = "lernkarteikarten1"; // Ändere z.B. auf "lernkarteikarten2" für andere Datei
+const CARDS = typeof cards !== "undefined" ? cards : cards1; // wählt automatisch cards oder cards1
+
+// ===============================
 // STATE
 // ===============================
 let currentIndex = 0;
 let showAnswer = false;
 let onlyMarked = false;
 
-let doneCards = JSON.parse(localStorage.getItem("safety_doneCards")) || [];
-let markedCards = JSON.parse(localStorage.getItem("safety_markedCards")) || [];
-
-// ===============================
-// AKTIVES KARTEN-ARRAY AUTOMATISCH ERKENNEN
-// ===============================
-const cardsArray = typeof cards1 !== "undefined" ? cards1 : cards;
+let doneCards = JSON.parse(localStorage.getItem(`${STORAGE_PREFIX}_doneCards`)) || [];
+let markedCards = JSON.parse(localStorage.getItem(`${STORAGE_PREFIX}_markedCards`)) || [];
 
 // ===============================
 // AKTIVE KARTEN
 // ===============================
 function getActiveCards() {
   if (onlyMarked) {
-    return cardsArray.filter(
+    return CARDS.filter(
       c => markedCards.includes(c.id) && !doneCards.includes(c.id)
     );
   }
-  return cardsArray.filter(c => !doneCards.includes(c.id));
+  return CARDS.filter(c => !doneCards.includes(c.id));
 }
 
 // ===============================
@@ -101,7 +102,7 @@ function markCard() {
   const card = activeCards[currentIndex];
   if (!markedCards.includes(card.id)) {
     markedCards.push(card.id);
-    localStorage.setItem("safety_markedCards", JSON.stringify(markedCards));
+    localStorage.setItem(`${STORAGE_PREFIX}_markedCards`, JSON.stringify(markedCards));
   }
   nextCard();
 }
@@ -113,7 +114,7 @@ function doneCard() {
   const card = activeCards[currentIndex];
   if (!doneCards.includes(card.id)) {
     doneCards.push(card.id);
-    localStorage.setItem("safety_doneCards", JSON.stringify(doneCards));
+    localStorage.setItem(`${STORAGE_PREFIX}_doneCards`, JSON.stringify(doneCards));
   }
   nextCard();
 }
@@ -140,7 +141,7 @@ function toggleMode() {
 // STATISTIKSEITE
 // ===============================
 function renderStats() {
-  const total = cardsArray.length;
+  const total = CARDS.length;
   const done = doneCards.length;
   const mark = markedCards.length;
   const percent = total === 0 ? 0 : Math.round((done / total) * 100);
@@ -162,12 +163,11 @@ function renderStats() {
 
 // ===============================
 // RESET (Statistik)
-// ===============================
 function resetProgress() {
   if (!confirm("Willst du wirklich ALLES zurücksetzen?")) return;
 
-  localStorage.removeItem("safety_doneCards");
-  localStorage.removeItem("safety_markedCards");
+  localStorage.removeItem(`${STORAGE_PREFIX}_doneCards`);
+  localStorage.removeItem(`${STORAGE_PREFIX}_markedCards`);
   location.reload();
 }
 
@@ -177,59 +177,4 @@ function resetProgress() {
 document.addEventListener("DOMContentLoaded", () => {
   renderCard();
   renderStats();
-  renderQuizStats(); 
 });
-
-function toggleMenu() {
-  document.getElementById("moreMenu").classList.toggle("hidden");
-}
-
-// ===============================
-// QUIZ-STATISTIK
-// ===============================
-function renderQuizStats() {
-  const box = document.getElementById("quizStats");
-  if (!box) return;
-
-  box.innerHTML = "";
-
-  let hasData = false;
-
-  for (let i = 1; i <= 13; i++) {
-    const quizId = `quiz${i}`;
-    const attempts = localStorage.getItem(`safety_${quizId}_attempts`);
-    const best = localStorage.getItem(`safety_${quizId}_best`);
-
-    if (!attempts && !best) continue;
-
-    hasData = true;
-
-    const div = document.createElement("div");
-    div.innerHTML = `
-      <b>${quizId.toUpperCase()}</b><br>
-      Versuche: ${attempts || 0}<br>
-      Bestwert: ${best || 0}%
-    `;
-
-    box.appendChild(div);
-  }
-
-  if (!hasData) {
-    box.innerHTML = "<p style='text-align:center;'>Noch keine Quiz-Daten vorhanden.</p>";
-  }
-}
-
-// ===============================
-// QUIZ RESET
-// ===============================
-function resetQuizStats() {
-  if (!confirm("Quiz-Statistik wirklich zurücksetzen?")) return;
-
-  Object.keys(localStorage).forEach(key => {
-    if (key.startsWith("safety_quiz")) {
-      localStorage.removeItem(key);
-    }
-  });
-
-  renderQuizStats();
-}
