@@ -13,13 +13,16 @@ let onlyMarked = false;
 // KARTEN GET
 // ===============================
 function getActiveCards() {
+  const setCards = currentSet === "safety1" ? cards1 : cards;
+
   if (onlyMarked) {
-    return cards.filter(
+    return setCards.filter(
       c => markedCards.includes(c.id) && !doneCards.includes(c.id)
     );
   }
-  return cards.filter(c => !doneCards.includes(c.id));
+  return setCards.filter(c => !doneCards.includes(c.id));
 }
+
 
 // ===============================
 // RENDER CARD
