@@ -1,26 +1,23 @@
 // ===============================
-// === INITIAL STATE & DATENSET ===
+// STATE
 // ===============================
-const currentSet = document.body.dataset.set; // "cards" oder "cards1"
-const cardsActive = currentSet === "cards1" ? cards1 : cards;
-
 let currentIndex = 0;
 let showAnswer = false;
 let onlyMarked = false;
 
-let doneCards = JSON.parse(localStorage.getItem(`${currentSet}_doneCards`)) || [];
-let markedCards = JSON.parse(localStorage.getItem(`${currentSet}_markedCards`)) || [];
+let doneCards = JSON.parse(localStorage.getItem("safety_doneCards")) || [];
+let markedCards = JSON.parse(localStorage.getItem("safety_markedCards")) || [];
 
 // ===============================
-// GET ACTIVE CARDS
+// AKTIVE KARTEN
 // ===============================
 function getActiveCards() {
   if (onlyMarked) {
-    return cardsActive.filter(
+    return cards.filter(
       c => markedCards.includes(c.id) && !doneCards.includes(c.id)
     );
   }
-  return cardsActive.filter(c => !doneCards.includes(c.id));
+  return cards.filter(c => !doneCards.includes(c.id));
 }
 
 // ===============================
@@ -29,13 +26,18 @@ function getActiveCards() {
 function renderCard() {
   const activeCards = getActiveCards();
   const cardText = document.getElementById("cardText");
-  if (!cardText) return;
+  const cardDiv = document.querySelector(".card");
+  if (!cardText || !cardDiv) return;
+
+  // Alte Icons entfernen
+  cardDiv.querySelectorAll(".icon-top-right, .icon-bottom-right").forEach(el => el.remove());
 
   if (activeCards.length === 0) {
     cardText.textContent = onlyMarked
       ? "⭐ Keine Karten in der Merkliste"
       : "🎉 Alle Karten erledigt";
     updateStats(0, 0);
+    cardDiv.className = "card question";
     return;
   }
 
@@ -43,13 +45,49 @@ function renderCard() {
   if (currentIndex < 0) currentIndex = 0;
 
   const card = activeCards[currentIndex];
-  cardText.textContent = showAnswer ? card.answer : card.question;
+
+  // Flip-Animation
+  cardDiv.style.transform = "rotateY(0deg)";
+  setTimeout(() => {
+    cardText.textContent = showAnswer ? card.answer : card.question;
+  }, 100);
+
+  // Klassen setzen
+  cardDiv.className = "card"; // reset
+  if (markedCards.includes(card.id)) cardDiv.classList.add("marked");
+  else if (showAnswer) cardDiv.classList.add("answer");
+  else cardDiv.classList.add("question");
+
+  // ⭐ Merkliste oben rechts
+  if (markedCards.includes(card.id)) {
+    const star = document.createElement("div");
+    star.className = "icon-top-right";
+    star.textContent = "⭐";
+    cardDiv.appendChild(star);
+  }
+
+  // ✔ Erledigt unten rechts
+  if (doneCards.includes(card.id)) {
+    const check = document.createElement("div");
+    check.className = "icon-bottom-right";
+    check.textContent = "✔";
+    cardDiv.appendChild(check);
+  }
+
+  // 🔁 Antwort oben rechts (neben Merkliste)
+  if (showAnswer) {
+    const reply = document.createElement("div");
+    reply.className = "icon-top-right";
+    reply.style.right = "40px";
+    reply.textContent = "🔁";
+    cardDiv.appendChild(reply);
+  }
 
   updateStats(activeCards.length, currentIndex);
 }
 
 // ===============================
-// STATS OBEN
+// STATS
 // ===============================
 function updateStats(activeLength, index) {
   const doneEl = document.getElementById("doneCount");
@@ -59,11 +97,7 @@ function updateStats(activeLength, index) {
 
   if (doneEl) doneEl.textContent = doneCards.length;
   if (markEl) markEl.textContent = markedCards.length;
-
-  if (counterEl) {
-    counterEl.textContent =
-      activeLength === 0 ? "0 / 0" : `${index + 1} / ${activeLength}`;
-  }
+  if (counterEl) counterEl.textContent = activeLength === 0 ? "0 / 0" : `${index + 1} / ${activeLength}`;
 
   if (barEl && activeLength > 0) {
     barEl.style.width = ((index + 1) / activeLength) * 100 + "%";
@@ -77,7 +111,9 @@ function updateStats(activeLength, index) {
 // ===============================
 function flipCard() {
   showAnswer = !showAnswer;
-  renderCard();
+  const cardDiv = document.querySelector(".card");
+  if (cardDiv) cardDiv.style.transform = "rotateY(180deg)";
+  setTimeout(renderCard, 150);
 }
 
 function nextCard() {
@@ -99,7 +135,7 @@ function markCard() {
   const card = activeCards[currentIndex];
   if (!markedCards.includes(card.id)) {
     markedCards.push(card.id);
-    localStorage.setItem(`${currentSet}_markedCards`, JSON.stringify(markedCards));
+    localStorage.setItem("safety_markedCards", JSON.stringify(markedCards));
   }
   nextCard();
 }
@@ -111,7 +147,7 @@ function doneCard() {
   const card = activeCards[currentIndex];
   if (!doneCards.includes(card.id)) {
     doneCards.push(card.id);
-    localStorage.setItem(`${currentSet}_doneCards`, JSON.stringify(doneCards));
+    localStorage.setItem("safety_doneCards", JSON.stringify(doneCards));
   }
   nextCard();
 }
@@ -125,108 +161,21 @@ function toggleMode() {
   showAnswer = false;
 
   const btn = document.getElementById("toggleMode");
-  if (btn) {
-    btn.textContent = onlyMarked
-      ? "📚 Alle Karten"
-      : "⭐ Nur Merkliste";
-  }
+  if (btn) btn.textContent = onlyMarked ? "📚 Alle Karten" : "⭐ Nur Merkliste";
 
   renderCard();
 }
 
 // ===============================
-// STATISTIKSEITE
-// ===============================
-function renderStats() {
-  const total = cardsActive.length;
-  const done = doneCards.length;
-  const mark = markedCards.length;
-  const percent = total === 0 ? 0 : Math.round((done / total) * 100);
-
-  const totalEl = document.getElementById("totalCards");
-  const doneEl = document.getElementById("doneCards");
-  const markEl = document.getElementById("markCards");
-  const percentEl = document.getElementById("progressPercent");
-  const barEl = document.getElementById("progressBar");
-
-  if (!totalEl) return;
-
-  totalEl.textContent = total;
-  doneEl.textContent = done;
-  markEl.textContent = mark;
-  percentEl.textContent = percent + "%";
-  if (barEl) barEl.style.width = percent + "%";
-}
-
-// ===============================
-// RESET LERNFORTSCHRITT
-// ===============================
-function resetProgress() {
-  if (!confirm("Willst du wirklich ALLES zurücksetzen?")) return;
-
-  localStorage.removeItem(`${currentSet}_doneCards`);
-  localStorage.removeItem(`${currentSet}_markedCards`);
-  location.reload();
-}
-
-// ===============================
-// BURGER MENÜ
+// MORE MENU
 // ===============================
 function toggleMenu() {
-  const menu = document.getElementById("moreMenu");
-  if (menu) menu.classList.toggle("hidden");
+  document.getElementById("moreMenu").classList.toggle("hidden");
 }
 
 // ===============================
-// QUIZ-STATISTIK
-// ===============================
-function renderQuizStats() {
-  const box = document.getElementById("quizStats");
-  if (!box) return;
-
-  box.innerHTML = "";
-  let hasData = false;
-
-  for (let i = 1; i <= 13; i++) {
-    const quizId = `quiz${i}`;
-    const attempts = localStorage.getItem(`safety_${quizId}_attempts`);
-    const best = localStorage.getItem(`safety_${quizId}_best`);
-
-    if (!attempts && !best) continue;
-
-    hasData = true;
-
-    const div = document.createElement("div");
-    div.innerHTML = `
-      <b>${quizId.toUpperCase()}</b><br>
-      Versuche: ${attempts || 0}<br>
-      Bestwert: ${best || 0}%
-    `;
-    box.appendChild(div);
-  }
-
-  if (!hasData) {
-    box.innerHTML = "<p style='text-align:center;'>Noch keine Quiz-Daten vorhanden.</p>";
-  }
-}
-
-function resetQuizStats() {
-  if (!confirm("Quiz-Statistik wirklich zurücksetzen?")) return;
-
-  Object.keys(localStorage).forEach(key => {
-    if (key.startsWith("safety_quiz")) {
-      localStorage.removeItem(key);
-    }
-  });
-
-  renderQuizStats();
-}
-
-// ===============================
-// DOM CONTENT LOADED
+// START
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
   renderCard();
-  renderStats();
-  renderQuizStats();
 });
