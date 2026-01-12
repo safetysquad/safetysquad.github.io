@@ -1,33 +1,28 @@
 // ===============================
-// KONFIGURATION: pro Lernkarten-Datei
-// ===============================
-const STORAGE_PREFIX = "lernkarteikarten1"; // Ändere z.B. auf "lernkarteikarten2" für andere Datei
-const CARDS = typeof cards !== "undefined" ? cards : cards1; // wählt automatisch cards oder cards1
-
-// ===============================
 // STATE
 // ===============================
+const currentSet = document.body.dataset.set || "default";
+
+let doneCards = JSON.parse(localStorage.getItem(`${currentSet}_doneCards`)) || [];
+let markedCards = JSON.parse(localStorage.getItem(`${currentSet}_markedCards`)) || [];
 let currentIndex = 0;
 let showAnswer = false;
 let onlyMarked = false;
 
-let doneCards = JSON.parse(localStorage.getItem(`${STORAGE_PREFIX}_doneCards`)) || [];
-let markedCards = JSON.parse(localStorage.getItem(`${STORAGE_PREFIX}_markedCards`)) || [];
-
 // ===============================
-// AKTIVE KARTEN
+// KARTEN GET
 // ===============================
 function getActiveCards() {
   if (onlyMarked) {
-    return CARDS.filter(
+    return cards.filter(
       c => markedCards.includes(c.id) && !doneCards.includes(c.id)
     );
   }
-  return CARDS.filter(c => !doneCards.includes(c.id));
+  return cards.filter(c => !doneCards.includes(c.id));
 }
 
 // ===============================
-// RENDER KARTE
+// RENDER CARD
 // ===============================
 function renderCard() {
   const activeCards = getActiveCards();
@@ -102,7 +97,7 @@ function markCard() {
   const card = activeCards[currentIndex];
   if (!markedCards.includes(card.id)) {
     markedCards.push(card.id);
-    localStorage.setItem(`${STORAGE_PREFIX}_markedCards`, JSON.stringify(markedCards));
+    localStorage.setItem(`${currentSet}_markedCards`, JSON.stringify(markedCards));
   }
   nextCard();
 }
@@ -114,7 +109,7 @@ function doneCard() {
   const card = activeCards[currentIndex];
   if (!doneCards.includes(card.id)) {
     doneCards.push(card.id);
-    localStorage.setItem(`${STORAGE_PREFIX}_doneCards`, JSON.stringify(doneCards));
+    localStorage.setItem(`${currentSet}_doneCards`, JSON.stringify(doneCards));
   }
   nextCard();
 }
@@ -138,46 +133,14 @@ function toggleMode() {
 }
 
 // ===============================
-// STATISTIKSEITE
+// RESET (Statistik)
 // ===============================
-function renderStats() {
-  const total = CARDS.length;
-  const done = doneCards.length;
-  const mark = markedCards.length;
-  const percent = total === 0 ? 0 : Math.round((done / total) * 100);
+function resetProgress() {
+  if (!confirm("Willst du wirklich ALLES zurücksetzen?")) return;
 
-  const totalEl = document.getElementById("totalCards");
-  const doneEl = document.getElementById("doneCards");
-  const markEl = document.getElementById("markCards");
-  const percentEl = document.getElementById("progressPercent");
-  const barEl = document.getElementById("progressBar");
-
-  if (!totalEl) return;
-
-  totalEl.textContent = total;
-  doneEl.textContent = done;
-  markEl.textContent = mark;
-  percentEl.textContent = percent + "%";
-  if (barEl) barEl.style.width = percent + "%";
-}
-
-// ===============================
-// ===============================
-// RESET (Statistik pro Lernkarten-Set)
-// ===============================
-function resetProgress(prefix) {
-  if (!prefix) return; // kein Prefix angegeben
-  if (!confirm("Willst du wirklich ALLES für dieses Lernkarten-Set zurücksetzen?")) return;
-
-  localStorage.removeItem(`${prefix}_doneCards`);
-  localStorage.removeItem(`${prefix}_markedCards`);
-
-  // Neu rendern
-  if (prefix === "lernkarteikarten1") {
-    renderStatsSet('lernkarteikarten1', 'totalCards1', 'doneCards1', 'markCards1', 'progressPercent1', 'progressBar1');
-  } else if (prefix === "lernkarteikarten2") {
-    renderStatsSet('lernkarteikarten2', 'totalCards2', 'doneCards2', 'markCards2', 'progressPercent2', 'progressBar2');
-  }
+  localStorage.removeItem(`${currentSet}_doneCards`);
+  localStorage.removeItem(`${currentSet}_markedCards`);
+  location.reload();
 }
 
 // ===============================
@@ -185,5 +148,13 @@ function resetProgress(prefix) {
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
   renderCard();
-  renderStats();
+
+  // Burger-Menü fix
+  const burger = document.getElementById("burgerBtn");
+  const menu = document.getElementById("moreMenu");
+  if (burger && menu) {
+    burger.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  }
 });
