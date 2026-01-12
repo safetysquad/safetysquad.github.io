@@ -4998,9 +4998,607 @@ quiz11: [
     correct: ["e"],
     points: 1
   }
-];
-
-
-
+],
+  quiz18: = [
+  {
+    id: 1,
+    question: "Was sind wesentliche Aufgaben der Polizei, des Bundes und der Länder?",
+    answers: [
+      { id: "a", text: "Bürger dabei zu unterstützen, ihre zivilrechtlichen Ansprüche gegen andere Bürger durchzusetzen" },
+      { id: "b", text: "Die Gefahrenabwehr zum Wohle der öffentlichen Sicherheit und Ordnung" },
+      { id: "c", text: "Straftaten zu erforschen und zu verfolgen" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 2,
+    question: "Wozu ist ein Sicherheitsunternehmer nach der Bewachungsverordnung verpflichtet?",
+    answers: [
+      { id: "a", text: "Er darf grundsätzlich keine zuverlässigen Personen beschäftigen" },
+      { id: "b", text: "Er hat seinen Wachpersonen einen Dienstausweis auszustellen" },
+      { id: "c", text: "Er hat eine Rechtsschutzversicherung abzuschließen" },
+      { id: "d", text: "Er muss eine Haftpflichtversicherung abschließen" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 3,
+    question: "Welche Art von Datenverarbeitung schützt das BDSG?",
+    answers: [
+      { id: "a", text: "Lediglich die Verarbeitung von wichtigen Daten, z.B. Betriebs- und Geschäftsgeheimnisse" },
+      { id: "b", text: "Die automatisierte Datenverarbeitung unter Einsatz von Datenverarbeitungsanlagen" },
+      { id: "c", text: "Die nicht-automatisierten Dateien, die nach bestimmten Merkmalen erfasst, sortiert und ausgewertet werden" },
+      { id: "d", text: "Jegliche Art von Erhebung, Verarbeitung und Nutzung personenbezogener Daten" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 4,
+    question: "Welche Aussagen zum staatlichen Gewaltmonopol sind richtig?",
+    answers: [
+      { id: "a", text: "Der Staat darf zur Aufrechterhaltung der öffentlichen Sicherheit und Ordnung willkürlich Gewalt anwenden." },
+      { id: "b", text: "Die Anwendung von Gewalt ist grundsätzlich nur den staatlichen Organen erlaubt." },
+      { id: "c", text: "Die Anwendung staatlicher Gewalt ist nur unter engen gesetzlichen Vorausset¬zungen zulässig." },
+      { id: "d", text: "Der Bürger darf in keiner Situation Gewalt anwenden." }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 5,
+    question: "Zu welchem Zeitpunkt hat der Gewerbetreibende die Wachpersonen, die er beschäftigen möchte, bei der zuständigen Behörde anzumelden?",
+    answers: [
+      { id: "a", text: "Spätestens bis zum Ende der Probezeit" },
+      { id: "b", text: "Frühestens am ersten Arbeitstag" },
+      { id: "c", text: "Spätestens vier Wochen vor Arbeitsbeginn" },
+      { id: "d", text: "Rechtzeitig vor Beginn der Beschäftigung" }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 6,
+    question: "Das BDSG verpflichtet dazu, das Datengeheimnis zu beachten. Was ist damit gemeint?",
+    answers: [
+      { id: "a", text: "Das Datengeheimnis dient dem Schutz und der unbefugten Kenntnisnahme von Geschäftsgeheimnissen" },
+      { id: "b", text: "Mit der Datenverarbeitung befasste Personen dürfen personenbezogene Daten nur befugt verarbeiten" },
+      { id: "c", text: "Mit der Datenverarbeitung beauftragte Personen müssen auf das Datengeheimnis verpflichtet werden. Dies gilt in ganz Europa" },
+      { id: "d", text: "Wenn die mit der Verarbeitung personenbezogener Daten betrauten Personen ihre Tätigkeit beenden, besteht das Datengeheimnis fort" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 7,
+    question: "Wer beschließt in der Bundesrepublik Deutschland Gesetze, die bundesweit gelten?",
+    answers: [
+      { id: "a", text: "Die Landesregierungen." },
+      { id: "b", text: "Die Parlamente der Bundesländer." },
+      { id: "c", text: "Der Bundestag und der Bundesrat." },
+      { id: "d", text: "Die Bundesregierung." }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 8,
+    question: "Was sind Bewachungstätigkeiten im Sinne von § 34a GewO?",
+    answers: [
+      { id: "a", text: "Überprüfung technischer Bühnenanlagen bei einer Veranstaltung" },
+      { id: "b", text: "Geld- und Werttransporte als Geldbote" },
+      { id: "c", text: "Beobachtungs- und Ermittlungstätigkeiten als Detektiv" },
+      { id: "d", text: "Personen- und Fahrzeugkontrollen im Rahmen des Objektschutzes" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 9,
+    question: "Die private Videoüberwachung öffentlich zugänglicher Räume ist nur zulässig, falls",
+    answers: [
+      { id: "a", text: "...keine Anhaltspunkte bestehen, dass schutzwürdige Interessen der Betroffenen überwiegen." },
+      { id: "b", text: "...sie zur Wahrnehmung berechtigter Interessen für konkret festgelegte Zwecke erforderlich ist." },
+      { id: "c", text: "...die zuständige Polizeibehörde die Verhältnismäßigkeit geprüft und eine entsprechende Genehmigung erteilt hat." },
+      { id: "d", text: "...die Beeinträchtigung der schutzwürdigen Interessen durch ein Jedermannsrecht gerechtfertigt ist." }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 10,
+    question: "Welche Aussagen zum Gewaltmonopol des Staates in der Bundesrepublik Deutschland sind richtig?",
+    answers: [
+      { id: "a", text: "Das staatliche Gewaltmonopol lässt keine Ausnahmen zu. Privatpersonen müssen sich an staatliche Stellen wenden, z. B. an Polizei und Gerichte, wenn sie Hilfe benötigen" },
+      { id: "b", text: "Der Staat darf Gewalt nur als letztes Mittel anwenden, um den Frieden zu bewahren. Die Gewalt muss rechtmäßig und verhältnismäßig sein" },
+      { id: "c", text: "Nur staatliche Stellen, wie z. B. die Polizei, dürfen zur Sicherung des inneren Friedens Gewalt anwenden" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 11,
+    question: "Wer benötigt keine Sachkundeprüfung gem. §34a GewO, obwohl er Kontrollgänge im öffentlichen Verkehrsraum ausübt oder als Ladendetektiv oder Türsteher für eine Wachfirma arbeiten will?",
+    answers: [
+      { id: "a", text: "ehemalige Wachsoldaten der Bundeswehr" },
+      { id: "b", text: "Wer einen Abschluss zumindest im mittleren Polizeidienst nachweisen kann" },
+      { id: "c", text: "Wer eine andere abgeschlossene Berufsausbildung hat" },
+      { id: "d", text: "Werkschutzfachkraft, Werkschutzmeister" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 12,
+    question: "Was sind wesentliche Prinzipien des Datenschutzrechts gemäß der DS-GVO?",
+    answers: [
+      { id: "a", text: "Personenbezogene Daten dürfen in beliebigem Umfang erhoben und verarbeitet werden" },
+      { id: "b", text: "Personenbezogene Daten müssen nur dann vor unbefugter Verarbeitung geschützt werden, wenn dies der Betroffene verlangt" },
+      { id: "c", text: "Personenbezogene Daten müssen sachlich richtig und erforderlichenfalls auf dem neuesten Stand sein" },
+      { id: "d", text: "Personenbezogene Daten müssen auf rechtmäßige Weise und nach Treu und Glauben verarbeitet werden" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 13,
+    question: "Bei Großveranstaltungen kann es notwendig sein, die Zufahrtskontrollen von Parkplätzen im öffentlichen Bereich durch privates Sicherheitspersonal zu regeln. Welche Voraussetzung kann eine solche Sonderregelung erlauben?",
+    answers: [
+      { id: "a", text: "Nachweis eines vorliegenden Gewohnheitsrechts" },
+      { id: "b", text: "Public-Private-Partnership-Vereinbarung" },
+      { id: "c", text: "Genehmigung von Ordnungsamt und örtl. Polizeibehörde" },
+      { id: "d", text: "Entscheidung durch den Bewachungsgewerbetreibenden" },
+      { id: "e", text: "Entscheidung des zuständigen Auftraggebers" },
+      { id: "f", text: "Übertragene Besitzrechte durch die Polizei" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 14,
+    question: "Welche Unterlagen benötigt die Erlaubnisbehörde unter anderem, um den Antrag auf Erteilung einer Bewachungserlaubnis gemäß § 34a GewO zu prüfen?",
+    answers: [
+      { id: "a", text: "Eine unbeschränkte Auskunft aus dem Bundeszentralregister zur Überprüfung der Zuverlässigkeit des Antragstellers" },
+      { id: "b", text: "Den Nachweis der erforderlichen Sachkundeprüfung für das Bewachungsgewerbe" },
+      { id: "c", text: "Ein persönliches Führungszeugnis zur Überprüfung der Zuverlässigkeit des Antragstellers" },
+      { id: "d", text: "Die Bescheinigung über die Teilnahme am Unterrichtungsverfahren" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 15,
+    question: "Was sind gemäß DS-GVO 'besondere Kategorien personenbezogener Daten'?",
+    answers: [
+      { id: "a", text: "Politische Meinungen, weltanschauliche Überzeugungen" },
+      { id: "b", text: "Gewerkschaftszugehörigkeit, Gesundheitsdaten" },
+      { id: "c", text: "Geburtsort, Name, Vorname" },
+      { id: "d", text: "Kennzeichen am Pkw, Kfz-Versicherung" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 16,
+    question: "Vervollständigen Sie den Satz: Die Grundrechte (Artikel 1 bis 19 GG) sind in erster Linie Abwehrrechte ...",
+    answers: [
+      { id: "a", text: "... des Staates gegen Verletzung von Rechtsgütern durch Straftaten." },
+      { id: "b", text: "... des Bürgers gegenüber staatlicher Machtentfaltung." },
+      { id: "c", text: "... der Polizei, um bei ihren Einsätzen gegenüber dem Bürger geschützt zu sein" },
+      { id: "d", text: "... des Privatrechts gegenüber unerlaubten Handlungen." },
+      { id: "e", text: "... des öffentlichen Rechts gegenüber den Bürgern." },
+      { id: "f", text: "... welche ausschließlich den deutschen Staatsbürgern zur Verfügung stehen." }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 17,
+    question: "Was regelt die BewachV?",
+    answers: [
+      { id: "a", text: "Sie regelt die Durchführung des Unterrichtungsverfahrens gem. §34a GewO" },
+      { id: "b", text: "Sie regelt die Grundsätze der Eigensicherung" },
+      { id: "c", text: "Sie regelt die Wahrung von Geschäfts- und Betriebsgeheimnissen" },
+      { id: "d", text: "Sie regelt die Festlegung einer Bekleidungsordnung" }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 18,
+    question: "Unter welchen Voraussetzungen dürfen gemäß DS-GVO und BDSG personenbezogene Daten verarbeitet werden?",
+    answers: [
+      { id: "a", text: "Wenn die betroffene Person ihre Einwilligung zur Verarbeitung der sie betreffenden personenbezogenen Daten für einen oder mehrere bestimmte Zwecke gegeben hat" },
+      { id: "b", text: "Wenn die Verarbeitung personenbezogener Daten automatisiert erfolgen soll, z. B. durch Computer. Die Einwilligung des Betroffenen ist nicht erforderlich, wenn die personenbezogenen Daten in Akten manuell verarbeitet werden" },
+      { id: "c", text: "Wenn der Betroffene zugestimmt hat. Die Zustimmung ist selbst dann erforderlich, wenn die Verarbeitung zur Erfüllung einer rechtlichen Verpflichtung erforderlich ist, z. B. für die Anmeldung einer Wachperson über das Bewacherregister" },
+      { id: "d", text: "Wenn der Verantwortliche nachweisen kann, dass die betroffene Person in die Verarbeitung ihrer personenbezogenen Daten eingewilligt hat" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 19,
+    question: "Welche Aussagen zum Gewaltmonopol des Staates sind richtig?",
+    answers: [
+      { id: "a", text: "Der Staat kann das Gewaltmonopol ausnahmslos auf das Bewachungsgewerbe übertragen." },
+      { id: "b", text: "Das Gewaltmonopol ermöglicht zum Schutz der Rechtsordnung Eingriffe in Grundrechte, z. B. in das Recht auf Freiheit." },
+      { id: "c", text: "Das Gewaltmonopol erlaubt Zwangsmaßnahmen gegen Sachen, Tiere oder Menschen." },
+      { id: "d", text: "Nur die Polizei des Bundes und der Länder als Organ der Exekutive besitzt das Gewaltmonopol." }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 20,
+    question: "Das Unterrichtungsverfahren braucht gemäß BewachV nicht absolviert werden, wenn ...",
+    answers: [
+      { id: "a", text: "die Person bei der Bundeswehr mindestens 3 Jahre im Wachdienst tätig war." },
+      { id: "b", text: "die Person den Nachweis erbringt, dass sie in allen Sachgebieten des Unterrichtungsverfahrens über ausreichende Kenntnisse verfügt." },
+      { id: "c", text: "die Person Abschlüsse im Rahmen einer Laufbahnprüfung besitzt, z.B. für den mittleren Polizeivollzugsdienst." }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 21,
+    question: "Wann muss gemäß DS-GVO der Verantwortliche die personenbezogenen Daten des Betroffenen unverzüglich löschen?",
+    answers: [
+      { id: "a", text: "Wenn diese Daten verwendet werden, um Rechtsansprüche durchzusetzen" },
+      { id: "b", text: "Wenn die betroffene Person ihre Einwilligung widerruft und es an einer anderweitigen Rechtsgrundlage für die Verarbeitung fehlt" },
+      { id: "c", text: "Wenn diese Daten zur Ausübung des Rechts auf freie Meinungsäußerung verwendet werden" },
+      { id: "d", text: "Wenn diese Daten von vornherein unrechtmäßig verarbeitet wurden" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 22,
+    question: "Das deutsche Strafrecht…",
+    answers: [
+      { id: "a", text: "...regelt die Anwendung von Schadensersatzpflichten" },
+      { id: "b", text: "…ist Teil des privaten Rechts, weil es die Rechtsbeziehungen zwischen Bürger und Bürger regelt." },
+      { id: "c", text: "…kennt die beiden Strafarten Freiheitsstrafe und Geldstrafe." },
+      { id: "d", text: "...nennt im allgemeinen Teil nur Straftaten gegen das Eigentum" },
+      { id: "e", text: "…setzt für die Strafbarkeit immer eine vollendete Rechtsgutverletzung voraus." },
+      { id: "f", text: "…setzt für die Strafbarkeit immer ein willensgesteuertes Verhalten eines Täters voraus, dass aus einem Aktiven Tun aber auch aus einem Unterlassen bestehen kann" }
+    ],
+    correct: ["c", "f"],
+    points: 2
+  },
+  {
+    id: 23,
+    question: "Für welche Tätigkeiten ist gemäß § 34a GewO eine vor der Industrie- und Handelskammer erfolgreich abgelegte Sachkundeprüfung erforderlich?",
+    answers: [
+      { id: "a", text: "Für die Bewachung von Asyl- und Flüchtlingsunterkünften in leitender Funktion" },
+      { id: "b", text: "Für die Durchführung von Kontrollgängen in der Fußgängerzone einer Stadt" },
+      { id: "c", text: "Für die ausschließliche Entgegennahme und Weiterleitung von Alarmmeldungen durch Notrufzentralen" },
+      { id: "d", text: "Für die Bewachung des Einlassbereiches eines Hotels, in dem ein Sommerball veranstaltet wird" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 24,
+    question: "Welche Aussagen zum BDSG sind richtig?",
+    answers: [
+      { id: "a", text: "Das BDSG enthält Rechte der Betroffenen, z. B. das Recht auf Auskunft." },
+      { id: "b", text: "Das BDSG erlaubt Unternehmen, personenbezogene Daten ihrer Mitarbeiter ohne deren Einwilligung zu erheben." },
+      { id: "c", text: "Das BDSG regelt den Umgang mit personenbezogenen Daten." },
+      { id: "d", text: "Das BDSG gilt für die Behörden des Bundes und der Länder. Für die Privatwirtschaft wie Unternehmen gelten die Landesdatenschutzgesetze." }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 25,
+    question: "Im deutschen Rechtssystem sind Rechtfertigungsgründe festgelegt. Worin besteht deren Zweck?",
+    answers: [
+      { id: "a", text: "Sie können unerlaubtes Handeln rechtfertigen . . . zum Beispiel die Notwehr gemäß § 227 BGB oder der (verteidigende) Notstand gemäß § 228 BGB" },
+      { id: "b", text: "Sie können ordnungswidriges Handeln entschuldigen" },
+      { id: "c", text: "Sie können verbotenes Handeln entschuldigen" },
+      { id: "d", text: "Sie können strafbares Handeln rechtfertigen . . . zum Beispiel die Notwehr gem. §32 StGB oder die vorläufige Festnahme gemäß § 127 Abs. 1 StPO" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 26,
+    question: "Wer ist für die sichere Aufbewahrung der Schusswaffen und Munition im Gewerbebetrieb verantwortlich?",
+    answers: [
+      { id: "a", text: "Der Gewerbetreibende." },
+      { id: "b", text: "Jeder zur Führung bzw. Bereithaltung von Schusswaffen befugte Sicherheitsmitarbeiter." },
+      { id: "c", text: "Der Sicherheitsmitarbeiter, der gerade Dienst in der Sicherheitszentrale verrichtet." },
+      { id: "d", text: "Nur der Sicherheitsmitarbeiter, der über einen Waffenschein verfügt bzw. als Sachkundiger tätig werden darf." }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 27,
+    question: "Wann dürfen personenbezogene Daten gemäß DS-GVO verarbeitet werden?",
+    answers: [
+      { id: "a", text: "Wenn dies erforderlich ist, um lebenswichtige Interessen des Betroffenen zu schützen" },
+      { id: "b", text: "Wenn dies für die Erfüllung eines Vertrages erforderlich ist" },
+      { id: "c", text: "Wenn der Betroffene schriftlich seine Einwilligung gegeben hat" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 28,
+    question: "Wer hat das Sicherheitsmonopol in Deutschland?",
+    answers: [
+      { id: "a", text: "Bürger" },
+      { id: "b", text: "Polizei" },
+      { id: "c", text: "Keiner" },
+      { id: "d", text: "Sicherheitsdienste" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 29,
+    question: "Ein Sicherheitsmitarbeiter wird mit der Durchführung von Kontrollgängen in einem Hausrechtsbereich mit tatsächlich öffentlichem Verkehr beauftragt. Was ist gemäß BewachV zu beachten, wenn er mit einem Reizstoffsprühgerät bewaffnet werden soll?",
+    answers: [
+      { id: "a", text: "Jeder Gebrauch des Reizstoffsprühgerätes muss unverzüglich der zuständigen Polizeidienststelle und dem Bewachungsgewerbetreibenden angezeigt werden" },
+      { id: "b", text: "Das Reizstoffsprühgerät darf ausschließlich zur Eigensicherung während der Kontrollgänge geführt werden" },
+      { id: "c", text: "Das Reizstoffsprühgerät darf nur mit Zustimmung des Bewachungsgewerbetreibenden geführt werden" }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 30,
+    question: "Was ist die Aufgabe des Bundesdatenschutzgesetzes?",
+    answers: [
+      { id: "a", text: "Der Einzelne soll davor geschützt werden, dass er durch den Umgang mit seinen personenbezogenen Daten in seinem Persönlichkeitsrecht beeinträchtigt wird" },
+      { id: "b", text: "Es soll sicherstellen, dass durch personelle und technische Maßnahmen Betriebs- und Geschäftsgeheimnisse eines Unternehmens nicht unbefugt an andere weitergegeben werden können" },
+      { id: "c", text: "Es soll ermöglichen, dass der Arbeitgeber durch die Auswertung der personenbezogenen Daten seiner Mitarbeiter Informationen über deren Freizeitverhalten erhält" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 31,
+    question: "Wozu dienen die Grundrechte?",
+    answers: [
+      { id: "a", text: "Abschreckung der Allgemeinheit vor strafbaren Handlungen" },
+      { id: "b", text: "Als Abwehrrechte der Bürger gegenüber dem Staat" },
+      { id: "c", text: "Regelung des Rechtsverhältnisses der Bürger untereinander" },
+      { id: "d", text: "Als Eingriffsrechte des Staates gegenüber dem Bürger" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 32,
+    question: "Wer muss gemäß BewachV ein Schild (Kennschild/Namensschild) tragen?",
+    answers: [
+      { id: "a", text: "Wachpersonen, die die Bewachungstätigkeit 'Schutz: vor Ladendieben' durchführen" },
+      { id: "b", text: "Wachpersonen, die in nicht-leitender Funktion Asylunterkünfte bewachen, z.B. im Eingangsbereich" },
+      { id: "c", text: "Gewerbetreibende, die als Wachperson tätig werden und die Bewachungstätigkeit 'Kontrollgänge im öffentlichen Verkehrsraum' durchführen" },
+      { id: "d", text: "Wachpersonen, die die Bewachungstätigkeit 'Geld- und Werttransport' durchführen" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 33,
+    question: "Bei welchen personenbezogenen Daten muss der Betroffene einwilligen, damit diese erhoben werden dürfen?",
+    answers: [
+      { id: "a", text: "Arbeitsverträge und Angaben über das Einkommen" },
+      { id: "b", text: "Adressen, Namen und Telefonnummern aus dem Telefonbuch" },
+      { id: "c", text: "Geburtsname, Geburtsdatum und Staatsangehörigkeit" },
+      { id: "d", text: "Namensangaben auf Briefkästen und Klingelschildern" }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 34,
+    question: "Was wird unter dem Privatrecht verstanden?",
+    answers: [
+      { id: "a", text: "Das Privatrecht ist ein Teil des öffentlichen Rechts und regelt die Rechtsbeziehung zwischen Staat und Bürger" },
+      { id: "b", text: "Das Privatrecht regelt die Rechtsbeziehungen zwischen gleichgestellten natürlichen und juristischen Personen" },
+      { id: "c", text: "Das Privatrecht legt im Wesentlichen fest, welche Freiheiten, Rechte und Pflichten die Menschen im Verhältnis zueinander haben" },
+      { id: "d", text: "Das Privatrecht beschreibt die Rechtsfolgen für Straftaten und Ordnungswidrigkeiten, z.B. Geld- oder Freiheitsstrafen, Geldbußen" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 35,
+    question: "Welche Aussagen zur Anzeigepflicht eines selbstständigen Betriebes sind gemäß GewO richtig?",
+    answers: [
+      { id: "a", text: "Die Anzeigepflicht besteht nur, wenn das Gewerbe begonnen wird" },
+      { id: "b", text: "Die Anzeigepflicht dient dem Zweck, die staatliche Überwachung der Gewerbeausübung zu ermöglichen, z. B. durch die Gewerbeaufsicht" },
+      { id: "c", text: "Wer vorsätzlich oder fahrlässig seiner Anzeigepflicht nicht nachkommt, handelt gemäß GewO ordnungswidrig" },
+      { id: "d", text: "Die Anzeigepflicht gilt nur für das erlaubnispflichtige Bewachungsgewerbe" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 36,
+    question: "Welche Aussagen zum Recht auf Löschung sind gemäß DS-GVO richtig?",
+    answers: [
+      { id: "a", text: "Personenbezogene Daten müssen von der verantwortlichen Stelle nur dann gelöscht werden, wenn dies ein Gesetz vorschreibt." },
+      { id: "b", text: "Personenbezogene Daten sind unverzüglich zu löschen, wenn sie unrechtmäßig verarbeitet wurden." },
+      { id: "c", text: "Personenbezogene Daten sind unverzüglich zu löschen, wenn die betroffene Person ihre Einwilligung für die Verarbeitung widerruft." },
+      { id: "d", text: "Personenbezogene Daten sind auf Verlangen trotz des Rechts auf freie Meinungsäußerung immer unverzüglich zu löschen." }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 37,
+    question: "Der Bewachungsgewerbetreibende und seine Beschäftigten dürfen bei der Durchführung von Bewachungsaufgaben gegenüber Dritten bestimmte Rechte eigenverantwortlich ausüben. Um welche Rechte handelt es sich?",
+    answers: [
+      { id: "a", text: "Gesetzlich übertragene Rechte aufgrund einer Beleihung" },
+      { id: "b", text: "Beschlagnahme von Diebesgut" },
+      { id: "c", text: "Verkehrsregelung nach Verkehrsunfällen" },
+      { id: "d", text: "Notwehr- und Notstandsrechte" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 38,
+    question: "Eine Person möchte sich im Bewachungsgewerbe selbständig machen. Welche Unterlagen benötigt unter anderem die Erlaubnisbehörde, um den Antrag auf Erteilung einer Bewachungserlaubnis gemäß § 34a GewO zu prüfen?",
+    answers: [
+      { id: "a", text: "Eine unbeschränkte Auskunft aus dem Bundeszentralregister zur Überprüfung der Zuverlässigkeit des Antragstellers" },
+      { id: "b", text: "Die Bescheinigung über die Teilnahme am Unterrichtungsverfahren" },
+      { id: "c", text: "Ein persönliches Führungszeugnis zur Überprüfung der Zuverlässigkeit des Antragstellers" },
+      { id: "d", text: "Den Nachweis der erforderlichen Sachkundeprüfung für das Bewachungsgewerbe" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 39,
+    question: "Wann dürfen über eine Person ohne deren Einwilligung personenbezogene Daten erhoben werden?",
+    answers: [
+      { id: "a", text: "wenn es sich bei der Stelle, die die personenbezogenen Daten erhebt, um eine Bundesbehörde handelt" },
+      { id: "b", text: "wenn das BDSG oder eine andere Rechtsvorschrift dies erlaubt oder zwingend anordnet" },
+      { id: "c", text: "wenn ein Auftraggeber dies vom Wachunternehmen zur Erteilung eines Auftrages fordert" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 40,
+    question: "Welche der nachfolgenden Aussagen verstößt gegen die Rechtsordnung der Bundesrepublik Deutschland?",
+    answers: [
+      { id: "a", text: "Die Durchsuchung einer Wohnung durch die Polizei, auf Grund eines Durchsuchungsbeschlusses." },
+      { id: "b", text: "Die Untersagung einer Bewachungserlaubnis auf Grund von drei Vorstrafen, wegen verschiedener Verbrechen in den letzten drei Jahren" },
+      { id: "c", text: "Das Anspucken einer Wachperson, welche den Einlass eines Kaufhauses sichert." },
+      { id: "d", text: "Die Bestrafung einer Person mit einer Geldstrafe ohne gesetzliche Grundlage" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 41,
+    question: "Wer erteilt die Bewachungserlaubnis gemäß § 34a Gewerbeordnung?",
+    answers: [
+      { id: "a", text: "Der jeweilige Auftraggeber" },
+      { id: "b", text: "Die Berufsgenossenschaft" },
+      { id: "c", text: "Die nach Landesrecht zuständige Behörde" },
+      { id: "d", text: "Die örtliche Polizeibehörde" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 42,
+    question: "Welche Aussagen zum Begriff „personenbezogene Daten“ sind gemäß DS-GVO richtig?",
+    answers: [
+      { id: "a", text: "Betriebs- und Geschäftsgeheimnisse, z. B. Baupläne, gelten nicht als personenbezogene Daten" },
+      { id: "b", text: "Firmenname und Gesellschaftsform eines Unternehmens sind keine personenbezogenen Daten" },
+      { id: "c", text: "Personenbezogene Daten umfassen alle Informationen zu einer identifizierten oder identifizierbaren natürlichen Person" },
+      { id: "d", text: "E-Mail-Adressen, die die Identifikation einer natürlichen Person ermöglichen, zählen als personenbezogene Daten" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 43,
+    question: "Welche der folgenden Grundrechte sind für die Wachbranche relevant?",
+    answers: [
+      { id: "a", text: "Recht auf Menschenwürde" },
+      { id: "b", text: "Unverletzlichkeit der Wohnung" },
+      { id: "c", text: "Freizügigkeit" },
+      { id: "d", text: "Keines" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 44,
+    question: "Welche Rechtsvorschriften gewährleisten in der Bundesrepublik Deutschland die Gewerbefreiheit?",
+    answers: [
+      { id: "a", text: "Die Gewerbeordnung." },
+      { id: "b", text: "Die Bewachungsverordnung." },
+      { id: "c", text: "Das Grundgesetz." },
+      { id: "d", text: "Das Bürgerliche Gesetzbuch." }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 45,
+    question: "Eine Wachperson hat einen Fahrgast ohne gültigen Fahrschein angetroffen. Die Wachperson will die personenbezogenen Daten des Fahrgasts erheben. Was muss die Wachperson gemäß DS-GVO beachten, damit diese Maßnahme rechtmäßig ist?",
+    answers: [
+      { id: "a", text: "Diese Vorgehensweise muss mit dem Auftraggeber vertraglich vereinbart sein" },
+      { id: "b", text: "Für diese Maßnahme muss eine Erlaubnis der zuständigen Sicherheitsbehörde vorliegen" },
+      { id: "c", text: "Die Wachperson muss nachweisen können, dass der Fahrgast mit der Erhebung seiner Daten einverstanden war, z. B. durch eine schriftliche Erklärung" },
+      { id: "d", text: "Der Fahrgast muss in die Erhebung seiner personenbezogenen Daten einwilligen" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 46,
+    question: "Welche Aussage zu den Menschenrechten gemäß GG ist richtig?",
+    answers: [
+      { id: "a", text: "Sie gelten nur auf dem Staatsgebiet der Bundesrepublik Deutschland" },
+      { id: "b", text: "Sie gelten für alle Menschen weltweit" },
+      { id: "c", text: "Sie gelten ausschließlich für deutsche Staatsbürger" },
+      { id: "d", text: "Sie gelten nicht für Personen die eine Haftstrafe verbüßen" },
+      { id: "e", text: "Sie gelten im gesamten Gebiet der Europäischen Union" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 47,
+    question: "Der Betreiber einer gastgewerblichen Diskothek setzt als Türsteher eigenes Personal und Wachpersonen eines Bewachungsunternehmens ein. Benötigen die als Türsteher eingesetzten Personen eine Qualifikation im Sinne von § 34a GewO?",
+    answers: [
+      { id: "a", text: "Ja, die Wachpersonen benötigen den Sachkundenachweis" },
+      { id: "b", text: "Ja, die bei der Diskothek angestellten Mitarbeiter benötigen den Unterrichtungsnachweis" },
+      { id: "c", text: "Ja, die Wachpersonen benötigen den Unterrichtungsnachweis" },
+      { id: "d", text: "Ja, die bei der Diskothek angestellten Mitarbeiter benötigen den Sachkundenachweis" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 48,
+    question: "Zum Zweck einer Strafverfolgung sind rechtmäßig personenbezogene Daten mithilfe einer Videoüberwachungsanlage erhoben worden. Wann sind diese Daten gemäß BDSG unverzüglich zu löschen?",
+    answers: [
+      { id: "a", text: "wenn der Täter mittels des Videobeweises wegen dieser Straftat überführt worden ist" },
+      { id: "b", text: "wenn schutzwürdige Interessen der betroffenen Person einer weiteren Speicherung entgegenstehen" },
+      { id: "c", text: "wenn der mit der Erhebung verfolgte Zweck erreicht worden ist" },
+      { id: "d", text: "wenn die der tatverdächtigen Person keine Einwilligung gegeben hat" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 49,
+    question: "Welche Aussagen über die Grundrechte des GG treffen zu?",
+    answers: [
+      { id: "a", text: "Einige Grundrechte beinhalten Ansprüche gegenüber dem Staat, wie z. B. Art. 19 GG, Recht auf Rechtsschutz durch gerichtliche Verfahren." },
+      { id: "b", text: "Einige Grundrechte sind Abwehrrechte und schützen gegen unzulässige Eingriffe des Staates wie z. B. Art. 13 GG, Unverletzlichkeit der Wohnung." },
+      { id: "c", text: "Einige Grundrechte können gemäß Art. 19 GG eingeschränkt werden, wie z. B. die Würde des Menschen." }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 50,
+    question: "Müssen Sicherheitsmitarbeiter einer Wachfirma ihren Dienstausweis gemäß § 18 BewachV sichtbar tragen?",
+    answers: [
+      { id: "a", text: "Nein, er muss aber mitgeführt werden" },
+      { id: "b", text: "Nur Türsteher, Ladendetektive und Citystreifen" },
+      { id: "c", text: "Ja, alle" },
+      { id: "d", text: "Bei Tätigkeiten, die eine Sachkunde nach § 34a GewO erfordern, außer Ladendetektive, ist ein Schild mit ihrem Namen oder einer Kennnummer sowie der Bezeichnung des Gewerbebetriebs sichtbar zu tragen." }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  ];
 };
 
