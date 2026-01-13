@@ -8,22 +8,36 @@
   <style>
     .quiz-block {
       display: flex;
-      align-items: center;
+      gap: 10px;
       margin-bottom: 12px;
     }
+
+    .quiz-block .btn {
+      flex: 1; /* gleiche Breite */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 12px;
+      text-align: center;
+    }
+
     .quiz-link {
-      flex-grow: 1;
       display: flex;
       justify-content: space-between;
-      padding: 8px 12px;
+      align-items: center;
     }
+
     .quiz-badge {
       margin-left: 8px;
       font-weight: bold;
     }
-    .retry-btn {
-      margin-left: 10px;
-      white-space: nowrap;
+
+    #global-wrong-container .btn {
+      width: 100%;
+      display: block;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -95,11 +109,11 @@ function renderQuizDashboard() {
     link.appendChild(badge);
     block.appendChild(link);
 
-    // Retry-Button pro Quiz
+    // Retry-Button pro Quiz (falls Fragen falsch)
     if (savedWrong.length > 0) {
       const retryBtn = document.createElement("a");
       retryBtn.href = `quiz-run.html?id=${quizId}&retryWrong=1`;
-      retryBtn.className = "btn warn small retry-btn";
+      retryBtn.className = "btn warn";
       retryBtn.innerText = `❌ Falsche Fragen wiederholen (${savedWrong.length})`;
       block.appendChild(retryBtn);
     }
