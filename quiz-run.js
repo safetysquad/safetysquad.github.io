@@ -26,7 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   quizId = params.get("id");
 
-  if (!quizId || !quizzes[quizId]) {
+  const retryParam = params.get("retryWrong");
+if (retryParam === "1") {
+  const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
+  if (savedWrong.length > 0) {
+    isRetryMode = true;
+    quiz = quizzes[quizId].filter(q => savedWrong.includes(q.id));
+    wrongQuestions = quiz.slice(); // alle geladenen Fragen
+  }
+}
+ if (!quizId || !quizzes[quizId]) {
     document.body.innerHTML = "<h2>❌ Quiz nicht gefunden</h2>";
     return;
   }
