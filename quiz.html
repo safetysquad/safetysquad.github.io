@@ -53,41 +53,50 @@
 
 <!-- ================= SCRIPTS ================= -->
 <script>
-  // ================= Quiz Badges + 100% Handler =================
-  document.querySelectorAll(".quiz-link").forEach(link => {
-    const url = new URL(link.href);
-    const quizId = url.searchParams.get("id");
+document.querySelectorAll(".quiz-link").forEach(link => {
+  const url = new URL(link.href);
+  const quizId = url.searchParams.get("id");
 
-    const best = localStorage.getItem(`safety_${quizId}_best`);
+  const best = localStorage.getItem(`safety_${quizId}_best`);
+  const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
 
-    const badge = document.createElement("span");
-    badge.classList.add("quiz-badge");
+  const badge = document.createElement("span");
+  badge.classList.add("quiz-badge");
 
-    if (!best) {
-      badge.innerText = "Neu";
-      badge.classList.add("new");
-    } else {
-      badge.innerText = `${best}%`;
-      if (Number(best) === 100) badge.classList.add("gold");
+  if (!best) {
+    badge.innerText = "Neu";
+    badge.classList.add("new");
+  } else {
+    badge.innerText = `${best}%`;
+    if (Number(best) === 100) badge.classList.add("gold");
+  }
+  link.appendChild(badge);
+
+  // Klick-Handler für 100% Quiz
+  link.addEventListener("click", function(e) {
+    if (Number(best) === 100) {
+      e.preventDefault();
+      window.location.href = `quiz-run.html?id=${quizId}&showResult=1`;
     }
-
-    link.appendChild(badge);
-
-    // Klick-Handler für 100% Quiz
-    link.addEventListener("click", function(e) {
-      if (Number(best) === 100) {
-        e.preventDefault();
-        window.location.href = `quiz-run.html?id=${quizId}&showResult=1`;
-      }
-    });
   });
 
-  // ================= Burger Menü =================
-  function toggleMenu() {
-    const menu = document.getElementById("moreMenu");
-    if (menu) menu.classList.toggle("hidden");
+  // ❌ Button für falsch beantwortete Fragen
+  if (savedWrong.length > 0) {
+    const retryBtn = document.createElement("a");
+    retryBtn.href = `quiz-run.html?id=${quizId}&retryWrong=1`;
+    retryBtn.className = "btn warn small";
+    retryBtn.innerText = `❌ Falsche Fragen wiederholen (${savedWrong.length})`;
+    link.insertAdjacentElement("afterend", retryBtn);
   }
+});
+
+// ================= Burger Menü =================
+function toggleMenu() {
+  const menu = document.getElementById("moreMenu");
+  if (menu) menu.classList.toggle("hidden");
+}
 </script>
+
 
 </body>
 </html>
