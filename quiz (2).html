@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz – SAFETY SQUAD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css?v=6">
+  <style>
+    .quiz-block {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .quiz-link {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 12px;
+    }
+    .quiz-badge {
+      margin-left: 8px;
+      font-weight: bold;
+    }
+    .retry-btn {
+      margin-left: 10px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+<div class="app">
+
+  <!-- ================= HEADER ================= -->
+  <header class="header-bar">
+    <button class="burger" onclick="toggleMenu()">☰</button>
+    <div class="header-text">
+      <h1>📝 Quiz</h1>
+      <p>Wähle einen Test</p>
+    </div>
+  </header>
+
+  <!-- ================= BURGER MENÜ ================= -->
+  <div id="moreMenu" class="more-menu hidden">
+    <a href="stats.html">📊 Statistik</a>
+    <a href="index.html">⬅ Startseite</a>
+  </div>
+
+  <!-- ================= GLOBALER BUTTON ================= -->
+  <div id="global-wrong-container" style="margin: 10px 0;"></div>
+
+  <!-- ================= QUIZ LISTE ================= -->
+  <main id="quiz-list"></main>
+
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="quiz-data.js"></script>
+<script>
+function renderQuizDashboard() {
+  const quizListEl = document.getElementById("quiz-list");
+  const globalContainer = document.getElementById("global-wrong-container");
+  quizListEl.innerHTML = "";
+  globalContainer.innerHTML = "";
+
+  let totalWrong = 0;
+
+  Object.keys(quizzes).forEach((quizId, index) => {
+    const quiz = quizzes[quizId];
+    const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
+    const best = localStorage.getItem(`safety_${quizId}_best`);
+
+    totalWrong += savedWrong.length;
+
+    // Quiz-Block
+    const block = document.createElement("div");
+    block.className = "quiz-block";
+
+    // Quiz-Link
+    const link = document.createElement("a");
+    link.href = `quiz-run.html?id=${quizId}`;
+    link.className = "btn quiz-link";
+    link.innerHTML = `<span>Quiz ${index + 1} (${quiz.length} Fragen)</span>`;
+    
+    // Badge
+    const badge = document.createElement("span");
+    badge.classList.add("quiz-badge");
+    if (!best) {
+      badge.innerText = "Neu";
+      badge.classList.add("new");
+    } else {
+      badge.innerText = `${best}%`;
+      if (Number(best) === 100) badge.classList.add("gold");
+    }
+    link.appendChild(badge);
+    block.appendChild(link);
+
+    // Retry-Button pro Quiz
+    if (savedWrong.length > 0) {
+      const retryBtn = document.createElement("a");
+      retryBtn.href = `quiz-run.html?id=${quizId}&retryWrong=1`;
+      retryBtn.className = "btn warn small retry-btn";
+      retryBtn.innerText = `❌ Falsche Fragen wiederholen (${savedWrong.length})`;
+      block.appendChild(retryBtn);
+    }
+
+    quizListEl.appendChild(block);
+  });
+
+  // Globaler Button für alle falschen Fragen
+  if (totalWrong > 0) {
+    const btn = document.createElement("a");
+    btn.href = "quiz-run.html?globalWrong=1";
+    btn.className = "btn warn large";
+    btn.innerText = `❌ Alle falschen Fragen wiederholen (${totalWrong})`;
+    globalContainer.appendChild(btn);
+  }
+}
+
+// Burger Menü
+function toggleMenu() {
+  const menu = document.getElementById("moreMenu");
+  if (menu) menu.classList.toggle("hidden");
+}
+
+// Seite laden
+document.addEventListener("DOMContentLoaded", renderQuizDashboard);
+</script>
+
+</body>
+</html>
