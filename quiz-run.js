@@ -1,4 +1,4 @@
-console.log("QUIZ-RUN.JS VERSION 5 GELADEN");
+console.log("QUIZ-RUN.JS VERSION 6 GELADEN");
 
 // ==============================
 // GRUNDVARIABLEN
@@ -27,27 +27,60 @@ document.addEventListener("DOMContentLoaded", () => {
   quizId = params.get("id");
 
   const retryParam = params.get("retryWrong");
-  if (retryParam === "1") {
+  const globalWrongParam = params.get("globalWrong");
+
+  // =======================
+  // Globaler Fehler-Lernmodus
+  // =======================
+  if (globalWrongParam === "1") {
+    isRetryMode = true;
+    let allWrongQuestions = [];
+    Object.keys(quizzes).forEach(qId => {
+      const savedWrong = JSON.parse(localStorage.getItem(`safety_${qId}_wrong`) || "[]");
+      if (savedWrong.length > 0) {
+        const questions = quizzes[qId].filter(q => savedWrong.includes(q.id));
+        allWrongQuestions = allWrongQuestions.concat(questions);
+      }
+    });
+
+    if (allWrongQuestions.length === 0) {
+      alert("Es gibt aktuell keine falsch beantworteten Fragen.");
+      window.location.href = "quiz.html";
+      return;
+    }
+
+    quiz = allWrongQuestions;
+    currentIndex = 0;
+    userAnswers = {};
+  }
+
+  // =======================
+  // Falsche Fragen eines einzelnen Quizzes wiederholen
+  // =======================
+  if (retryParam === "1" && quizId) {
     const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
     if (savedWrong.length > 0) {
       isRetryMode = true;
       quiz = quizzes[quizId].filter(q => savedWrong.includes(q.id));
-      wrongQuestions = quiz.slice(); // alle geladenen Fragen
+      wrongQuestions = quiz.slice();
     }
   }
 
-  if (!quizId || !quizzes[quizId]) {
+  // =======================
+  // Normales Quiz
+  // =======================
+  if (!quizId || (!quizzes[quizId] && !isRetryMode)) {
     document.body.innerHTML = "<h2>❌ Quiz nicht gefunden</h2>";
     return;
   }
 
-  // Nur setzen, wenn quiz noch null ist (kein Retry)
-  if (!quiz) quiz = quizzes[quizId];
+  // Nur setzen, wenn quiz noch null ist (kein Retry, kein global)
+  if (!quiz && quizId) quiz = quizzes[quizId];
 
-  document.getElementById("quizTitle").innerText = `📝 ${quizId.toUpperCase()}`;
+  document.getElementById("quizTitle").innerText = `📝 ${quizId ? quizId.toUpperCase() : "Fehler-Lernmodus"}`;
 
   // Falsch beantwortete Fragen aus localStorage laden (für normale Quiz-Session)
-  if (!isRetryMode) {
+  if (!isRetryMode && quizId) {
     const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
     if (savedWrong.length > 0 && !params.get("showResult")) {
       wrongQuestions = quiz.filter(q => savedWrong.includes(q.id));
@@ -66,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderQuestion();
   updateProgress();
 });
-
 
 // ==============================
 // Frage rendern
@@ -164,7 +196,7 @@ function evaluateQuiz() {
     const isCorrect = given === correct;
 
     if (isCorrect) points += q.points;
-    else newlyWrong.push(q.id); // ❌ sammeln
+    else newlyWrong.push(q.id);
 
     results.push({
       question: q.question,
@@ -232,8 +264,9 @@ function renderResult(points, maxPoints, percent, results) {
     </div>
   `;
 
+  // Button für falsche Fragen (global oder pro Quiz)
   const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
-  if (savedWrong.length > 0 && !isRetryMode) {
+  if (savedWrong.length > 0 && !isRetryMode && quizId) {
     html += `
       <button class="btn warn" onclick="retryWrongQuestions()">
         ❌ Falsche Fragen wiederholen (${savedWrong.length})
@@ -316,6 +349,7 @@ function restartQuiz() {
 // Falsche Fragen wiederholen
 // ==============================
 function retryWrongQuestions() {
+  if (!quizId) return;
   const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
   if (savedWrong.length === 0) return;
 
