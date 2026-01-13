@@ -5,38 +5,59 @@
   <title>Quiz – SAFETY SQUAD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css?v=6">
- <style>
+<style>
   .quiz-block {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Link links, Retry rechts */
     margin-bottom: 12px;
+    flex-wrap: wrap; /* Bei kleinen Bildschirmen umbrechen */
   }
 
-  .left-side {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-grow: 1;
-  }
-
+  /* Quiz-Link (kleiner, links) */
   .quiz-link {
     display: flex;
     align-items: center;
-    gap: 5px;
-    padding: 8px 12px;
-    white-space: nowrap;
+    gap: 5px; /* Abstand zwischen Text und Badge */
+    padding: 6px 10px; /* kleiner als Retry-Button */
+    font-size: 0.85rem; /* ca. 30% kleiner als Retry */
+    white-space: nowrap; /* Badge bleibt neben Text */
+    flex-shrink: 1; /* darf bei Bedarf kleiner werden */
+    background-color: #e0e0e0; /* Optional: Button-Farbe */
+    border-radius: 6px;
+    text-decoration: none;
+    color: #000;
   }
 
+  /* Badge mit Prozentangabe */
   .quiz-badge {
     font-weight: bold;
+    font-size: 0.85rem; /* passt zum Quiz-Link */
+    margin-left: 5px;
+    white-space: nowrap;
   }
 
+  /* Retry-Button (größer, rechts) */
   .retry-btn {
-    white-space: nowrap;
-    flex-shrink: 0; /* nicht zusammenquetschen */
+    padding: 8px 16px; /* größer als Quiz-Link */
+    font-size: 1rem;   /* Standardgröße */
+    white-space: nowrap; /* kein Umbrechen */
+    flex-shrink: 0;     /* nicht gequetscht */
+    background-color: #ffcccc; /* Optional: Warnfarbe */
+    border-radius: 6px;
+    text-decoration: none;
+    color: #000;
+  }
+
+  /* Optional: Hover-Effekte */
+  .quiz-link:hover {
+    background-color: #d0d0d0;
+  }
+  .retry-btn:hover {
+    background-color: #ffb3b3;
   }
 </style>
+
 
 </head>
 
