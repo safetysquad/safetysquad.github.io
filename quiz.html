@@ -5,34 +5,39 @@
   <title>Quiz – SAFETY SQUAD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css?v=6">
-  <style>
-    /* ================= Dashboard Styling ================= */
-    .quiz-block {
-      display: flex;
-      align-items: center;
-      margin-bottom: 12px;
-      gap: 10px; /* Abstand zwischen Hauptlink und Retry */
-    }
-    .quiz-link {
-      flex-grow: 1;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 12px;
-      white-space: nowrap;
-    }
-    .quiz-badge {
-      margin-left: 5px;
-      font-weight: bold;
-    }
-    .retry-btn {
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    #global-wrong-container {
-      margin: 10px 0;
-    }
-  </style>
+ <style>
+  .quiz-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Link links, Retry rechts */
+    margin-bottom: 12px;
+  }
+
+  .left-side {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+  }
+
+  .quiz-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    white-space: nowrap;
+  }
+
+  .quiz-badge {
+    font-weight: bold;
+  }
+
+  .retry-btn {
+    white-space: nowrap;
+    flex-shrink: 0; /* nicht zusammenquetschen */
+  }
+</style>
+
 </head>
 
 <body>
