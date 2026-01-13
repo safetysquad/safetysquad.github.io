@@ -1,4 +1,4 @@
-console.log("QUIZ-RUN.JS VERSION 4 GELADEN");
+console.log("QUIZ-RUN.JS VERSION 5 GELADEN");
 
 // ==============================
 // GRUNDVARIABLEN
@@ -10,6 +10,9 @@ let userAnswers = {};
 let wrongQuestions = [];
 let isRetryMode = false;
 
+// ==============================
+// Hilfsfunktion
+// ==============================
 function getTextById(ids = [], answers = []) {
   return answers
     .filter(a => ids.includes(a.id))
@@ -17,26 +20,30 @@ function getTextById(ids = [], answers = []) {
 }
 
 // ==============================
-// QUIZ LADEN
+// Quiz Laden
 // ==============================
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   quizId = params.get("id");
 
-  quiz = quizzes[quizId];
-
-  if (!quiz) {
+  if (!quizId || !quizzes[quizId]) {
     document.body.innerHTML = "<h2>❌ Quiz nicht gefunden</h2>";
     return;
   }
 
+  quiz = quizzes[quizId];
   document.getElementById("quizTitle").innerText = `📝 ${quizId.toUpperCase()}`;
 
-  const showResult = params.get("showResult");
-  if (showResult === "1") {
+  // Falsch beantwortete Fragen aus localStorage laden
+  const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
+  if (savedWrong.length > 0 && !params.get("showResult")) {
+    wrongQuestions = quiz.filter(q => savedWrong.includes(q.id));
+  }
+
+  // Direkt Ergebnis anzeigen?
+  if (params.get("showResult") === "1") {
     const bestPercent = Number(localStorage.getItem(`safety_${quizId}_best`) || 0);
-    let maxPoints = 0;
-    quiz.forEach(q => maxPoints += q.points);
+    const maxPoints = quiz.reduce((sum, q) => sum + q.points, 0);
     const points = Math.round((bestPercent / 100) * maxPoints);
     renderResult(points, maxPoints, bestPercent, []);
     return;
@@ -47,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==============================
-// FRAGE RENDERn
+// Frage rendern
 // ==============================
 function renderQuestion() {
   const q = quiz[currentIndex];
@@ -60,8 +67,7 @@ function renderQuestion() {
   if (!pointsEl) {
     pointsEl = document.createElement("div");
     pointsEl.id = "questionPoints";
-    const progressEl = document.querySelector(".progress");
-    progressEl.insertAdjacentElement("afterend", pointsEl);
+    document.querySelector(".progress").insertAdjacentElement("afterend", pointsEl);
   }
   pointsEl.innerText = `🧠 ${q.points} Punkt${q.points > 1 ? "e" : ""}`;
 
@@ -82,7 +88,7 @@ function renderQuestion() {
 }
 
 // ==============================
-// ANTWORT AUSWÄHLEN
+// Antwort auswählen
 // ==============================
 function toggleAnswer(answerId) {
   const q = quiz[currentIndex];
@@ -99,7 +105,7 @@ function toggleAnswer(answerId) {
 }
 
 // ==============================
-// NAVIGATION
+// Navigation
 // ==============================
 function nextQuestion() {
   if (currentIndex < quiz.length - 1) {
@@ -120,7 +126,7 @@ function prevQuestion() {
 }
 
 // ==============================
-// FORTSCHRITT
+// Fortschritt
 // ==============================
 function updateProgress() {
   const percent = ((currentIndex + 1) / quiz.length) * 100;
@@ -128,13 +134,13 @@ function updateProgress() {
 }
 
 // ==============================
-// AUSWERTUNG
+// Auswertung
 // ==============================
 function evaluateQuiz() {
   let points = 0;
   let maxPoints = 0;
   const results = [];
-  wrongQuestions = [];
+  const newlyWrong = [];
 
   quiz.forEach(q => {
     maxPoints += q.points;
@@ -143,7 +149,7 @@ function evaluateQuiz() {
     const isCorrect = given === correct;
 
     if (isCorrect) points += q.points;
-    else wrongQuestions.push(q); // ❌ sammeln
+    else newlyWrong.push(q.id); // ❌ sammeln
 
     results.push({
       question: q.question,
@@ -156,13 +162,38 @@ function evaluateQuiz() {
 
   const percent = Math.round((points / maxPoints) * 100);
 
-  if (!isRetryMode) saveStats(percent);
+  if (!isRetryMode) {
+    saveStats(percent);
+    updatePersistentWrong(newlyWrong, results);
+  }
 
   renderResult(points, maxPoints, percent, results);
 }
 
 // ==============================
-// ERGEBNIS ANZEIGEN
+// Persistent Falsch Fragen
+// ==============================
+function updatePersistentWrong(newWrong, results) {
+  const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
+
+  // Richtige Fragen entfernen
+  results.forEach(r => {
+    if (r.isCorrect && savedWrong.includes(r.answers[0].id)) {
+      const index = savedWrong.indexOf(r.answers[0].id);
+      if (index > -1) savedWrong.splice(index, 1);
+    }
+  });
+
+  // Neue falsche Fragen hinzufügen (falls noch nicht vorhanden)
+  newWrong.forEach(id => {
+    if (!savedWrong.includes(id)) savedWrong.push(id);
+  });
+
+  localStorage.setItem(`safety_${quizId}_wrong`, JSON.stringify(savedWrong));
+}
+
+// ==============================
+// Ergebnis anzeigen
 // ==============================
 function renderResult(points, maxPoints, percent, results) {
   const main = document.querySelector("main");
@@ -186,10 +217,11 @@ function renderResult(points, maxPoints, percent, results) {
     </div>
   `;
 
-  if (!isRetryMode && wrongQuestions.length > 0) {
+  const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
+  if (savedWrong.length > 0 && !isRetryMode) {
     html += `
       <button class="btn warn" onclick="retryWrongQuestions()">
-        ❌ Falsche Fragen wiederholen (${wrongQuestions.length})
+        ❌ Falsche Fragen wiederholen (${savedWrong.length})
       </button>
     `;
   }
@@ -221,7 +253,7 @@ function renderResult(points, maxPoints, percent, results) {
 }
 
 // ==============================
-// STATISTIK SPEICHERN
+// Statistik speichern
 // ==============================
 function saveStats(percent) {
   const attemptsKey = `safety_${quizId}_attempts`;
@@ -235,7 +267,7 @@ function saveStats(percent) {
 }
 
 // ==============================
-// TEST WIEDERHOLEN
+// Quiz wiederholen
 // ==============================
 function restartQuiz() {
   currentIndex = 0;
@@ -266,13 +298,14 @@ function restartQuiz() {
 }
 
 // ==============================
-// FALSCH BEANTWORTETE FRAGEN WIEDERHOLEN
+// Falsche Fragen wiederholen
 // ==============================
 function retryWrongQuestions() {
-  if (wrongQuestions.length === 0) return;
+  const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
+  if (savedWrong.length === 0) return;
 
   isRetryMode = true;
-  quiz = wrongQuestions; // nur diese Fragen
+  quiz = quizzes[quizId].filter(q => savedWrong.includes(q.id));
   currentIndex = 0;
   userAnswers = {};
 
