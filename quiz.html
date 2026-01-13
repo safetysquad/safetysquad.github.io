@@ -26,6 +26,37 @@
     <a href="index.html">⬅ Startseite</a>
   </div>
 
+  <div id="global-wrong-container"></div>
+
+<script>
+// ======================
+// Globaler Button für alle falschen Fragen
+// ======================
+function renderGlobalWrongButton() {
+  const container = document.getElementById("global-wrong-container");
+  container.innerHTML = ""; // reset
+
+  let totalWrong = 0;
+
+  // Alle Quizzes durchgehen
+  Object.keys(quizzes).forEach(quizId => {
+    const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
+    totalWrong += savedWrong.length;
+  });
+
+  if (totalWrong > 0) {
+    const btn = document.createElement("a");
+    btn.href = "quiz-run.html?globalWrong=1";
+    btn.className = "btn warn large";
+    btn.innerText = `❌ Alle falschen Fragen wiederholen (${totalWrong})`;
+    container.appendChild(btn);
+  }
+}
+
+// Aufrufen, sobald die Seite geladen ist
+document.addEventListener("DOMContentLoaded", renderGlobalWrongButton);
+</script>
+
   <!-- ================= QUIZ LINKS ================= -->
   <main>
     <a href="quiz-run.html?id=quiz1" class="btn quiz-link">Quiz 1</a>
