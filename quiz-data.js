@@ -6610,6 +6610,269 @@ quiz11: [
     correct: ["a", "d"],
     points: 2
   }
+],
+  quiz20: [
+  {
+    "id": 1,
+    "question": "Wie ist das rechtliche Verhältnis zwischen Staat und Bürger im Öffentlichen Recht?",
+    "answers": [
+      { "id": "a", "text": "Es kommt auf den Einzelfall an." },
+      { "id": "b", "text": "Der Staat ist übergeordnet." },
+      { "id": "c", "text": "Der Bürger hat keine Rechte." },
+      { "id": "d", "text": "Beide Seiten sind gleichberechtigt." },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["b"],
+    "points": 1
+  },
+  {
+    "id": 2,
+    "question": "Aufgrund des § 34a Abs. 2 der Gewerbeordnung, hat das Bundesministerium des Inneren und für Heimat die Bewachungsverordnung erlassen. Überprüfen Sie die nachfolgenden Aussagen und kreuzen Sie diejenigen an, welche in der Bewachungsverordnung geregelt sind.",
+    "answers": [
+      { "id": "a", "text": "Ausstattung mit bestimmten Ausrüstungsgegenständen." },
+      { "id": "b", "text": "Festlegung einer Bekleidungsordnung." },
+      { "id": "c", "text": "Aufzeichnung aller Bewachungsverträge in deutscher Sprache." },
+      { "id": "d", "text": "Ausstellen von Dienstausweisen (Bewacherausweis)" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["c", "d"],
+    "points": 2
+  },
+  {
+    "id": 3,
+    "question": "Wann dürfen gemäß BDSG personenbezogene Daten erhoben, verarbeitet und genutzt werden?",
+    "answers": [
+      { "id": "a", "text": "Wenn der Betroffene seine schriftliche Zustimmung gibt" },
+      { "id": "b", "text": "Wenn der Betroffene mündlich zustimmt" },
+      { "id": "c", "text": "Wenn es das Bundesdatenschutzgesetz erlaub" },
+      { "id": "d", "text": "Wenn es der Datenschutzbeauftragte erlaubt" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "c"],
+    "points": 2
+  },
+  {
+    "id": 4,
+    "question": "Wann wird gegen das Schikaneverbot gemäß BGB verstoßen?",
+    "answers": [
+      { "id": "a", "text": "Wenn ein Türsteher nachts um 02:00 Uhr einem 13-Jährigen den Zutritt zur Diskothek verweigert" },
+      { "id": "b", "text": "Wenn eine Wachperson eigenmächtig immer wieder bei bestimmten Personen Taschenkontrollen durchführt, obwohl sie dazu nicht beauftragt ist" },
+      { "id": "c", "text": "Wenn eine Wachperson ihrem Fahrdienstleiter meldet, dass beim Fahrzeug eines Kollegen die Rückleuchten defekt sind" },
+      { "id": "d", "text": "" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["b"],
+    "points": 1
+  },
+  {
+    "id": 5,
+    "question": "Welche Aussagen zum Privatrecht sind richtig?",
+    "answers": [
+      { "id": "a", "text": "Es regelt z. B. die Besitz- und Eigentumsrechte an Sachen" },
+      { "id": "b", "text": "Es umfasst auch die Gewerbeordnung, die die Voraussetzungen für den Betrieb von Sicherheitsunternehmen regelt" },
+      { "id": "c", "text": "Es regelt die rechtlichen Beziehungen der Bürger zum Staat und seinen Einrichtungen" },
+      { "id": "d", "text": "Es regelt die rechtlichen Beziehungen der Bürger untereinander" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "d"],
+    "points": 2
+  },
+  {
+    "id": 6,
+    "question": "Wann darf der Bewachungsgewerbetreibende gemäß BewachV Personen mit Bewachungsaufgaben beschäftigen?",
+    "answers": [
+      { "id": "a", "text": "Wenn sie die erforderliche Zuverlässigkeit besitzen." },
+      { "id": "b", "text": "Wenn sie einen Schulabschluss besitzen." },
+      { "id": "c", "text": "grundsätzlich wenn sie das 18. Lebensjahr vollendet haben." },
+      { "id": "d", "text": "Wenn sie ihre körperliche Eignung durch ein ärztliches Attest nachweisen." },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "c"],
+    "points": 2
+  },
+  {
+    "id": 7,
+    "question": "Welche grundsätzlichen Aussagen zum Datenschutz sind richtig?",
+    "answers": [
+      { "id": "a", "text": "Die Bestimmungen der Datenschutzgesetze gelten nur für Bundesbehörden, z. B. für das Bundeskriminalamt" },
+      { "id": "b", "text": "Verantwortliche Stelle im Sinne des BDSG ist z. B. jede Person oder Stelle, die personenbezogene Daten für sich selbst erhebt, verarbeitet oder nutzt" },
+      { "id": "c", "text": "Personenbezogene Daten dürfen nur erhoben, verarbeitet oder genutzt werden, soweit dies z. B. in Rechtsvorschriften erlaubt ist oder der Betroffene eingewilligt hat" },
+      { "id": "d", "text": "Zuwiderhandlungen gegen das BDSG werden ausschließlich als Ordnungswidrigkeiten verfolgt und können mit Geldbußen geahndet werden" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["b", "c"],
+    "points": 2
+  },
+  {
+    "id": 8,
+    "question": "Kann die Wachperson gemäß BGB eingreifen, um die Verunstaltung der Lagerhalle mit Graffiti zu verhindern?",
+    "answers": [
+      { "id": "a", "text": "Ja, die Wachperson kann durch das Selbsthilferecht des Besitzdieners verhindern, dass die Person den Besitz des Kunden durch Graffiti stört" },
+      { "id": "b", "text": "Ja, die Wachperson kann im Sinne des Angriffsnotstands gegen die Person vorgehen, um die Gefahr der Verunstaltung der Lagerhalle durch Graffiti abzuwenden" },
+      { "id": "c", "text": "Ja, die Wachperson kann aber erst im Sinne der allgemeinen Selbsthilfe einschreiten, wenn die Person begonnen hat, die Wand zu besprühen" },
+      { "id": "d", "text": "Ja, die Wachperson kann den unmittelbar bevorstehenden Angriff auf das Rechtsgut Eigentum des Kunden durch Notwehr abwehren" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "d"],
+    "points": 2
+  },
+  {
+    "id": 9,
+    "question": "Welche Aussage zur inneren Sicherheit ist richtig?",
+    "answers": [
+      { "id": "a", "text": "Der einzelne Bürger braucht für die Durchsetzung seiner Rechte die staatliche Hilfe nicht in Anspruch zu nehmen" },
+      { "id": "b", "text": "Die Gewährleistung der inneren Sicherheit und Ordnung ist eine der wichtigsten Aufgaben von privaten Sicherheitsdiensten" },
+      { "id": "c", "text": "Die Gewährleistung der inneren Sicherheit, insbesondere die Abwehr von Gefahren, ist in erster Linie eine staatliche Angelegenheit" },
+      { "id": "d", "text": "Die innere Sicherheit basiert auf dem Sicherheitsmonopol des Staates" },
+      { "id": "e", "text": "Für die Abwehr von Gefahren ist jeder Bürger stets selber verantwortlich und hat die erforderlichen Gegenmaßnahmen zu treffen" }
+    ],
+    "correct": ["c"],
+    "points": 1
+  },
+  {
+    "id": 10,
+    "question": "Wann darf gemäß der BewachV der Bewachungsgewerbetreibende Wachpersonen mit der Durchführung von Bewachungsaufgaben beschäftigen?",
+    "answers": [
+      { "id": "a", "text": "Wenn sie ein Abschlusszeugnis aus einem anderen Berufszweig besitzen, z. B. aus einem Handwerkerberuf." },
+      { "id": "b", "text": "Wenn sie die deutsche Staatsangehörigkeit besitzen und das 18. Lebensjahr vollendet haben." },
+      { "id": "c", "text": "Wenn sie volljährig sind oder z. B. erfolgreich eine Ausbildung zur Fachkraft für Schutz und Sicherheit abgeschlossen haben." },
+      { "id": "d", "text": "Wenn sie die erforderliche Zuverlässigkeit besitzen und fachkundig sind." },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["c", "d"],
+    "points": 1
+  },
+  {
+    "id": 11,
+    "question": "Unter welchen Voraussetzungen ist gemäß BDSG die Videoüberwachung zulässig?",
+    "answers": [
+      { "id": "a", "text": "Wenn die Videoüberwachung der Wahrnehmung des Hausrechts dient und keine schutzwürdigen Interessen von Personen überwiegen, z. B. von Kunden in einem Geschäft." },
+      { "id": "b", "text": "Wenn für jeden deutlich gemacht wird, dass eine Videoüberwachung stattfindet und wer diese veranlasst hat, z. B. durch Hinweisschilder." },
+      { "id": "c", "text": "Wenn mit der Videoüberwachung das Verhalten und die Arbeitsleistung der Beschäftigten am Arbeitsplatz aufgezeichnet werden." },
+      { "id": "d", "text": "" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "b"],
+    "points": 2
+  },
+  {
+    "id": 12,
+    "question": "Gemäß BGB sind SMA als Besitzdiener grundsätzlich befugt, dieselben Selbsthilfe-rechte auszuüben, wie sie dem Besitzer zustehen. Was bedeutet dies?",
+    "answers": [
+      { "id": "a", "text": "SMA dürfen eine dem Besitzer weggenommene Sache auch noch nach Tagen dem Dieb abnehmen, um sie dem Besitzer zurückzugeben." },
+      { "id": "b", "text": "SMA dürfen nur eingreifen, wenn der Besitzer anwesend ist und ihnen die Erlaubnis gibt." },
+      { "id": "c", "text": "SMA dürfen eine dem Besitzer weggenommene Sache dem auf frischer Tat ertappten Täter notfalls mit Gewalt wieder wegnehmen." },
+      { "id": "d", "text": "SMA dürfen Personen, die sich unbefugt in einem geschützten Hausrechtsbereich aufhalten, notfalls mit angemessener Gewalt entfernen." },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["c", "d"],
+    "points": 2
+  },
+  {
+    "id": 13,
+    "question": "Welche nachfolgenden Aussagen zu den Grundrechten im deutschen Grundgesetz (GG) sind richtig?",
+    "answers": [
+      { "id": "a", "text": "Menschenrechte sind Grundrechte. Sie gelten für alle Menschen, die sich in Deutschland aufhalten, also auch für Flüchtlinge und Touristen." },
+      { "id": "b", "text": "Jeder kann sich auf die Gleichbehandlung vor dem Gesetz berufen." },
+      { "id": "c", "text": "Die Grundrechte des deutschen GG gelten weltweit für alle Deutschen, auch wenn sie sich im Ausland aufhalten." },
+      { "id": "d", "text": "Alle Grundrechte können durch Gesetze oder Rechtsverordnungen eingeschränkt werden." },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "b"],
+    "points": 2
+  },
+  {
+    "id": 14,
+    "question": "Wer benötigt keine Sachkundeprüfung gem. §34a GewO, obwohl er Kontrollgänge im öffentlichen Verkehrsraum ausübt oder als Ladendetektiv oder Türsteher für eine Wachfirma arbeiten will?",
+    "answers": [
+      { "id": "a", "text": "Wer einen Abschluss zumindest im mittleren Polizeidienst nachweisen kann." },
+      { "id": "b", "text": "ehemalige Wachsoldaten der Bundeswehr." },
+      { "id": "c", "text": "Werkschutzfachkraft, Werkschutzmeister" },
+      { "id": "d", "text": "Wer eine andere abgeschlossene Berufsausbildung hat." },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "c"],
+    "points": 2
+  },
+  {
+    "id": 15,
+    "question": "Müssen nichtöffentliche Stellen (Privatwirtschaft) gemäß DS-GVO und BDSG einen Datenschutzbeauftragten benennen?",
+    "answers": [
+      { "id": "a", "text": "Ja, wenn sie z. B. personenbezogene Daten geschäftsmäßig für Zwecke der Markt- oder Meinungsforschung verarbeiten" },
+      { "id": "b", "text": "Ja, wenn sie im Unternehmen mindestens 100 gewerbliche Mitarbeiter beschäftigen" },
+      { "id": "c", "text": "Ja, wenn sie im Unternehmen eine Videoüberwachungsanlage betreiben" },
+      { "id": "d", "text": "Ja, wenn sie in der Regel mindestens 20 Personen ständig mit der automatisierten Verarbeitung personenbezogener Daten beschäftigen" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "d"],
+    "points": 2
+  },
+  {
+    "id": 16,
+    "question": "Eine Maßnahme ist nicht „verhältnismäßig\", wenn sie ...",
+    "answers": [
+      { "id": "a", "text": "... geeignet ist" },
+      { "id": "b", "text": "... erforderlich ist" },
+      { "id": "c", "text": "... nicht angemessen ist" },
+      { "id": "d", "text": "... nicht das mildeste Mittel darstellt" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["c", "d"],
+    "points": 2
+  },
+  {
+    "id": 17,
+    "question": "Auf Grund welcher rechtlichen Grundlagen werden private Sicherheitsmitarbeiter tätig?",
+    "answers": [
+      { "id": "a", "text": "Hoheitliche Rechte" },
+      { "id": "b", "text": "Sicherheitsmitarbeiter benötigen keine Rechtsgrundlage, sie haben Sonderrechte und können alles notwendige einleiten um Gerechtigkeit walten zu lassen." },
+      { "id": "c", "text": "Anweisungen des Auftraggebers" },
+      { "id": "d", "text": "Besitzdienerrechte" },
+      { "id": "e", "text": "Auf Grundlage der Jedermannsrechte sowie Rechtfertigungsgründe" }
+    ],
+    "correct": ["d", "e"],
+    "points": 2
+  },
+  {
+    "id": 18,
+    "question": "Wozu sind die Wachpersonen gemäß BewachV im Umgang mit dem Bewacherausweis verpflichtet?",
+    "answers": [
+      { "id": "a", "text": "Sie müssen ihren Ausweis sichtbar tragen. Ausgenommen davon sind Ladendetektive" },
+      { "id": "b", "text": "Sie müssen ihren Ausweis in Verbindung mit dem im Bewacherregister angegebenen Ausweis- oder Identifikationsdokument während des Wachdienstes mitführen" },
+      { "id": "c", "text": "Sie müssen ihren Ausweis auf Verlangen den Beauftragten der Vollzugsbehörden, z. B. Polizei- oder Zollbehörden vorzeigen" },
+      { "id": "d", "text": "Sie müssen auf Verlangen jeder Person ihren Ausweis und ihren Personalausweis oder Reisepass vorzeigen" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["b", "c"],
+    "points": 2
+  },
+  {
+    "id": 19,
+    "question": "Wann sind gemäß BDSG personenbezogene Daten zu löschen?",
+    "answers": [
+      { "id": "a", "text": "Wenn ihre Speicherung unzulässig ist." },
+      { "id": "b", "text": "Wenn der Zweck, für den die Daten benötigt wurden, wegfällt." },
+      { "id": "c", "text": "Wenn nach Erhebung der Daten eine Frist von 12 Monaten vergangen ist." },
+      { "id": "d", "text": "" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "b"],
+    "points": 2
+  },
+  {
+    "id": 20,
+    "question": "Eine Empfangsdame bemerkt, wie der ihr bekannte Mitarbeiter M mehrere Druckerpatronen, die eindeutig der Firma gehören, einsteckt und gehen will. Was darf sie unter Beachtung der Verhältnismäßigkeit tun?",
+    "answers": [
+      { "id": "a", "text": "Sie kann den Besitzentzug lediglich ihrem Arbeitgeber melden, andere Möglichkeiten stehen ihr niht zur Verfügung" },
+      { "id": "b", "text": "Sie darf im Rahmen der Selbsthilfe den M festhalten (§ 229 BGB)." },
+      { "id": "c", "text": "Da ihr der Täter bekannt ist, darf sie nur die Polizei verständigen." },
+      { "id": "d", "text": "Sie darf im Rahmen der Selbsthilfe des Besitzdieners die Patronen an sich nehmen (§ 860 BGB)." },
+      { "id": "e", "text": "Sie darf M vorläufig festnehmen (§ 127 StPO)" }
+    ],
+    "correct": ["d"],
+    "points": 0
+  }
 ]
+
 };
 
