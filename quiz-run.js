@@ -27,26 +27,31 @@ document.addEventListener("DOMContentLoaded", () => {
   quizId = params.get("id");
 
   const retryParam = params.get("retryWrong");
-if (retryParam === "1") {
-  const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
-  if (savedWrong.length > 0) {
-    isRetryMode = true;
-    quiz = quizzes[quizId].filter(q => savedWrong.includes(q.id));
-    wrongQuestions = quiz.slice(); // alle geladenen Fragen
+  if (retryParam === "1") {
+    const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
+    if (savedWrong.length > 0) {
+      isRetryMode = true;
+      quiz = quizzes[quizId].filter(q => savedWrong.includes(q.id));
+      wrongQuestions = quiz.slice(); // alle geladenen Fragen
+    }
   }
-}
- if (!quizId || !quizzes[quizId]) {
+
+  if (!quizId || !quizzes[quizId]) {
     document.body.innerHTML = "<h2>❌ Quiz nicht gefunden</h2>";
     return;
   }
 
-  quiz = quizzes[quizId];
+  // Nur setzen, wenn quiz noch null ist (kein Retry)
+  if (!quiz) quiz = quizzes[quizId];
+
   document.getElementById("quizTitle").innerText = `📝 ${quizId.toUpperCase()}`;
 
-  // Falsch beantwortete Fragen aus localStorage laden
-  const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
-  if (savedWrong.length > 0 && !params.get("showResult")) {
-    wrongQuestions = quiz.filter(q => savedWrong.includes(q.id));
+  // Falsch beantwortete Fragen aus localStorage laden (für normale Quiz-Session)
+  if (!isRetryMode) {
+    const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
+    if (savedWrong.length > 0 && !params.get("showResult")) {
+      wrongQuestions = quiz.filter(q => savedWrong.includes(q.id));
+    }
   }
 
   // Direkt Ergebnis anzeigen?
@@ -61,6 +66,7 @@ if (retryParam === "1") {
   renderQuestion();
   updateProgress();
 });
+
 
 // ==============================
 // Frage rendern
