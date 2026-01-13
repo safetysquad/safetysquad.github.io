@@ -5600,5 +5600,652 @@ quiz11: [
     points: 1
   }
   ],
+  quiz20: [
+  {
+    id: 1,
+    question: "Welche Aussagen zur Menschenwürde sind gemäß Art. 1 Grundgesetz richtig?",
+    answers: [
+      { id: "a", text: "Geschützt ist jeder Mensch, der sich im Geltungsbereich des GG aufhält, z. B. Minderjährige Kinder, Straftäter und Ausländer" },
+      { id: "b", text: "Durch die Menschenwürde sind nur die höchsten Grundrechte geschützt" },
+      { id: "c", text: "Geschützt sind ebenso juristische Personen und die Menschheit" },
+      { id: "d", text: "Der Staat ist verpflichtet, die Menschenwürde zu achten und zu schützen" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 2,
+    question: "Zu welchem Zeitpunkt hat der Gewerbetreibende die Wachpersonen bei der zuständigen Behörde anzumelden?",
+    answers: [
+      { id: "a", text: "Spätestens bis zum Ende der Probezeit" },
+      { id: "b", text: "Spätestens vier Wochen vor Arbeitsbeginn" },
+      { id: "c", text: "Rechtzeitig vor Beginn der Beschäftigung" },
+      { id: "d", text: "Frühestens am ersten Arbeitstag" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 3,
+    question: "Welche grundsätzlichen Aussagen zum Datenschutz sind richtig?",
+    answers: [
+      { id: "a", text: "Personenbezogene Daten dürfen nur erhoben, verarbeitet oder genutzt werden, wenn dies erlaubt ist oder eingewilligt wurde" },
+      { id: "b", text: "Verantwortliche Stelle ist jede Person oder Stelle, die personenbezogene Daten erhebt, verarbeitet oder nutzt" },
+      { id: "c", text: "Datenschutzgesetze gelten nur für Bundesbehörden" },
+      { id: "d", text: "Zuwiderhandlungen werden ausschließlich als Ordnungswidrigkeiten verfolgt" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 4,
+    question: "Welche Aussage zu Eigentümer und Besitzer ist richtig?",
+    answers: [
+      { id: "a", text: "Eigentümer und Besitzer sind verschiedene Personen" },
+      { id: "b", text: "Eigentümer und Besitzer sind dieselbe Person" },
+      { id: "c", text: "Eigentümer und Besitzer können dieselbe oder verschiedene Personen sein" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 5,
+    question: "Worin besteht der Zweck von Rechtfertigungsgründen?",
+    answers: [
+      { id: "a", text: "Sie können unerlaubtes Handeln rechtfertigen" },
+      { id: "b", text: "Sie können verbotenes Handeln entschuldigen" },
+      { id: "c", text: "Sie können strafbares Handeln rechtfertigen" },
+      { id: "d", text: "Sie können ordnungswidriges Handeln entschuldigen" }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 6,
+    question: "Welche Aussagen zur Dienstkleidung sind gemäß BewachV richtig?",
+    answers: [
+      { id: "a", text: "Kaufhausdetektive müssen Dienstkleidung tragen" },
+      { id: "b", text: "Es dürfen keine amtsähnlichen Abzeichen verwendet werden" },
+      { id: "c", text: "Dienstkleidung darf nicht mit hoheitlichen Uniformen verwechselt werden" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 7,
+    question: "Welche Daten sind besondere Arten personenbezogener Daten gemäß BDSG?",
+    answers: [
+      { id: "a", text: "Politische Meinungen oder Gewerkschaftszugehörigkeit" },
+      { id: "b", text: "Tonmitschnitt bei öffentlichem Konzert" },
+      { id: "c", text: "Sportliche Betätigung" },
+      { id: "d", text: "Angaben über Krankheiten mit Behinderungsursache" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 8,
+    question: "Welche Rechtsbeziehungen regelt das BGB?",
+    answers: [
+      { id: "a", text: "Gewerberecht" },
+      { id: "b", text: "Rechtsverhältnis von Staat und Bürger" },
+      { id: "c", text: "Rechtsverhältnis Arbeitgeber und Arbeitnehmer" },
+      { id: "d", text: "Rechtsverhältnis von Bürgern untereinander" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 9,
+    question: "Welche Aussagen zum Privatrecht sind richtig?",
+    answers: [
+      { id: "a", text: "Regelt die rechtlichen Beziehungen der Bürger untereinander" },
+      { id: "b", text: "Umfasst die Gewerbeordnung" },
+      { id: "c", text: "Regelt Besitz- und Eigentumsrechte" },
+      { id: "d", text: "Regelt Beziehungen zwischen Bürger und Staat" }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 10,
+    question: "Für welche Tätigkeit ist die Sachkundeprüfung nach § 34a GewO erforderlich?",
+    answers: [
+      { id: "a", text: "Ordnungsdienst bei Veranstaltungen" },
+      { id: "b", text: "Schutz vor Ladendieben" },
+      { id: "c", text: "Geld- und Werttransport" },
+      { id: "d", text: "Zugangskontrollen an Fußballstadien" },
+      { id: "e", text: "Objekt- und Personenschutz" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 39,
+    question: "Ein Privatdetektiv soll heimlich eine öffentliche Rede eines Politikers aufnehmen. Wie ist dies rechtlich zu bewerten?",
+    answers: [
+      { id: "a", text: "Er hat einen Rechtfertigungsgrund und bleibt straffrei" },
+      { id: "b", text: "Er darf den Auftrag nicht annehmen" },
+      { id: "c", text: "Er macht sich schadenersatzpflichtig" },
+      { id: "d", text: "Er darf den Auftrag annehmen und handelt rechtmäßig" }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 40,
+    question: "Was ist eine \"unerlaubte Handlung\" nach § 823 BGB?",
+    answers: [
+      { id: "a", text: "…die versehentliche Beschädigung einer Sache." },
+      { id: "b", text: "…eine Selbsthilfe nach § 229 BGB." },
+      { id: "c", text: "…eine vorsätzliche Körperverletzung." },
+      { id: "d", text: "…nur Straftaten." }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 41,
+    question: "Welche Institutionen zählen zur \"gesetzgebenden Gewalt\"?",
+    answers: [
+      { id: "a", text: "Der Bundestag" },
+      { id: "b", text: "Der Bundesrat" },
+      { id: "c", text: "Die Staatsanwaltschaft" },
+      { id: "d", text: "Die Regierungen der Bundesländer" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 42,
+    question: "Was sind im Sinne von § 34a GewO keine Bewachungstätigkeiten?",
+    answers: [
+      { id: "a", text: "Revier- und Streifendienste (Citystreife)" },
+      { id: "b", text: "Einlasskontrollen durch Angestellte eines Fußballvereins" },
+      { id: "c", text: "Schutz vor Ladendieben" },
+      { id: "d", text: "Aufklärungs- und Ermittlungstätigkeiten" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 43,
+    question: "Wann sind gemäß BDSG personenbezogene Daten zu löschen?",
+    answers: [
+      { id: "a", text: "Wenn der Zweck, für den die Daten benötigt wurden, wegfällt." },
+      { id: "b", text: "Wenn nach Erhebung der Daten eine Frist von 12 Monaten vergangen ist." },
+      { id: "c", text: "Wenn ihre Speicherung unzulässig ist." }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 44,
+    question: "Welche Aussagen zum Aggressivnotstand gemäß BGB sind richtig?",
+    answers: [
+      { id: "a", text: "Der Aggressivnotstand ist ein Rechtfertigungsgrund." },
+      { id: "b", text: "Ein Anspruch auf Schadensersatz ist ausgeschlossen." },
+      { id: "c", text: "Die Gefahr darf nur von eigenen Rechtsgütern abgewehrt werden." },
+      { id: "d", text: "Die Gefahr muss gegenwärtig sein." }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 45,
+    question: "Welche der nachfolgenden Aussagen unterscheidet die Polizei vom Sicherheitsgewerbe?",
+    answers: [
+      { id: "a", text: "Private Sicherheitsmitarbeiter haben den Status von Hilfsbeamten der Staatsanwaltschaft." },
+      { id: "b", text: "Die Polizei ist unter anderem Bundessache und arbeitet auf Grundlage des Polizeigesetzes des Bundes." },
+      { id: "c", text: "Die Polizei verfügt über hoheitliche Sonderrechte wie Blaulicht und Martinshorn." },
+      { id: "d", text: "Das Sicherheitsgewerbe wird nur auf Wunsch des Auftraggebers tätig." },
+      { id: "e", text: "Das Sicherheitsgewerbe erfüllt niemals Präventivaufgaben." }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 46,
+    question: "Welche Angaben müssen im Bewacherausweis gemäß BewachV enthalten sein?",
+    answers: [
+      { id: "a", text: "Antwort 1; 2 und 3 sind richtig" },
+      { id: "b", text: "Antwort 1; 3 und 5 sind richtig" },
+      { id: "c", text: "Antwort 2 und 4 sind richtig" },
+      { id: "d", text: "Antwort 1; 3 und 4 sind richtig" }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 47,
+    question: "Dürfen im privaten Bereich personenbezogene Daten ohne Einwilligung erhoben werden?",
+    answers: [
+      { id: "a", text: "Nein, nur mit Einwilligung des Betroffenen." },
+      { id: "b", text: "Ja, zur Aufgabenerfüllung ohne Informationspflicht." },
+      { id: "c", text: "Nein, die Einwilligung hat in der Regel schriftlich zu erfolgen." },
+      { id: "d", text: "Ja, von Jedermann unabhängig von der Kenntnis des Betroffenen." }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 48,
+    question: "Welche Aussagen zum Hausrechtsinhaber und seinen Rechten sind richtig?",
+    answers: [
+      { id: "a", text: "Er kann entscheiden, wer den Hausrechtsbereich betreten darf." },
+      { id: "b", text: "Er darf Personen im Hausrechtsbereich festsetzen." },
+      { id: "c", text: "Er kann entscheiden, wer den Bereich verlassen oder bleiben darf." },
+      { id: "d", text: "Er darf Personen mit Gewalt entfernen." }
+    ],
+    correct: ["a", "c"],
+    points: 2
+  },
+  {
+    id: 49,
+    question: "Welche Aussagen zum Grundrecht auf Leben sind gemäß Grundgesetz richtig?",
+    answers: [
+      { id: "a", text: "Es gilt für alle Menschen auf dem Staatsgebiet der Bundesrepublik Deutschland." },
+      { id: "b", text: "In dieses Grundrecht darf niemals eingegriffen werden." },
+      { id: "c", text: "Es steht nur deutschen Staatsbürgern zu." },
+      { id: "d", text: "Eingriffe sind aufgrund eines Gesetzes möglich, z. B. Notwehr." }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 50,
+    question: "Welche Angaben muss der Bewacherausweis gemäß BewachV enthalten?",
+    answers: [
+      { id: "a", text: "Wohnanschrift und Geburtsdatum der Wachperson." },
+      { id: "b", text: "Lichtbild sowie Name und Vorname der Wachperson." },
+      { id: "c", text: "Unterschrift des Gewerbetreibenden und des Sachbearbeiters." },
+      { id: "d", text: "Name und Anschrift des Gewerbetreibenden." }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 51,
+    question: "Unter welchen Voraussetzungen dürfen gemäß DS-GVO und BDSG personenbezogene Daten verarbeitet werden?",
+    answers: [
+      { id: "a", text: "Wenn der Verantwortliche eine Verarbeitung nach eigenem Ermessen für erforderlich hält" },
+      { id: "b", text: "Wenn die Verarbeitung automatisiert erfolgt, bei manueller Verarbeitung ist keine Einwilligung erforderlich" },
+      { id: "c", text: "Wenn der Betroffene zustimmt, auch wenn eine gesetzliche Verpflichtung besteht" },
+      { id: "d", text: "Wenn die betroffene Person ihre Einwilligung für einen oder mehrere bestimmte Zwecke gegeben hat" }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 52,
+    question: "Aus Wut stößt ein Passant ein ordnungsgemäß geparktes Motorrad um. Welche Aussage zur Schadenersatzpflicht gemäß BGB ist richtig?",
+    answers: [
+      { id: "a", text: "Kein Schadensersatz, da nur Vorsatz haftbar macht" },
+      { id: "b", text: "Schadensersatz wegen Sachbeschädigung nach StGB" },
+      { id: "c", text: "Schadensersatz unabhängig davon, ob vorsätzlich oder fahrlässig gehandelt wurde" },
+      { id: "d", text: "Kein Schadensersatz wegen fehlender Schuldfähigkeit" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 53,
+    question: "Welche Aussagen zum staatlichen Gewaltmonopol sind richtig?",
+    answers: [
+      { id: "a", text: "Anwendungsbeispiele sind Strafvollzug und polizeiliche Eingriffsrechte" },
+      { id: "b", text: "Darf nur von Polizei- und Justizvollzugsbeamten ausgeübt werden" },
+      { id: "c", text: "Gilt absolut ohne Ausnahmen" },
+      { id: "d", text: "Liegt grundsätzlich beim Staat und seinen Organen" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 54,
+    question: "Wann wird die Erlaubnis zur Ausübung eines Bewachungsgewerbes gemäß GewO versagt?",
+    answers: [
+      { id: "a", text: "Bei fehlender deutscher Staatsangehörigkeit" },
+      { id: "b", text: "Bei ungeordneten Vermögensverhältnissen" },
+      { id: "c", text: "Bei Nichterreichen des 21. Lebensjahres" },
+      { id: "d", text: "Bei fehlender Zuverlässigkeit" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 55,
+    question: "Welche allgemeinen Pflichten haben Unternehmen, in denen personenbezogene Daten bearbeitet werden?",
+    answers: [
+      { id: "a", text: "Schriftliche Verpflichtung auf das Datengeheimnis" },
+      { id: "b", text: "Technische und organisatorische Maßnahmen zum Datenschutz" },
+      { id: "c", text: "Besondere Überwachungspflichten gegenüber Mitarbeitern" },
+      { id: "d", text: "Pflicht zur lückenlosen Datenerfassung" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 56,
+    question: "Wer ist Eigentümer einer Sache?",
+    answers: [
+      { id: "a", text: "Der Besitzer" },
+      { id: "b", text: "Wer eine Sache gekauft oder geerbt hat" },
+      { id: "c", text: "Der gutgläubige Käufer einer gestohlenen Sache" },
+      { id: "d", text: "Wer die tatsächliche Gewalt ausübt" }
+    ],
+    correct: ["b"],
+    points: 1
+  },
+  {
+    id: 57,
+    question: "Welche Aussagen zu den Grundrechten im GG sind richtig?",
+    answers: [
+      { id: "a", text: "Alle Grundrechte können eingeschränkt werden" },
+      { id: "b", text: "Menschenrechte gelten für alle Menschen in Deutschland" },
+      { id: "c", text: "Grundrechte gelten weltweit für alle Deutschen" },
+      { id: "d", text: "Jeder kann sich auf Gleichbehandlung berufen" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 58,
+    question: "Was muss ein Dienstausweis gemäß BewachV beinhalten?",
+    answers: [
+      { id: "a", text: "Name und Vorname des Ausweisinhabers" },
+      { id: "b", text: "Name und Vorname des Gewerbetreibenden" },
+      { id: "c", text: "Name und Anschrift des Ausweisinhabers" },
+      { id: "d", text: "Name und Anschrift des Gewerbetreibenden" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 59,
+    question: "Was sind personenbezogene Daten im Sinne des BDSG?",
+    answers: [
+      { id: "a", text: "Anonyme Meinungsumfragen" },
+      { id: "b", text: "Ausgefüllter Wahlzettel" },
+      { id: "c", text: "Name, Vorname, Alter, Personalausweisnummer" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 60,
+    question: "Wie kann gemäß BGB der Besitz an einer Sache erworben werden?",
+    answers: [
+      { id: "a", text: "Durch Freihalten einer Parklücke" },
+      { id: "b", text: "Durch Diebstahl" },
+      { id: "c", text: "Durch Schlüsselübergabe" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 61,
+    question: "Welche Aussagen zu Rechtfertigungsgründen sind richtig?",
+    answers: [
+      { id: "a", text: "Schuldunfähigkeit ist ein Rechtfertigungsgrund" },
+      { id: "b", text: "Sie ergeben sich aus StGB, StPO und BGB" },
+      { id: "c", text: "Sie gelten nur bei fehlender staatlicher Hilfe" },
+      { id: "d", text: "Notwehr- und Notstandsrechte stehen jedem zu" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 62,
+    question: "Wann muss das Unterrichtungsverfahren gemäß BewachV nicht absolviert werden?",
+    answers: [
+      { id: "a", text: "Bei Laufbahnprüfung im Polizeivollzugsdienst" },
+      { id: "b", text: "Bei Nachweis ausreichender Kenntnisse" },
+      { id: "c", text: "Bei 3 Jahren Wachdienst bei der Bundeswehr" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 63,
+    question: "Welche Aussagen zum Recht auf Löschung gemäß DS-GVO sind richtig?",
+    answers: [
+      { id: "a", text: "Immer zu löschen, auch bei Meinungsfreiheit" },
+      { id: "b", text: "Bei unrechtmäßiger Verarbeitung" },
+      { id: "c", text: "Nur bei gesetzlicher Pflicht" },
+      { id: "d", text: "Bei Widerruf der Einwilligung" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 64,
+    question: "Darf eine Wachperson einem Gast helfen, seinen Sitzplatz zurückzuerlangen?",
+    answers: [
+      { id: "a", text: "Nein, kein Notwehr- oder Notstandsfall" },
+      { id: "b", text: "Ja, im Rahmen eines Angriffsnotstandes" },
+      { id: "c", text: "Nein, nur Hinweis auf Selbsthilfe" },
+      { id: "d", text: "Ja, bei verbotener Eigenmacht und fehlender obrigkeitlicher Hilfe" },
+      { id: "e", text: "Ja, Selbsthilfe des Besitzers unter Wahrung der Erforderlichkeit" }
+    ],
+    correct: ["e"],
+    points: 1
+  },
+  {
+    id: 65,
+    question: "Welche Aussagen zur Unverletzlichkeit der Wohnung (Art. 13 GG) sind richtig?",
+    answers: [
+      { id: "a", text: "Gilt nur für Eigentumswohnungen" },
+      { id: "b", text: "Durchsuchung nur mit Richter, bei Gefahr im Verzug auch andere Organe" },
+      { id: "c", text: "Gilt nur für Eigentümer" },
+      { id: "d", text: "Individuelles Abwehrrecht gegen staatliche Gewalt" },
+      { id: "e", text: "Gilt nicht für Ausländer" },
+      { id: "f", text: "Nur strafprozessual zulässig" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 66,
+    question: "Was regelt die BewachV?",
+    answers: [
+      { id: "a", text: "Durchführung des Unterrichtungsverfahrens" },
+      { id: "b", text: "Wahrung von Geschäfts- und Betriebsgeheimnissen" },
+      { id: "c", text: "Grundsätze der Eigensicherung" },
+      { id: "d", text: "Bekleidungsordnung" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 67,
+    question: "Welcher Straftatbestand erfasst den unbefugten Zugriff auf personenbezogene Daten?",
+    answers: [
+      { id: "a", text: "Verletzung des Briefgeheimnisses" },
+      { id: "b", text: "Unterschlagung" },
+      { id: "c", text: "Diebstahl" },
+      { id: "d", text: "Ausspähen von Daten" }
+    ],
+    correct: ["d"],
+    points: 1
+  },
+  {
+    id: 68,
+    question: "Welche Aussagen zum Verteidigungsnotstand (§ 228 BGB) sind richtig?",
+    answers: [
+      { id: "a", text: "Unzulässig bei selbst verursachter Gefahr" },
+      { id: "b", text: "Gefahr kann auch von Sachen ausgehen" },
+      { id: "c", text: "Handlung muss erforderlich und verhältnismäßig sein" },
+      { id: "d", text: "Beschädigung fremder Sache zur Gefahrenabwehr erlaubt" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 69,
+    question: "Wer gehört zur vollziehenden Gewalt (Exekutive)?",
+    answers: [
+      { id: "a", text: "Amtsrichter" },
+      { id: "b", text: "Polizeivollzugsbeamte" },
+      { id: "c", text: "Sachbearbeiter einer Gewerbebehörde" },
+      { id: "d", text: "Geschäftsführer eines Bewachungsunternehmens" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 70,
+    question: "Welche Aussagen zum Namens-/Kennschild gemäß BewachV sind richtig?",
+    answers: [
+      { id: "a", text: "Immer bei jeder Bewachungstätigkeit" },
+      { id: "b", text: "Bei zugangsgeschützten Großveranstaltungen verpflichtend" },
+      { id: "c", text: "Nur wenn Auftraggeber es fordert" },
+      { id: "d", text: "Name/Kennnummer und Name des Gewerbetreibenden" }
+    ],
+    correct: ["b", "d"],
+    points: 2
+  },
+  {
+    id: 71,
+    question: "Was sind besondere Kategorien personenbezogener Daten gemäß DS-GVO?",
+    answers: [
+      { id: "a", text: "Gewerkschaftszugehörigkeit, Gesundheitsdaten" },
+      { id: "b", text: "Name und Geburtsort" },
+      { id: "c", text: "Kfz-Kennzeichen" },
+      { id: "d", text: "Politische Meinungen und weltanschauliche Überzeugungen" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 72,
+    question: "Mit welchem Rechtfertigungsgrund ist die Abwehr einer drohenden Gefahr möglich?",
+    answers: [
+      { id: "a", text: "Verteidigungsnotstand" },
+      { id: "b", text: "Selbsthilfe des Besitzers" },
+      { id: "c", text: "Allgemeine Selbsthilfe" },
+      { id: "d", text: "Notwehr" }
+    ],
+    correct: ["a"],
+    points: 1
+  },
+  {
+    id: 73,
+    question: "Welche Aussagen zur Unverletzlichkeit der Wohnung gemäß GG sind richtig?",
+    answers: [
+      { id: "a", text: "Individuelles Abwehrrecht gegen Staatsgewalt" },
+      { id: "b", text: "Durchsuchung mit Richter, bei Gefahr im Verzug auch Polizei/StA" },
+      { id: "c", text: "Gilt nur für Eigentümer" },
+      { id: "d", text: "Garantiert Wohnraumanspruch" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 74,
+    question: "Was sind Bewachungstätigkeiten im Sinne von § 34a GewO?",
+    answers: [
+      { id: "a", text: "Detektivische Ermittlungen" },
+      { id: "b", text: "Überprüfung technischer Bühnenanlagen" },
+      { id: "c", text: "Geld- und Werttransporte" },
+      { id: "d", text: "Personen- und Fahrzeugkontrollen im Objektschutz" }
+    ],
+    correct: ["c", "d"],
+    points: 2
+  },
+  {
+    id: 75,
+    question: "Welche Aussagen zum Recht auf Auskunft gemäß BDSG sind richtig?",
+    answers: [
+      { id: "a", text: "Öffentliche Stellen dürfen Auskunft verweigern bei Gefährdung" },
+      { id: "b", text: "Jeder hat Anspruch auf Auskunft über gespeicherte Daten" },
+      { id: "c", text: "Auskunft ist kostenpflichtig" }
+    ],
+    correct: ["a", "b"],
+    points: 2
+  },
+  {
+    id: 76,
+    question: "Welche Befugnisse hat der Inhaber des Hausrechts?",
+    answers: [
+      { id: "a", text: "Hausverbot erteilen" },
+      { id: "b", text: "Erzwungene Taschenkontrollen" },
+      { id: "c", text: "Willkürliche Zutrittsverbote" },
+      { id: "d", text: "Hausregeln erlassen" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 77,
+    question: "Wozu verpflichtet das Legalitätsprinzip?",
+    answers: [
+      { id: "a", text: "Festnahme bei jeder Anzeige" },
+      { id: "b", text: "Einleitung eines Ermittlungsverfahrens bei Verdacht" },
+      { id: "c", text: "Anklage bei hinreichendem Tatverdacht" },
+      { id: "d", text: "Überwachung legaler Handlungen" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 78,
+    question: "Welche Hinweise müssen gemäß BewachV in der Dienstanweisung enthalten sein?",
+    answers: [
+      { id: "a", text: "Sonderrechte im Straßenverkehr bei Alarmverfolgung" },
+      { id: "b", text: "Keine Polizeibefugnisse der Wachpersonen" },
+      { id: "c", text: "Waffen nur mit Zustimmung des Gewerbetreibenden" },
+      { id: "d", text: "Beachtung der DGUV Vorschrift 23" }
+    ],
+    correct: ["b", "c"],
+    points: 2
+  },
+  {
+    id: 79,
+    question: "Das Bundesdatenschutzgesetz (BDSG) gilt …",
+    answers: [
+      { id: "a", text: "Nur für Privatpersonen" },
+      { id: "b", text: "Nur für die Privatwirtschaft" },
+      { id: "c", text: "Für Bundes-, Landesbehörden und Privatwirtschaft" },
+      { id: "d", text: "Nur für Bundesbehörden" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 80,
+    question: "Welche Aussagen zur Selbsthilfe des Besitzdieners (§§ 860, 855 BGB) sind richtig?",
+    answers: [
+      { id: "a", text: "Abnahme der Sache bei frischer Tat mit angemessener Gewalt" },
+      { id: "b", text: "Abnahme auch Tage später zulässig" },
+      { id: "c", text: "Nur mit vorheriger Zustimmung des Eigentümers" },
+      { id: "d", text: "Entfernung unbefugter Personen aus dem Hausrechtsbereich" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  },
+  {
+    id: 81,
+    question: "Welche Maßnahme dürfen Wachpersonen durchführen?",
+    answers: [
+      { id: "a", text: "Beschlagnahme von Reizstoffsprühgeräten" },
+      { id: "b", text: "Durchsuchung ohne Einwilligung" },
+      { id: "c", text: "Taschenkontrolle mit Einwilligung" }
+    ],
+    correct: ["c"],
+    points: 1
+  },
+  {
+    id: 82,
+    question: "Welche Unterlagen muss der Bewachungsgewerbetreibende gemäß BewachV aufbewahren?",
+    answers: [
+      { id: "a", text: "Nachweise über Zuverlässigkeit und Befähigung" },
+      { id: "b", text: "Schießfertigkeitsnachweise" },
+      { id: "c", text: "Angaben zur Hundehaltung" },
+      { id: "d", text: "Vordruck eines Bewacherausweises" }
+    ],
+    correct: ["a", "d"],
+    points: 2
+  }
+]
 };
 
