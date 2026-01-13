@@ -3682,7 +3682,7 @@ quiz11: [
     points: 1
   }
 ],
-  quiz14: = [
+  quiz14: [
   {
     id: 1,
     question: "Welche Aussagen treffen auf die Allgemeine Selbsthilfe gemäß § 229 BGB zu?",
@@ -3980,7 +3980,7 @@ quiz11: [
     points: 2
   }
     ],
-    quiz15: = [
+    quiz15: [
   {
     id: 1,
     question: "Wer handelt unerlaubt gemäß § 823 BGB?",
@@ -4282,7 +4282,7 @@ quiz11: [
   points: 2
 }
  ],
-   quiz16: = [
+   quiz16: [
   {
     id: 1,
     question: "Welche Rechte dürfen Sicherheitsmitarbeiter (SMA), die Kontrollgänge im öffentlichen Verkehrsraum durchführen, in eigener Verantwortung ausüben?",
@@ -4999,7 +4999,7 @@ quiz11: [
     points: 1
   }
 ],
-  quiz18: = [
+  quiz18: [
   {
     id: 1,
     question: "Was sind wesentliche Aufgaben der Polizei, des Bundes und der Länder?",
@@ -5598,7 +5598,7 @@ quiz11: [
     ],
     correct: ["a"],
     points: 1
-  },
-  ];
+  }
+  ],
 };
 
