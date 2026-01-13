@@ -1,4 +1,4 @@
-console.log("QUIZ-RUN.JS VERSION 3 GELADEN");
+console.log("QUIZ-RUN.JS VERSION 4 GELADEN");
 
 // ==============================
 // GRUNDVARIABLEN
@@ -7,6 +7,8 @@ let quiz = null;
 let quizId = null;
 let currentIndex = 0;
 let userAnswers = {};
+let wrongQuestions = [];
+let isRetryMode = false;
 
 function getTextById(ids = [], answers = []) {
   return answers
@@ -30,31 +32,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("quizTitle").innerText = `📝 ${quizId.toUpperCase()}`;
 
-  // -------------
-  // Prüfen, ob direkt Ergebnis angezeigt werden soll
-  // -------------
   const showResult = params.get("showResult");
   if (showResult === "1") {
-    // Punkte aus localStorage abrufen
     const bestPercent = Number(localStorage.getItem(`safety_${quizId}_best`) || 0);
-
-    // Summe max. Punkte berechnen
     let maxPoints = 0;
     quiz.forEach(q => maxPoints += q.points);
-
-    // Punkte berechnen anhand % (falls du die exakte Punktezahl willst)
     const points = Math.round((bestPercent / 100) * maxPoints);
-
-    // Ergebnisse rendern
-    renderResult(points, maxPoints, bestPercent, []); // leeres Result-Array okay
+    renderResult(points, maxPoints, bestPercent, []);
     return;
   }
 
-  // normales Quiz starten
   renderQuestion();
   updateProgress();
 });
-
 
 // ==============================
 // FRAGE RENDERn
@@ -66,40 +56,24 @@ function renderQuestion() {
   const questionTextEl = document.getElementById("questionText");
   const answersBox = document.getElementById("answers");
 
-  // =============================
-  // Punkteanzeige unter Progress
-  // =============================
   let pointsEl = document.getElementById("questionPoints");
-
   if (!pointsEl) {
     pointsEl = document.createElement("div");
     pointsEl.id = "questionPoints";
-
     const progressEl = document.querySelector(".progress");
     progressEl.insertAdjacentElement("afterend", pointsEl);
   }
-
   pointsEl.innerText = `🧠 ${q.points} Punkt${q.points > 1 ? "e" : ""}`;
 
-  // =============================
-  // Frage setzen
-  // =============================
   questionTextEl.innerText = q.question;
-
-  // Antworten leeren
   answersBox.innerHTML = "";
 
   q.answers.forEach(a => {
     const btn = document.createElement("button");
     btn.className = "btn secondary";
-
-    if (userAnswers[q.id]?.includes(a.id)) {
-      btn.classList.add("active");
-    }
-
+    if (userAnswers[q.id]?.includes(a.id)) btn.classList.add("active");
     btn.innerText = `${a.id}. ${a.text}`;
     btn.onclick = () => toggleAnswer(a.id);
-
     answersBox.appendChild(btn);
   });
 
@@ -108,15 +82,11 @@ function renderQuestion() {
 }
 
 // ==============================
-// ANTWORT AUSWÄHLEN (MEHRFACH)
+// ANTWORT AUSWÄHLEN
 // ==============================
 function toggleAnswer(answerId) {
   const q = quiz[currentIndex];
-
-  if (!userAnswers[q.id]) {
-    userAnswers[q.id] = [];
-  }
-
+  if (!userAnswers[q.id]) userAnswers[q.id] = [];
   const selected = userAnswers[q.id];
 
   if (selected.includes(answerId)) {
@@ -164,15 +134,16 @@ function evaluateQuiz() {
   let points = 0;
   let maxPoints = 0;
   const results = [];
+  wrongQuestions = [];
 
   quiz.forEach(q => {
     maxPoints += q.points;
-
     const given = (userAnswers[q.id] || []).sort().join(",");
     const correct = q.correct.sort().join(",");
     const isCorrect = given === correct;
 
     if (isCorrect) points += q.points;
+    else wrongQuestions.push(q); // ❌ sammeln
 
     results.push({
       question: q.question,
@@ -185,10 +156,9 @@ function evaluateQuiz() {
 
   const percent = Math.round((points / maxPoints) * 100);
 
-// Statistik speichern
-saveStats(percent);
+  if (!isRetryMode) saveStats(percent);
 
-renderResult(points, maxPoints, percent, results);
+  renderResult(points, maxPoints, percent, results);
 }
 
 // ==============================
@@ -216,6 +186,14 @@ function renderResult(points, maxPoints, percent, results) {
     </div>
   `;
 
+  if (!isRetryMode && wrongQuestions.length > 0) {
+    html += `
+      <button class="btn warn" onclick="retryWrongQuestions()">
+        ❌ Falsche Fragen wiederholen (${wrongQuestions.length})
+      </button>
+    `;
+  }
+
   results.forEach(r => {
     if (!r.isCorrect) {
       const userTexts = getTextById(r.givenAnswers, r.answers);
@@ -227,11 +205,7 @@ function renderResult(points, maxPoints, percent, results) {
 
           <p class="answer user">❌ Deine Antwort:</p>
           <ul class="answer-list user">
-            ${
-              userTexts.length
-                ? userTexts.map(t => `<li>${t}</li>`).join("")
-                : "<li>—</li>"
-            }
+            ${userTexts.length ? userTexts.map(t => `<li>${t}</li>`).join("") : "<li>—</li>"}
           </ul>
 
           <p class="answer correct">✅ Richtige Antwort:</p>
@@ -246,7 +220,6 @@ function renderResult(points, maxPoints, percent, results) {
   main.innerHTML = html;
 }
 
-
 // ==============================
 // STATISTIK SPEICHERN
 // ==============================
@@ -257,10 +230,7 @@ function saveStats(percent) {
   const attempts = Number(localStorage.getItem(attemptsKey) || 0) + 1;
   localStorage.setItem(attemptsKey, attempts);
 
-  const best = Math.max(
-    percent,
-    Number(localStorage.getItem(bestKey) || 0)
-  );
+  const best = Math.max(percent, Number(localStorage.getItem(bestKey) || 0));
   localStorage.setItem(bestKey, best);
 }
 
@@ -268,16 +238,12 @@ function saveStats(percent) {
 // TEST WIEDERHOLEN
 // ==============================
 function restartQuiz() {
-  // Zurücksetzen
   currentIndex = 0;
   userAnswers = {};
+  isRetryMode = false;
 
-  // Quiz sicher laden
-  if (!quiz && quizId) {
-    quiz = quizzes[quizId];
-  }
+  if (!quiz && quizId) quiz = quizzes[quizId];
 
-  // Normalen Quiz-HTML wiederherstellen
   const main = document.querySelector("main");
   main.innerHTML = `
     <div class="card">
@@ -292,13 +258,41 @@ function restartQuiz() {
     </div>
   `;
 
-  // Fortschritt zurücksetzen
   document.getElementById("progressBar").style.width = "0%";
   document.getElementById("counter").innerText = `Frage 1 von ${quiz.length}`;
 
-  // Frage anzeigen
   renderQuestion();
   updateProgress();
 }
 
+// ==============================
+// FALSCH BEANTWORTETE FRAGEN WIEDERHOLEN
+// ==============================
+function retryWrongQuestions() {
+  if (wrongQuestions.length === 0) return;
 
+  isRetryMode = true;
+  quiz = wrongQuestions; // nur diese Fragen
+  currentIndex = 0;
+  userAnswers = {};
+
+  const main = document.querySelector("main");
+  main.innerHTML = `
+    <div class="card">
+      <p id="questionText">Lade Frage…</p>
+    </div>
+
+    <div id="answers" class="action-buttons"></div>
+
+    <div class="nav">
+      <button class="btn warn" onclick="prevQuestion()">⬅ Zurück</button>
+      <button class="btn warn" onclick="nextQuestion()">➡ Weiter</button>
+    </div>
+  `;
+
+  document.getElementById("progressBar").style.width = "0%";
+  document.getElementById("counter").innerText = `Frage 1 von ${quiz.length}`;
+
+  renderQuestion();
+  updateProgress();
+}
