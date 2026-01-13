@@ -5,6 +5,27 @@
   <title>Quiz – SAFETY SQUAD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css?v=6">
+  <style>
+    .quiz-block {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .quiz-link {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 12px;
+    }
+    .quiz-badge {
+      margin-left: 8px;
+      font-weight: bold;
+    }
+    .retry-btn {
+      margin-left: 10px;
+      white-space: nowrap;
+    }
+  </style>
 </head>
 
 <body>
@@ -34,14 +55,8 @@
 </div>
 
 <!-- ================= SCRIPTS ================= -->
-<!-- zuerst die Quiz-Daten einbinden -->
 <script src="quiz-data.js"></script>
-
-<!-- Dashboard rendern -->
 <script>
-// ======================
-// Dashboard rendern (dynamisch)
-// ======================
 function renderQuizDashboard() {
   const quizListEl = document.getElementById("quiz-list");
   const globalContainer = document.getElementById("global-wrong-container");
@@ -50,27 +65,26 @@ function renderQuizDashboard() {
 
   let totalWrong = 0;
 
-  Object.keys(quizzes).forEach(quizId => {
+  Object.keys(quizzes).forEach((quizId, index) => {
     const quiz = quizzes[quizId];
     const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
     const best = localStorage.getItem(`safety_${quizId}_best`);
 
     totalWrong += savedWrong.length;
 
-    // ================= Quiz-Block =================
+    // Quiz-Block
     const block = document.createElement("div");
     block.className = "quiz-block";
-    block.style.marginBottom = "10px";
 
+    // Quiz-Link
     const link = document.createElement("a");
     link.href = `quiz-run.html?id=${quizId}`;
     link.className = "btn quiz-link";
-    link.style.marginRight = "10px";
-    link.innerText = quizId;
-
+    link.innerHTML = `<span>Quiz ${index + 1} (${quiz.length} Fragen)</span>`;
+    
+    // Badge
     const badge = document.createElement("span");
     badge.classList.add("quiz-badge");
-    badge.style.marginLeft = "5px";
     if (!best) {
       badge.innerText = "Neu";
       badge.classList.add("new");
@@ -85,7 +99,7 @@ function renderQuizDashboard() {
     if (savedWrong.length > 0) {
       const retryBtn = document.createElement("a");
       retryBtn.href = `quiz-run.html?id=${quizId}&retryWrong=1`;
-      retryBtn.className = "btn warn small";
+      retryBtn.className = "btn warn small retry-btn";
       retryBtn.innerText = `❌ Falsche Fragen wiederholen (${savedWrong.length})`;
       block.appendChild(retryBtn);
     }
@@ -103,15 +117,13 @@ function renderQuizDashboard() {
   }
 }
 
-// ================= Burger Menü =================
+// Burger Menü
 function toggleMenu() {
   const menu = document.getElementById("moreMenu");
   if (menu) menu.classList.toggle("hidden");
 }
 
-// ======================
 // Seite laden
-// ======================
 document.addEventListener("DOMContentLoaded", renderQuizDashboard);
 </script>
 
