@@ -5721,6 +5721,370 @@ quiz11: [
     points: 1
   },
   {
+    "id": 11,
+    "question": "Für wen gelten die Bestimmungen des Bundesdatenschutzgesetzes?",
+    "answers": [
+      { "id": "a", "text": "Für Einzelpersonen und Familien (somit für Jedermann)" },
+      { "id": "b", "text": "Für private Stellen (z.B. Unternehmen, Verbände, Vereine)" },
+      { "id": "c", "text": "Für die öffentlichen Stellen (z.B. Behörden, Ämter)" },
+      { "id": "d", "text": "" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["b", "c"],
+    "points": 2
+  },
+  {
+    "id": 12,
+    "question": "Welche Aussagen zum Verteidigungsnotstand gemäß § 228 BGB sind richtig?",
+    "answers": [
+      { "id": "a", "text": "Die Notstandshandlung setzt einen Abwehrwillen voraus, und sie muss zur Abwehr der Gefahr erforderlich sein" },
+      { "id": "b", "text": "Die Notstandshandlung setzt voraus, dass der Notstandshandelnde eine fremde Sache an sich nimmt, um mit dieser die drohende Gefahr abzuwenden" },
+      { "id": "c", "text": "Die Notstandslage setzt voraus, dass die Gefahr ausschließlich für eigene Rechtsgüter droht, z.B. für das eigene Eigentum" },
+      { "id": "d", "text": "Die Notstandslage setzt voraus, dass durch eine fremde Sache die Gefahr einer Rechtsgutverletzung besteht" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "d"],
+    "points": 2
+  },
+  {
+    "id": 13,
+    "question": "Welche Institutionen zählen zur gesetzgebenden Gewalt?",
+    "answers": [
+      { "id": "a", "text": "die Parlamente der Bundesländer (Landtage)" },
+      { "id": "b", "text": "Die Staatsanwaltschaft" },
+      { "id": "c", "text": "Der Bundestag" },
+      { "id": "d", "text": "Die Regierungen der Bundesländer" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "c"],
+    "points": 2
+  },
+  {
+    "id": 14,
+    "question": "Welche Pflicht haben Wachpersonen gemäß BewachV, wenn sie Kontrollgänge im Hausrechtsbereich mit tatsächlich öffentlichem Verkehr durchführen?",
+    "answers": [
+      { "id": "a", "text": "Sie müssen ihren Firmenausweis auf der Dienstkleidung sichtbar tragen" },
+      { "id": "b", "text": "Sie müssen aus Gründen der Eigensicherung Gas- oder Schreckschusswaffen bei sich tragen" },
+      { "id": "c", "text": "Sie müssen sichtbar ein Schild tragen, auf dem ihr Name oder eine Kennnummer sowie der Name des Gewerbetreibenden steht" },
+      { "id": "d", "text": "" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["c"],
+    "points": 1
+  },
+  {
+    "id": 15,
+    "question": "Was ist ein Datenschutzbeauftragter, was darf er?",
+    "answers": [
+      { "id": "a", "text": "Er ist nur für den Schutz von Betriebsgeheimnissen zuständig." },
+      { "id": "b", "text": "Er wird benötigt, wenn mindestens 20 Personen ständig mit der automatisierten Verarbeitung personenbezogener Daten beschäftigt sind." },
+      { "id": "c", "text": "Derjenige, der im Betrieb für den Datenschutz zuständig ist." },
+      { "id": "d", "text": "In Bezug auf Daten hat er hoheitliche Rechte." },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["b", "c"],
+    "points": 2
+  },
+  {
+    "id": 16,
+    "question": "Wachpersonen können verschiedene Rechtfertigungsgründe bei der Erfüllung ihrer Aufgaben wahrnehmen. Welcher Rechtfertigungsgrund aus dem BGB muss vertraglich übertragen werden?",
+    "answers": [
+      { "id": "a", "text": "Der Angriffsnotstand" },
+      { "id": "b", "text": "Die Allgemeine Selbsthilfe" },
+      { "id": "c", "text": "Der Verteidigungsnotstand" },
+      { "id": "d", "text": "Die Notwehr" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["b"],
+    "points": 1
+  },
+  {
+    "id": 17,
+    "question": "Welche Grundrechte des Grundgesetzes sind Bürgerrechte?",
+    "answers": [
+      { "id": "a", "text": "Versammlungsfreiheit" },
+      { "id": "b", "text": "Schutz der Menschenwürde" },
+      { "id": "c", "text": "Gleichheit vor dem Gesetz" },
+      { "id": "d", "text": "Freie Berufswahl" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "d"],
+    "points": 2
+  },
+  {
+    "id": 18,
+    "question": "Wer gehört gemäß § 34a GewO zum Bewachungsgewerbe?",
+    "answers": [
+      { "id": "a", "text": "Private Ermittler bei Observationsaufgaben" },
+      { "id": "b", "text": "Ehrenamtliche Ordner im Fußballstadion" },
+      { "id": "c", "text": "Sicherheitsmitarbeiter im Geld- und Werttransport" },
+      { "id": "d", "text": "Türsteher als Angestellte der Diskothek" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["c"],
+    "points": 1
+  },
+  {
+    "id": 19,
+    "question": "Ein Ladendetektiv hat eine Person auf frischer Tat bei einem Diebstahl betroffen. Für die Sicherung der Strafverfolgung ist die Erhebung der personenbezogenen Daten der Person notwendig. Die Daten der Person und der Tathergang werden in einem Bericht verarbeitet. Ist die Verarbeitung der personenbezogenen Daten in dem Bericht sowie dessen Verwendung für die Strafanzeige gemäß DS-GVO zulässig?",
+    "answers": [
+      { "id": "a", "text": "Ja, wenn der Dieb in die Verarbeitung seiner Daten freiwillig einwilligt, z. B. in Form einer unmissverständlichen mündlichen Erklärung." },
+      { "id": "b", "text": "Ja, wenn die zuständige Datenschutz-Aufsichtsbehörde das Erstellen des Berichts und die Stellung der Strafanzeige erlaubt hat." },
+      { "id": "c", "text": "Nein, da für die Strafverfolgung, hier des Diebstahls, ausschließlich die Polizei zuständig ist." },
+      { "id": "d", "text": "Ja, wenn die Daten in rechtmäßiger Weise und in einer für den Dieb nachvollziehbaren Weise verarbeitet werden." },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "d"],
+    "points": 2
+  },
+  {
+    "id": 20,
+    "question": "Die Notstandshandlung im Sinne des § 904 BGB (Aggressivnotstand)…",
+    "answers": [
+      { "id": "a", "text": "…ist nur möglich, wenn fremde Rechtsgüter jeglicher Art, einer gegenwärtigen, nicht anders abwendbaren Gefahr ausgesetzt sind und diese Handlung zur Abwendung erforderlich ist." },
+      { "id": "b", "text": "…ist nicht zulässig, wenn der Eigentümer der Sache auf die eingewirkt werden soll, die Einwirkung verbietet." },
+      { "id": "c", "text": "…wirkt auf fremde Sachen ein, von der die Gefahr nicht ausgeht." },
+      { "id": "d", "text": "…besteht in der unmittelbaren oder mittelbaren Einwirkung auf eine Sache, die zur Abwehr der Gefahr notwendig sein muss, z.B. deren Benutzung, Beschädigung oder Zerstörung." },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["c", "d"],
+    "points": 2
+  },
+  {
+    "id": 21,
+    "question": "Wozu dienen die Grundrechte?",
+    "answers": [
+      { "id": "a", "text": "Als Abwehrrechte der Bürger gegenüber dem Staat" },
+      { "id": "b", "text": "Abschreckung der Allgemeinheit vor strafbaren Handlungen" },
+      { "id": "c", "text": "Regelung des Rechtsverhältnisses der Bürger untereinander" },
+      { "id": "d", "text": "Als Eingriffsrechte des Staates gegenüber dem Bürger" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a"],
+    "points": 1
+  },
+  {
+    "id": 22,
+    "question": "Aufgrund des § 34a Abs. 2 der Gewerbeordnung, hat das Bundesministerium des Inneren und für Heimat die Bewachungsverordnung erlassen. Überprüfen Sie die nachfolgenden Aussagen und kreuzen Sie diejenigen an, welche in der Bewachungsverordnung geregelt sind.",
+    "answers": [
+      { "id": "a", "text": "Festlegung einer Bekleidungsordnung." },
+      { "id": "b", "text": "Ausstellen von Dienstausweisen (Bewacherausweis)" },
+      { "id": "c", "text": "Aufzeichnung aller Bewachungsverträge in deutscher Sprache." },
+      { "id": "d", "text": "Ausstattung mit bestimmten Ausrüstungsgegenständen." },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["b", "c"],
+    "points": 2
+  },
+  {
+    "id": 23,
+    "question": "Die DS-GVO und das BDSG regeln die „Auftragsverarbeitung\" von personenbezogenen Daten. Welche Aussagen dazu sind richtig?",
+    "answers": [
+      { "id": "a", "text": "Der Auftragsverarbeiter haftet bei Datenschutzverletzungen" },
+      { "id": "b", "text": "Der Auftragsverarbeiter ist davon befreit, technische und organisatorische Schutzmaßnahmen zu ergreifen" },
+      { "id": "c", "text": "Die Verarbeitung durch einen Auftragsverarbeiter erfolgt in der Regel aufgrund eines Vertrages" },
+      { "id": "d", "text": "Der Auftragsverarbeiter darf ohne Rücksprache mit dem Auftraggeber weitere Subunternehmer zur Erfüllung seines Auftrages einsetzen" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "c"],
+    "points": 2
+  },
+  {
+    "id": 24,
+    "question": "Welche Aussagen zum Besitz sind gemäß BGB richtig?",
+    "answers": [
+      { "id": "a", "text": "Der Besitz an einer Sache wird erworben, indem eine Person die tatsächliche Gewalt über die Sache erlangt" },
+      { "id": "b", "text": "Der Besitz ist die rechtliche Herrschaft einer Person über eine Sache" },
+      { "id": "c", "text": "Der Besitz ist die tatsächliche Herrschaft einer Person über eine Sache" },
+      { "id": "d", "text": "" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "c"],
+    "points": 2
+  },
+  {
+    "id": 25,
+    "question": "Erklären Sie den Begriff \"Gewaltmonopol\"!",
+    "answers": [
+      { "id": "a", "text": "Gewaltmonopol bedeutet, nur der Chef der Wachfirma hat das Sagen." },
+      { "id": "b", "text": "Private können im Rahmen der Jedermannsrechte gegen das Gewaltmonopol des Staates ausnahmsweise verstoßen." },
+      { "id": "c", "text": "Gewaltmonopol bedeutet, dass ausschließlich nur die Polizei Gewalt anwenden darf." },
+      { "id": "d", "text": "Der Staat hat das Gewaltmonopol, kann seine Rechte aber voll auf Private übertragen" },
+      { "id": "e", "text": "Der Staat hat die absolute Herrschaft über jegliche Gewaltanwendung, es gibt keine Ausnahmen." }
+    ],
+    "correct": ["b"],
+    "points": 1
+  },
+  {
+    "id": 26,
+    "question": "Was bestimmt die Bewachungsverordnung zur Dienstkleidung von Wachpersonal? Die Dienstkleidung…",
+    "answers": [
+      { "id": "a", "text": "...darf nicht außerhalb des Hausrechtsbereiches getragen werden." },
+      { "id": "b", "text": "...muss mit einer Kennnummer der Wachperson gekennzeichnet sein." },
+      { "id": "c", "text": "...darf nicht mit hoheitlichen Uniformen verwechselt werden können." },
+      { "id": "d", "text": "...muss den Unfallverhütungsvorschriften entsprechen." },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["c"],
+    "points": 1
+  },
+  {
+    "id": 27,
+    "question": "Wann müssen gemäß DS-GVO personenbezogene Daten grundsätzlich gelöscht werden?",
+    "answers": [
+      { "id": "a", "text": "Wenn sie für Direktwerbung verwendet werden sollen und der Betroffene widerspricht" },
+      { "id": "b", "text": "Wenn es der Betroffene ausdrücklich verlangt" },
+      { "id": "c", "text": "Wenn sie unrechtmäßig verarbeitet wurden" },
+      { "id": "d", "text": "Wenn ihre Speicherung länger als sechs Monate andauert" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "c"],
+    "points": 2
+  },
+  {
+    "id": 28,
+    "question": "Der Revierfahrer „A\" überfährt mit dem Dienstwagen unabsichtlich die Katze von „B\", die ihm plötzlich vor das Fahrzeug läuft. Was liegt hier zivilrechtlich vor?",
+    "answers": [
+      { "id": "a", "text": "Ein Sachmangel gemäß § 434 BGB" },
+      { "id": "b", "text": "Unerlaubtes Entfernen vom Unfallort gemäß § 142 StGB" },
+      { "id": "c", "text": "Schadenersatzpflicht gemäß § 823 BGB" },
+      { "id": "d", "text": "Sachbeschädigung gemäß § 303 StGB" },
+      { "id": "e", "text": "Fahrlässige Tötung gemäß § 222 StGB" }
+    ],
+    "correct": ["c"],
+    "points": 1
+  },
+  {
+    "id": 29,
+    "question": "Im Grundgesetz steht, dass die \"Freiheit der Person“ unverletzlich ist. Welche Aussagen dazu sind richtig?",
+    "answers": [
+      { "id": "a", "text": "Eingriffe in die Freiheit der Person dürfen nur durch Hoheitsträger wie die Polizei vorgenommen werden." },
+      { "id": "b", "text": "Dieses Grundrecht erlaubt es jeder Person, jeden beliebigen Ort in Deutschland aufzusuchen." },
+      { "id": "c", "text": "Eingriffe in die Freiheit der Person sind nur aufgrund eines Gesetzes zulässig, z. B. der StPO." },
+      { "id": "d", "text": "In der Regel ist bei jeder natürlichen Person deren körperliche Bewegungsfreiheit geschützt." },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["c", "d"],
+    "points": 2
+  },
+  {
+    "id": 30,
+    "question": "Die BewachV regelt den Umgang mit Waffen. Welche Hinweise muss hierzu die Dienstanweisung enthalten?",
+    "answers": [
+      { "id": "a", "text": "Dass Sicherheitsmitarbeiter jeden Gebrauch der Schusswaffen, Hieb- und Stoßwaffen sowie Reizstoffsprühgeräte unverzüglich der zuständigen Gewerbebehörde anzeigen müssen." },
+      { "id": "b", "text": "Dass Sicherheitsmitarbeiter nur mit Zustimmung des Gewerbetreibenden Schusswaffen, Hieb- und Stoßwaffen sowie Reizstoffsprühgeräte führen dürfen" },
+      { "id": "c", "text": "Dass Sicherheitsmitarbeiter zum Zwecke der Eigensicherung Schusswaffen, Hieb- und Stoßwaffen sowie Reizstoffsprühgeräte führen dürfen" },
+      { "id": "d", "text": "Dass Sicherheitsmitarbeiter jeden Gebrauch der Schusswaffen, Hieb- und Stoßwaffen sowie Reizstoffsprühgeräte unverzüglich der zuständigen Polizeidienststelle und dem Gewerbetreibenden anzeigen müssen" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["b", "d"],
+    "points": 2
+  },
+  {
+    "id": 31,
+    "question": "In den öffentlich zugänglichen Verkaufsräumen eines Supermarktes werden Videoaufzeichnungen gemacht. Unter welchen Voraussetzungen ist gemäß BDSG die Videoüberwachung zulässig?",
+    "answers": [
+      { "id": "a", "text": "Wenn die Videoüberwachung für die Wahrung des Hausrechts erforderlich ist. Außerdem dürfen keine Anhaltspunkte dafür vorliegen, dass schutzwürdige Interessen der Kunden überwiegen" },
+      { "id": "b", "text": "Wenn es sich bei den öffentlich zugänglichen Räumen um Straßen, Wege und Plätze handelt, die außerhalb von Gebäuden liegen" },
+      { "id": "c", "text": "Wenn mit der Videoüberwachung das Verhalten und die Arbeitsleistung der Beschäftigten am Arbeitsplatz überprüft werden soll" },
+      { "id": "d", "text": "Wenn für jeden erkennbar ist, dass eine Videoüberwachung stattfindet und wer diese veranlasst hat" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "d"],
+    "points": 2
+  },
+  {
+    "id": 32,
+    "question": "Welche Aussagen zum Grundsatz der Verhältnismäßigkeit sind richtig?",
+    "answers": [
+      { "id": "a", "text": "Es darf jedes Mittel eingesetzt werden, um den gewünschten Erfolg zu erreichen" },
+      { "id": "b", "text": "Eine Maßnahme ist nur so lange zulässig, bis ihr Zweck erreicht ist" },
+      { "id": "c", "text": "Dieser Grundsatz muss nur von der Staatsgewalt beachtet werden" },
+      { "id": "d", "text": "Sind mehrere Mittel verfügbar, ist das mildeste Mittel zu wählen" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["b", "d"],
+    "points": 2
+  },
+  {
+    "id": 33,
+    "question": "Welche Aussagen über die Grundrechte des GG treffen zu?",
+    "answers": [
+      { "id": "a", "text": "Einige Grundrechte können gemäß Art. 19 GG eingeschränkt werden, wie z. B. die Würde des Menschen." },
+      { "id": "b", "text": "Einige Grundrechte sind Abwehrrechte und schützen gegen unzulässige Eingriffe des Staates wie z. B. Art. 13 GG, Unverletzlichkeit der Wohnung." },
+      { "id": "c", "text": "Einige Grundrechte beinhalten Ansprüche gegenüber dem Staat, wie z. B. Art. 19 GG, Recht auf Rechtsschutz durch gerichtliche Verfahren." },
+      { "id": "d", "text": "" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["b", "c"],
+    "points": 2
+  },
+  {
+    "id": 34,
+    "question": "Welche Aussagen zum Begriff „Bewachung\" sind gemäß § 34a GewO richtig?",
+    "answers": [
+      { "id": "a", "text": "Bewachung liegt vor, wenn gewerbsmäßig das Leben oder das Eigentum fremder Personen vor Eingriffen Dritter geschützt wird." },
+      { "id": "b", "text": "Bewachung liegt vor, wenn ein Unternehmer seinen Betrieb durch eigene Mitarbeiter bewachen lässt." },
+      { "id": "c", "text": "Bewachung liegt vor, wenn beispielsweise ein Ladendetektiv durch wiederkehrende Kontrollen fremdes Eigentum schützt." },
+      { "id": "d", "text": "Bewachung liegt selbst dann vor, wenn ausschließlich Alarmmeldungen in Notrufzentralen entgegengenommen und weitergeleitet werden." },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "c"],
+    "points": 2
+  },
+  {
+    "id": 35,
+    "question": "Was bedeutet das Recht auf informationelle Selbstbestimmung für den Bürger?",
+    "answers": [
+      { "id": "a", "text": "...selbst über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten von Jedermann bestimmen." },
+      { "id": "b", "text": "...über die Erhebung, Verarbeitung und Nutzung seiner personenbezogenen Daten selber bestimmen." },
+      { "id": "c", "text": "...über die öffentliche Preisgabe und Verwendung personenbezogener Daten mitbestimmen können." },
+      { "id": "d", "text": "...selbstständig über jede Informationsbeschaffung und Weitergabe bestimmen" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["b"],
+    "points": 1
+  },
+  {
+    "id": 36,
+    "question": "Welche Aussage zum Privatrecht ist richtig?",
+    "answers": [
+      { "id": "a", "text": "Es gilt das Prinzip der Gleichordnung" },
+      { "id": "b", "text": "Es regelt die Beziehung zwischen Staat und Bürger" },
+      { "id": "c", "text": "Es gilt das Prinzip der Über- und Unterordnung" },
+      { "id": "d", "text": "Es regelt die Beziehung zwischen Bürger und Bürger" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "d"],
+    "points": 2
+  },
+  {
+    "id": 37,
+    "question": "Welche Aussagen zu den Menschenrechten sind gemäß Grundgesetz richtig?",
+    "answers": [
+      { "id": "a", "text": "Sie sind Abwehrrechte gegen staatliche Willkürmaßnahmen" },
+      { "id": "b", "text": "Sie gelten weltweit für Bürger mit deutscher Staatsangehörigkeit" },
+      { "id": "c", "text": "Sie gelten für alle Menschen in Deutschland, unabhängig von ihrer Staatsangehörigkeit" },
+      { "id": "d", "text": "" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["a", "c"],
+    "points": 2
+  },
+  {
+    "id": 38,
+    "question": "Welche Angaben muss der Bewacherausweis von Sicherheitsmitarbeitern gemäß BewachV enthalten?",
+    "answers": [
+      { "id": "a", "text": "Gültigkeitsdauer, Lichtbild des Gewerbetreibenden, Name, Vorname des Sicherheitsmitarbeiters sowie seine Zugehörigkeit zur Krankenkasse" },
+      { "id": "b", "text": "Name, Vorname des Sicherheitsmitarbeiters, Gültigkeitsdauer des Ausweises, Privatanschrift und Geburtsdatum des Sicherheitsmitarbeiters" },
+      { "id": "c", "text": "Name, Vorname und Unterschrift des Sicherheitsmitarbeiters, Name, Anschrift und Unterschrift des Gewerbetreibenden oder seines Vertreters" },
+      { "id": "d", "text": "Bezeichnung und Anschrift des Gewerbebetriebes, Bewacherregisteridentifikationsnummer des Gewerbebetriebes und der Wachperson" },
+      { "id": "e", "text": "" }
+    ],
+    "correct": ["c", "d"],
+    "points": 2
+  },
+    {
     id: 39,
     question: "Ein Privatdetektiv soll heimlich eine öffentliche Rede eines Politikers aufnehmen. Wie ist dies rechtlich zu bewerten?",
     answers: [
