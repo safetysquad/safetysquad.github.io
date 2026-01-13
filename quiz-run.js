@@ -1,4 +1,4 @@
-console.log("QUIZ-RUN.JS VERSION 6 GELADEN");
+console.log("QUIZ-RUN.JS VERSION 7 GELADEN");
 
 // ==============================
 // GRUNDVARIABLEN
@@ -9,6 +9,7 @@ let currentIndex = 0;
 let userAnswers = {};
 let wrongQuestions = [];
 let isRetryMode = false;
+let isGlobalMode = false;
 
 // ==============================
 // Hilfsfunktion
@@ -25,7 +26,6 @@ function getTextById(ids = [], answers = []) {
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   quizId = params.get("id");
-
   const retryParam = params.get("retryWrong");
   const globalWrongParam = params.get("globalWrong");
 
@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // =======================
   if (globalWrongParam === "1") {
     isRetryMode = true;
+    isGlobalMode = true;
+
     let allWrongQuestions = [];
     Object.keys(quizzes).forEach(qId => {
       const savedWrong = JSON.parse(localStorage.getItem(`safety_${qId}_wrong`) || "[]");
@@ -69,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // =======================
   // Normales Quiz
   // =======================
-  if (!quizId || (!quizzes[quizId] && !isRetryMode)) {
+  if (!quizId && !isGlobalMode) {
     document.body.innerHTML = "<h2>❌ Quiz nicht gefunden</h2>";
     return;
   }
@@ -231,7 +233,7 @@ function updatePersistentWrong(newWrong, results) {
     }
   });
 
-  // Neue falsche Fragen hinzufügen (falls noch nicht vorhanden)
+  // Neue falsche Fragen hinzufügen
   newWrong.forEach(id => {
     if (!savedWrong.includes(id)) savedWrong.push(id);
   });
@@ -264,14 +266,16 @@ function renderResult(points, maxPoints, percent, results) {
     </div>
   `;
 
-  // Button für falsche Fragen (global oder pro Quiz)
-  const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
-  if (savedWrong.length > 0 && !isRetryMode && quizId) {
-    html += `
-      <button class="btn warn" onclick="retryWrongQuestions()">
-        ❌ Falsche Fragen wiederholen (${savedWrong.length})
-      </button>
-    `;
+  // Button für falsche Fragen
+  if (!isRetryMode) {
+    if (isGlobalMode) {
+      html += `<button class="btn warn" onclick="retryWrongQuestions()">❌ Alle falschen Fragen wiederholen</button>`;
+    } else if (quizId) {
+      const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
+      if (savedWrong.length > 0) {
+        html += `<button class="btn warn" onclick="retryWrongQuestions()">❌ Falsche Fragen wiederholen (${savedWrong.length})</button>`;
+      }
+    }
   }
 
   results.forEach(r => {
@@ -304,6 +308,7 @@ function renderResult(points, maxPoints, percent, results) {
 // Statistik speichern
 // ==============================
 function saveStats(percent) {
+  if (!quizId) return;
   const attemptsKey = `safety_${quizId}_attempts`;
   const bestKey = `safety_${quizId}_best`;
 
@@ -324,6 +329,13 @@ function restartQuiz() {
 
   if (!quiz && quizId) quiz = quizzes[quizId];
 
+  renderQuizUI();
+}
+
+// ==============================
+// Quiz UI rendern (für Wiederholung & Retry)
+// ==============================
+function renderQuizUI() {
   const main = document.querySelector("main");
   main.innerHTML = `
     <div class="card">
@@ -337,7 +349,6 @@ function restartQuiz() {
       <button class="btn warn" onclick="nextQuestion()">➡ Weiter</button>
     </div>
   `;
-
   document.getElementById("progressBar").style.width = "0%";
   document.getElementById("counter").innerText = `Frage 1 von ${quiz.length}`;
 
@@ -349,32 +360,33 @@ function restartQuiz() {
 // Falsche Fragen wiederholen
 // ==============================
 function retryWrongQuestions() {
-  if (!quizId) return;
-  const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
-  if (savedWrong.length === 0) return;
+  const globalWrong = new URLSearchParams(window.location.search).get("globalWrong");
 
-  isRetryMode = true;
-  quiz = quizzes[quizId].filter(q => savedWrong.includes(q.id));
-  currentIndex = 0;
-  userAnswers = {};
+  if (globalWrong === "1" || isGlobalMode) {
+    // Global wiederholen
+    isRetryMode = true;
+    isGlobalMode = true;
+    let allWrongQuestions = [];
+    Object.keys(quizzes).forEach(qId => {
+      const savedWrong = JSON.parse(localStorage.getItem(`safety_${qId}_wrong`) || "[]");
+      if (savedWrong.length > 0) {
+        const questions = quizzes[qId].filter(q => savedWrong.includes(q.id));
+        allWrongQuestions = allWrongQuestions.concat(questions);
+      }
+    });
+    if (allWrongQuestions.length === 0) return;
+    quiz = allWrongQuestions;
+    currentIndex = 0;
+    userAnswers = {};
+  } else if (quizId) {
+    // Einzel-Quiz wiederholen
+    const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
+    if (savedWrong.length === 0) return;
+    isRetryMode = true;
+    quiz = quizzes[quizId].filter(q => savedWrong.includes(q.id));
+    currentIndex = 0;
+    userAnswers = {};
+  }
 
-  const main = document.querySelector("main");
-  main.innerHTML = `
-    <div class="card">
-      <p id="questionText">Lade Frage…</p>
-    </div>
-
-    <div id="answers" class="action-buttons"></div>
-
-    <div class="nav">
-      <button class="btn warn" onclick="prevQuestion()">⬅ Zurück</button>
-      <button class="btn warn" onclick="nextQuestion()">➡ Weiter</button>
-    </div>
-  `;
-
-  document.getElementById("progressBar").style.width = "0%";
-  document.getElementById("counter").innerText = `Frage 1 von ${quiz.length}`;
-
-  renderQuestion();
-  updateProgress();
+  renderQuizUI();
 }
