@@ -9,47 +9,48 @@
   .quiz-block {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Link links, Retry rechts */
+    justify-content: flex-start; /* Link links, Retry rechts */
+    gap: 8px; /* Abstand zwischen Buttons */
     margin-bottom: 12px;
-    flex-wrap: wrap; /* Bei kleinen Bildschirmen umbrechen */
+    flex-wrap: wrap; /* kleine Screens umbrechen */
   }
 
-  /* Quiz-Link (kleiner, links) */
+  /* Quiz-Link */
   .quiz-link {
+    flex: 0 1 auto;           /* darf schrumpfen, bleibt links */
     display: flex;
     align-items: center;
-    gap: 5px; /* Abstand zwischen Text und Badge */
-    padding: 6px 10px; /* kleiner als Retry-Button */
-    font-size: 0.85rem; /* ca. 30% kleiner als Retry */
-    white-space: nowrap; /* Badge bleibt neben Text */
-    flex-shrink: 1; /* darf bei Bedarf kleiner werden */
-    background-color: #e0e0e0; /* Optional: Button-Farbe */
-    border-radius: 6px;
+    gap: 5px;                 /* Abstand Text <-> Badge */
+    padding: 6px 10px;
+    font-size: 0.85rem;       /* kleiner als Retry */
+    white-space: nowrap;
     text-decoration: none;
     color: #000;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    min-width: 120px;         /* verhindert zu kleine Buttons */
   }
 
-  /* Badge mit Prozentangabe */
   .quiz-badge {
     font-weight: bold;
-    font-size: 0.85rem; /* passt zum Quiz-Link */
+    font-size: 0.85rem;
     margin-left: 5px;
-    white-space: nowrap;
   }
 
-  /* Retry-Button (größer, rechts) */
+  /* Retry-Button */
   .retry-btn {
-    padding: 8px 16px; /* größer als Quiz-Link */
-    font-size: 1rem;   /* Standardgröße */
-    white-space: nowrap; /* kein Umbrechen */
-    flex-shrink: 0;     /* nicht gequetscht */
-    background-color: #ffcccc; /* Optional: Warnfarbe */
+    flex: 0 1 auto;           /* darf schrumpfen */
+    padding: 8px 14px;        /* größer als Quiz-Link */
+    font-size: 1rem;
+    white-space: nowrap;
+    background-color: #ffcccc;
     border-radius: 6px;
     text-decoration: none;
     color: #000;
+    min-width: 200px;         /* verhindert zu schmal bei vielen Buchstaben */
   }
 
-  /* Optional: Hover-Effekte */
+  /* Hover-Effekte */
   .quiz-link:hover {
     background-color: #d0d0d0;
   }
@@ -57,6 +58,7 @@
     background-color: #ffb3b3;
   }
 </style>
+
 
 
 </head>
