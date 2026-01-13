@@ -15,21 +15,30 @@
     .quiz-block .btn {
       flex: 1; /* gleiche Breite */
       display: flex;
+      flex-direction: column; /* Text + Badge untereinander */
       justify-content: center;
       align-items: center;
       padding: 8px 12px;
       text-align: center;
+      min-width: 0; /* verhindert Überlauf */
     }
 
     .quiz-link {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column; /* Text oben, Badge unten */
+      justify-content: center;
       align-items: center;
     }
 
-    .quiz-badge {
-      margin-left: 8px;
+    .quiz-link span {
+      font-size: 1rem;
       font-weight: bold;
+    }
+
+    .quiz-badge {
+      margin-top: 4px; /* Abstand zum Text */
+      font-weight: bold;
+      font-size: 0.9rem;
     }
 
     #global-wrong-container .btn {
@@ -96,7 +105,7 @@ function renderQuizDashboard() {
     link.className = "btn quiz-link";
     link.innerHTML = `<span>Quiz ${index + 1} (${quiz.length} Fragen)</span>`;
     
-    // Badge
+    // Badge (Prozentzahl oder Neu) unter Text
     const badge = document.createElement("span");
     badge.classList.add("quiz-badge");
     if (!best) {
