@@ -20,7 +20,7 @@
       align-items: center;
       padding: 8px 12px;
       text-align: center;
-      min-width: 0; /* verhindert Überlauf */
+      min-width: 0; /* verhindert Überlauf auf kleinen Bildschirmen */
     }
 
     .quiz-link {
@@ -28,6 +28,7 @@
       flex-direction: column; /* Text oben, Badge unten */
       justify-content: center;
       align-items: center;
+      text-align: center;
     }
 
     .quiz-link span {
@@ -36,7 +37,8 @@
     }
 
     .quiz-badge {
-      margin-top: 4px; /* Abstand zum Text */
+      display: block;       /* Badge in eigene Zeile */
+      margin-top: 4px;      /* Abstand zum Text */
       font-weight: bold;
       font-size: 0.9rem;
     }
@@ -105,7 +107,7 @@ function renderQuizDashboard() {
     link.className = "btn quiz-link";
     link.innerHTML = `<span>Quiz ${index + 1} (${quiz.length} Fragen)</span>`;
     
-    // Badge (Prozentzahl oder Neu) unter Text
+    // Badge (Prozentzahl oder "Neu") unter Text
     const badge = document.createElement("span");
     badge.classList.add("quiz-badge");
     if (!best) {
