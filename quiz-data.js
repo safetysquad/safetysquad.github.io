@@ -5600,7 +5600,7 @@ quiz11: [
     points: 1
   }
   ],
-  quiz20: [
+  quiz19: [
   {
     id: 1,
     question: "Welche Aussagen zur Menschenwürde sind gemäß Art. 1 Grundgesetz richtig?",
