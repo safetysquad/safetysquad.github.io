@@ -9,7 +9,7 @@ const quizzes = {
         { id: "c", text: "Name des Türstehers oder eine Kennnummer, die er vom Bewachungsgewerbetreibenden erhalten hat" },
         { id: "d", text: "Name und Anschrift des Türstehers" }
       ],
-      correct: ["a", "c"],
+      correct: "c"],
       points: 2
     },
     {
@@ -22,7 +22,7 @@ const quizzes = {
         { id: "d", text: "Private Sicherheitsmitarbeiter müssen grundsätzlich überall und ausnahmslos eine Dienstkleidung tragen" }
       ],
       correct: ["a"],
-      points: 1
+      : 1
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const quizzes = {
         { id: "c", text: "Einsatz als sogenannte Wellenbrecher vor der Bühne zum Schutz der Musiker" },
         { id: "d", text: "Bewachung von zugangsgeschützten Großveranstaltungen in leitender Funktion" }
       ],
-      correct: ["a", "c"],
+      correct: "c"],
       points: 2
     },
     {
@@ -70,7 +70,7 @@ const quizzes = {
         { id: "c", text: "Bewachung liegt vor, wenn ein Unternehmer seinen Betrieb durch eigene Mitarbeiter bewachen lässt" },
         { id: "d", text: "Bewachung liegt selbst dann vor, wenn ausschließlich Alarmmeldungen entgegengenommen werden" }
       ],
-      correct: ["a", "b"],
+      correct: "b"],
       points: 2
     },
 
@@ -526,7 +526,7 @@ quiz2: [
       { id: "f", text: "ist ein Grundrecht, welches in keiner Weise eingeschränkt werden darf" }
     ],
     correct: ["a","c"],
-    points: 1
+    points: 2
   },
   {
     id: 18,
@@ -561,7 +561,7 @@ quiz2: [
       { id: "d", text: "Erhebung der Anklage" }
     ],
     correct: ["a","d"],
-    points: 1
+    points: 2
   },
   {
     id: 21,
@@ -574,7 +574,7 @@ quiz2: [
       { id: "e", text: "Bewacherregister" }
     ],
     correct: ["a","d"],
-    points: 1
+    points: 2
   },
   {
     id: 22,
@@ -1446,7 +1446,7 @@ quiz5: [
       { id: "d", text: "Gewerkschaftszugehörigkeit, Gesundheitsdaten" }
     ],
     correct: ["b", "d"],
-    points: 1
+    points: 2
   },
   {
     id: 16,
@@ -1565,7 +1565,7 @@ quiz5: [
       { id: "d", text: "Wenn sie für Direktwerbung verwendet werden sollen und der Betroffene widerspricht" }
     ],
     correct: ["b", "d"],
-    points: 1
+    points: 2
   }
 ],
   
@@ -1603,7 +1603,7 @@ quiz5: [
       { id: "d", text: "Der Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten ist ein Grundrecht" }
     ],
     correct: ["c", "d"],
-    points: 1
+    points: 2
   },
   {
     id: 4,
@@ -1709,7 +1709,7 @@ quiz5: [
       { id: "d", text: "Wenn die betroffene Person ihre Einwilligung zur Verarbeitung der sie betreffenden personenbezogenen Daten für einen oder mehrere bestimmte Zwecke gegeben hat" }
     ],
     correct: ["b", "d"],
-    points: 1
+    points: 2
   },
   {
     id: 13,
@@ -1827,7 +1827,7 @@ quiz5: [
       { id: "d", text: "Wenn dieses durch eine Rechtsvorschrift eindeutig geregelt ist" }
     ],
     correct: ["c", "d"],
-    points: 1
+    points: 2
   },
   {
     id: 23,
@@ -1914,7 +1914,7 @@ quiz7: [
       { id: "d", text: "Ruhiges und professionelles Verhalten gegenüber aggressiven Personen." }
     ],
     correct: ["b","c"],
-    points: 1
+    points: 2
   },
   {
     id: 5,
@@ -1926,7 +1926,7 @@ quiz7: [
       { id: "d", text: "Pünktliches Erscheinen und ordnungsgemäße Dienstausführung" }
     ],
     correct: ["a","d"],
-    points: 1
+    points: 2
   },
   {
     id: 6,
@@ -1962,7 +1962,7 @@ quiz7: [
       { id: "d", text: "Person A fährt Fahrrad ohne Licht bei Dunkelheit." }
     ],
     correct: ["a","c"],
-    points: 1
+    points: 2
   },
   {
     id: 9,
@@ -1986,7 +1986,7 @@ quiz7: [
       { id: "d", text: "Bei Sicherheitsmitarbeitern" }
     ],
     correct: ["b","c"],
-    points: 1
+    points: 2
   },
   {
     id: 11,
@@ -1998,7 +1998,7 @@ quiz7: [
       { id: "d", text: "Doppelverglasung" }
     ],
     correct: ["b","c"],
-    points: 1
+    points: 2
   },
   {
     id: 12,
@@ -2022,7 +2022,7 @@ quiz7: [
       { id: "d", text: "Aufklärung von Straftaten." }
     ],
     correct: ["a","c"],
-    points: 1
+    points: 2
   },
   {
     id: 14,
@@ -2034,7 +2034,7 @@ quiz7: [
       { id: "d", text: "Es gibt positive und negative Vorurteile." }
     ],
     correct: ["b","d"],
-    points: 1
+    points: 2
   },
   {
     id: 15,
@@ -2070,7 +2070,7 @@ quiz7: [
       { id: "d", text: "Ruhig bleiben, die Situation beobachten und gegebenenfalls Unterstützung anfordern." }
     ],
     correct: ["b","d"],
-    points: 1
+    points: 2
   },
   {
     id: 18,
@@ -2094,7 +2094,7 @@ quiz7: [
       { id: "d", text: "Kooperationen von privater und öffentlicher Sicherheit sind möglich." }
     ],
     correct: ["a","d"],
-    points: 1
+    points: 2
   },
   {
     id: 20,
@@ -2106,7 +2106,7 @@ quiz7: [
       { id: "d", text: "Ich lasse die Person zunächst in Ruhe ihre Rauschmittel konsumieren und spreche sie dann ruhig, mit ausreichendem Abstand, an." }
     ],
     correct: ["b","d"],
-    points: 1
+    points: 2
   }
 ],
 
@@ -4906,7 +4906,7 @@ quiz11: [
       { id: "d", text: "Gewerkschaftszugehörigkeit, Gesundheitsdaten" }
     ],
     correct: ["a", "d"],
-    points: 1
+    points: 2
   },
   {
     id: 12,
@@ -4966,7 +4966,7 @@ quiz11: [
       { id: "c", text: "Der Besitzdiener übt die tatsächliche Gewalt über eine Sache für den Besitzer aus. Er ist dabei an die Weisungen des Besitzers gebunden." }
     ],
     correct: ["a", "c"],
-    points: 1
+    points: 2
   },
   {
     id: 17,
