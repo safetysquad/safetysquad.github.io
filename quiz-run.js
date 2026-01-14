@@ -1,4 +1,4 @@
-console.log("QUIZ-RUN.JS VERSION 8 GELADEN");
+console.log("QUIZ-RUN.JS VERSION 9 GELADEN");
 
 // ==============================
 // GRUNDVARIABLEN
@@ -7,7 +7,6 @@ let quiz = null;
 let quizId = null;
 let currentIndex = 0;
 let userAnswers = {};
-let wrongQuestions = [];
 let isRetryMode = false;
 let isGlobalMode = false;
 
@@ -38,9 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let allWrongQuestions = [];
     Object.keys(quizzes).forEach(qId => {
-      const savedWrong = JSON.parse(localStorage.getItem(`safety_${qId}_wrong`) || "[]");
+      const savedWrong = JSON.parse(
+        localStorage.getItem(`safety_${qId}_wrong`) || "[]"
+      );
       if (savedWrong.length > 0) {
-        const questions = quizzes[qId].filter(q => savedWrong.includes(q.id));
+        const questions = quizzes[qId].filter(q =>
+          savedWrong.includes(q.id)
+        );
         allWrongQuestions = allWrongQuestions.concat(questions);
       }
     });
@@ -58,17 +61,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Einzelne falsche Fragen
   // =======================
   if (retryParam === "1" && quizId) {
-    const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
+    const savedWrong = JSON.parse(
+      localStorage.getItem(`safety_${quizId}_wrong`) || "[]"
+    );
     if (savedWrong.length > 0) {
       isRetryMode = true;
-      quiz = quizzes[quizId].filter(q => savedWrong.includes(q.id));
+      quiz = quizzes[quizId].filter(q =>
+        savedWrong.includes(q.id)
+      );
     }
   }
 
   // =======================
   // Normales Quiz
   // =======================
-  if (!quiz && quizId) quiz = quizzes[quizId];
+  if (!quiz && quizId) {
+    quiz = quizzes[quizId];
+  }
 
   if (!quiz) {
     document.body.innerHTML = "<h2>❌ Quiz nicht gefunden</h2>";
@@ -77,20 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("quizTitle").innerText =
     `📝 ${quizId ? quizId.toUpperCase() : "Fehler-Lernmodus"}`;
-
-  // =======================
-  // 👉 Ergebnis direkt anzeigen?
-  // =======================
-  if (!isRetryMode && quizId) {
-    const finished = localStorage.getItem(`safety_${quizId}_finished`);
-    if (finished === "1") {
-      const bestPercent = Number(localStorage.getItem(`safety_${quizId}_best`) || 0);
-      const maxPoints = quiz.reduce((s, q) => s + q.points, 0);
-      const points = Math.round((bestPercent / 100) * maxPoints);
-      renderResult(points, maxPoints, bestPercent, []);
-      return;
-    }
-  }
 
   renderQuestion();
   updateProgress();
@@ -104,13 +99,18 @@ function renderQuestion() {
   if (!q) return;
 
   document.getElementById("questionText").innerText = q.question;
+
   const answersBox = document.getElementById("answers");
   answersBox.innerHTML = "";
 
   q.answers.forEach(a => {
     const btn = document.createElement("button");
     btn.className = "btn secondary";
-    if (userAnswers[q.id]?.includes(a.id)) btn.classList.add("active");
+
+    if (userAnswers[q.id]?.includes(a.id)) {
+      btn.classList.add("active");
+    }
+
     btn.innerText = `${a.id}. ${a.text}`;
     btn.onclick = () => toggleAnswer(a.id);
     answersBox.appendChild(btn);
@@ -177,12 +177,16 @@ function evaluateQuiz() {
 
   quiz.forEach(q => {
     maxPoints += q.points;
+
     const given = (userAnswers[q.id] || []).sort().join(",");
     const correct = q.correct.sort().join(",");
     const isCorrect = given === correct;
 
-    if (isCorrect) points += q.points;
-    else newlyWrong.push(q.id);
+    if (isCorrect) {
+      points += q.points;
+    } else {
+      newlyWrong.push(q.id);
+    }
 
     results.push({
       question: q.question,
@@ -197,10 +201,21 @@ function evaluateQuiz() {
 
   if (!isRetryMode && quizId) {
     saveStats(percent);
-    localStorage.setItem(`safety_${quizId}_finished`, "1");
+    updatePersistentWrong(newlyWrong);
   }
 
   renderResult(points, maxPoints, percent, results);
+}
+
+// ==============================
+// Falsch beantwortete Fragen speichern
+// ==============================
+function updatePersistentWrong(newWrong) {
+  const key = `safety_${quizId}_wrong`;
+  const savedWrong = JSON.parse(localStorage.getItem(key) || "[]");
+
+  const merged = Array.from(new Set([...savedWrong, ...newWrong]));
+  localStorage.setItem(key, JSON.stringify(merged));
 }
 
 // ==============================
@@ -209,7 +224,7 @@ function evaluateQuiz() {
 function renderResult(points, maxPoints, percent, results) {
   const main = document.querySelector("main");
 
-  main.innerHTML = `
+  let html = `
     <div class="result-summary">
       <h2>Ergebnis</h2>
       <p><b>${points}</b> von <b>${maxPoints}</b> Punkten</p>
@@ -221,6 +236,25 @@ function renderResult(points, maxPoints, percent, results) {
       </div>
     </div>
   `;
+
+  results.forEach(r => {
+    if (!r.isCorrect) {
+      const userTexts = getTextById(r.givenAnswers, r.answers);
+      const correctTexts = getTextById(r.correctAnswers, r.answers);
+
+      html += `
+        <div class="result-card wrong">
+          <p class="question">${r.question}</p>
+          <p>❌ Deine Antwort:</p>
+          <ul>${userTexts.map(t => `<li>${t}</li>`).join("") || "<li>—</li>"}</ul>
+          <p>✅ Richtige Antwort:</p>
+          <ul>${correctTexts.map(t => `<li>${t}</li>`).join("")}</ul>
+        </div>
+      `;
+    }
+  });
+
+  main.innerHTML = html;
 }
 
 // ==============================
@@ -230,18 +264,21 @@ function saveStats(percent) {
   const attemptsKey = `safety_${quizId}_attempts`;
   const bestKey = `safety_${quizId}_best`;
 
-  localStorage.setItem(attemptsKey,
-    Number(localStorage.getItem(attemptsKey) || 0) + 1);
+  localStorage.setItem(
+    attemptsKey,
+    Number(localStorage.getItem(attemptsKey) || 0) + 1
+  );
 
-  localStorage.setItem(bestKey,
-    Math.max(percent, Number(localStorage.getItem(bestKey) || 0)));
+  localStorage.setItem(
+    bestKey,
+    Math.max(percent, Number(localStorage.getItem(bestKey) || 0))
+  );
 }
 
 // ==============================
 // Quiz neu starten
 // ==============================
 function restartQuiz() {
-  localStorage.removeItem(`safety_${quizId}_finished`);
   currentIndex = 0;
   userAnswers = {};
   isRetryMode = false;
@@ -255,13 +292,16 @@ function restartQuiz() {
 function renderQuizUI() {
   const main = document.querySelector("main");
   main.innerHTML = `
-    <div class="card"><p id="questionText"></p></div>
+    <div class="card">
+      <p id="questionText"></p>
+    </div>
     <div id="answers" class="action-buttons"></div>
     <div class="nav">
       <button class="btn warn" onclick="prevQuestion()">⬅ Zurück</button>
       <button class="btn warn" onclick="nextQuestion()">➡ Weiter</button>
     </div>
   `;
+
   renderQuestion();
   updateProgress();
 }
