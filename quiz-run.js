@@ -1,4 +1,4 @@
-console.log("QUIZ-RUN.JS VERSION 7 GELADEN");
+console.log("QUIZ-RUN.JS VERSION 8 GELADEN");
 
 // ==============================
 // GRUNDVARIABLEN
@@ -76,12 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Nur setzen, wenn quiz noch null ist (kein Retry, kein global)
   if (!quiz && quizId) quiz = quizzes[quizId];
 
   document.getElementById("quizTitle").innerText = `📝 ${quizId ? quizId.toUpperCase() : "Fehler-Lernmodus"}`;
 
-  // Falsch beantwortete Fragen aus localStorage laden (für normale Quiz-Session)
+  // Falsch beantwortete Fragen aus localStorage laden
   if (!isRetryMode && quizId) {
     const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
     if (savedWrong.length > 0 && !params.get("showResult")) {
@@ -89,9 +88,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Direkt Ergebnis anzeigen?
+  // =======================
+  // AUTOMATISCH ERGEBNIS ANZEIGEN
+  // =======================
+  const bestPercent = Number(localStorage.getItem(`safety_${quizId}_best`) || 0);
+  if (!isRetryMode && !isGlobalMode && bestPercent > 0) {
+    const maxPoints = quiz.reduce((sum, q) => sum + q.points, 0);
+    const points = Math.round((bestPercent / 100) * maxPoints);
+    renderResult(points, maxPoints, bestPercent, []);
+    return;
+  }
+
+  // Direkt über Parameter Ergebnis anzeigen?
   if (params.get("showResult") === "1") {
-    const bestPercent = Number(localStorage.getItem(`safety_${quizId}_best`) || 0);
     const maxPoints = quiz.reduce((sum, q) => sum + q.points, 0);
     const points = Math.round((bestPercent / 100) * maxPoints);
     renderResult(points, maxPoints, bestPercent, []);
