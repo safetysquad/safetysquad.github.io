@@ -22,7 +22,7 @@ const quizzes = {
         { id: "d", text: "Private Sicherheitsmitarbeiter müssen grundsätzlich überall und ausnahmslos eine Dienstkleidung tragen" }
       ],
       correct: ["a"],
-      : 1
+      points: 1
     },
     {
       id: 3,
