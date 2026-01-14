@@ -1,4 +1,4 @@
-console.log("QUIZ-RUN.JS VERSION 12 GELADEN");
+console.log("QUIZ-RUN.JS VERSION 13 GELADEN");
 
 // ==============================
 // GRUNDVARIABLEN
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
           givenAnswers: [],
           answers: q.answers,
           isCorrect: false,
-          id: q.id // ✅ ID hinzufügen!
+          id: q.id
         }))
       : [];
 
@@ -211,16 +211,17 @@ function evaluateQuiz() {
       givenAnswers: userAnswers[q.id] || [],
       answers: q.answers,
       isCorrect,
-      id: q.id // ✅ ID speichern
+      id: q.id
     });
   });
 
   const percent = Math.round((points / maxPoints) * 100);
 
-  if (!isRetryMode) {
-    saveStats(percent);
-    updatePersistentWrong(newlyWrong, results);
-  }
+  // ✅ Immer aktualisieren, auch im Retry-Modus
+  updatePersistentWrong(newlyWrong, results);
+
+  // Nur normalen Fortschritt speichern, nicht im Retry-Modus
+  if (!isRetryMode) saveStats(percent);
 
   renderResult(points, maxPoints, percent, results);
 }
@@ -333,7 +334,7 @@ function restartQuiz() {
 }
 
 // ==============================
-// Quiz UI rendern (für Wiederholung & Retry)
+// Quiz UI rendern
 // ==============================
 function renderQuizUI() {
   const main = document.querySelector("main");
@@ -352,7 +353,6 @@ function renderQuizUI() {
     <div class="progress-bar-container">
       <div id="progressBar" class="progress-bar"></div>
     </div>
-
   `;
   renderQuestion();
   updateProgress();
