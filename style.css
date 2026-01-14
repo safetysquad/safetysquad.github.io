@@ -428,3 +428,34 @@ main {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
+/* ===============================
+   QUIZ STATISTIK – FIX 4 PRO REIHE
+   =============================== */
+
+.quiz-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+/* Kacheln */
+.quiz-stats-grid > div {
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+/* Größere Screens etwas luftiger */
+@media (min-width: 768px) {
+  .quiz-stats-grid {
+    gap: 0.75rem;
+  }
+
+  .quiz-stats-grid > div {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+}
