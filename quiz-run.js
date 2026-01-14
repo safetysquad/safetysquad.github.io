@@ -97,9 +97,18 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // Prüfen, ob Quiz bereits abgeschlossen wurde
+const bestPercent = Number(localStorage.getItem(`safety_${quizId}_best`) || 0);
+if (bestPercent > 0 && !params.get("retryWrong") && !isGlobalMode) {
+  const maxPoints = quiz.reduce((sum, q) => sum + q.points, 0);
+  const points = Math.round((bestPercent / 100) * maxPoints);
+  renderResult(points, maxPoints, bestPercent, []); // direkt Ergebnis anzeigen
+} else {
   renderQuizUI();
   renderQuestion();
   updateProgress();
+}
+
 });
 
 // ==============================
