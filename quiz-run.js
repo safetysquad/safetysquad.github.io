@@ -1,4 +1,4 @@
-console.log("QUIZ-RUN.JS VERSION 10 GELADEN");
+console.log("QUIZ-RUN.JS VERSION 11 GELADEN");
 
 // ==============================
 // GRUNDVARIABLEN
@@ -7,7 +7,6 @@ let quiz = null;
 let quizId = null;
 let currentIndex = 0;
 let userAnswers = {};
-let wrongQuestions = [];
 let isRetryMode = false;
 let isGlobalMode = false;
 
@@ -64,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (savedWrong.length > 0) {
       isRetryMode = true;
       quiz = quizzes[quizId].filter(q => savedWrong.includes(q.id));
-      wrongQuestions = quiz.slice();
       renderQuizUI();
       return;
     }
@@ -95,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ? quiz.filter(q => savedWrong.includes(q.id)).map(q => ({
           question: q.question,
           correctAnswers: q.correct,
-          givenAnswers: [], // Keine User-Antworten nötig, nur Anzeige
+          givenAnswers: [],
           answers: q.answers,
           isCorrect: false
         }))
@@ -234,10 +232,8 @@ function updatePersistentWrong(newWrong, results) {
   // Richtige Fragen entfernen
   results.forEach(r => {
     if (r.isCorrect) {
-      r.correctAnswers.forEach(id => {
-        const index = savedWrong.indexOf(id);
-        if (index > -1) savedWrong.splice(index, 1);
-      });
+      const index = savedWrong.indexOf(r.id || r.question); // id oder question als Backup
+      if (index > -1) savedWrong.splice(index, 1);
     }
   });
 
@@ -261,11 +257,7 @@ function renderResult(points, maxPoints, percent, results) {
       <p><b>${points}</b> von <b>${maxPoints}</b> Punkten</p>
       <p><b>${percent}%</b> erreicht</p>
 
-      ${
-        percent === 100
-          ? `<div class="badge success">✅ Bestanden</div>`
-          : `<div class="badge warn">❌ Noch nicht bestanden</div>`
-      }
+      ${percent === 100 ? `<div class="badge success">✅ Bestanden</div>` : `<div class="badge warn">❌ Noch nicht bestanden</div>`}
 
       <div class="result-actions">
         <button class="btn" onclick="restartQuiz()">🔁 Test wiederholen</button>
@@ -380,17 +372,14 @@ function retryWrongQuestions() {
     });
     if (allWrongQuestions.length === 0) return;
     quiz = allWrongQuestions;
-    currentIndex = 0;
-    userAnswers = {};
-    isRetryMode = true;
   } else if (quizId) {
     const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
     if (savedWrong.length === 0) return;
     quiz = quizzes[quizId].filter(q => savedWrong.includes(q.id));
-    currentIndex = 0;
-    userAnswers = {};
-    isRetryMode = true;
   }
 
+  currentIndex = 0;
+  userAnswers = {};
+  isRetryMode = true;
   renderQuizUI();
 }
