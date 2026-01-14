@@ -1,4 +1,4 @@
-console.log("QUIZ-RUN.JS VERSION 11 GELADEN");
+console.log("QUIZ-RUN.JS VERSION 12 GELADEN");
 
 // ==============================
 // GRUNDVARIABLEN
@@ -95,7 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
           correctAnswers: q.correct,
           givenAnswers: [],
           answers: q.answers,
-          isCorrect: false
+          isCorrect: false,
+          id: q.id // ✅ ID hinzufügen!
         }))
       : [];
 
@@ -209,7 +210,8 @@ function evaluateQuiz() {
       correctAnswers: q.correct,
       givenAnswers: userAnswers[q.id] || [],
       answers: q.answers,
-      isCorrect
+      isCorrect,
+      id: q.id // ✅ ID speichern
     });
   });
 
@@ -227,12 +229,12 @@ function evaluateQuiz() {
 // Persistent Falsch Fragen
 // ==============================
 function updatePersistentWrong(newWrong, results) {
-  const savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
+  let savedWrong = JSON.parse(localStorage.getItem(`safety_${quizId}_wrong`) || "[]");
 
   // Richtige Fragen entfernen
   results.forEach(r => {
     if (r.isCorrect) {
-      const index = savedWrong.indexOf(r.id || r.question); // id oder question als Backup
+      const index = savedWrong.indexOf(r.id);
       if (index > -1) savedWrong.splice(index, 1);
     }
   });
