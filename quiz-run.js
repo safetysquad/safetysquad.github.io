@@ -1,4 +1,4 @@
-console.log("QUIZ-RUN.JS VERSION 13 GELADEN");
+console.log("QUIZ-RUN.JS VERSION 14 GELADEN");
 
 // ==============================
 // GRUNDVARIABLEN
@@ -292,8 +292,13 @@ function renderResult(points, maxPoints, percent, results) {
 
           <p class="answer user">❌ Deine Antwort:</p>
           <ul class="answer-list user">
-            ${userTexts.length ? userTexts.map(t => `<li>${t}</li>`).join("") : "<li>—</li>"}
-          </ul>
+  ${
+    r.givenAnswers && r.givenAnswers.length
+      ? userTexts.map(t => `<li>${t}</li>`).join("")
+      : "<li><i>(Antwort wurde nur im letzten Durchlauf angezeigt)</i></li>"
+  }
+</ul>
+
 
           <p class="answer correct">✅ Richtige Antwort:</p>
           <ul class="answer-list correct">
