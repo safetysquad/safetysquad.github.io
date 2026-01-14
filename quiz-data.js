@@ -34,7 +34,7 @@ const quizzes = {
         { id: "d", text: "Bewachung von zugangsgeschützten Großveranstaltungen in leitender Funktion" }
       ],
       correct: ["a", "c"],
-      : 2
+      points: 2
     },
     {
       id: 4,
@@ -46,7 +46,7 @@ const quizzes = {
         { id: "d", text: "Die Gewerbeordnung" }
       ],
       correct: ["c", "d"],
-      : 2
+      points: 2
     },
     {
       id: 5,
@@ -58,7 +58,7 @@ const quizzes = {
         { id: "d", text: "Name, Vorname des Sicherheitsmitarbeiters, Gültigkeitsdauer des Ausweises, Privatanschrift und Geburtsdatum des Sicherheitsmitarbeiters" }
       ],
       correct: ["b", "c"],
-      : 2
+      points: 2
     },
 
     {
@@ -71,7 +71,7 @@ const quizzes = {
         { id: "d", text: "Bewachung liegt selbst dann vor, wenn ausschließlich Alarmmeldungen entgegengenommen werden" }
       ],
       correct: ["a", "b"],
-      : 2
+      points: 2
     },
 
     {
@@ -84,7 +84,7 @@ const quizzes = {
         { id: "d", text: "Es muss eine Dienstmütze getragen werden" }
       ],
       correct: ["b"],
-      : 1
+      points: 1
     },
 
     {
@@ -416,24 +416,23 @@ quiz2: [
     correct: ["c","d"],
     points: 2
   },
-  {
-    id: 9,
-    question: "Welche der nachfolgenden Aussagen ist in Bezug auf diese Gewalten korrekt?
-1.	sie ist aufgeteilt in drei Staatsgewalten - Legislative; Executive; Judikative
-2.	die Staatsgewalten sind nicht an das deutsche Recht gebunden
-3.	die Legislative ist die gesetzgebende Gewalt
-4.	die Exekutive ist vertreten durch den Richter
-5.	die Staatsgewalten sind an Recht und Gesetz gebunden
-6.	zur Judikativen gehören ausnahmslos alle Beschäftigten in einem Gericht (Richter, Schöffen, Justizvollzugsbeamte)
-",
-    answers: [
-      { id: "a", text: "die Antworten 1, 3 und 5 sind richtig" },
-      { id: "b", text: "die Antworten 2, 4 und 6 sind richtig" },
-      { id: "c", text: "die Antworten 1 , 2 und 5 sind richtig" }
-    ],
-    correct: ["a"],
-    points: 1
-  },
+{
+  id: 9,
+  question: `Welche der nachfolgenden Aussagen ist in Bezug auf diese Gewalten korrekt?
+1. sie ist aufgeteilt in drei Staatsgewalten - Legislative; Executive; Judikative
+2. die Staatsgewalten sind nicht an das deutsche Recht gebunden
+3. die Legislative ist die gesetzgebende Gewalt
+4. die Exekutive ist vertreten durch den Richter
+5. die Staatsgewalten sind an Recht und Gesetz gebunden
+6. zur Judikativen gehören ausnahmslos alle Beschäftigten in einem Gericht (Richter, Schöffen, Justizvollzugsbeamte)`,
+  answers: [
+    { id: "a", text: "die Antworten 1, 3 und 5 sind richtig" },
+    { id: "b", text: "die Antworten 2, 4 und 6 sind richtig" },
+    { id: "c", text: "die Antworten 1 , 2 und 5 sind richtig" }
+  ],
+  correct: ["a"],
+  points: 1
+},
   {
     id: 10,
     question: "Welche Rechte haben SMA gegenüber anderen Bürgern bei der Durchführung von Bewachungsaufgaben?",
