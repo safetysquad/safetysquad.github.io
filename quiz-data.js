@@ -737,23 +737,23 @@ quiz3: [
     points: 2
   },
   {
-    id: 10,
-    question: "Gemäß Bewachungsverordnung müssen Sie einen Bewacherausweis mitführen in diesem Bewacherausweis müssen verschiedene Informationen zwingend hinterlegt sein:
-1.	es muss die Unterschrift vom Gewerbetreibenden enthalten sein
-2.	es muss die Bewacheridentnummer von der Wachperson und vom Gewerbetreibenden enthalten sein
-3.	es muss der Vor- und Nachname und die Unterschrift der Wachperson enthalten sein
-4.	es muss die Bewacheridentnummer des Gewerbebetriebes und der Wachperson enthalten sein
-5.	es muss die Anschrift des Gewerbebetriebes und der Wachperson enthalten sein
-",
-    answers: [
-      { id: "a", text: "Antwort 1; 3 und 4 sind richtig" },
-      { id: "b", text: "Antwort 2 und 4 sind richtig" },
-      { id: "c", text: "Antwort 1; 3 und 5 sind richtig" },
-      { id: "d", text: "Antwort 1; 2 und 3 sind richtig" }
-    ],
-    correct: ["a"],
-    points: 1
-  },
+  id: 10,
+  question: `Gemäß Bewachungsverordnung müssen Sie einen Bewacherausweis mitführen. 
+In diesem Bewacherausweis müssen verschiedene Informationen zwingend hinterlegt sein:
+1. es muss die Unterschrift vom Gewerbetreibenden enthalten sein
+2. es muss die Bewacheridentnummer von der Wachperson und vom Gewerbetreibenden enthalten sein
+3. es muss der Vor- und Nachname und die Unterschrift der Wachperson enthalten sein
+4. es muss die Bewacheridentnummer des Gewerbebetriebes und der Wachperson enthalten sein
+5. es muss die Anschrift des Gewerbebetriebes und der Wachperson enthalten sein`,
+  answers: [
+    { id: "a", text: "Antwort 1; 3 und 4 sind richtig" },
+    { id: "b", text: "Antwort 2 und 4 sind richtig" },
+    { id: "c", text: "Antwort 1; 3 und 5 sind richtig" },
+    { id: "d", text: "Antwort 1; 2 und 3 sind richtig" }
+  ],
+  correct: ["a"],
+  points: 1
+},
   {
     id: 11,
     question: "Welche Aussagen zur Anzeigepflicht eines selbstständigen Betriebes sind gemäß GewO richtig?",
@@ -976,25 +976,24 @@ quiz4: [
     points: 1
   },
 
-  {
-    id: 4,
-    question: "Es gibt in Deutschland eine "horizontale" Gewaltenteilung.
+ {
+  id: 4,
+  question: `Es gibt in Deutschland eine "horizontale" Gewaltenteilung.
 Welche der nachfolgenden Aussagen ist in Bezug auf diese Gewalten korrekt?
-1.	sie ist aufgeteilt in drei Staatsgewalten - Legislative; Executive; Judikative
-2.	die Staatsgewalten sind nicht an das deutsche Recht gebunden
-3.	die Legislative ist die gesetzgebende Gewalt
-4.	die Exekutive ist vertreten durch den Richter
-5.	die Staatsgewalten sind an Recht und Gesetz gebunden
-6.	zur Judikativen gehören ausnahmslos alle Beschäftigten in einem Gericht (Richter, Schöffen, Justizvollzugsbeamte)
-",
-    answers: [
-      { id: "a", text: "Die Antworten 1, 2 und 5 sind richtig" },
-      { id: "b", text: "Die Antworten 1, 3 und 5 sind richtig" },
-      { id: "c", text: "Die Antworten 2, 4 und 6 sind richtig" }
-    ],
-    correct: ["b"],
-    points: 1
-  },
+1. sie ist aufgeteilt in drei Staatsgewalten - Legislative; Executive; Judikative
+2. die Staatsgewalten sind nicht an das deutsche Recht gebunden
+3. die Legislative ist die gesetzgebende Gewalt
+4. die Exekutive ist vertreten durch den Richter
+5. die Staatsgewalten sind an Recht und Gesetz gebunden
+6. zur Judikativen gehören ausnahmslos alle Beschäftigten in einem Gericht (Richter, Schöffen, Justizvollzugsbeamte)`,
+  answers: [
+    { id: "a", text: "Die Antworten 1, 2 und 5 sind richtig" },
+    { id: "b", text: "Die Antworten 1, 3 und 5 sind richtig" },
+    { id: "c", text: "Die Antworten 2, 4 und 6 sind richtig" }
+  ],
+  correct: ["b"],
+  points: 1
+},
 
   {
     id: 5,
