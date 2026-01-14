@@ -9,7 +9,7 @@ const quizzes = {
         { id: "c", text: "Name des Türstehers oder eine Kennnummer, die er vom Bewachungsgewerbetreibenden erhalten hat" },
         { id: "d", text: "Name und Anschrift des Türstehers" }
       ],
-      correct: "c"],
+      correct: ["c"],
       points: 2
     },
     {
