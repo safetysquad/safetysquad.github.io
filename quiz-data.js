@@ -33,7 +33,7 @@ const quizzes = {
         { id: "c", text: "Einsatz als sogenannte Wellenbrecher vor der Bühne zum Schutz der Musiker" },
         { id: "d", text: "Bewachung von zugangsgeschützten Großveranstaltungen in leitender Funktion" }
       ],
-      correct: "c"],
+      correct: ["c"],
       points: 2
     },
     {
@@ -70,7 +70,7 @@ const quizzes = {
         { id: "c", text: "Bewachung liegt vor, wenn ein Unternehmer seinen Betrieb durch eigene Mitarbeiter bewachen lässt" },
         { id: "d", text: "Bewachung liegt selbst dann vor, wenn ausschließlich Alarmmeldungen entgegengenommen werden" }
       ],
-      correct: "b"],
+      correct: ["b"],
       points: 2
     },
 
