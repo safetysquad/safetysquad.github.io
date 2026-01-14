@@ -404,6 +404,120 @@ const cards = [
   question: "Was ist ein Besitzdiener?",
   answer: "Ein Besitzdiener ist, wer für den Besitzer dessen Selbsthilferechte und das Hausrecht weisungsgebunden in dessen Haushalt oder Erwerbsgeschäft ausübt."
 },
-
+  {
+    id: 82,
+    question: "Welche Regelungen sind enthalten?\na. Im allgemeinen Teil des Strafgesetzbuchs?\nb. Im besonderen Teil des Strafgesetzbuchs?",
+    answer: "a. Der allgemeine Teil enthält allgemeine Regelungen, die für alle Tatbestände des besonderen Teils gelten.\nb. Der Besondere Teil enthält die Straftaten und die dazugehörigen Strafbestände."
+  },
+  {
+    id: 83,
+    question: "Was ist eine Handlung? Was ist Unterlassen?",
+    answer: "Eine Handlung ist jedes vom menschlichen Willen getragene aktive Tun.\nUnterlassen bedeutet, dass ich etwas nicht tue, obwohl es mir geboten ist bzw. ich rechtlich dazu verpflichtet wäre."
+  },
+  {
+    id: 84,
+    question: "Sind alle Straftatbestände im Strafgesetzbuch enthalten?",
+    answer: "Die meisten Straftaten stehen im StGB. Weitere Straftaten sind in Nebengesetzen wie dem Waffengesetz oder Betäubungsmittelgesetz enthalten."
+  },
+  {
+    id: 85,
+    question: "Aus welchen 4 Elementen besteht eine verfolgbare Straftat?",
+    answer: "Tatbestandsmäßigkeit\nRechtswidrigkeit\nSchuld\nVerfahrensvoraussetzung"
+  },
+  {
+    id: 86,
+    question: "Aus welchen beiden Elementen besteht die Tatbestandsmäßigkeit?",
+    answer: "Objektiver Tatbestand (sichtbarer Tatbestand)\nSubjektiver Tatbestand (unsichtbarer Tatbestand, Gedankenwelt des Täters)"
+  },
+  {
+    id: 87,
+    question: "In welchen Bereichen ist auch die fahrlässige Begehung eines Straftatbestandes strafbar?",
+    answer: "Eselsbrücke: (Waffen) – K L U B\nKörper\nLeben\nUmwelt\nBrand"
+  },
+  {
+    id: 88,
+    question: "In welchen Rechtsgebiet / Gesetz sprechen wir von:\na. Rechtswidrigkeit?\nb. Widerrechtlichkeit?",
+    answer: "a. Im StGB\nb. Im BGB"
+  },
+  {
+    id: 89,
+    question: "Welches Jedermannsrecht finden wir inhaltsgleich in 2 Gesetzen? Welche Rechtsfolgen treten ein?",
+    answer: "§32 StGB Notwehr: schützt vor Strafverfolgung\n§227 BGB Notwehr: schützt vor Ansprüchen"
+  },
+  {
+    id: 90,
+    question: "Ab welchem Alter ist ein Kind schuldfähig?",
+    answer: "Ab 14 Jahren"
+  },
+  {
+    id: 91,
+    question: "Aus welchem Grund kann ein Erwachsener schuldunfähig sein?",
+    answer: "Aufgrund krankhafter seelischer Störung"
+  },
+  {
+    id: 92,
+    question: "Welcher Verfahrensvoraussetzung bedarf es bei einem absoluten Antragsdelikt?",
+    answer: "Strafantrag (Frist 3 Monate nach Bekanntwerden der Straftat)"
+  },
+  {
+    id: 93,
+    question: "Was unterscheidet echte und unechte Unterlassungsdelikte?",
+    answer: "Echte Unterlassungsdelikte: kann grundsätzlich jeder begehen (z.B. §123 StGB Hausfriedensbruch, §138 StGB Nichtanzeigen geplanter Straftaten, §323 StGB Unterlassen von Hilfeleistung)\nUnechte Unterlassungsdelikte: §13 StGB Begehen durch Unterlassen (Garantenstellung)"
+  },
+  {
+    id: 94,
+    question: "Was bedeutet Vorsatz? Was bedeutet Fahrlässigkeit?",
+    answer: "Vorsatz: mit Wissen und Wollen\nFahrlässigkeit: die gebotene Sorgfalt nicht beachten"
+  },
+  {
+    id: 95,
+    question: "Was ist ein Versuch? Und wann ist der Versuch einer Straftat strafbar?",
+    answer: "Versuch: Der Täter setzt unmittelbar zu einer Straftat an nach eigenen Vorstellungen von der Tat.\nDer Versuch eines Verbrechens ist stets strafbar.\nDer Versuch eines Vergehens ist nur dann strafbar, wenn es ausdrücklich im Gesetz bestimmt ist."
+  },
+  {
+    id: 96,
+    question: "Wie unterscheidet man Vergehen und Verbrechen?",
+    answer: "Vergehen: rechtswidrige Taten, die im Mindestmaß mit Freiheitsstrafe unter 1 Jahr oder Geldstrafe bedroht sind.\nVerbrechen: rechtswidrige Taten, die im Mindestmaß mit Freiheitsstrafe nicht unter 1 Jahr bedroht sind."
+  },
+  {
+    id: 97,
+    question: "Wie unterscheidet man Antragsdelikte und Offizialdelikte?",
+    answer: "Bei Antragsdelikten ist der Strafantrag Voraussetzung für die Strafverfolgung.\nBei Offizialdelikten verfolgt der Staat die Straftaten automatisch."
+  },
+  {
+    id: 98,
+    question: "Was unterscheidet absolute Antragsdelikte von relativen Antragsdelikten?",
+    answer: "Absolute Antragsdelikte: bedarf es immer eines Strafantrags (z.B. Beleidigung)\nRelative Antragsdelikte: können auch ohne Strafantrag verfolgt werden, sofern öffentliches Interesse vorliegt (z.B. Körperverletzung)"
+  },
+  {
+    id: 99,
+    question: "Wann ist man Garant?",
+    answer: "Rechtliche Verpflichtung nennt man Garantenstellung bzw. Garantenpflicht.\nGarantenpflichten ergeben sich u.a. aus: Vertrag (z.B. Bewachungsauftrag), Schaffung von Gefahren (z.B. Öffnen eines Kanalschachts), ..."
+  },
+  {
+    id: 100,
+    question: "Was versteht man unter Putativnotwehr?",
+    answer: "Es handelt sich hierbei um eine irrtümlich angenommene Notwehrsituation"
+  },
+  {
+    id: 101,
+    question: "Was ist ein Notwehrexzess?",
+    answer: "Eine Überschreitung der Notwehr aus Furcht, Verwirrung oder Schrecken."
+  },
+  {
+    id: 102,
+    question: "Welche Verbrechen sind für das Sicherheitsgewerbe relevant?",
+    answer: "§§154, 226, 249, 252, 255, 306 StGB"
+  },
+  {
+    id: 103,
+    question: "Welche Schuldausschließungsgründe kennen Sie?",
+    answer: "Schuldunfähigkeit des Kindes\nSeelische Störung\nVerbotsirrtum\n(Verminderte Schuldfähigkeit)"
+  },
+  {
+    id: 104,
+    question: "Welche Entschuldigungsgründe kennen Sie?",
+    answer: "Überschreitung der Notwehr / Notwehrexzess\nEntschuldigender Notstand"
+  },
 
 ];
