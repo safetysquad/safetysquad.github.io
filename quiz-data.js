@@ -34,7 +34,7 @@ const quizzes = {
         { id: "d", text: "Bewachung von zugangsgeschützten Großveranstaltungen in leitender Funktion" }
       ],
       correct: ["a", "c"],
-      points: 2
+      : 2
     },
     {
       id: 4,
@@ -46,7 +46,7 @@ const quizzes = {
         { id: "d", text: "Die Gewerbeordnung" }
       ],
       correct: ["c", "d"],
-      points: 2
+      : 2
     },
     {
       id: 5,
@@ -58,7 +58,7 @@ const quizzes = {
         { id: "d", text: "Name, Vorname des Sicherheitsmitarbeiters, Gültigkeitsdauer des Ausweises, Privatanschrift und Geburtsdatum des Sicherheitsmitarbeiters" }
       ],
       correct: ["b", "c"],
-      points: 2
+      : 2
     },
 
     {
@@ -71,7 +71,7 @@ const quizzes = {
         { id: "d", text: "Bewachung liegt selbst dann vor, wenn ausschließlich Alarmmeldungen entgegengenommen werden" }
       ],
       correct: ["a", "b"],
-      points: 2
+      : 2
     },
 
     {
@@ -84,7 +84,7 @@ const quizzes = {
         { id: "d", text: "Es muss eine Dienstmütze getragen werden" }
       ],
       correct: ["b"],
-      points: 1
+      : 1
     },
 
     {
@@ -418,7 +418,14 @@ quiz2: [
   },
   {
     id: 9,
-    question: "Es gibt in Deutschland eine \"horizontale\" Gewaltenteilung. Welche der nachfolgenden Aussagen ist korrekt?",
+    question: "Welche der nachfolgenden Aussagen ist in Bezug auf diese Gewalten korrekt?
+1.	sie ist aufgeteilt in drei Staatsgewalten - Legislative; Executive; Judikative
+2.	die Staatsgewalten sind nicht an das deutsche Recht gebunden
+3.	die Legislative ist die gesetzgebende Gewalt
+4.	die Exekutive ist vertreten durch den Richter
+5.	die Staatsgewalten sind an Recht und Gesetz gebunden
+6.	zur Judikativen gehören ausnahmslos alle Beschäftigten in einem Gericht (Richter, Schöffen, Justizvollzugsbeamte)
+",
     answers: [
       { id: "a", text: "die Antworten 1, 3 und 5 sind richtig" },
       { id: "b", text: "die Antworten 2, 4 und 6 sind richtig" },
@@ -731,7 +738,13 @@ quiz3: [
   },
   {
     id: 10,
-    question: "Gemäß Bewachungsverordnung müssen Sie einen Bewacherausweis mitführen. Welche Informationen müssen zwingend hinterlegt sein?",
+    question: "Gemäß Bewachungsverordnung müssen Sie einen Bewacherausweis mitführen in diesem Bewacherausweis müssen verschiedene Informationen zwingend hinterlegt sein:
+1.	es muss die Unterschrift vom Gewerbetreibenden enthalten sein
+2.	es muss die Bewacheridentnummer von der Wachperson und vom Gewerbetreibenden enthalten sein
+3.	es muss der Vor- und Nachname und die Unterschrift der Wachperson enthalten sein
+4.	es muss die Bewacheridentnummer des Gewerbebetriebes und der Wachperson enthalten sein
+5.	es muss die Anschrift des Gewerbebetriebes und der Wachperson enthalten sein
+",
     answers: [
       { id: "a", text: "Antwort 1; 3 und 4 sind richtig" },
       { id: "b", text: "Antwort 2 und 4 sind richtig" },
@@ -965,7 +978,15 @@ quiz4: [
 
   {
     id: 4,
-    question: "Welche Aussagen zur Gewaltenteilung sind korrekt?",
+    question: "Es gibt in Deutschland eine "horizontale" Gewaltenteilung.
+Welche der nachfolgenden Aussagen ist in Bezug auf diese Gewalten korrekt?
+1.	sie ist aufgeteilt in drei Staatsgewalten - Legislative; Executive; Judikative
+2.	die Staatsgewalten sind nicht an das deutsche Recht gebunden
+3.	die Legislative ist die gesetzgebende Gewalt
+4.	die Exekutive ist vertreten durch den Richter
+5.	die Staatsgewalten sind an Recht und Gesetz gebunden
+6.	zur Judikativen gehören ausnahmslos alle Beschäftigten in einem Gericht (Richter, Schöffen, Justizvollzugsbeamte)
+",
     answers: [
       { id: "a", text: "Die Antworten 1, 2 und 5 sind richtig" },
       { id: "b", text: "Die Antworten 1, 3 und 5 sind richtig" },
@@ -1296,7 +1317,7 @@ quiz5: [
       { id: "c", text: "Grundsätzlich ist die Erhebung, Verarbeitung und Nutzung personenbezogener Daten erlaubt, soweit kein Straftatbestand aus dem Strafgesetzbuch (StGB) erfüllt wird" }
     ],
     correct: ["a"],
-    points: 0
+    points: 1
   },
   {
     id: 5,
@@ -1380,7 +1401,7 @@ quiz5: [
       { id: "d", text: "Prinzip der Datenvermeidung" }
     ],
     correct: ["b", "d"],
-    points: 0
+    points: 2
   },
   {
     id: 12,
@@ -1439,7 +1460,7 @@ quiz5: [
       { id: "d", text: "Wenn es der Betroffene ausdrücklich verlangt" }
     ],
     correct: ["a", "b"],
-    points: 1
+    points: 2
   },
   {
     id: 17,
@@ -1486,7 +1507,7 @@ quiz5: [
       { id: "c", text: "Verlangt jemand Auskunft über die Daten, die zu seiner Person gespeichert sind, muss er dafür die Kosten tragen" }
     ],
     correct: ["a", "b"],
-    points: 1
+    points: 2
   },
   {
     id: 21,
@@ -1510,7 +1531,7 @@ quiz5: [
       { id: "d", text: "Wenn die mit der Verarbeitung personenbezogener Daten betrauten Personen ihre Tätigkeit beenden, besteht das Datengeheimnis fort" }
     ],
     correct: ["c", "d"],
-    points: 1
+    points: 2
   },
   {
     id: 23,
