@@ -351,7 +351,6 @@ function renderQuizUI() {
       <div id="progressBar" class="progress-bar"></div>
     </div>
 
-    <p id="counter">Test 1 von ${quiz.length}</p>
   `;
   renderQuestion();
   updateProgress();
