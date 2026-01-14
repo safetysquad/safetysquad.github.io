@@ -63,7 +63,7 @@ const quizzes = {
 
     {
       id: 6,
-      question: "Welche Aussagen zum Begriff „Bewachung\" sind gemäß § 34a GewO richtig?",
+      question: "Welche Aussagen zum Begriff Bewachung sind gemäß § 34a GewO richtig?",
       answers: [
         { id: "a", text: "Bewachung liegt vor, wenn gewerbsmäßig das Leben oder das Eigentum fremder Personen vor Eingriffen Dritter geschützt wird" },
         { id: "b", text: "Bewachung liegt vor, wenn beispielsweise ein Ladendetektiv durch wiederkehrende Kontrollen fremdes Eigentum schützt" },
