@@ -183,5 +183,5 @@ const cards2 = [
     "id": 37,
     "question": "§323c StGB Unterlassene Hilfeleistung",
     "answer": "Unterlassen erforderlicher und zumutbarer Hilfeleistung bei Personen in Not."
-  }
+  },
 ];
