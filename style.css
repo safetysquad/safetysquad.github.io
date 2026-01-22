@@ -119,9 +119,10 @@ main {
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  background: #22c55e;   /* Hauptaktion */
+  background: #22c55e;
   color: #022c22;
   transition: transform 0.2s ease, background-color 0.2s ease;
+  margin: 0 auto;
 }
 
 .btn:hover {
@@ -226,7 +227,7 @@ main {
 
 .action-buttons {
   display: flex;
-  flex-direction: column;
+      flex-direction: column;
   gap: 10px;
 }
 
@@ -395,25 +396,13 @@ main {
    ANIMATIONEN
 ================================= */
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse {
@@ -452,35 +441,29 @@ main {
 }
 
 /* ===============================
-   DESKTOP-FREUNDLICH
+   DESKTOP-FREUNDLICH & ZENTRIERT
 ================================ */
 @media (min-width: 768px) {
   .app {
-    max-width: 100%;
-    margin: 0;
+    max-width: 900px;  /* angenehme Desktop-Breite */
+    margin: 0 auto;    /* zentriert auf Bildschirm */
     padding: 1rem 2rem;
   }
 
-  main {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
+  .btn {
+    max-width: 400px;  /* Buttons auf Desktop breiter, aber nicht riesig */
+    margin: 0 auto;
   }
 
   .card {
-    flex: 1 1 300px;
-    min-width: 280px;
+    max-width: 100%;
   }
 
-  .btn {
-    max-width: 300px;
-  }
-
+  /* Buttons weiterhin untereinander für sauberes Layout */
   .top-buttons,
   .action-buttons,
   .actions {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 12px;
   }
 }
