@@ -182,23 +182,23 @@ const quizzes = {
       points: 1
     },
     {
-      id: 16,
-      question: "Welche Aussagen zu Straftatbeständen nach dem StGB treffen zu?
-1. Die Unterschlagung (§ 246 StGB) liegt nur dann vor, wenn man eine Sache wegnimmt.,
-2. Beim räuberischen Diebstahl (§ 252 StGB) wird Gewalt angewendet, um eine bereits gestohlene Sache zu behalten.,
-3. Hehlerei (§ 259 StGB) bedeutet, dass man Ware die ein anderer gestohlen hat verkauft oder ankauft.,
-4. Der Tatbestand des Erschleichens von Leistungen (§ 265a StGB) ist z. B. erfüllt, wenn man ohne Fahrschein Bus fährt.,
-5. Bei der Urkundenfälschung (§ 267 StGB) reicht es bereits, eine unechte Urkunde herzustellen oder zu gebrauchen.",
-      answers: [
-        { id: "a", text: "nur 1, 3, 4 und 5" },
-        { id: "b", text: "nur 1 und 2" },
-        { id: "c", text: "alle Aussagen" },
-        { id: "d", text: "nur 2, 3 und 4" },
-        { id: "e", text: "nur 2, 3, 4 und 5" }
-      ],
-      correct: ["d"],
-      points: 1
-    },
+  id: 16,
+  question: `Welche Aussagen zu Straftatbeständen nach dem StGB treffen zu?
+1. Die Unterschlagung (§ 246 StGB) liegt nur dann vor, wenn man eine Sache wegnimmt
+2. Beim räuberischen Diebstahl (§ 252 StGB) wird Gewalt angewendet, um eine bereits gestohlene Sache zu behalten
+3. Hehlerei (§ 259 StGB) bedeutet, dass man Ware, die ein anderer gestohlen hat, verkauft oder ankauft
+4. Der Tatbestand des Erschleichens von Leistungen (§ 265a StGB) ist z. B. erfüllt, wenn man ohne Fahrschein Bus fährt
+5. Bei der Urkundenfälschung (§ 267 StGB) reicht es bereits, eine unechte Urkunde herzustellen oder zu gebrauchen`,
+  answers: [
+    { id: "a", text: "nur 1, 3, 4 und 5" },
+    { id: "b", text: "nur 1 und 2" },
+    { id: "c", text: "alle Aussagen" },
+    { id: "d", text: "nur 2, 3 und 4" },
+    { id: "e", text: "nur 2, 3, 4 und 5" }
+  ],
+  correct: ["d"],
+  points: 1
+},
     {
       id: 17,
       question: "Welche Merkmale machen die objektive Sorgfaltswidrigkeit aus?",
