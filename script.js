@@ -1,8 +1,9 @@
 // ===============================
 // === INITIAL STATE & DATENSET ===
 // ===============================
-const currentSet = document.body.dataset.set; // "cards" oder "cards1"
-const cardsActive = currentSet === "cards1" ? cards1 : cards;
+const currentSet = document.body.dataset.set;
+const cardsActive = { cards, cards1, cards2 }[currentSet] || cards;
+
 
 let currentIndex = 0;
 let showAnswer = false;
