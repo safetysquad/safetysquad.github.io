@@ -309,6 +309,307 @@ const quizzes = {
       ],
       correct: ["a", "c"],
       points: 2
+    },
+quiz2: [
+    {
+      id: 1,
+      question: 'Wann liegt eine "tätliche Beleidigung" gemäß § 185 StGB vor?',
+      answers: [
+        { id: "a", text: 'Beschimpfung mit Worten' },
+        { id: "b", text: 'Verbreiten von Unwahrheiten' },
+        { id: "c", text: 'Ins Gesicht spucken' },
+        { id: "d", text: 'Zeigen des Stinkefingers' }
+      ],
+      correct: ["c"],
+      points: 1
+    },
+    {
+      id: 2,
+      question: "Welche Aussagen zum Vorsatz und zur Fahrlässigkeit sind richtig?",
+      answers: [
+        { id: "a", text: "Vorsätzliches Handeln ist grundsätzlich bei Vergehen und Verbrechen strafbar" },
+        { id: "b", text: "Fahrlässiges Handeln ist bei Verbrechen stets strafbar" },
+        { id: "c", text: "Fahrlässiges Handeln ist nur in gesetzlich bestimmten Fällen strafbar" },
+        { id: "d", text: "Vorsätzliches Handeln ist nur bei Vergehen strafbar" }
+      ],
+      correct: ["a", "c"],
+      points: 2
+    },
+    {
+      id: 3,
+      question: "Wie lautet der dreistufige Deliktsaufbau?",
+      answers: [
+        { id: "a", text: "Schuld – Rechtswidrigkeit – Tatbestand" },
+        { id: "b", text: "Straftat – Schuld – Rechtswidrigkeit" },
+        { id: "c", text: "Handlung – Rechtswidrigkeit – Schuld" },
+        { id: "d", text: "Tatbestand – Rechtswidrigkeit – Schuld" }
+      ],
+      correct: ["d"],
+      points: 1
+    },
+    {
+      id: 4,
+      question: "Bei welchem Delikt ist fahrlässiges Handeln strafbar?",
+      answers: [
+        { id: "a", text: "Unterschlagung" },
+        { id: "b", text: "Diebstahl" },
+        { id: "c", text: "Sachbeschädigung" },
+        { id: "d", text: "Körperverletzung" }
+      ],
+      correct: ["d"],
+      points: 1
+    },
+    {
+      id: 5,
+      question: "Welche Aussagen zu Begehungs- und Unterlassungsdelikten sind richtig?",
+      answers: [
+        { id: "a", text: "Es gibt nur Unterlassungsdelikte" },
+        { id: "b", text: "Bei Garantenpflicht kann Unterlassen strafbar sein" },
+        { id: "c", text: "Aktives Tun kann strafbar sein" }
+      ],
+      correct: ["b", "c"],
+      points: 2
+    },
+    {
+      id: 6,
+      question: "Was sind echte Unterlassungsdelikte?",
+      answers: [
+        { id: "a", text: "Amtsanmaßung" },
+        { id: "b", text: "Nichtanzeige geplanter Straftaten" },
+        { id: "c", text: "Unterlassene Hilfeleistung" },
+        { id: "d", text: "Begünstigung" }
+      ],
+      correct: ["b", "c"],
+      points: 2
+    },
+    {
+      id: 7,
+      question: "Welche Aussagen zur Notwehr gemäß § 32 StGB sind richtig?",
+      answers: [
+        { id: "a", text: "Nur gegen den Angreifer" },
+        { id: "b", text: "Auch gegen Tiere" },
+        { id: "c", text: "Rechtfertigungsgrund" },
+        { id: "d", text: "Entschuldigungsgrund" }
+      ],
+      correct: ["a", "c"],
+      points: 2
+    },
+    {
+      id: 8,
+      question: "Was sind Merkmale einer Straftat?",
+      answers: [
+        { id: "a", text: "Tatbestandsmäßige Handlung" },
+        { id: "b", text: "Rechtsgutverletzung" },
+        { id: "c", text: "Rechtswidrigkeit und Schuld" }
+      ],
+      correct: ["a", "c"],
+      points: 2
+    },
+    {
+      id: 9,
+      question: "Welche Aussagen zur Strafbarkeit des Versuchs sind richtig?",
+      answers: [
+        { id: "a", text: "Versuch nur bei Verbrechen strafbar" },
+        { id: "b", text: "Versuch eines Vergehens nur bei gesetzlicher Regelung" },
+        { id: "c", text: "Versuch eines Verbrechens ist stets strafbar" }
+      ],
+      correct: ["b", "c"],
+      points: 2
+    },
+    {
+      id: 10,
+      question: "Wann liegt gefährliche Körperverletzung vor?",
+      answers: [
+        { id: "a", text: "Waffe oder gefährliches Werkzeug" },
+        { id: "b", text: "Hinterlistiger Überfall" },
+        { id: "c", text: "Kurze Beeinträchtigung" },
+        { id: "d", text: "Verlust des Sehvermögens" }
+      ],
+      correct: ["a", "b"],
+      points: 2
+    },
+    {
+      id: 11,
+      question: "Wann liegt Hausfriedensbruch vor?",
+      answers: [
+        { id: "a", text: "Befahren eines Parkplatzes" },
+        { id: "b", text: "Nichtverlassen nach Aufforderung" },
+        { id: "c", text: "Diebstahl im Supermarkt" },
+        { id: "d", text: "Betreten trotz Hausverbots" }
+      ],
+      correct: ["b", "d"],
+      points: 2
+    },
+    {
+      id: 12,
+      question: "Welche Aussagen zum Angriff auf eine Wachperson sind richtig?",
+      answers: [
+        { id: "a", text: "Vorläufige Festnahme möglich" },
+        { id: "b", text: "Keine Festnahme wegen Minderjährigkeit" },
+        { id: "c", text: "Notwehr mit erforderlichen Mitteln" }
+      ],
+      correct: ["a", "c"],
+      points: 2
+    },
+    {
+      id: 13,
+      question: "Wer begeht Erschleichen von Leistungen gemäß § 265a StGB?",
+      answers: [
+        { id: "a", text: "1. Klasse mit 2.-Klasse-Ticket" },
+        { id: "b", text: "Parkuhr nicht bezahlen" },
+        { id: "c", text: "Zigarettenautomat aufbrechen" },
+        { id: "d", text: "Türsteher ablenken" }
+      ],
+      correct: ["a", "d"],
+      points: 2
+    },
+    {
+      id: 14,
+      question: "Welche Aussagen zu Unterlassungsdelikten sind richtig?",
+      answers: [
+        { id: "a", text: "Unechtes Unterlassungsdelikt nur bei Garantenstellung" },
+        { id: "b", text: "Echte Unterlassungsdelikte sind Gebotsnormen" },
+        { id: "c", text: "Garantenstellung nur gesetzlich" },
+        { id: "d", text: "Echte Unterlassungsdelikte sind Verbotsnormen" }
+      ],
+      correct: ["a", "b"],
+      points: 2
+    },
+    {
+      id: 15,
+      question: "Welche Aussagen zur Zeugenvernehmung sind richtig?",
+      answers: [
+        { id: "a", text: "Schriftliche Notizen erlaubt" },
+        { id: "b", text: "Keine Infos zum Beschuldigten" },
+        { id: "c", text: "Grundsätzlich mündlich" },
+        { id: "d", text: "Selbstbelastungspflicht" }
+      ],
+      correct: ["a", "c"],
+      points: 2
+    },
+    {
+      id: 16,
+      question: "Welche Aussagen beschreiben einen Rechtfertigungsgrund?",
+      answers: [
+        { id: "a", text: "Schließt Rechtswidrigkeit aus" },
+        { id: "b", text: "Nur bei schuldhaftem Handeln" },
+        { id: "c", text: "Tat ist nicht strafbar" },
+        { id: "d", text: "Beliebiger privater Zwang" },
+        { id: "e", text: "Gesetzliche Entschuldigung" }
+      ],
+      correct: ["a", "c"],
+      points: 2
+    },
+    {
+      id: 17,
+      question: "Was enthält der Besondere Teil des StGB?",
+      answers: [
+        { id: "a", text: "Geltungsbereich" },
+        { id: "b", text: "Straftaten und Strafandrohungen" },
+        { id: "c", text: "Ordnungswidrigkeiten" },
+        { id: "d", text: "Alle Straftaten vollständig" }
+      ],
+      correct: ["b"],
+      points: 1
+    },
+    {
+      id: 18,
+      question: "Wer begeht Hausfriedensbruch?",
+      answers: [
+        { id: "a", text: "Betreten trotz Hausverbot" },
+        { id: "b", text: "Betreten zum Stehlen" },
+        { id: "c", text: "Ohne Kaufabsicht betreten" },
+        { id: "d", text: "Nichtverlassen bei Geschäftsschluss" }
+      ],
+      correct: ["a", "d"],
+      points: 2
+    },
+    {
+      id: 19,
+      question: "Wann liegt schwere Körperverletzung vor?",
+      answers: [
+        { id: "a", text: "Verlust des Sehvermögens" },
+        { id: "b", text: "Schwellung" },
+        { id: "c", text: "Zahnausfall" },
+        { id: "d", text: "Verlust eines Armes" }
+      ],
+      correct: ["a", "d"],
+      points: 2
+    },
+    {
+      id: 20,
+      question: "Welche Aussagen zum Butterflymesser sind richtig?",
+      answers: [
+        { id: "a", text: "Kind ist schuldunfähig" },
+        { id: "b", text: "Kind begeht Straftat" },
+        { id: "c", text: "Abnahme durch Notstand" },
+        { id: "d", text: "Beschlagnahme durch Notwehr" }
+      ],
+      correct: ["a", "c"],
+      points: 2
+    },
+    {
+      id: 21,
+      question: "Wann ist Begünstigung gemäß § 257 StGB möglich?",
+      answers: [
+        { id: "a", text: "Während der Tat" },
+        { id: "b", text: "Nach der Tat" },
+        { id: "c", text: "Vor der Tat" },
+        { id: "d", text: "Nach Ordnungswidrigkeit" }
+      ],
+      correct: ["b"],
+      points: 1
+    },
+    {
+      id: 22,
+      question: "Welche Aussagen zur Freiheitsberaubung sind richtig?",
+      answers: [
+        { id: "a", text: "Nur Einsperren" },
+        { id: "b", text: "Tatopfer jeder bewegungsfähige Mensch" },
+        { id: "c", text: "Versuch straflos" },
+        { id: "d", text: "Schutz der Bewegungsfreiheit" }
+      ],
+      correct: ["b", "d"],
+      points: 2
+    },
+    {
+      id: 23,
+      question: "Besonders schwere Fälle des Diebstahls gemäß § 243 StGB?",
+      answers: [
+        { id: "a", text: "Bedrohung mit Messer" },
+        { id: "b", text: "Einbruch in Lagerhalle" },
+        { id: "c", text: "Gewerbsmäßiger Diebstahl" },
+        { id: "d", text: "Beute über 5.000 €" }
+      ],
+      correct: ["b", "c"],
+      points: 2
+    },
+    {
+      id: 24,
+      question: "Welche Aussage zum Vergehen ist richtig?",
+      answers: [
+        { id: "a", text: "Mindestens 1 Jahr Freiheitsstrafe" },
+        { id: "b", text: "Unter 1 Jahr oder Geldstrafe" },
+        { id: "c", text: "Nur Geldbuße" },
+        { id: "d", text: "Nur Geldstrafe" }
+      ],
+      correct: ["b"],
+      points: 1
+    },
+    {
+      id: 25,
+      question: "Gegen wen kann eine Notwehrhandlung erfolgen?",
+      answers: [
+        { id: "a", text: "Unbewegliche Sachen" },
+        { id: "b", text: "Herrenlose Tiere" },
+        { id: "c", text: "Unwetter" },
+        { id: "d", text: "Menschen" },
+        { id: "e", text: "Aufgehetzte Hunde" },
+        { id: "f", text: "Nur eigene Rechtsgüter" }
+      ],
+      correct: ["d", "e"],
+      points: 2
     }
   ]
 };
+
