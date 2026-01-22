@@ -1,8 +1,15 @@
 // ===============================
 // === INITIAL STATE & DATENSET ===
 // ===============================
-const currentSet = document.body.dataset.set;
-const cardsActive = { cards, cards1, cards2 }[currentSet] || cards;
+const currentSet = document.body.dataset.set; // "cards", "cards1", "cards2"
+
+const cardsActive =
+  currentSet === "cards1"
+    ? cards1
+    : currentSet === "cards2"
+    ? cards2
+    : cards;
+
 
 
 let currentIndex = 0;
