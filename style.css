@@ -443,15 +443,19 @@ main {
 /* ===============================
    DESKTOP-FREUNDLICH & ZENTRIERT
 ================================ */
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .app {
-    max-width: 900px;  /* angenehme Desktop-Breite */
-    margin: 0 auto;    /* zentriert auf Bildschirm */
-    padding: 1rem 2rem;
+    max-width: 1400px;   /* maximale Breite auf großen Bildschirmen */
+    margin: 0 auto;      /* zentriert */
+    padding: 2rem 3rem;  /* etwas mehr Innenabstand für große Screens */
+  }
+
+  main {
+    gap: 2rem;           /* mehr Abstand zwischen Cards/Content */
   }
 
   .btn {
-    max-width: 400px;  /* Buttons auf Desktop breiter, aber nicht riesig */
+    max-width: 500px;    /* Buttons größer auf großen Screens */
     margin: 0 auto;
   }
 
