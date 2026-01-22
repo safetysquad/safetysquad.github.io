@@ -309,7 +309,8 @@ const quizzes = {
       ],
       correct: ["a", "c"],
       points: 2
-    },
+    }
+    ],
 quiz2: [
     {
       id: 1,
