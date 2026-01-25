@@ -1,0 +1,592 @@
+/* =========================================================
+   SACHKUNDE34A – 2026 DESIGN SYSTEM – FINAL
+========================================================= */
+
+/* ===============================
+   ROOT / BRAND + THEME
+================================ */
+:root {
+  /* Light Theme (default) */
+  --bg-main: #f9fafb;
+  --card-bg: #ffffff;
+
+  --text-main: #111827;
+  --text-muted: #6b7280;
+
+  --success: #16a34a;
+  --warn: #f59e0b;
+  --danger: #dc2626;
+
+  --shadow-dark: rgba(17, 24, 39, 0.08);
+  --shadow-light: rgba(255, 255, 255, 0.95);
+}
+
+/* ===============================
+   DARK MODE VARIABLES
+================================ */
+body.dark {
+  --bg-main: #0f172a;
+  --card-bg: #1e293b;
+
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+
+  --success: #22c55e;
+  --warn: #fbbf24;
+  --danger: #f87171;
+
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+  --shadow-light: rgba(255, 255, 255, 0.03);
+}
+
+/* ===============================
+   RESET
+================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* ===============================
+   APP CONTAINER
+================================ */
+.app {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===============================
+   HEADER FINAL LAYOUT
+================================ */
+header {
+  display: flex;
+  flex-direction: column;       /* Logo/Buttons oben, Titel/Stats darunter */
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  width: 100%;
+}
+
+/* TOP ROW: Logo + Buttons */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logo links */
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Buttons rechts */
+.header-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  position: static;      /* Entfernt absolutes Positionieren */
+}
+
+/* TITEL + COUNTER + PUNKTE: untere Reihe */
+.header-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* Text linksbündig */
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+/* Beispiel: Fortschrittsleiste oberhalb der Karte */
+.progress {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* RESPONSIVE Anpassungen */
+@media (max-width: 768px) {
+  header {
+    gap: 0.25rem;
+    padding: 0.5rem;
+  }
+  .logo img {
+  height: 120px;      /* Desktop Standardhöhe */
+  max-height: 120px;  /* verhindert übermäßiges Wachsen */
+  width: auto;
+  transition: height 0.3s ease;
+}
+/* Mobile */
+@media (max-width: 768px) {
+  .logo img {
+    height: 80px;     /* Mobile */
+    max-height: 80px;
+  }
+}
+  .header-info h1 {
+    font-size: 1.25rem;
+  }
+  .stats {
+    font-size: 0.7rem;
+  }
+}
+/* ===============================
+   Header Buttons Container
+================================ */
+.header-buttons {
+  display: flex;
+  gap: 0.5rem;      /* Abstand zwischen den Buttons */
+  position: absolute; 
+  top: 1rem;
+  right: 1rem;
+}
+
+/* ===============================
+   Gemeinsames Styling für alle runden Buttons
+================================ */
+.header-buttons button,
+.header-buttons a.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  background: var(--card-bg);
+  color: var(--text-main);
+  box-shadow:
+    4px 4px 12px var(--shadow-dark),
+    -4px -4px 12px var(--shadow-light);
+  border: none;
+  cursor: pointer;
+  text-decoration: none; /* für Links */
+  transition: transform 0.15s, background 0.3s, color 0.3s;
+}
+
+/* Hover & Active Effekte */
+.header-buttons button:hover,
+.header-buttons a.btn:hover {
+  transform: scale(1.05);
+}
+.header-buttons button:active,
+.header-buttons a.btn:active {
+  transform: scale(0.95);
+}
+
+/* ===============================
+   Spezielle Anpassungen einzelner Buttons
+================================ */
+
+/* Dark Mode Toggle */
+#theme-toggle {
+  position: relative; /* innerhalb Header-Buttons Container */
+  top: 0;
+  right: 0;
+}
+
+/* Statistik Button – etwas kleiner & Abstand zum Dark Mode */
+#stats-toggle {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  box-shadow:
+    3px 3px 10px var(--shadow-dark),
+    -3px -3px 10px var(--shadow-light);
+}
+
+/* Zurück Button – gleiches Styling wie Dark Mode */
+#back-button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+}
+
+
+/* ===============================
+   MAIN – Hero Layout
+================================ */
+main { 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1.2rem;
+  padding-top: 0; 
+}
+
+/* ===============================
+   STATS BOXEN
+================================ */
+.stats {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.stats div {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 14px;
+  text-align: center;
+  background: #f3f4f6;
+  color: var(--text-main);
+  box-shadow:
+    4px 4px 12px var(--shadow-dark),
+    -4px -4px 12px var(--shadow-light);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.stats div b {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.stats div.active {
+  background: #dbeafe;
+}
+
+/* Dark Mode Stats */
+body.dark .stats div {
+  background: var(--card-bg);
+  color: var(--text-main);
+  box-shadow:
+    8px 8px 24px var(--shadow-dark),
+    -8px -8px 24px var(--shadow-light);
+}
+
+body.dark .stats div.active {
+  background: #1e293b;
+}
+
+/* ===============================
+   PROGRESS BAR
+================================ */
+.progress {
+  margin: 0.8rem 0 1.2rem;
+  height: 12px;
+  background: var(--brand-soft, #dbeafe);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  border-radius: 12px;
+  background: var(--success);
+  box-shadow: 0 0 8px rgba(34,197,94,0.4);
+  transition: width 0.8s ease-in-out, background 0.3s, box-shadow 0.3s;
+}
+
+body.dark .progress {
+  background: var(--card-bg);
+  box-shadow: inset 4px 4px 12px var(--shadow-dark),
+              inset -4px -4px 12px var(--shadow-light);
+}
+
+body.dark .progress-bar {
+  box-shadow: 0 0 8px rgba(34,197,94,0.6);
+}
+
+/* ===============================
+   CARD – LERNKARTE
+================================ */
+.card {
+  position: relative;
+  min-height: 240px;
+  padding: 2.2rem 2rem;
+  background: var(--card-bg);
+  border-radius: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.4;
+  font-size: 1.3rem;
+  font-weight: 600;
+  box-shadow:
+    8px 8px 24px var(--shadow-dark),
+    -8px -8px 24px var(--shadow-light);
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.card::before {
+  background: transparent;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+
+  padding: 0.9rem 1rem;
+  border-radius: 22px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+
+  background: #f3f4f6;
+  color: var(--text-main);
+  box-shadow:
+    6px 6px 16px var(--shadow-dark),
+    -6px -6px 16px var(--shadow-light);
+
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.3s, color 0.3s;
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn:active {
+  transform: scale(0.98);
+  box-shadow:
+    inset 4px 4px 12px var(--shadow-dark),
+    inset -4px -4px 12px var(--shadow-light);
+}
+
+/* Primary Button */
+.btn.primary {
+  background: linear-gradient(135deg, var(--brand, #3b82f6), #60a5fa);
+  color: white;
+  box-shadow: 0 8px 20px var(--brand-glow, rgba(96,165,250,0.5));
+}
+
+/* Status Buttons */
+.btn.success { background: #dcfce7; color: var(--success); }
+.btn.warn { background: #fef3c7; color: #92400e; }
+.btn.danger { background: #fee2e2; color: var(--danger); }
+
+/* Dark Mode Buttons */
+body.dark .btn {
+  background: var(--card-bg);
+  color: var(--text-main);
+  box-shadow:
+    8px 8px 24px var(--shadow-dark),
+    -8px -8px 24px var(--shadow-light);
+}
+
+body.dark .btn:active {
+  box-shadow:
+    inset 8px 8px 24px var(--shadow-dark),
+    inset -8px -8px 24px var(--shadow-light);
+}
+
+/* ===============================
+   NAV BUTTONS
+================================ */
+.nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav .btn {
+  flex: 1;
+  min-width: 140px;
+  max-width: 200px;
+  width: auto !important;
+}
+
+/* ===============================
+   ACTION GROUPS
+================================ */
+.top-buttons, .actions {
+  display: flex;
+  gap: 0.75rem;
+}
+.actions { margin-top: 0.5rem; }
+.actions .btn { flex: 1; }
+
+
+/* ===============================
+   Quiz Liste Buttons
+================================ */
+#quiz-list {
+  align-items: center;
+}
+.quiz-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 480px;   /* schön mittig auf Desktop */
+}
+.quiz-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  border-radius: 18px;
+  background: var(--card-bg);
+  color: var(--text-main);
+  font-weight: 600;
+  box-shadow:
+    6px 6px 18px var(--shadow-dark),
+    -6px -6px 18px var(--shadow-light);
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.3s;
+}
+
+.quiz-link:hover {
+  transform: scale(1.02);
+}
+.quiz-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  margin-left: 0.5rem;
+}
+
+.quiz-badge.gold {
+  background: #facc15;
+  color: #1e293b;
+}
+
+.quiz-badge.new {
+  background: #dbeafe;
+  color: #1e40af;
+}
+.quiz-block .btn.warn {
+  font-size: 0.85rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 16px;
+  width: 100%;
+}
+
+/* ===============================
+   QUIZ – ANTWORTEN
+================================ */
+#answers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.answer-btn {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+
+  padding: 1.3rem 1.4rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+
+  border-radius: 20px;
+  text-align: left;              /* wichtig für lange Texte */
+  justify-content: flex-start;   /* Text linksbündig */
+
+  background: var(--card-bg);
+}
+.answer-btn.active {
+  outline: 2px solid var(--brand, #3b82f6);
+  background: #dbeafe;
+}
+body.dark .answer-btn.active {
+  background: #1e3a8a;
+}
+
+/* ===============================
+   QUIZ / RESULT
+================================ */
+.result-summary, .result-card {
+  background: var(--card-bg);
+  border-radius: 22px;
+  padding: 1.4rem;
+  box-shadow:
+    6px 6px 18px var(--shadow-dark),
+    -6px -6px 18px var(--shadow-light);
+}
+
+.result-card.wrong {
+  box-shadow:
+    0 0 0 2px rgba(220,38,38,0.25),
+    6px 6px 18px var(--shadow-dark);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge.success { background: #dcfce7; color: var(--success); }
+.badge.warn { background: #fef3c7; color: #92400e; }
+
+/* ===============================
+   QUIZ STATS GRID
+================================ */
+.quiz-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.quiz-stats-grid > div {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+  box-shadow:
+    3px 3px 10px var(--shadow-dark),
+    -3px -3px 10px var(--shadow-light);
+}
+
+/* ===============================
+   BRAND TAG
+================================ */
+.brand-tag {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* ===============================
+   HELPERS
+================================ */
+.hidden { display: none; }
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
