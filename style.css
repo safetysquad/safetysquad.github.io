@@ -1,5 +1,46 @@
+/* =========================================================
+   SACHKUNDE34A – 2026 DESIGN SYSTEM – FINAL
+========================================================= */
+
 /* ===============================
-   RESET + MOBILE FIX
+   ROOT / BRAND + THEME
+================================ */
+:root {
+  /* Light Theme (default) */
+  --bg-main: #f9fafb;
+  --card-bg: #ffffff;
+
+  --text-main: #111827;
+  --text-muted: #6b7280;
+
+  --success: #16a34a;
+  --warn: #f59e0b;
+  --danger: #dc2626;
+
+  --shadow-dark: rgba(17, 24, 39, 0.08);
+  --shadow-light: rgba(255, 255, 255, 0.95);
+}
+
+/* ===============================
+   DARK MODE VARIABLES
+================================ */
+body.dark {
+  --bg-main: #0f172a;
+  --card-bg: #1e293b;
+
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+
+  --success: #22c55e;
+  --warn: #fbbf24;
+  --danger: #f87171;
+
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+  --shadow-light: rgba(255, 255, 255, 0.03);
+}
+
+/* ===============================
+   RESET
 ================================ */
 * {
   box-sizing: border-box;
@@ -10,8 +51,9 @@
 
 html, body {
   width: 100%;
-  height: 100%;
-  background: #0f172a;
+  min-height: 100%;
+  background: var(--bg-main);
+  color: var(--text-main);
 }
 
 /* ===============================
@@ -19,400 +61,488 @@ html, body {
 ================================ */
 .app {
   min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
   display: flex;
   flex-direction: column;
-  background: #0f172a;
-  color: #e5e7eb;
 }
 
 /* ===============================
-   HEADER
+   HEADER & LOGO – UPDATED
 ================================ */
 header {
-  padding: 1.5rem 1rem 1rem;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 1.5rem;
-  margin-bottom: .3rem;
-}
-
-header p {
-  font-size: .95rem;
-  opacity: .8;
-}
-
-.header-bar {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
+  text-align: left;
+
+  margin-bottom: 0;  /* etwas mehr Abstand */
+  padding: 0.5rem 1rem; /* Luft innen */
+  position: relative;   /* für Toggle */
+  min-height: 80px;     /* höherer Header für größere Logos */
 }
 
-.header-text {
-  flex: 1;
-  text-align: center;
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;       /* Logo schrumpft nicht */
+  margin-left: 0;       /* optional Abstand links */
 }
 
-.burger {
-  background: none;
-  border: none;
+.logo img {
+  height: 150px;         /* Desktop: deutlich größer */
+  max-height: 150px;
+  width: auto;
+  transition: height 0.3s ease;
+}
+
+/* Optional: Firmenname daneben */
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+/* Responsive Logo-Höhe */
+@media (max-width: 1024px) {
+  .logo img {
+    height: 120px;
+     max-height: none; /* wichtig, damit height wirken kann */
+  }
+
+  .logo-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 120px;     /* gewünschte Mobile-Größe */
+    max-height: none; /* wichtig, damit height wirken kann */
+  }
+}
+
+
+  .logo-text {
+    font-size: 1rem;
+  }
+}
+
+/* Header Text (falls noch h1 im Header) */
+header h1 {
   font-size: 1.6rem;
-  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
-.more-menu {
-  position: absolute;
-  top: 60px;
-  left: 1rem;
-  background: #0f172a;
-  border-radius: 14px;
-  padding: 12px;
+/* ===============================
+   Header Buttons Container
+================================ */
+.header-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.4);
-  z-index: 100;
-}
-
-.more-menu a,
-.more-menu button {
-  display: block;
-  background: #1e293b;
-  color: #fff;
-  padding: 12px;
-  border-radius: 12px;
-  text-decoration: none;
-  border: none;
-  font-size: 1rem;
-}
-
-.more-menu a:hover {
-  background: rgba(255,255,255,.1);
-}
-
-.hidden {
-  display: none;
+  gap: 0.5rem;      /* Abstand zwischen den Buttons */
+  position: absolute; 
+  top: 1rem;
+  right: 1rem;
 }
 
 /* ===============================
-   MAIN
+   Gemeinsames Styling für alle runden Buttons
 ================================ */
-main {
-  flex: 1;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-/* ===============================
-   BUTTONS – RUHIG & KLAR
-================================ */
-.btn {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 18px;
-  border: none;
-  font-size: 1.05rem;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  background: #22c55e;
-  color: #022c22;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-  margin: 0 auto;
-}
-
-.btn:hover {
-  animation: pulse 0.6s;
-}
-
-.btn.secondary {
-  background: #334155;
-  color: #e5e7eb;
-}
-
-.btn.warn {
-  background: #1e293b;
-  color: #e5e7eb;
-}
-
-.btn.danger {
-  background: #7f1d1d;
-  color: #fecaca;
-}
-
-.btn.secondary.active {
-  background: #22c55e;
-  color: #022c22;
-}
-
-/* ===============================
-   CARD
-================================ */
-.card {
-  background: #1e293b;
-  border-radius: 20px;
-  padding: 2rem;
-  min-height: 240px;
+.header-buttons button,
+.header-buttons a.btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  white-space: pre-line;
-  font-size: 1.05rem;
-  opacity: 0;
-  transform: translateY(15px);
-  animation: fadeInUp 0.5s forwards;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  background: var(--card-bg);
+  color: var(--text-main);
+  box-shadow:
+    4px 4px 12px var(--shadow-dark),
+    -4px -4px 12px var(--shadow-light);
+  border: none;
+  cursor: pointer;
+  text-decoration: none; /* für Links */
+  transition: transform 0.15s, background 0.3s, color 0.3s;
+}
+
+/* Hover & Active Effekte */
+.header-buttons button:hover,
+.header-buttons a.btn:hover {
+  transform: scale(1.05);
+}
+.header-buttons button:active,
+.header-buttons a.btn:active {
+  transform: scale(0.95);
 }
 
 /* ===============================
-   STATS UND FORTSCHRITTSABSTAND
+   Spezielle Anpassungen einzelner Buttons
+================================ */
+
+/* Dark Mode Toggle */
+#theme-toggle {
+  position: relative; /* innerhalb Header-Buttons Container */
+  top: 0;
+  right: 0;
+}
+
+/* Statistik Button – etwas kleiner & Abstand zum Dark Mode */
+#stats-toggle {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  box-shadow:
+    3px 3px 10px var(--shadow-dark),
+    -3px -3px 10px var(--shadow-light);
+}
+
+/* Zurück Button – gleiches Styling wie Dark Mode */
+#back-button {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+}
+
+
+/* ===============================
+   MAIN – Hero Layout
+================================ */
+main { 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1.2rem;
+  padding-top: 0; 
+}
+
+/* ===============================
+   STATS BOXEN
 ================================ */
 .stats {
   display: flex;
-  justify-content: space-between;
-  gap: .5rem;
-  font-size: .85rem;
-  margin-bottom: 1rem;
-}
-
-.progress {
-  margin-top: .8rem;
-  margin-bottom: 1.2rem;
-  height: 10px;
-  background: #1e293b;
-  border-radius: 10px;
-  overflow: hidden;
+  gap: 0.75rem;
+  font-size: 0.8rem;
 }
 
 .stats div {
-  background: #1e293b;
-  padding: .6rem;
-  border-radius: 12px;
   flex: 1;
+  padding: 0.6rem;
+  border-radius: 14px;
   text-align: center;
+  background: #f3f4f6;
+  color: var(--text-main);
+  box-shadow:
+    4px 4px 12px var(--shadow-dark),
+    -4px -4px 12px var(--shadow-light);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.stats div b {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.stats div.active {
+  background: #dbeafe;
+}
+
+/* Dark Mode Stats */
+body.dark .stats div {
+  background: var(--card-bg);
+  color: var(--text-main);
+  box-shadow:
+    8px 8px 24px var(--shadow-dark),
+    -8px -8px 24px var(--shadow-light);
+}
+
+body.dark .stats div.active {
+  background: #1e293b;
+}
+
+/* ===============================
+   PROGRESS BAR
+================================ */
+.progress {
+  margin: 0.8rem 0 1.2rem;
+  height: 12px;
+  background: var(--brand-soft, #dbeafe);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 .progress-bar {
   height: 100%;
-  background: #22c55e;
   width: 0%;
-  transition: width 0.8s ease-in-out;
+  border-radius: 12px;
+  background: var(--success);
+  box-shadow: 0 0 8px rgba(34,197,94,0.4);
+  transition: width 0.8s ease-in-out, background 0.3s, box-shadow 0.3s;
+}
+
+body.dark .progress {
+  background: var(--card-bg);
+  box-shadow: inset 4px 4px 12px var(--shadow-dark),
+              inset -4px -4px 12px var(--shadow-light);
+}
+
+body.dark .progress-bar {
+  box-shadow: 0 0 8px rgba(34,197,94,0.6);
 }
 
 /* ===============================
-   NAV
+   CARD – LERNKARTE
+================================ */
+.card {
+  position: relative;
+  min-height: 240px;
+  padding: 2.2rem 2rem;
+  background: var(--card-bg);
+  border-radius: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 1.4;
+  font-size: 1.3rem;
+  font-weight: 600;
+  box-shadow:
+    8px 8px 24px var(--shadow-dark),
+    -8px -8px 24px var(--shadow-light);
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.card::before {
+  background: transparent;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+
+  padding: 0.9rem 1rem;
+  border-radius: 22px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+
+  background: #f3f4f6;
+  color: var(--text-main);
+  box-shadow:
+    6px 6px 16px var(--shadow-dark),
+    -6px -6px 16px var(--shadow-light);
+
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.3s, color 0.3s;
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn:active {
+  transform: scale(0.98);
+  box-shadow:
+    inset 4px 4px 12px var(--shadow-dark),
+    inset -4px -4px 12px var(--shadow-light);
+}
+
+/* Primary Button */
+.btn.primary {
+  background: linear-gradient(135deg, var(--brand, #3b82f6), #60a5fa);
+  color: white;
+  box-shadow: 0 8px 20px var(--brand-glow, rgba(96,165,250,0.5));
+}
+
+/* Status Buttons */
+.btn.success { background: #dcfce7; color: var(--success); }
+.btn.warn { background: #fef3c7; color: #92400e; }
+.btn.danger { background: #fee2e2; color: var(--danger); }
+
+/* Dark Mode Buttons */
+body.dark .btn {
+  background: var(--card-bg);
+  color: var(--text-main);
+  box-shadow:
+    8px 8px 24px var(--shadow-dark),
+    -8px -8px 24px var(--shadow-light);
+}
+
+body.dark .btn:active {
+  box-shadow:
+    inset 8px 8px 24px var(--shadow-dark),
+    inset -8px -8px 24px var(--shadow-light);
+}
+
+/* ===============================
+   NAV BUTTONS
 ================================ */
 .nav {
   display: flex;
-  gap: .5rem;
-}
-
-.nav button {
-  flex: 1;
-}
-
-/* ===============================
-   TOP / ACTION BUTTONS
-================================ */
-.top-buttons {
-  display: flex;
   gap: 10px;
+  justify-content: center;
+  margin-top: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 12px;
 }
 
-.action-buttons {
-  display: flex;
-      flex-direction: column;
-  gap: 10px;
-}
-
-.actions {
-  display: flex;
-  gap: 10px;
-  margin: 12px 0;
-}
-
-.actions .btn {
+.nav .btn {
   flex: 1;
-}
-
-@media (max-width: 360px) {
-  .actions {
-    flex-direction: column;
-  }
+  min-width: 140px;
+  max-width: 200px;
+  width: auto !important;
 }
 
 /* ===============================
-   QUIZ RESULT
+   ACTION GROUPS
 ================================ */
-.result-summary {
-  background: #1e293b;
-  padding: 1.5rem;
-  border-radius: 20px;
-  text-align: center;
+.top-buttons, .actions {
+  display: flex;
+  gap: 0.75rem;
 }
+.actions { margin-top: 0.5rem; }
+.actions .btn { flex: 1; }
 
-.result-summary h2 {
-  margin-bottom: .5rem;
+
+/* ===============================
+   Quiz Liste Buttons
+================================ */
+#quiz-list {
+  align-items: center;
 }
-
-.badge {
-  margin: 1rem auto;
-  padding: .6rem 1rem;
-  border-radius: 14px;
-  font-weight: 600;
-  width: fit-content;
-}
-
-.badge.success {
-  background: #22c55e;
-  color: #022c22;
-}
-
-.badge.warn {
-  background: #f59e0b;
-  color: #422006;
-}
-
-.result-card {
-  background: #1e293b;
-  border-radius: 18px;
-  padding: 1.2rem;
-  margin: 1rem 0;
-}
-
-.result-card.wrong {
-  border: 1px solid #ef4444;
-}
-
-.result-card .question {
-  font-weight: 600;
-  margin-bottom: .6rem;
-}
-
-.result-card .answer {
-  font-size: .95rem;
-  margin: .3rem 0;
-}
-
-.result-card .answer.user {
-  color: #fca5a5;
-}
-
-.result-card .answer.correct {
-  color: #86efac;
-}
-
-.result-actions {
+.quiz-block {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 1.2rem;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 480px;   /* schön mittig auf Desktop */
 }
-
-.answer-list {
-  margin: .4rem 0 .8rem 1rem;
-  font-size: .95rem;
-}
-
-.answer-list.user li {
-  color: #fca5a5;
-}
-
-.answer-list.correct li {
-  color: #86efac;
-}
-
-#questionPoints {
-  margin: 10px 0 14px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-align: center;
-  color: #007acc;
-}
-
 .quiz-link {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  border-radius: 18px;
+  background: var(--card-bg);
+  color: var(--text-main);
+  font-weight: 600;
+  box-shadow:
+    6px 6px 18px var(--shadow-dark),
+    -6px -6px 18px var(--shadow-light);
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.3s;
 }
 
+.quiz-link:hover {
+  transform: scale(1.02);
+}
 .quiz-badge {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 4px 8px;
-  font-size: 0.85rem;
-  border-radius: 6px;
-  font-weight: bold;
-  background: #007acc;
-  color: white;
-}
-
-.quiz-badge.new {
-  background: #999;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  margin-left: 0.5rem;
 }
 
 .quiz-badge.gold {
-  background: #2ecc71;
+  background: #facc15;
+  color: #1e293b;
 }
 
-.pdf-links {
+.quiz-badge.new {
+  background: #dbeafe;
+  color: #1e40af;
+}
+.quiz-block .btn.warn {
+  font-size: 0.85rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 16px;
+  width: 100%;
+}
+
+/* ===============================
+   QUIZ – ANTWORTEN
+================================ */
+#answers {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 1rem;
+  gap: 0.75rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.pdf-link {
-  position: relative;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeIn 0.5s forwards;
-}
+.answer-btn {
+  width: 100%;
+  max-width: none;
+  margin: 0;
 
-.pdf-badge {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 4px 8px;
-  font-size: 0.85rem;
-  border-radius: 6px;
-  font-weight: bold;
-  background: #007acc;
-  color: white;
-}
+  padding: 1.3rem 1.4rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
 
-.pdf-badge.new {
-  background: #22c55e;
-}
+  border-radius: 20px;
+  text-align: left;              /* wichtig für lange Texte */
+  justify-content: flex-start;   /* Text linksbündig */
 
-/* ===============================
-   ANIMATIONEN
-================================= */
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(15px); }
-  100% { opacity: 1; transform: translateY(0); }
+  background: var(--card-bg);
 }
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+.answer-btn.active {
+  outline: 2px solid var(--brand, #3b82f6);
+  background: #dbeafe;
 }
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+body.dark .answer-btn.active {
+  background: #1e3a8a;
 }
 
 /* ===============================
-   QUIZ STATISTIK – FIX 4 PRO REIHE
+   QUIZ / RESULT
+================================ */
+.result-summary, .result-card {
+  background: var(--card-bg);
+  border-radius: 22px;
+  padding: 1.4rem;
+  box-shadow:
+    6px 6px 18px var(--shadow-dark),
+    -6px -6px 18px var(--shadow-light);
+}
+
+.result-card.wrong {
+  box-shadow:
+    0 0 0 2px rgba(220,38,38,0.25),
+    6px 6px 18px var(--shadow-dark);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge.success { background: #dcfce7; color: var(--success); }
+.badge.warn { background: #fef3c7; color: #92400e; }
+
+/* ===============================
+   QUIZ STATS GRID
 ================================ */
 .quiz-stats-grid {
   display: grid;
@@ -421,53 +551,53 @@ main {
 }
 
 .quiz-stats-grid > div {
-  background: rgba(255,255,255,0.06);
-  border-radius: 8px;
+  background: var(--card-bg);
+  border-radius: 14px;
   padding: 0.5rem;
-  text-align: center;
   font-size: 0.75rem;
-  line-height: 1.2;
-}
-
-@media (min-width: 768px) {
-  .quiz-stats-grid {
-    gap: 0.75rem;
-  }
-
-  .quiz-stats-grid > div {
-    padding: 0.75rem;
-    font-size: 0.85rem;
-  }
+  text-align: center;
+  box-shadow:
+    3px 3px 10px var(--shadow-dark),
+    -3px -3px 10px var(--shadow-light);
 }
 
 /* ===============================
-   DESKTOP-FREUNDLICH & ZENTRIERT
+   BRAND TAG
 ================================ */
-@media (min-width: 1200px) {
-  .app {
-    max-width: 1400px;   /* maximale Breite auf großen Bildschirmen */
-    margin: 0 auto;      /* zentriert */
-    padding: 2rem 3rem;  /* etwas mehr Innenabstand für große Screens */
-  }
+.brand-tag {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
 
-  main {
-    gap: 2rem;           /* mehr Abstand zwischen Cards/Content */
-  }
+/* ===============================
+   HELPERS
+================================ */
+.hidden { display: none; }
 
-  .btn {
-    max-width: 500px;    /* Buttons größer auf großen Screens */
-    margin: 0 auto;
-  }
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-  .card {
-    max-width: 100%;
-  }
-
-  /* Buttons weiterhin untereinander für sauberes Layout */
-  .top-buttons,
-  .action-buttons,
-  .actions {
-    flex-direction: column;
-    gap: 12px;
-  }
+/* ===============================
+   CONTROL MODE
+================================ */
+body::after {
+  content: "Control Mode V1.1 Active";
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: #3b82f6;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 6px;
+  z-index: 9999;
+  opacity: 0.6;
+  pointer-events: none;
 }
