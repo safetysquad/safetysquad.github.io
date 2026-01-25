@@ -1,0 +1,473 @@
+/* ===============================
+   RESET + MOBILE FIX
+================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #0f172a;
+}
+
+/* ===============================
+   APP CONTAINER
+================================ */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header {
+  padding: 1.5rem 1rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin-bottom: .3rem;
+}
+
+header p {
+  font-size: .95rem;
+  opacity: .8;
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-text {
+  flex: 1;
+  text-align: center;
+}
+
+.burger {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.more-menu {
+  position: absolute;
+  top: 60px;
+  left: 1rem;
+  background: #0f172a;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.4);
+  z-index: 100;
+}
+
+.more-menu a,
+.more-menu button {
+  display: block;
+  background: #1e293b;
+  color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: none;
+  font-size: 1rem;
+}
+
+.more-menu a:hover {
+  background: rgba(255,255,255,.1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===============================
+   MAIN
+================================ */
+main {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ===============================
+   BUTTONS – RUHIG & KLAR
+================================ */
+.btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 18px;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  background: #22c55e;
+  color: #022c22;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  margin: 0 auto;
+}
+
+.btn:hover {
+  animation: pulse 0.6s;
+}
+
+.btn.secondary {
+  background: #334155;
+  color: #e5e7eb;
+}
+
+.btn.warn {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+.btn.danger {
+  background: #7f1d1d;
+  color: #fecaca;
+}
+
+.btn.secondary.active {
+  background: #22c55e;
+  color: #022c22;
+}
+
+/* ===============================
+   CARD
+================================ */
+.card {
+  background: #1e293b;
+  border-radius: 20px;
+  padding: 2rem;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: pre-line;
+  font-size: 1.05rem;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+/* ===============================
+   STATS UND FORTSCHRITTSABSTAND
+================================ */
+.stats {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  font-size: .85rem;
+  margin-bottom: 1rem;
+}
+
+.progress {
+  margin-top: .8rem;
+  margin-bottom: 1.2rem;
+  height: 10px;
+  background: #1e293b;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.stats div {
+  background: #1e293b;
+  padding: .6rem;
+  border-radius: 12px;
+  flex: 1;
+  text-align: center;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #22c55e;
+  width: 0%;
+  transition: width 0.8s ease-in-out;
+}
+
+/* ===============================
+   NAV
+================================ */
+.nav {
+  display: flex;
+  gap: .5rem;
+}
+
+.nav button {
+  flex: 1;
+}
+
+/* ===============================
+   TOP / ACTION BUTTONS
+================================ */
+.top-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.action-buttons {
+  display: flex;
+      flex-direction: column;
+  gap: 10px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.actions .btn {
+  flex: 1;
+}
+
+@media (max-width: 360px) {
+  .actions {
+    flex-direction: column;
+  }
+}
+
+/* ===============================
+   QUIZ RESULT
+================================ */
+.result-summary {
+  background: #1e293b;
+  padding: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.result-summary h2 {
+  margin-bottom: .5rem;
+}
+
+.badge {
+  margin: 1rem auto;
+  padding: .6rem 1rem;
+  border-radius: 14px;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.badge.success {
+  background: #22c55e;
+  color: #022c22;
+}
+
+.badge.warn {
+  background: #f59e0b;
+  color: #422006;
+}
+
+.result-card {
+  background: #1e293b;
+  border-radius: 18px;
+  padding: 1.2rem;
+  margin: 1rem 0;
+}
+
+.result-card.wrong {
+  border: 1px solid #ef4444;
+}
+
+.result-card .question {
+  font-weight: 600;
+  margin-bottom: .6rem;
+}
+
+.result-card .answer {
+  font-size: .95rem;
+  margin: .3rem 0;
+}
+
+.result-card .answer.user {
+  color: #fca5a5;
+}
+
+.result-card .answer.correct {
+  color: #86efac;
+}
+
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1.2rem;
+}
+
+.answer-list {
+  margin: .4rem 0 .8rem 1rem;
+  font-size: .95rem;
+}
+
+.answer-list.user li {
+  color: #fca5a5;
+}
+
+.answer-list.correct li {
+  color: #86efac;
+}
+
+#questionPoints {
+  margin: 10px 0 14px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #007acc;
+}
+
+.quiz-link {
+  position: relative;
+}
+
+.quiz-badge {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  font-weight: bold;
+  background: #007acc;
+  color: white;
+}
+
+.quiz-badge.new {
+  background: #999;
+}
+
+.quiz-badge.gold {
+  background: #2ecc71;
+}
+
+.pdf-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.pdf-link {
+  position: relative;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.5s forwards;
+}
+
+.pdf-badge {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  font-weight: bold;
+  background: #007acc;
+  color: white;
+}
+
+.pdf-badge.new {
+  background: #22c55e;
+}
+
+/* ===============================
+   ANIMATIONEN
+================================= */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ===============================
+   QUIZ STATISTIK – FIX 4 PRO REIHE
+================================ */
+.quiz-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.quiz-stats-grid > div {
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .quiz-stats-grid {
+    gap: 0.75rem;
+  }
+
+  .quiz-stats-grid > div {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===============================
+   DESKTOP-FREUNDLICH & ZENTRIERT
+================================ */
+@media (min-width: 1200px) {
+  .app {
+    max-width: 1400px;   /* maximale Breite auf großen Bildschirmen */
+    margin: 0 auto;      /* zentriert */
+    padding: 2rem 3rem;  /* etwas mehr Innenabstand für große Screens */
+  }
+
+  main {
+    gap: 2rem;           /* mehr Abstand zwischen Cards/Content */
+  }
+
+  .btn {
+    max-width: 500px;    /* Buttons größer auf großen Screens */
+    margin: 0 auto;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  /* Buttons weiterhin untereinander für sauberes Layout */
+  .top-buttons,
+  .action-buttons,
+  .actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
