@@ -1,4 +1,4 @@
-/* =========================================================
+ /* =========================================================
    SACHKUNDE34A – 2026 DESIGN SYSTEM – FINAL
 ========================================================= */
 
@@ -119,28 +119,24 @@ header {
   margin-bottom: 1rem;
 }
 
-/* RESPONSIVE Anpassungen */
-@media (max-width: 768px) {
-  header {
-    gap: 0.25rem;
-    padding: 0.5rem;
-  }
-  .logo img {
-  height: 120px;      /* Desktop Standardhöhe */
-  max-height: 120px;  /* verhindert übermäßiges Wachsen */
+/* Standard: Desktop */
+.logo img {
+  height: 80px;       /* maximale Desktop-Höhe */
+  max-height: 80px;   /* extra Schutz */
   width: auto;
   transition: height 0.3s ease;
 }
-/* Mobile */
+
+/* Mobile: kleiner skalieren */
 @media (max-width: 768px) {
   .logo img {
-    height: 80px;     /* Mobile */
-    max-height: 80px;
+    height: 60px;     /* Mobile */
   }
-}
+
   .header-info h1 {
     font-size: 1.25rem;
   }
+
   .stats {
     font-size: 0.7rem;
   }
@@ -589,4 +585,22 @@ body.dark .answer-btn.active {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   CONTROL MODE
+================================ */
+body::after {
+  content: "Control Mode V0.5 Active";
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: #3b82f6;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 6px;
+  z-index: 9999;
+  opacity: 0.6;
+  pointer-events: none;
 }
