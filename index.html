@@ -12,57 +12,31 @@
   <link rel="icon" sizes="192x192" href="icon-180.png">
 
   <meta charset="UTF-8">
-  <title>SAFETY SQUAD</title>
-
+  <title>Sachkunde34a</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-
-<body>
 <div class="app">
-
-  <header>
-    <h1>📘 SAFETY SQUAD</h1>
-    <p>Teste dein Wissen Schritt für Schritt</p>
-  </header>
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
+  </div>
+  <div class="header-buttons">
+  <button id="theme-toggle">🌓</button>
+  </div>
+</header>
 
   <main>
     <a href="lernkarteikarten.html" class="btn">📚 Lernkarteikarten</a>
     <a href="strafrechtbesondererteil.html" class="btn">📚 Strafrecht Besonderer Teil</a>
-    <a href="lernkarten.html" class="btn">📚 Lernkarten</a>
     <a href="quiz.html" class="btn secondary">📝 Quiz</a>
     <a href="pdfs.html" class="btn secondary">📄 PDF Unterlagen</a>
-
-
-    <!-- ================= UPDATE BUTTON ================= -->
-    <button class="btn warn" onclick="forceUpdate()">🔄 Update laden</button>
+    <a href="stats.html" class="btn secondary">Statistik</a>
   </main>
-
 </div>
 
-<script>
-function forceUpdate() {
-  const timestamp = Date.now(); // aktueller Zeitstempel
-
-  // ================= CSS NEU LADEN =================
-  document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
-    const href = link.getAttribute('href').split('?')[0];
-    link.setAttribute('href', href + '?v=' + timestamp);
-  });
-
-  // ================= JS NEU LADEN =================
-  document.querySelectorAll('script[src]').forEach(script => {
-    const src = script.getAttribute('src').split('?')[0];
-    const newScript = document.createElement('script');
-    newScript.src = src + '?v=' + timestamp;
-    document.body.appendChild(newScript);
-    script.remove(); // alte Script entfernen
-  });
-
-  alert('🔄 Seite und Assets werden neu geladen!');
-}
-</script>
+<script src="css/theme.js"></script>
 
 </body>
 </html>
