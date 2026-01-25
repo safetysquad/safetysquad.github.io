@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
   <title>Statistik – SAFETY SQUAD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 <div class="app">
-
 <header>
-  <h1>📊 Statistik</h1>
-  <p>Dein Lernfortschritt</p>
-</header>
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
+  </div>
+  <div class="header-buttons">
+  <button id="back-button">⬅</button>
+  <button id="theme-toggle">🌓</button>
+  </div>
 
+</header>
 <main>
 
   <!-- ================= SET 1 – Lernkarteikarten ================= -->
-  <h2>📚 Lernkarteikarten</h2>
+  <h2 style="text-align:center;">📚 Lernkarteikarten</h2>
   <div class="stats">
     <div>📄 Gesamt<br><b id="totalCards1">0</b></div>
     <div>✅ Erledigt<br><b id="doneCards1">0</b></div>
@@ -36,8 +40,8 @@
 
   <hr style="margin:2rem 0; opacity:.2;">
 
-  <!-- ================= SET 2 – Lernkarten ================= -->
-  <h2>📝 Lernkarten</h2>
+  <!-- ================= SET 2 – Strafrecht § ================= -->
+ <h2 style="text-align:center;">📝 Strafrecht § & Tatbestände</h2>
   <div class="stats">
     <div>📄 Gesamt<br><b id="totalCards2">0</b></div>
     <div>✅ Erledigt<br><b id="doneCards2">0</b></div>
@@ -61,19 +65,15 @@
   <button class="btn danger" onclick="resetQuizStats()">
     🧹 Quiz-Statistik zurücksetzen
   </button>
-
-  <a href="index.html" class="btn secondary">
-    🔙 Zur Startseite
-  </a>
-
 </main>
 
 </div>
 
 <!-- ================= SCRIPTE ================= -->
-<script src="data.js"></script>
-<script src="data1.js"></script>
-<script src="script.js"></script>
+<script src="js/data.js"></script>
+<script src="js/strafrechtbesondererteil.js"></script>
+<script src="js/script.js"></script>
+<script src="css/theme.js"></script>
 <script>
   // ================= RENDER STATISTIK GETRENNT =================
   function renderStatsSet(setName, prefix) {
@@ -102,6 +102,17 @@
     renderStatsSet('cards1', 2);
     renderQuizStats();
   });
+document.getElementById("back-button").addEventListener("click", () => {
+  window.history.back();
+});
+document.getElementById("back-button").addEventListener("click", () => {
+  if (document.referrer) {
+    window.history.back();
+  } else {
+    window.location.href = "index.html"; // Startseite
+  }
+});
+
 </script>
 
 </body>
