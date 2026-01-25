@@ -4,27 +4,37 @@
   <meta charset="UTF-8">
   <title>SAFETY SQUAD – Lernkarten</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body data-set="cards1">
+<body data-set="cards">
 <div class="app">
 
 <header>
-  <h1>📚 Lernkarten Original</h1>
-
-  <div class="stats">
-    <div>✅ Erledigt<br><b id="doneCount">0</b></div>
-    <div>⭐ Merkliste<br><b id="markCount">0</b></div>
-    <div>📄<br><b id="cardCounter">0 / 0</b></div>
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
   </div>
+  
+  <div class="header-buttons">
+  <button id="theme-toggle">🌓</button>
+  <a href="stats.html" id="stats-toggle" class="btn">📊</a>
+
+  </div>
+
+</header>
+
+
+<main>
+  <div class="stats">
+  <div id="doneBox">✅ Erledigt<br><b id="doneCount">0</b></div>
+  <div id="markBox">⭐ Merkliste<br><b id="markCount">0</b></div>
+  <div id="allBox">📄<br><b id="cardCounter">0 / 0</b></div>
+</div>
 
   <div class="progress">
     <div class="progress-bar" id="progressBar"></div>
   </div>
-</header>
-
-<main>
+  
   <div class="card" onclick="flipCard()">
     <p id="cardText">Lade Karte…</p>
   </div>
@@ -40,20 +50,13 @@
   <button class="btn" onclick="doneCard()">✅ Richtig</button>
 </div>
 
-
-<button class="btn secondary" onclick="toggleMenu()">☰ Mehr</button>
-<div id="moreMenu" class="more-menu hidden">
-  <button onclick="toggleMode()">⭐ Nur Merkliste</button>
-  <a href="stats.html">📊 Statistik</a>
-  <a href="index.html">⬅ Startseite</a>
-</div>
-
 </main>
 
 
 </div>
 
-<script src="data1.js"></script>
-<script src="script.js"></script>
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+<script src="css/theme.js"></script>
 </body>
 </html>
