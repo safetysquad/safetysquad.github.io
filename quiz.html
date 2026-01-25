@@ -4,61 +4,23 @@
   <meta charset="UTF-8">
   <title>Quiz – SAFETY SQUAD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css?v=6">
-  <style>
-    .quiz-block {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .quiz-block .btn {
-      flex: 1; /* gleiche Breite */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 8px 12px;
-      text-align: center;
-    }
-
-    .quiz-link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .quiz-badge {
-      margin-left: 8px;
-      font-weight: bold;
-    }
-
-    #global-wrong-container .btn {
-      width: 100%;
-      display: block;
-      text-align: center;
-      padding: 10px 0;
-      margin-top: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 
 <body>
 <div class="app">
 
   <!-- ================= HEADER ================= -->
-  <header class="header-bar">
-    <button class="burger" onclick="toggleMenu()">☰</button>
-    <div class="header-text">
-      <h1>📝 Quiz</h1>
-      <p>Wähle einen Test</p>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
     </div>
+    <div class="header-buttons">
+      <button id="back-button">⬅</button>
+      <button id="theme-toggle">🌓</button>
+    </div>
+    <h1>Wähle einen Test</h1>
   </header>
-
-  <!-- ================= BURGER MENÜ ================= -->
-  <div id="moreMenu" class="more-menu hidden">
-    <a href="stats.html">📊 Statistik</a>
-    <a href="index.html">⬅ Startseite</a>
-  </div>
 
   <!-- ================= GLOBALER BUTTON ================= -->
   <div id="global-wrong-container" style="margin: 10px 0;"></div>
@@ -68,8 +30,7 @@
 
 </div>
 
-<!-- ================= SCRIPTS ================= -->
-<script src="quiz-data.js"></script>
+<script src="js/quiz-data.js"></script>
 <script>
 function renderQuizDashboard() {
   const quizListEl = document.getElementById("quiz-list");
@@ -125,16 +86,10 @@ function renderQuizDashboard() {
   if (totalWrong > 0) {
     const btn = document.createElement("a");
     btn.href = "quiz-run.html?globalWrong=1";
-    btn.className = "btn warn large";
+    btn.className = "btn warn";
     btn.innerText = `❌ Alle falschen Fragen wiederholen (${totalWrong})`;
     globalContainer.appendChild(btn);
   }
-}
-
-// Burger Menü
-function toggleMenu() {
-  const menu = document.getElementById("moreMenu");
-  if (menu) menu.classList.toggle("hidden");
 }
 
 // Seite laden
