@@ -130,7 +130,7 @@ function renderQuestion() {
 
   q.answers.forEach(a => {
     const btn = document.createElement("button");
-    btn.className = "btn secondary";
+    btn.className = "answer-btn";
     if (userAnswers[q.id]?.includes(a.id)) btn.classList.add("active");
     btn.innerText = `${a.id}. ${a.text}`;
     btn.onclick = () => toggleAnswer(a.id);
