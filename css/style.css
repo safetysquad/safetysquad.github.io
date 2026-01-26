@@ -510,8 +510,10 @@ body.dark .btn:active {
     8px 8px 24px var(--shadow-dark),
     -8px -8px 24px var(--shadow-light);
 
-  color: #000;             /* Light Mode Schrift */
+   color: #000;             /* Light Mode Schrift */
   border: 2px solid #000;  /* Light Mode Umrandung */
+  box-sizing: border-box;  /* wichtig, damit Border innerhalb der Breite bleibt */
+  outline: none;           /* entfernt Focus-Linie */
   transition: background 0.3s, color 0.3s, border 0.3s;
 }
 
