@@ -121,8 +121,8 @@ header {
 
 /* Standard: Desktop */
 .logo img {
-  height: 80px;       /* maximale Desktop-Höhe */
-  max-height: 80px;   /* extra Schutz */
+  height: 160px;       /* maximale Desktop-Höhe */
+  max-height: 160px;   /* extra Schutz */
   width: auto;
   transition: height 0.3s ease;
 }
@@ -130,7 +130,7 @@ header {
 /* Mobile: kleiner skalieren */
 @media (max-width: 768px) {
   .logo img {
-    height: 60px;     /* Mobile */
+    height: 90px;     /* Mobile */
   }
 
   .header-info h1 {
@@ -585,22 +585,4 @@ body.dark .answer-btn.active {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ===============================
-   CONTROL MODE
-================================ */
-body::after {
-  content: "Control Mode V0.1 Active";
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  background: #3b82f6;
-  color: white;
-  font-size: 0.75rem;
-  padding: 2px 6px;
-  border-radius: 6px;
-  z-index: 9999;
-  opacity: 0.6;
-  pointer-events: none;
 }
