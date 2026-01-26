@@ -102,16 +102,6 @@
     renderStatsSet('cards1', 2);
     renderQuizStats();
   });
-document.getElementById("back-button").addEventListener("click", () => {
-  window.history.back();
-});
-document.getElementById("back-button").addEventListener("click", () => {
-  if (document.referrer) {
-    window.history.back();
-  } else {
-    window.location.href = "index.html"; // Startseite
-  }
-});
 
 </script>
 
