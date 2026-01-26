@@ -117,14 +117,6 @@ function renderQuestion() {
   const questionTextEl = document.getElementById("questionText");
   const answersBox = document.getElementById("answers");
 
-  let pointsEl = document.getElementById("questionPoints");
-  if (!pointsEl) {
-    pointsEl = document.createElement("div");
-    pointsEl.id = "questionPoints";
-    document.querySelector(".progress").insertAdjacentElement("afterend", pointsEl);
-  }
-  pointsEl.innerText = `🧠 ${q.points} Punkt${q.points > 1 ? "e" : ""}`;
-
   questionTextEl.innerText = q.question;
   answersBox.innerHTML = "";
 
@@ -138,7 +130,7 @@ function renderQuestion() {
   });
 
   document.getElementById("counter").innerText =
-    `Frage ${currentIndex + 1} von ${quiz.length}`;
+  `Frage ${currentIndex + 1} von ${quiz.length} · 🧠 ${q.points} Punkt${q.points > 1 ? "e" : ""}`;
 }
 
 // ==============================
