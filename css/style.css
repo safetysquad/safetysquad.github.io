@@ -487,13 +487,13 @@ body.dark .btn:active {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  width: 100%;
-  margin: 0 auto;
+  width: 100%;      
+  margin: 0;
 }
 
 .answer-btn {
   width: 100%;
-  max-width: none;
+  max-width: 100%;
   margin: 0;
 
   padding: 1.3rem 1.4rem;
@@ -502,18 +502,34 @@ body.dark .btn:active {
   line-height: 1.4;
 
   border-radius: 20px;
-  text-align: left;              /* wichtig für lange Texte */
-  justify-content: flex-start;   /* Text linksbündig */
+  text-align: left;             
+  justify-content: flex-start;  
 
   background: var(--card-bg);
+  box-shadow:
+    8px 8px 24px var(--shadow-dark),
+    -8px -8px 24px var(--shadow-light);
+
+  color: #000;             /* Light Mode Schrift */
+  border: 2px solid #000;  /* Light Mode Umrandung */
+  transition: background 0.3s, color 0.3s, border 0.3s;
 }
+
+body.dark .answer-btn {
+  color: #fff;             /* Dark Mode Schrift */
+  border: 2px solid #fff;  /* Dark Mode Umrandung */
+}
+
 .answer-btn.active {
-  outline: 2px solid var(--brand, #3b82f6);
-  background: #dbeafe;
+  background: #dbeafe;      /* Light Mode aktiver Button */
+  outline: none;             /* outline entfernen, da wir Border nutzen */
 }
+
 body.dark .answer-btn.active {
-  background: #1e3a8a;
+  background: #1e3a8a;      /* Dark Mode aktiver Button */
+  outline: none;             /* kein Outline */
 }
+
 
 /* ===============================
    QUIZ / RESULT
